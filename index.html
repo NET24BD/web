@@ -2476,6 +2476,31 @@ function safeURL(value){
         }
 
 
+        /*
+         * Automatically remove ChatGPT's tracking parameter.
+         * Example:
+         * https://net24bd.github.io/web/?utm_source=chatgpt.com
+         * becomes:
+         * https://net24bd.github.io/web/
+         *
+         * Other URL parameters are kept unchanged.
+         */
+
+        if(
+            parsed.searchParams.get("utm_source") &&
+            parsed.searchParams
+                .get("utm_source")
+                .trim()
+                .toLowerCase() === "chatgpt.com"
+        ){
+
+            parsed.searchParams.delete(
+                "utm_source"
+            );
+
+        }
+
+
         return parsed.href;
 
     }
