@@ -792,6 +792,111 @@ body.light-theme .logo-box{
     font-size:17px;
 }
 
+/* WWW / Globe / Search fallback icon */
+.www-icon{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            160deg,
+            #f20cf2 0%,
+            #b33bea 42%,
+            #726eea 68%,
+            #16b8df 100%
+        );
+
+    color:#fff;
+}
+
+.www-icon .www-globe{
+
+    position:absolute;
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:31px;
+
+    color:#fff;
+
+    opacity:.98;
+}
+
+.www-icon .www-bar{
+
+    position:absolute;
+
+    left:6px;
+
+    right:6px;
+
+    top:17px;
+
+    height:16px;
+
+    border:2px solid #fff;
+
+    border-radius:5px;
+
+    background:rgba(135,86,236,.96);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:3px;
+
+    z-index:2;
+
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+
+.www-icon .www-text{
+
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-.6px;
+
+    color:#fff;
+}
+
+.www-icon .www-search{
+
+    font-size:8px;
+
+    color:#fff;
+}
+
 
 .status{
 
@@ -1974,11 +2079,19 @@ function createCard(card){
             >
 
             <span
-                class="logo-fallback"
+                class="logo-fallback www-icon"
                 style="display:none"
+                aria-label="WWW"
             >
 
-                <i class="fa-solid fa-globe"></i>
+                <span class="www-globe">
+                    <i class="fa-solid fa-globe"></i>
+                </span>
+
+                <span class="www-bar">
+                    <span class="www-text">WWW</span>
+                    <i class="fa-solid fa-magnifying-glass www-search"></i>
+                </span>
 
             </span>
 
@@ -1990,9 +2103,16 @@ function createCard(card){
 
         logoHTML = `
 
-            <span class="logo-fallback">
+            <span class="logo-fallback www-icon" aria-label="WWW">
 
-                <i class="fa-solid fa-globe"></i>
+                <span class="www-globe">
+                    <i class="fa-solid fa-globe"></i>
+                </span>
+
+                <span class="www-bar">
+                    <span class="www-text">WWW</span>
+                    <i class="fa-solid fa-magnifying-glass www-search"></i>
+                </span>
 
             </span>
 
