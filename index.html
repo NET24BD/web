@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Website Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Segoe UI",Arial,sans-serif;
+        }
+
+
+        body{
+
+            min-height:100vh;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(34,197,94,.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(16,185,129,.10),
+                    transparent 30%
+                ),
+                #f4f7f9;
+
+            color:#172033;
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .top-header{
+
+            width:100%;
+
+            padding:32px 5% 22px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            gap:20px;
+
+        }
+
+
+        .brand{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:15px;
+
+        }
+
+
+        .brand-icon{
+
+            width:58px;
+            height:58px;
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            border-radius:17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #16a34a,
+                    #059669
+                );
+
+            color:#fff;
+
+            font-size:24px;
+
+            box-shadow:
+                0 10px 25px
+                rgba(22,163,74,.22);
+
+        }
+
+
+        .brand-text h1{
+
+            font-size:26px;
+
+            font-weight:750;
+
+            color:#0f172a;
+
+        }
+
+
+        .brand-text p{
+
+            margin-top:4px;
+
+            color:#64748b;
+
+            font-size:13px;
+
+        }
+
+
+        .header-badge{
+
+            padding:9px 15px;
+
+            border-radius:30px;
+
+            background:#ffffff;
+
+            border:1px solid #e2e8f0;
+
+            color:#475569;
+
+            font-size:13px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(15,23,42,.05);
+
+        }
+
+
+        /* =========================================
+           DASHBOARD
+        ========================================= */
+
+        .dashboard{
+
+            width:90%;
+
+            max-width:1400px;
+
+            margin:10px auto 50px;
+
+            display:grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px,1fr)
+                );
+
+            gap:22px;
+
+        }
+
+
+        /* =========================================
+           CARD
+        ========================================= */
+
+        .website-card{
+
+            position:relative;
+
+            background:
+                rgba(255,255,255,.94);
+
+            border:1px solid #e5eaf0;
+
+            border-radius:22px;
+
+            padding:22px;
+
+            min-height:265px;
+
+            display:flex;
+
+            flex-direction:column;
+
+            overflow:hidden;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15,23,42,.055);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+
+        }
+
+
+        .website-card::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:0;
+            left:0;
+            right:0;
+
+            height:4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #16a34a,
+                    #10b981
+                );
+
+            opacity:0;
+
+            transition:.3s;
+
+        }
+
+
+        .website-card:hover{
+
+            transform:
+                translateY(-7px);
+
+            border-color:#bbf7d0;
+
+            box-shadow:
+                0 20px 40px
+                rgba(15,23,42,.11);
+
+        }
+
+
+        .website-card:hover::before{
+
+            opacity:1;
+
+        }
+
+
+        /* =========================================
+           CARD TOP
+        ========================================= */
+
+        .card-top{
+
+            display:flex;
+
+            align-items:flex-start;
+
+            justify-content:space-between;
+
+            gap:15px;
+
+        }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .website-logo{
+
+            width:64px;
+            height:64px;
+
+            border-radius:18px;
+
+            background:#f0fdf4;
+
+            border:1px solid #dcfce7;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            overflow:hidden;
+
+            flex-shrink:0;
+
+        }
+
+
+        .website-logo img{
+
+            width:100%;
+            height:100%;
+
+            object-fit:cover;
+
+        }
+
+
+        .website-logo i{
+
+            font-size:27px;
+
+            color:#16a34a;
+
+        }
+
+
+        /* =========================================
+           STATUS
+        ========================================= */
+
+        .status{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:6px;
+
+            padding:6px 10px;
+
+            border-radius:20px;
+
+            background:#f0fdf4;
+
+            color:#15803d;
+
+            font-size:11px;
+
+            font-weight:600;
+
+        }
+
+
+        .status-dot{
+
+            width:6px;
+            height:6px;
+
+            border-radius:50%;
+
+            background:#22c55e;
+
+        }
+
+
+        /* =========================================
+           CONTENT
+        ========================================= */
+
+        .card-content{
+
+            margin-top:18px;
+
+        }
+
+
+        .card-content h2{
+
+            font-size:18px;
+
+            color:#0f172a;
+
+            font-weight:700;
+
+        }
+
+
+        .card-content p{
+
+            margin-top:8px;
+
+            font-size:13px;
+
+            line-height:1.6;
+
+            color:#64748b;
+
+            min-height:42px;
+
+        }
+
+
+        /* =========================================
+           CARD FOOTER
+        ========================================= */
+
+        .card-footer{
+
+            margin-top:auto;
+
+            padding-top:20px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            gap:10px;
+
+        }
+
+
+        .website-url{
+
+            font-size:11px;
+
+            color:#94a3b8;
+
+            overflow:hidden;
+
+            white-space:nowrap;
+
+            text-overflow:ellipsis;
+
+            max-width:125px;
+
+        }
+
+
+        /* =========================================
+           OPEN BUTTON
+        ========================================= */
+
+        .open-btn{
+
+            border:none;
+
+            outline:none;
+
+            cursor:pointer;
+
+            padding:10px 16px;
+
+            border-radius:11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #16a34a,
+                    #059669
+                );
+
+            color:#fff;
+
+            font-size:12px;
+
+            font-weight:650;
+
+            display:flex;
+
+            align-items:center;
+
+            gap:7px;
+
+            box-shadow:
+                0 7px 18px
+                rgba(22,163,74,.18);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .open-btn:hover{
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(22,163,74,.27);
+
+        }
+
+
+        .open-btn i{
+
+            font-size:11px;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer{
+
+            text-align:center;
+
+            padding:0 20px 30px;
+
+            color:#94a3b8;
+
+            font-size:12px;
+
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media(max-width:850px){
+
+            .top-header{
+
+                padding-left:4%;
+                padding-right:4%;
+
+            }
+
+            .dashboard{
+
+                width:92%;
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(0,1fr)
+                    );
+
+            }
+
+            .header-badge{
+
+                display:none;
+
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media(max-width:600px){
+
+            .top-header{
+
+                padding:
+                    22px
+                    5%
+                    15px;
+
+            }
+
+
+            .brand-icon{
+
+                width:50px;
+                height:50px;
+
+                border-radius:14px;
+
+                font-size:21px;
+
+            }
+
+
+            .brand-text h1{
+
+                font-size:21px;
+
+            }
+
+
+            .brand-text p{
+
+                font-size:11px;
+
+            }
+
+
+            .dashboard{
+
+                width:90%;
+
+                grid-template-columns:
+                    1fr;
+
+                gap:16px;
+
+                margin-top:8px;
+
+            }
+
+
+            .website-card{
+
+                min-height:245px;
+
+                border-radius:19px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-globe"></i>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <h1>Website Dashboard</h1>
+
+                <p>
+                    Access all your websites from one place
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-badge">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            &nbsp; 25 Websites
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         WEBSITE CARDS
+    ========================================= -->
+
+    <main class="dashboard">
+
+
+        <!-- CARD 01 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <img
+                        src="https://www.google.com/favicon.ico"
+                        alt="Google"
+                    >
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>Google</h2>
+
+                <p>
+                    Search the web, discover information
+                    and access Google's services.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    google.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://google.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 02 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <img
+                        src="https://github.com/favicon.ico"
+                        alt="GitHub"
+                    >
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>GitHub</h2>
+
+                <p>
+                    Manage repositories, code and
+                    development projects.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    github.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://github.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 03 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <img
+                        src="https://www.youtube.com/favicon.ico"
+                        alt="YouTube"
+                    >
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>YouTube</h2>
+
+                <p>
+                    Watch videos, discover channels
+                    and manage your content.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    youtube.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://youtube.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 04 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>Website 04</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website04.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 05 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <i class="fa-solid fa-server"></i>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>Website 05</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website05.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 06 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h2>Website 06</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website06.com
+                </span>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+
+                    Open
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 07 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 07</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website07.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 08 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 08</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website08.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 09 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 09</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website09.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 10 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 10</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website10.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 11 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-file"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 11</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website11.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 12 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-folder"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 12</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website12.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 13 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 13</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website13.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 14 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 14</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website14.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 15 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 15</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website15.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 16 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 16</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website16.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 17 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-message"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 17</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website17.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 18 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 18</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website18.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 19 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 19</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website19.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 20 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 20</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website20.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 21 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 21</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website21.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 22 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 22</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website22.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 23 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 23</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website23.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 24 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 24</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website24.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 25 -->
+
+        <div class="website-card">
+
+            <div class="card-top">
+
+                <div class="website-logo">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2>Website 25</h2>
+
+                <p>
+                    Your website description goes
+                    here.
+                </p>
+
+            </div>
+
+            <div class="card-footer">
+
+                <span class="website-url">
+                    website25.com
+                </span>
+
+                <button
+                    class="open-btn"
+                    onclick="openWebsite('https://example.com')"
+                >
+                    Open
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">
+
+        © 2026 Website Dashboard · All Rights Reserved
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        "use strict";
+
+
+        function openWebsite(url){
+
+            if(!url){
+                return;
+            }
+
+            window.location.href = url;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
