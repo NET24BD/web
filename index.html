@@ -32,6 +32,74 @@
 
 
 /* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root{
+
+    --bg:#070b12;
+
+    --bg-soft:#0c121c;
+
+    --card:#111a27;
+
+    --card-hover:#162231;
+
+    --border:rgba(148,163,184,.13);
+
+    --text:#f8fafc;
+
+    --text-soft:#94a3b8;
+
+    --text-muted:#64748b;
+
+    --input:#0d1521;
+
+    --theme-bg:rgba(15,23,42,.75);
+
+    --green:#10b981;
+
+    --green-dark:#059669;
+
+    --green-light:#34d399;
+
+    --shadow:rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light{
+
+    --bg:#f3f6f9;
+
+    --bg-soft:#ffffff;
+
+    --card:#ffffff;
+
+    --card-hover:#f8fafc;
+
+    --border:rgba(15,23,42,.10);
+
+    --text:#172033;
+
+    --text-soft:#64748b;
+
+    --text-muted:#94a3b8;
+
+    --input:#ffffff;
+
+    --theme-bg:rgba(255,255,255,.88);
+
+    --shadow:rgba(15,23,42,.09);
+
+}
+
+
+/* =========================================================
    BODY
 ========================================================= */
 
@@ -39,7 +107,7 @@ body{
 
     min-height:100vh;
 
-    color:#e5e7eb;
+    color:var(--text);
 
     background:
 
@@ -55,9 +123,14 @@ body{
             transparent 30%
         ),
 
-        #070b12;
+        var(--bg);
 
     overflow-x:hidden;
+
+    transition:
+
+        background .3s ease,
+        color .3s ease;
 
 }
 
@@ -73,7 +146,7 @@ body{
 
     margin:auto;
 
-    padding:28px 0 18px;
+    padding:27px 0 17px;
 
     display:flex;
 
@@ -81,7 +154,7 @@ body{
 
     justify-content:space-between;
 
-    gap:15px;
+    gap:20px;
 
 }
 
@@ -110,6 +183,7 @@ body{
     border-radius:15px;
 
     background:
+
         linear-gradient(
             135deg,
             #10b981,
@@ -121,6 +195,7 @@ body{
     font-size:22px;
 
     box-shadow:
+
         0 10px 25px
         rgba(16,185,129,.18);
 
@@ -129,9 +204,9 @@ body{
 
 .brand-text h1{
 
-    font-size:24px;
+    color:var(--text);
 
-    color:#f8fafc;
+    font-size:24px;
 
     font-weight:750;
 
@@ -142,43 +217,113 @@ body{
 
     margin-top:4px;
 
-    color:#64748b;
+    color:var(--text-muted);
 
     font-size:12px;
 
 }
 
 
-.header-badge{
+/* =========================================================
+   THEME BUTTONS
+========================================================= */
 
-    padding:9px 14px;
+.theme-buttons{
 
-    border-radius:25px;
+    display:flex;
 
-    background:
-        rgba(15,23,42,.7);
+    align-items:center;
 
-    border:1px solid
-        rgba(148,163,184,.12);
+    gap:5px;
 
-    color:#94a3b8;
+    padding:5px;
+
+    border-radius:13px;
+
+    background:var(--theme-bg);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+.theme-btn{
+
+    height:34px;
+
+    padding:0 12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:transparent;
+
+    color:var(--text-muted);
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+
+.theme-btn i{
 
     font-size:11px;
 
 }
 
 
-.header-badge i{
+.theme-btn:hover{
 
-    color:#34d399;
+    color:var(--text);
 
-    margin-right:5px;
+    background:
+        rgba(148,163,184,.08);
+
+}
+
+
+.theme-btn.active{
+
+    color:#fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #10b981,
+            #059669
+        );
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(16,185,129,.18);
 
 }
 
 
 /* =========================================================
-   SEARCH
+   SEARCH AREA
 ========================================================= */
 
 .search-area{
@@ -186,7 +331,8 @@ body{
     width:92%;
     max-width:1400px;
 
-    margin:0 auto 22px;
+    margin:
+        0 auto 22px;
 
     display:flex;
 
@@ -216,9 +362,10 @@ body{
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
-    color:#64748b;
+    color:var(--text-muted);
 
     font-size:13px;
 
@@ -238,19 +385,25 @@ body{
 
     border-radius:13px;
 
-    border:1px solid
-        rgba(148,163,184,.13);
+    border:1px solid var(--border);
 
-    background:
-        rgba(15,23,42,.72);
+    background:var(--input);
 
-    color:#f8fafc;
+    color:var(--text);
 
     font-size:13px;
 
-    backdrop-filter:blur(12px);
+    box-shadow:
+        0 5px 20px var(--shadow);
 
     transition:.25s;
+
+}
+
+
+.search-box input::placeholder{
+
+    color:var(--text-muted);
 
 }
 
@@ -258,18 +411,12 @@ body{
 .search-box input:focus{
 
     border-color:
-        rgba(52,211,153,.4);
+        rgba(16,185,129,.45);
 
     box-shadow:
+
         0 0 0 3px
-        rgba(16,185,129,.06);
-
-}
-
-
-.search-box input::placeholder{
-
-    color:#64748b;
+        rgba(16,185,129,.07);
 
 }
 
@@ -282,27 +429,31 @@ body{
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
     width:25px;
     height:25px;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
 
     border:0;
 
     background:transparent;
 
-    color:#64748b;
+    color:var(--text-muted);
 
     cursor:pointer;
-
-    display:none;
 
 }
 
 
 .search-result{
 
-    color:#64748b;
+    color:var(--text-muted);
 
     font-size:11px;
 
@@ -313,13 +464,13 @@ body{
 
 .search-result strong{
 
-    color:#34d399;
+    color:var(--green);
 
 }
 
 
 /* =========================================================
-   CARD GRID
+   DASHBOARD
 ========================================================= */
 
 .dashboard{
@@ -327,7 +478,8 @@ body{
     width:92%;
     max-width:1400px;
 
-    margin:0 auto 45px;
+    margin:
+        0 auto 45px;
 
     display:grid;
 
@@ -343,7 +495,7 @@ body{
 
 
 /* =========================================================
-   SQUARE CARD
+   WEBSITE CARD
 ========================================================= */
 
 .website-card{
@@ -364,24 +516,17 @@ body{
 
     border-radius:19px;
 
-    background:
+    background:var(--card);
 
-        linear-gradient(
-            145deg,
-            rgba(20,29,42,.96),
-            rgba(9,14,23,.98)
-        );
-
-    border:1px solid
-        rgba(148,163,184,.12);
+    border:1px solid var(--border);
 
     box-shadow:
-        0 10px 28px
-        rgba(0,0,0,.22);
+        0 10px 28px var(--shadow);
 
     transition:
 
         transform .25s ease,
+        background .3s ease,
         border-color .25s ease,
         box-shadow .25s ease;
 
@@ -401,6 +546,7 @@ body{
     height:2px;
 
     background:
+
         linear-gradient(
             90deg,
             #10b981,
@@ -420,12 +566,13 @@ body{
     transform:
         translateY(-5px);
 
+    background:var(--card-hover);
+
     border-color:
-        rgba(52,211,153,.3);
+        rgba(16,185,129,.3);
 
     box-shadow:
-        0 18px 35px
-        rgba(0,0,0,.34);
+        0 18px 35px var(--shadow);
 
 }
 
@@ -475,14 +622,14 @@ body{
     border-radius:15px;
 
     background:
+
         linear-gradient(
             145deg,
-            #1e293b,
-            #0f172a
+            rgba(148,163,184,.12),
+            rgba(148,163,184,.05)
         );
 
-    border:1px solid
-        rgba(148,163,184,.13);
+    border:1px solid var(--border);
 
 }
 
@@ -499,7 +646,7 @@ body{
 
 .website-logo i{
 
-    color:#34d399;
+    color:var(--green-light);
 
     font-size:21px;
 
@@ -525,7 +672,7 @@ body{
     background:
         rgba(16,185,129,.07);
 
-    color:#6ee7b7;
+    color:#10b981;
 
     font-size:8px;
 
@@ -541,17 +688,17 @@ body{
 
     border-radius:50%;
 
-    background:#34d399;
+    background:#10b981;
 
     box-shadow:
         0 0 7px
-        rgba(52,211,153,.8);
+        rgba(16,185,129,.7);
 
 }
 
 
 /* =========================================================
-   CARD CONTENT
+   CONTENT
 ========================================================= */
 
 .card-content{
@@ -563,7 +710,7 @@ body{
 
 .card-content h2{
 
-    color:#f8fafc;
+    color:var(--text);
 
     font-size:16px;
 
@@ -582,7 +729,7 @@ body{
 
     margin-top:7px;
 
-    color:#7f8ea3;
+    color:var(--text-soft);
 
     font-size:11px;
 
@@ -600,7 +747,7 @@ body{
 
 
 /* =========================================================
-   CARD FOOTER
+   FOOTER
 ========================================================= */
 
 .card-footer{
@@ -622,17 +769,15 @@ body{
 
 .website-url{
 
-    min-width:0;
-
     max-width:80px;
 
     overflow:hidden;
 
-    text-overflow:ellipsis;
-
     white-space:nowrap;
 
-    color:#475569;
+    text-overflow:ellipsis;
+
+    color:var(--text-muted);
 
     font-size:9px;
 
@@ -664,6 +809,7 @@ body{
     border-radius:9px;
 
     background:
+
         linear-gradient(
             135deg,
             #10b981,
@@ -678,25 +824,18 @@ body{
 
     transition:.2s;
 
-    white-space:nowrap;
-
 }
 
 
 .open-btn:hover{
 
-    transform:translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
+
         0 8px 18px
         rgba(16,185,129,.2);
-
-}
-
-
-.open-btn i{
-
-    font-size:8px;
 
 }
 
@@ -717,11 +856,9 @@ body{
 
     border-radius:18px;
 
-    border:1px dashed
-        rgba(148,163,184,.15);
+    border:1px dashed var(--border);
 
-    background:
-        rgba(15,23,42,.45);
+    background:var(--card);
 
 }
 
@@ -730,7 +867,7 @@ body{
 
     font-size:30px;
 
-    color:#475569;
+    color:var(--text-muted);
 
     margin-bottom:12px;
 
@@ -739,7 +876,7 @@ body{
 
 .no-result h3{
 
-    color:#cbd5e1;
+    color:var(--text);
 
     font-size:16px;
 
@@ -750,7 +887,7 @@ body{
 
     margin-top:5px;
 
-    color:#64748b;
+    color:var(--text-muted);
 
     font-size:11px;
 
@@ -765,9 +902,10 @@ body{
 
     text-align:center;
 
-    padding:0 20px 25px;
+    padding:
+        0 20px 25px;
 
-    color:#334155;
+    color:var(--text-muted);
 
     font-size:10px;
 
@@ -821,36 +959,55 @@ body{
         padding:
             20px 0 15px;
 
+        align-items:flex-start;
+
     }
 
 
     .brand-icon{
 
-        width:45px;
-        height:45px;
+        width:44px;
+        height:44px;
 
-        border-radius:13px;
+        border-radius:12px;
 
-        font-size:19px;
+        font-size:18px;
 
     }
 
 
     .brand-text h1{
 
-        font-size:19px;
+        font-size:18px;
 
     }
 
 
     .brand-text p{
 
-        font-size:10px;
+        font-size:9px;
 
     }
 
 
-    .header-badge{
+    .theme-buttons{
+
+        padding:4px;
+
+    }
+
+
+    .theme-btn{
+
+        width:32px;
+        height:30px;
+
+        padding:0;
+
+    }
+
+
+    .theme-btn span{
 
         display:none;
 
@@ -947,16 +1104,7 @@ body{
 
         font-size:9px;
 
-        line-height:1.5;
-
         -webkit-line-clamp:2;
-
-    }
-
-
-    .card-footer{
-
-        padding-top:8px;
 
     }
 
@@ -986,6 +1134,20 @@ body{
 ========================================================= */
 
 @media(max-width:370px){
+
+    .brand-text p{
+
+        display:none;
+
+    }
+
+
+    .theme-btn{
+
+        width:28px;
+
+    }
+
 
     .dashboard{
 
@@ -1049,6 +1211,7 @@ body{
 
 <header class="top-header">
 
+
     <div class="brand">
 
         <div class="brand-icon">
@@ -1056,6 +1219,7 @@ body{
             <i class="fa-solid fa-globe"></i>
 
         </div>
+
 
         <div class="brand-text">
 
@@ -1070,15 +1234,62 @@ body{
     </div>
 
 
-    <div class="header-badge">
 
-        <i class="fa-solid fa-layer-group"></i>
+    <!-- =================================================
+         3 THEME BUTTONS
+    ================================================== -->
 
-        <span id="totalCount">
-            25 Websites
-        </span>
+    <div class="theme-buttons">
+
+
+        <!-- DARK -->
+
+        <button
+            class="theme-btn active"
+            id="darkBtn"
+            onclick="setTheme('dark')"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+            <span>Dark</span>
+
+        </button>
+
+
+
+        <!-- LIGHT -->
+
+        <button
+            class="theme-btn"
+            id="lightBtn"
+            onclick="setTheme('light')"
+        >
+
+            <i class="fa-solid fa-sun"></i>
+
+            <span>Light</span>
+
+        </button>
+
+
+
+        <!-- AUTO -->
+
+        <button
+            class="theme-btn"
+            id="autoBtn"
+            onclick="setTheme('auto')"
+        >
+
+            <i class="fa-solid fa-desktop"></i>
+
+            <span>Auto</span>
+
+        </button>
 
     </div>
+
 
 </header>
 
@@ -1090,9 +1301,11 @@ body{
 
 <section class="search-area">
 
+
     <div class="search-box">
 
         <i class="fa-solid fa-magnifying-glass"></i>
+
 
         <input
             type="search"
@@ -1100,6 +1313,7 @@ body{
             placeholder="Search websites..."
             autocomplete="off"
         >
+
 
         <button
             class="clear-search"
@@ -1125,12 +1339,13 @@ body{
 
     </div>
 
+
 </section>
 
 
 
 <!-- =====================================================
-     WEBSITE CARDS
+     DASHBOARD
 ===================================================== -->
 
 <main
@@ -1139,7 +1354,9 @@ body{
 >
 
 
-<!-- CARD 01 -->
+<!-- =====================================================
+     CARD 01
+===================================================== -->
 
 <div
     class="website-card"
@@ -1157,6 +1374,7 @@ body{
             >
 
         </div>
+
 
         <div class="status">
 
@@ -1187,6 +1405,7 @@ body{
             google.com
         </span>
 
+
         <button
             class="open-btn"
             onclick="openWebsite('https://google.com')"
@@ -1204,7 +1423,9 @@ body{
 
 
 
-<!-- CARD 02 -->
+<!-- =====================================================
+     CARD 02
+===================================================== -->
 
 <div
     class="website-card"
@@ -1222,6 +1443,7 @@ body{
             >
 
         </div>
+
 
         <div class="status">
 
@@ -1252,6 +1474,7 @@ body{
             github.com
         </span>
 
+
         <button
             class="open-btn"
             onclick="openWebsite('https://github.com')"
@@ -1269,7 +1492,9 @@ body{
 
 
 
-<!-- CARD 03 -->
+<!-- =====================================================
+     CARD 03
+===================================================== -->
 
 <div
     class="website-card"
@@ -1287,6 +1512,7 @@ body{
             >
 
         </div>
+
 
         <div class="status">
 
@@ -1317,6 +1543,7 @@ body{
             youtube.com
         </span>
 
+
         <button
             class="open-btn"
             onclick="openWebsite('https://youtube.com')"
@@ -1329,131 +1556,6 @@ body{
         </button>
 
     </div>
-
-</div>
-
-
-
-<!-- CARD 04-25 -->
-
-<script>
-
-const websites = [
-
-    ["Website 04","Your website description goes here.","website04.com","fa-house"],
-    ["Website 05","Your website description goes here.","website05.com","fa-server"],
-    ["Website 06","Your website description goes here.","website06.com","fa-users"],
-    ["Website 07","Your website description goes here.","website07.com","fa-phone"],
-    ["Website 08","Your website description goes here.","website08.com","fa-headset"],
-    ["Website 09","Your website description goes here.","website09.com","fa-database"],
-    ["Website 10","Your website description goes here.","website10.com","fa-network-wired"],
-    ["Website 11","Your website description goes here.","website11.com","fa-file"],
-    ["Website 12","Your website description goes here.","website12.com","fa-folder"],
-    ["Website 13","Your website description goes here.","website13.com","fa-shield-halved"],
-    ["Website 14","Your website description goes here.","website14.com","fa-lock"],
-    ["Website 15","Your website description goes here.","website15.com","fa-gear"],
-    ["Website 16","Your website description goes here.","website16.com","fa-bell"],
-    ["Website 17","Your website description goes here.","website17.com","fa-message"],
-    ["Website 18","Your website description goes here.","website18.com","fa-envelope"],
-    ["Website 19","Your website description goes here.","website19.com","fa-calendar"],
-    ["Website 20","Your website description goes here.","website20.com","fa-clock"],
-    ["Website 21","Your website description goes here.","website21.com","fa-chart-pie"],
-    ["Website 22","Your website description goes here.","website22.com","fa-bolt"],
-    ["Website 23","Your website description goes here.","website23.com","fa-cloud"],
-    ["Website 24","Your website description goes here.","website24.com","fa-link"],
-    ["Website 25","Your website description goes here.","website25.com","fa-compass"]
-
-];
-
-
-websites.forEach((site,index)=>{
-
-    const card = document.createElement("div");
-
-    card.className = "website-card";
-
-    card.dataset.name = site[0];
-
-    card.dataset.description = site[1];
-
-
-    card.innerHTML = `
-
-        <div class="card-top">
-
-            <div class="website-logo">
-
-                <i class="fa-solid ${site[3]}"></i>
-
-            </div>
-
-            <div class="status">
-
-                <span class="status-dot"></span>
-
-                Online
-
-            </div>
-
-        </div>
-
-
-        <div class="card-content">
-
-            <h2>${site[0]}</h2>
-
-            <p>${site[1]}</p>
-
-        </div>
-
-
-        <div class="card-footer">
-
-            <span class="website-url">
-                ${site[2]}
-            </span>
-
-            <button
-                class="open-btn"
-                onclick="openWebsite('https://example.com')"
-            >
-
-                Open
-
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    document
-        .getElementById("dashboard")
-        .appendChild(card);
-
-});
-
-</script>
-
-
-<!-- NO RESULT -->
-
-<div
-    class="no-result"
-    id="noResult"
->
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <h3>
-        No website found
-    </h3>
-
-    <p>
-        Try another search keyword.
-    </p>
 
 </div>
 
@@ -1473,6 +1575,166 @@ websites.forEach((site,index)=>{
 <script>
 
 /* =========================================================
+   THEME SYSTEM
+========================================================= */
+
+const darkBtn =
+    document.getElementById("darkBtn");
+
+const lightBtn =
+    document.getElementById("lightBtn");
+
+const autoBtn =
+    document.getElementById("autoBtn");
+
+
+/* SYSTEM THEME */
+
+const systemTheme =
+    window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    );
+
+
+function applyAutoTheme(){
+
+    if(systemTheme.matches){
+
+        document.body.classList.remove(
+            "light"
+        );
+
+    }else{
+
+        document.body.classList.add(
+            "light"
+        );
+
+    }
+
+}
+
+
+/* SET THEME */
+
+function setTheme(theme){
+
+    /* Remove active */
+
+    darkBtn.classList.remove("active");
+
+    lightBtn.classList.remove("active");
+
+    autoBtn.classList.remove("active");
+
+
+    /* DARK */
+
+    if(theme === "dark"){
+
+        document.body.classList.remove(
+            "light"
+        );
+
+        darkBtn.classList.add("active");
+
+        localStorage.setItem(
+            "websiteTheme",
+            "dark"
+        );
+
+    }
+
+
+    /* LIGHT */
+
+    else if(theme === "light"){
+
+        document.body.classList.add(
+            "light"
+        );
+
+        lightBtn.classList.add("active");
+
+        localStorage.setItem(
+            "websiteTheme",
+            "light"
+        );
+
+    }
+
+
+    /* AUTO */
+
+    else{
+
+        applyAutoTheme();
+
+        autoBtn.classList.add("active");
+
+        localStorage.setItem(
+            "websiteTheme",
+            "auto"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD SAVED THEME
+========================================================= */
+
+(function loadTheme(){
+
+    const savedTheme =
+        localStorage.getItem(
+            "websiteTheme"
+        );
+
+
+    if(
+        savedTheme === "light" ||
+        savedTheme === "dark" ||
+        savedTheme === "auto"
+    ){
+
+        setTheme(savedTheme);
+
+    }else{
+
+        setTheme("dark");
+
+    }
+
+})();
+
+
+/* =========================================================
+   SYSTEM THEME CHANGE
+========================================================= */
+
+systemTheme.addEventListener(
+    "change",
+    function(){
+
+        const savedTheme =
+            localStorage.getItem(
+                "websiteTheme"
+            );
+
+        if(savedTheme === "auto"){
+
+            applyAutoTheme();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
    OPEN WEBSITE
 ========================================================= */
 
@@ -1490,27 +1752,21 @@ function openWebsite(url){
 ========================================================= */
 
 const searchInput =
-    document.getElementById("searchInput");
-
-const clearSearch =
-    document.getElementById("clearSearch");
-
-const searchResult =
-    document.getElementById("searchResult");
-
-const noResult =
-    document.getElementById("noResult");
-
-
-function getCards(){
-
-    return Array.from(
-        document.querySelectorAll(
-            ".website-card"
-        )
+    document.getElementById(
+        "searchInput"
     );
 
-}
+
+const clearSearch =
+    document.getElementById(
+        "clearSearch"
+    );
+
+
+const searchResult =
+    document.getElementById(
+        "searchResult"
+    );
 
 
 function performSearch(){
@@ -1522,7 +1778,11 @@ function performSearch(){
 
 
     const cards =
-        getCards();
+        Array.from(
+            document.querySelectorAll(
+                ".website-card"
+            )
+        );
 
 
     let count = 0;
@@ -1585,12 +1845,6 @@ function performSearch(){
     clearSearch.style.display =
         query ? "flex" : "none";
 
-
-    noResult.style.display =
-        count === 0
-        ? "block"
-        : "none";
-
 }
 
 
@@ -1602,7 +1856,7 @@ searchInput.addEventListener(
 
 clearSearch.addEventListener(
     "click",
-    ()=>{
+    function(){
 
         searchInput.value = "";
 
@@ -1616,7 +1870,7 @@ clearSearch.addEventListener(
 
 searchInput.addEventListener(
     "keydown",
-    event=>{
+    function(event){
 
         if(event.key === "Escape"){
 
