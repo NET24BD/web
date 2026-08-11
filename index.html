@@ -12,7 +12,9 @@
 
     <title>Website Dashboard</title>
 
+
     <!-- Font Awesome -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -21,45 +23,72 @@
 
     <style>
 
+        /* ==================================================
+           RESET
+        ================================================== */
+
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family:"Segoe UI",Arial,sans-serif;
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
         }
 
+
+        /* ==================================================
+           BODY
+        ================================================== */
 
         body{
 
             min-height:100vh;
 
-            background:
-                radial-gradient(
-                    circle at top left,
-                    rgba(34,197,94,.12),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at bottom right,
-                    rgba(16,185,129,.10),
-                    transparent 30%
-                ),
-                #f4f7f9;
+            color:#e5e7eb;
 
-            color:#172033;
+            background:
+
+                radial-gradient(
+                    circle at 10% 0%,
+                    rgba(16,185,129,.13),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(34,197,94,.08),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(6,182,212,.06),
+                    transparent 35%
+                ),
+
+                #070b12;
+
+            overflow-x:hidden;
 
         }
 
 
-        /* =========================================
+        /* ==================================================
            HEADER
-        ========================================= */
+        ================================================== */
 
         .top-header{
 
-            width:100%;
+            width:92%;
 
-            padding:32px 5% 22px;
+            max-width:1400px;
+
+            margin:auto;
+
+            padding:32px 0 18px;
 
             display:flex;
 
@@ -71,6 +100,10 @@
 
         }
 
+
+        /* ==================================================
+           BRAND
+        ================================================== */
 
         .brand{
 
@@ -96,109 +129,304 @@
             border-radius:17px;
 
             background:
+
                 linear-gradient(
                     135deg,
-                    #16a34a,
+                    #10b981,
                     #059669
                 );
 
-            color:#fff;
+            color:white;
 
             font-size:24px;
 
             box-shadow:
-                0 10px 25px
-                rgba(22,163,74,.22);
+
+                0 12px 30px
+                rgba(16,185,129,.20);
 
         }
 
 
         .brand-text h1{
 
-            font-size:26px;
+            font-size:27px;
 
             font-weight:750;
 
-            color:#0f172a;
+            color:#f8fafc;
 
         }
 
 
         .brand-text p{
 
-            margin-top:4px;
+            margin-top:5px;
 
-            color:#64748b;
+            color:#94a3b8;
 
             font-size:13px;
 
         }
 
+
+        /* ==================================================
+           COUNT BADGE
+        ================================================== */
 
         .header-badge{
 
-            padding:9px 15px;
+            display:flex;
+
+            align-items:center;
+
+            gap:8px;
+
+            padding:10px 16px;
 
             border-radius:30px;
 
-            background:#ffffff;
+            background:
+                rgba(15,23,42,.65);
 
-            border:1px solid #e2e8f0;
+            border:1px solid
+                rgba(148,163,184,.15);
 
-            color:#475569;
+            color:#cbd5e1;
 
-            font-size:13px;
+            font-size:12px;
 
-            box-shadow:
-                0 5px 18px
-                rgba(15,23,42,.05);
+            backdrop-filter:blur(15px);
 
         }
 
 
-        /* =========================================
-           DASHBOARD
-        ========================================= */
+        .header-badge i{
 
-        .dashboard{
+            color:#34d399;
 
-            width:90%;
+        }
+
+
+        /* ==================================================
+           SEARCH AREA
+        ================================================== */
+
+        .search-area{
+
+            width:92%;
 
             max-width:1400px;
 
-            margin:10px auto 50px;
+            margin:0 auto 24px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            gap:15px;
+
+        }
+
+
+        /* ==================================================
+           SEARCH BOX
+        ================================================== */
+
+        .search-box{
+
+            position:relative;
+
+            width:100%;
+
+            max-width:650px;
+
+        }
+
+
+        .search-box i{
+
+            position:absolute;
+
+            left:18px;
+
+            top:50%;
+
+            transform:
+                translateY(-50%);
+
+            color:#64748b;
+
+            font-size:14px;
+
+            pointer-events:none;
+
+        }
+
+
+        .search-box input{
+
+            width:100%;
+
+            height:48px;
+
+            padding:
+                0 48px 0 47px;
+
+            border-radius:14px;
+
+            outline:none;
+
+            border:1px solid
+                rgba(148,163,184,.15);
+
+            background:
+
+                rgba(15,23,42,.72);
+
+            color:#f8fafc;
+
+            font-size:13px;
+
+            backdrop-filter:blur(15px);
+
+            transition:
+
+                border-color .25s ease,
+                box-shadow .25s ease;
+
+        }
+
+
+        .search-box input::placeholder{
+
+            color:#64748b;
+
+        }
+
+
+        .search-box input:focus{
+
+            border-color:
+                rgba(52,211,153,.45);
+
+            box-shadow:
+
+                0 0 0 3px
+                rgba(16,185,129,.07);
+
+        }
+
+
+        /* ==================================================
+           CLEAR SEARCH
+        ================================================== */
+
+        .clear-search{
+
+            position:absolute;
+
+            right:14px;
+
+            top:50%;
+
+            transform:
+                translateY(-50%);
+
+            width:25px;
+            height:25px;
+
+            border:none;
+
+            background:transparent;
+
+            color:#64748b;
+
+            cursor:pointer;
+
+            display:none;
+
+            align-items:center;
+
+            justify-content:center;
+
+            border-radius:50%;
+
+        }
+
+
+        .clear-search:hover{
+
+            color:#e2e8f0;
+
+            background:
+                rgba(148,163,184,.08);
+
+        }
+
+
+        /* ==================================================
+           SEARCH RESULT
+        ================================================== */
+
+        .search-result{
+
+            font-size:12px;
+
+            color:#64748b;
+
+            white-space:nowrap;
+
+        }
+
+
+        .search-result strong{
+
+            color:#34d399;
+
+        }
+
+
+        /* ==================================================
+           DASHBOARD
+        ================================================== */
+
+        .dashboard{
+
+            width:92%;
+
+            max-width:1400px;
+
+            margin:
+                0 auto 50px;
 
             display:grid;
 
             grid-template-columns:
+
                 repeat(
                     auto-fit,
                     minmax(260px,1fr)
                 );
 
-            gap:22px;
+            gap:20px;
 
         }
 
 
-        /* =========================================
+        /* ==================================================
            CARD
-        ========================================= */
+        ================================================== */
 
         .website-card{
 
             position:relative;
 
-            background:
-                rgba(255,255,255,.94);
-
-            border:1px solid #e5eaf0;
-
-            border-radius:22px;
+            min-height:270px;
 
             padding:22px;
-
-            min-height:265px;
 
             display:flex;
 
@@ -206,14 +434,29 @@
 
             overflow:hidden;
 
+            border-radius:21px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(20,29,42,.92),
+                    rgba(11,17,27,.96)
+                );
+
+            border:1px solid
+                rgba(148,163,184,.12);
+
             box-shadow:
-                0 8px 25px
-                rgba(15,23,42,.055);
+
+                0 12px 35px
+                rgba(0,0,0,.22);
 
             transition:
+
                 transform .3s ease,
-                box-shadow .3s ease,
-                border-color .3s ease;
+                border-color .3s ease,
+                box-shadow .3s ease;
 
         }
 
@@ -226,15 +469,17 @@
 
             top:0;
             left:0;
-            right:0;
 
-            height:4px;
+            width:100%;
+            height:3px;
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #16a34a,
-                    #10b981
+                    #10b981,
+                    #22c55e,
+                    #06b6d4
                 );
 
             opacity:0;
@@ -249,11 +494,16 @@
             transform:
                 translateY(-7px);
 
-            border-color:#bbf7d0;
+            border-color:
+                rgba(52,211,153,.30);
 
             box-shadow:
-                0 20px 40px
-                rgba(15,23,42,.11);
+
+                0 22px 45px
+                rgba(0,0,0,.35),
+
+                0 0 25px
+                rgba(16,185,129,.055);
 
         }
 
@@ -265,9 +515,9 @@
         }
 
 
-        /* =========================================
+        /* ==================================================
            CARD TOP
-        ========================================= */
+        ================================================== */
 
         .card-top{
 
@@ -282,30 +532,36 @@
         }
 
 
-        /* =========================================
+        /* ==================================================
            LOGO
-        ========================================= */
+        ================================================== */
 
         .website-logo{
 
             width:64px;
             height:64px;
 
-            border-radius:18px;
-
-            background:#f0fdf4;
-
-            border:1px solid #dcfce7;
+            flex-shrink:0;
 
             display:flex;
 
             align-items:center;
-
             justify-content:center;
 
             overflow:hidden;
 
-            flex-shrink:0;
+            border-radius:18px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(30,41,59,.95),
+                    rgba(15,23,42,.95)
+                );
+
+            border:1px solid
+                rgba(148,163,184,.15);
 
         }
 
@@ -322,16 +578,16 @@
 
         .website-logo i{
 
-            font-size:27px;
+            color:#34d399;
 
-            color:#16a34a;
+            font-size:26px;
 
         }
 
 
-        /* =========================================
+        /* ==================================================
            STATUS
-        ========================================= */
+        ================================================== */
 
         .status{
 
@@ -345,11 +601,15 @@
 
             border-radius:20px;
 
-            background:#f0fdf4;
+            background:
+                rgba(16,185,129,.08);
 
-            color:#15803d;
+            border:1px solid
+                rgba(16,185,129,.12);
 
-            font-size:11px;
+            color:#6ee7b7;
+
+            font-size:10px;
 
             font-weight:600;
 
@@ -363,14 +623,18 @@
 
             border-radius:50%;
 
-            background:#22c55e;
+            background:#34d399;
+
+            box-shadow:
+                0 0 8px
+                rgba(52,211,153,.8);
 
         }
 
 
-        /* =========================================
+        /* ==================================================
            CONTENT
-        ========================================= */
+        ================================================== */
 
         .card-content{
 
@@ -381,9 +645,9 @@
 
         .card-content h2{
 
-            font-size:18px;
+            color:#f8fafc;
 
-            color:#0f172a;
+            font-size:18px;
 
             font-weight:700;
 
@@ -394,20 +658,20 @@
 
             margin-top:8px;
 
+            min-height:44px;
+
+            color:#94a3b8;
+
             font-size:13px;
 
-            line-height:1.6;
-
-            color:#64748b;
-
-            min-height:42px;
+            line-height:1.65;
 
         }
 
 
-        /* =========================================
-           CARD FOOTER
-        ========================================= */
+        /* ==================================================
+           FOOTER
+        ================================================== */
 
         .card-footer{
 
@@ -428,9 +692,7 @@
 
         .website-url{
 
-            font-size:11px;
-
-            color:#94a3b8;
+            max-width:120px;
 
             overflow:hidden;
 
@@ -438,14 +700,16 @@
 
             text-overflow:ellipsis;
 
-            max-width:125px;
+            color:#64748b;
+
+            font-size:11px;
 
         }
 
 
-        /* =========================================
+        /* ==================================================
            OPEN BUTTON
-        ========================================= */
+        ================================================== */
 
         .open-btn{
 
@@ -457,34 +721,36 @@
 
             padding:10px 16px;
 
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            gap:7px;
+
             border-radius:11px;
 
             background:
+
                 linear-gradient(
                     135deg,
-                    #16a34a,
+                    #10b981,
                     #059669
                 );
 
-            color:#fff;
+            color:#ffffff;
 
             font-size:12px;
 
             font-weight:650;
 
-            display:flex;
-
-            align-items:center;
-
-            gap:7px;
-
             box-shadow:
-                0 7px 18px
-                rgba(22,163,74,.18);
 
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
+                0 8px 20px
+                rgba(16,185,129,.15);
+
+            transition:.2s;
 
         }
 
@@ -495,58 +761,97 @@
                 translateY(-2px);
 
             box-shadow:
-                0 10px 22px
-                rgba(22,163,74,.27);
+
+                0 12px 25px
+                rgba(16,185,129,.25);
 
         }
 
 
-        .open-btn i{
+        /* ==================================================
+           NO RESULT
+        ================================================== */
 
-            font-size:11px;
+        .no-result{
 
-        }
+            grid-column:1 / -1;
 
+            display:none;
 
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        .footer{
+            padding:70px 20px;
 
             text-align:center;
 
-            padding:0 20px 30px;
+            border-radius:20px;
 
-            color:#94a3b8;
+            border:1px dashed
+                rgba(148,163,184,.15);
+
+            background:
+                rgba(15,23,42,.45);
+
+        }
+
+
+        .no-result i{
+
+            font-size:35px;
+
+            color:#475569;
+
+            margin-bottom:15px;
+
+        }
+
+
+        .no-result h3{
+
+            color:#cbd5e1;
+
+            font-size:17px;
+
+        }
+
+
+        .no-result p{
+
+            margin-top:6px;
+
+            color:#64748b;
 
             font-size:12px;
 
         }
 
 
-        /* =========================================
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        .footer{
+
+            text-align:center;
+
+            padding:
+                0 20px 30px;
+
+            color:#475569;
+
+            font-size:11px;
+
+        }
+
+
+        /* ==================================================
            TABLET
-        ========================================= */
+        ================================================== */
 
-        @media(max-width:850px){
-
-            .top-header{
-
-                padding-left:4%;
-                padding-right:4%;
-
-            }
+        @media(max-width:900px){
 
             .dashboard{
 
-                width:92%;
-
                 grid-template-columns:
-                    repeat(
-                        2,
-                        minmax(0,1fr)
-                    );
+                    repeat(2,1fr);
 
             }
 
@@ -559,18 +864,18 @@
         }
 
 
-        /* =========================================
+        /* ==================================================
            MOBILE
-        ========================================= */
+        ================================================== */
 
         @media(max-width:600px){
 
             .top-header{
 
+                width:90%;
+
                 padding:
-                    22px
-                    5%
-                    15px;
+                    25px 0 17px;
 
             }
 
@@ -601,23 +906,49 @@
             }
 
 
+            .search-area{
+
+                width:90%;
+
+                display:block;
+
+                margin-bottom:20px;
+
+            }
+
+
+            .search-box{
+
+                max-width:none;
+
+            }
+
+
+            .search-result{
+
+                display:block;
+
+                margin-top:9px;
+
+            }
+
+
             .dashboard{
 
                 width:90%;
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns:1fr;
 
                 gap:16px;
-
-                margin-top:8px;
 
             }
 
 
             .website-card{
 
-                min-height:245px;
+                min-height:250px;
+
+                padding:20px;
 
                 border-radius:19px;
 
@@ -633,9 +964,9 @@
 <body>
 
 
-    <!-- =========================================
+    <!-- ==================================================
          HEADER
-    ========================================= -->
+    ================================================== -->
 
     <header class="top-header">
 
@@ -665,7 +996,9 @@
 
             <i class="fa-solid fa-layer-group"></i>
 
-            &nbsp; 25 Websites
+            <span id="totalCount">
+                25 Websites
+            </span>
 
         </div>
 
@@ -673,16 +1006,71 @@
 
 
 
-    <!-- =========================================
-         WEBSITE CARDS
-    ========================================= -->
+    <!-- ==================================================
+         SEARCH
+    ================================================== -->
 
-    <main class="dashboard">
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search websites..."
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                class="clear-search"
+                id="clearSearch"
+                aria-label="Clear search"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="search-result"
+            id="searchResult"
+        >
+
+            Showing
+            <strong>25</strong>
+            websites
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         WEBSITE DASHBOARD
+    ================================================== -->
+
+    <main
+        class="dashboard"
+        id="dashboard"
+    >
 
 
         <!-- CARD 01 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Google"
+            data-description="Search the web discover information and access Google's services"
+        >
 
             <div class="card-top">
 
@@ -745,7 +1133,11 @@
 
         <!-- CARD 02 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="GitHub"
+            data-description="Manage repositories code and development projects"
+        >
 
             <div class="card-top">
 
@@ -808,7 +1200,11 @@
 
         <!-- CARD 03 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="YouTube"
+            data-description="Watch videos discover channels and manage content"
+        >
 
             <div class="card-top">
 
@@ -871,7 +1267,11 @@
 
         <!-- CARD 04 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 04"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
@@ -898,8 +1298,7 @@
                 <h2>Website 04</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
@@ -931,7 +1330,11 @@
 
         <!-- CARD 05 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 05"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
@@ -958,8 +1361,7 @@
                 <h2>Website 05</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
@@ -991,7 +1393,11 @@
 
         <!-- CARD 06 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 06"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
@@ -1018,8 +1424,7 @@
                 <h2>Website 06</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
@@ -1051,31 +1456,42 @@
 
         <!-- CARD 07 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 07"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-phone"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 07</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1083,12 +1499,16 @@
                     website07.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1099,31 +1519,42 @@
 
         <!-- CARD 08 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 08"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-headset"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 08</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1131,12 +1562,16 @@
                     website08.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1147,31 +1582,42 @@
 
         <!-- CARD 09 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 09"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-database"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 09</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1179,12 +1625,16 @@
                     website09.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1195,31 +1645,42 @@
 
         <!-- CARD 10 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 10"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-network-wired"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 10</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1227,12 +1688,16 @@
                     website10.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1243,31 +1708,42 @@
 
         <!-- CARD 11 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 11"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-file"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 11</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1275,12 +1751,16 @@
                     website11.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1291,31 +1771,42 @@
 
         <!-- CARD 12 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 12"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-folder"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 12</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1323,12 +1814,16 @@
                     website12.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1339,31 +1834,42 @@
 
         <!-- CARD 13 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 13"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-shield-halved"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 13</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1371,12 +1877,16 @@
                     website13.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1387,31 +1897,42 @@
 
         <!-- CARD 14 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 14"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-lock"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 14</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1419,12 +1940,16 @@
                     website14.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1435,31 +1960,42 @@
 
         <!-- CARD 15 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 15"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-gear"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 15</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1467,12 +2003,16 @@
                     website15.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1483,31 +2023,42 @@
 
         <!-- CARD 16 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 16"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-bell"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 16</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1515,12 +2066,16 @@
                     website16.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1531,31 +2086,42 @@
 
         <!-- CARD 17 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 17"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-message"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 17</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1563,12 +2129,16 @@
                     website17.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1579,31 +2149,42 @@
 
         <!-- CARD 18 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 18"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-envelope"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 18</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1611,12 +2192,16 @@
                     website18.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1627,31 +2212,42 @@
 
         <!-- CARD 19 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 19"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-calendar"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 19</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1659,12 +2255,16 @@
                     website19.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1675,31 +2275,42 @@
 
         <!-- CARD 20 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 20"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-clock"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 20</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1707,12 +2318,16 @@
                     website20.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1723,31 +2338,42 @@
 
         <!-- CARD 21 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 21"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-chart-pie"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 21</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1755,12 +2381,16 @@
                     website21.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1771,31 +2401,42 @@
 
         <!-- CARD 22 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 22"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-bolt"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 22</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1803,12 +2444,16 @@
                     website22.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1819,31 +2464,42 @@
 
         <!-- CARD 23 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 23"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-cloud"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 23</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1851,12 +2507,16 @@
                     website23.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1867,31 +2527,42 @@
 
         <!-- CARD 24 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 24"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-link"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 24</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1899,12 +2570,16 @@
                     website24.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
@@ -1915,31 +2590,42 @@
 
         <!-- CARD 25 -->
 
-        <div class="website-card">
+        <div
+            class="website-card"
+            data-name="Website 25"
+            data-description="Your website description goes here"
+        >
 
             <div class="card-top">
 
                 <div class="website-logo">
+
                     <i class="fa-solid fa-compass"></i>
+
                 </div>
 
+
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     Online
+
                 </div>
 
             </div>
+
 
             <div class="card-content">
 
                 <h2>Website 25</h2>
 
                 <p>
-                    Your website description goes
-                    here.
+                    Your website description goes here.
                 </p>
 
             </div>
+
 
             <div class="card-footer">
 
@@ -1947,15 +2633,40 @@
                     website25.com
                 </span>
 
+
                 <button
                     class="open-btn"
                     onclick="openWebsite('https://example.com')"
                 >
+
                     Open
+
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 </button>
 
             </div>
+
+        </div>
+
+
+
+        <!-- NO RESULT -->
+
+        <div
+            class="no-result"
+            id="noResult"
+        >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>
+                No website found
+            </h3>
+
+            <p>
+                Try searching with another keyword.
+            </p>
 
         </div>
 
@@ -1964,9 +2675,9 @@
 
 
 
-    <!-- =========================================
+    <!-- ==================================================
          FOOTER
-    ========================================= -->
+    ================================================== -->
 
     <footer class="footer">
 
@@ -1976,24 +2687,222 @@
 
 
 
-    <!-- =========================================
+    <!-- ==================================================
          JAVASCRIPT
-    ========================================= -->
+    ================================================== -->
 
     <script>
 
         "use strict";
 
 
+        /* ==================================================
+           OPEN WEBSITE
+        ================================================== */
+
         function openWebsite(url){
 
-            if(!url){
+            if(
+                typeof url !== "string" ||
+                !url.trim()
+            ){
+
                 return;
+
             }
 
-            window.location.href = url;
+            window.location.href =
+                url.trim();
 
         }
+
+
+        /* ==================================================
+           SEARCH
+        ================================================== */
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        const clearSearch =
+            document.getElementById(
+                "clearSearch"
+            );
+
+
+        const searchResult =
+            document.getElementById(
+                "searchResult"
+            );
+
+
+        const noResult =
+            document.getElementById(
+                "noResult"
+            );
+
+
+        const cards =
+            Array.from(
+                document.querySelectorAll(
+                    ".website-card"
+                )
+            );
+
+
+        function performSearch(){
+
+            const query =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            let visibleCount = 0;
+
+
+            cards.forEach(card => {
+
+                const name =
+                    (
+                        card.dataset.name ||
+                        ""
+                    ).toLowerCase();
+
+
+                const description =
+                    (
+                        card.dataset.description ||
+                        ""
+                    ).toLowerCase();
+
+
+                const url =
+                    (
+                        card.querySelector(
+                            ".website-url"
+                        )?.textContent ||
+                        ""
+                    ).toLowerCase();
+
+
+                const matches =
+                    !query ||
+                    name.includes(query) ||
+                    description.includes(query) ||
+                    url.includes(query);
+
+
+                if(matches){
+
+                    card.style.display =
+                        "flex";
+
+                    visibleCount++;
+
+                }else{
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            /* RESULT TEXT */
+
+            searchResult.innerHTML =
+                "Showing " +
+                "<strong>" +
+                visibleCount +
+                "</strong>" +
+                " websites";
+
+
+            /* CLEAR BUTTON */
+
+            if(query){
+
+                clearSearch.style.display =
+                    "flex";
+
+            }else{
+
+                clearSearch.style.display =
+                    "none";
+
+            }
+
+
+            /* NO RESULT */
+
+            if(visibleCount === 0){
+
+                noResult.style.display =
+                    "block";
+
+            }else{
+
+                noResult.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* ==================================================
+           INPUT EVENT
+        ================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            performSearch
+        );
+
+
+        /* ==================================================
+           CLEAR SEARCH
+        ================================================== */
+
+        clearSearch.addEventListener(
+            "click",
+            function(){
+
+                searchInput.value = "";
+
+                searchInput.focus();
+
+                performSearch();
+
+            }
+        );
+
+
+        /* ==================================================
+           ESC KEY
+        ================================================== */
+
+        searchInput.addEventListener(
+            "keydown",
+            function(event){
+
+                if(
+                    event.key === "Escape"
+                ){
+
+                    searchInput.value = "";
+
+                    performSearch();
+
+                }
+
+            }
+        );
 
     </script>
 
