@@ -3,1028 +3,1821 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Website Dashboard</title>
+    <title>Website Dashboard</title>
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
->
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-<style>
+    <style>
 
-/* =====================================================
-   RESET
-===================================================== */
+        /* =====================================================
+           RESET
+        ===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI",Arial,sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
 
-/* =====================================================
-   THEME
-===================================================== */
+        html {
+            scroll-behavior: smooth;
+        }
 
-:root{
 
-    --bg:#070b12;
-    --card:#111923;
-    --card-hover:#172331;
-    --border:rgba(148,163,184,.13);
+        body {
+            min-height: 100vh;
 
-    --text:#f8fafc;
-    --soft:#94a3b8;
-    --muted:#64748b;
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
 
-    --input:#0d1520;
-    --panel:rgba(15,23,42,.80);
+            background:
+                #080b10;
 
-    --green:#10b981;
-    --green2:#059669;
+            color: #f1f5f9;
 
-    --shadow:rgba(0,0,0,.30);
-}
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
 
+            overflow-x: hidden;
+        }
 
-/* LIGHT */
 
-body.light{
+        button,
+        input {
+            font-family: inherit;
+        }
 
-    --bg:#f3f6f9;
-    --card:#ffffff;
-    --card-hover:#f8fafc;
 
-    --border:rgba(15,23,42,.10);
+        button {
+            border: 0;
+            outline: none;
+        }
 
-    --text:#172033;
-    --soft:#64748b;
-    --muted:#94a3b8;
 
-    --input:#ffffff;
-    --panel:rgba(255,255,255,.90);
+        /* =====================================================
+           LIGHT THEME
+        ===================================================== */
 
-    --shadow:rgba(15,23,42,.09);
-}
+        body.light-theme {
 
+            background:
+                #f4f7fb;
 
-/* =====================================================
-   BODY
-===================================================== */
+            color:
+                #172033;
+        }
 
-body{
 
-    min-height:100vh;
+        /* =====================================================
+           AUTO THEME
+        ===================================================== */
 
-    color:var(--text);
+        body.auto-theme {
+            background: #080b10;
+            color: #f1f5f9;
+        }
 
-    background:
 
-        radial-gradient(
-            circle at 5% 0%,
-            rgba(16,185,129,.13),
-            transparent 28%
-        ),
+        @media
+        (prefers-color-scheme: light) {
 
-        radial-gradient(
-            circle at 95% 15%,
-            rgba(34,197,94,.07),
-            transparent 25%
-        ),
+            body.auto-theme {
 
-        var(--bg);
+                background:
+                    #f4f7fb;
 
-    overflow-x:hidden;
+                color:
+                    #172033;
+            }
 
-    transition:.3s ease;
-}
+        }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+        /* =====================================================
+           TOP HEADER
+        ===================================================== */
 
-.top-header{
+        .top-header {
 
-    width:92%;
-    max-width:1400px;
+            width: 100%;
 
-    margin:auto;
+            padding:
+                22px 20px 16px;
 
-    padding:25px 0 18px;
+            position:
+                sticky;
 
-    display:flex;
+            top: 0;
 
-    align-items:center;
+            z-index: 100;
 
-    justify-content:space-between;
+            background:
+                rgba(8, 11, 16, 0.88);
 
-    gap:20px;
-}
+            backdrop-filter:
+                blur(18px);
 
+            -webkit-backdrop-filter:
+                blur(18px);
 
-/* BRAND */
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
 
-.brand{
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
 
-    display:flex;
 
-    align-items:center;
+        body.light-theme .top-header {
 
-    gap:13px;
-}
+            background:
+                rgba(244,247,251,0.88);
 
+            border-bottom:
+                1px solid rgba(15,23,42,0.08);
+        }
 
-.brand-icon{
 
-    width:50px;
-    height:50px;
+        @media
+        (prefers-color-scheme: light) {
 
-    display:flex;
+            body.auto-theme .top-header {
 
-    align-items:center;
-    justify-content:center;
+                background:
+                    rgba(244,247,251,0.88);
 
-    border-radius:15px;
+                border-bottom:
+                    1px solid rgba(15,23,42,0.08);
+            }
 
-    color:white;
+        }
 
-    font-size:21px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #10b981,
-            #059669
-        );
+        .header-inner {
 
-    box-shadow:
-        0 10px 25px
-        rgba(16,185,129,.20);
-}
+            width:
+                min(1250px, 100%);
 
+            margin:
+                0 auto;
 
-.brand-text h1{
+            display:
+                flex;
 
-    font-size:23px;
+            align-items:
+                center;
 
-    font-weight:750;
+            justify-content:
+                space-between;
 
-    color:var(--text);
-}
+            gap:
+                18px;
+        }
 
 
-.brand-text p{
+        /* =====================================================
+           BRAND
+        ===================================================== */
 
-    margin-top:3px;
+        .brand {
 
-    font-size:11px;
+            display:
+                flex;
 
-    color:var(--muted);
-}
+            align-items:
+                center;
 
+            gap:
+                12px;
 
-/* =====================================================
-   THEME BUTTONS
-===================================================== */
+            min-width:
+                0;
+        }
 
-.theme-buttons{
 
-    display:flex;
+        .brand-icon {
 
-    gap:5px;
+            width:
+                48px;
 
-    padding:5px;
+            height:
+                48px;
 
-    border:1px solid var(--border);
+            flex:
+                0 0 48px;
 
-    border-radius:13px;
+            border-radius:
+                14px;
 
-    background:var(--panel);
+            display:
+                flex;
 
-    backdrop-filter:blur(15px);
-}
+            align-items:
+                center;
 
+            justify-content:
+                center;
 
-.theme-btn{
+            background:
+                linear-gradient(
+                    135deg,
+                    #16a34a,
+                    #15803d
+                );
 
-    height:34px;
+            color:
+                #ffffff;
 
-    padding:0 12px;
+            font-size:
+                21px;
 
-    border:0;
+            box-shadow:
+                0 8px 25px
+                rgba(22,163,74,0.25);
+        }
 
-    border-radius:9px;
 
-    background:transparent;
+        .brand-text {
 
-    color:var(--muted);
+            min-width:
+                0;
+        }
 
-    cursor:pointer;
 
-    display:flex;
+        .brand-title {
 
-    align-items:center;
+            font-size:
+                19px;
 
-    justify-content:center;
+            font-weight:
+                750;
 
-    gap:6px;
+            line-height:
+                1.2;
 
-    font-size:11px;
+            white-space:
+                nowrap;
 
-    font-weight:600;
+            overflow:
+                hidden;
 
-    transition:.2s;
-}
+            text-overflow:
+                ellipsis;
+        }
 
 
-.theme-btn:hover{
+        .brand-subtitle {
 
-    color:var(--text);
+            margin-top:
+                3px;
 
-    background:
-        rgba(148,163,184,.08);
-}
+            font-size:
+                12px;
 
+            color:
+                #94a3b8;
+        }
 
-.theme-btn.active{
 
-    color:white;
+        body.light-theme .brand-subtitle {
+            color: #64748b;
+        }
 
-    background:
-        linear-gradient(
-            135deg,
-            #10b981,
-            #059669
-        );
-}
 
+        /* =====================================================
+           THEME BUTTONS
+        ===================================================== */
 
-/* =====================================================
-   SEARCH
-===================================================== */
+        .theme-buttons {
 
-.search-area{
+            display:
+                flex;
 
-    width:92%;
-    max-width:1400px;
+            align-items:
+                center;
 
-    margin:
-        0 auto 22px;
+            gap:
+                5px;
 
-    display:flex;
+            padding:
+                4px;
 
-    align-items:center;
+            border-radius:
+                12px;
 
-    gap:15px;
-}
+            background:
+                rgba(255,255,255,0.05);
 
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+        }
 
-.search-box{
 
-    width:100%;
-    max-width:650px;
+        body.light-theme .theme-buttons {
 
-    position:relative;
-}
+            background:
+                rgba(15,23,42,0.05);
 
+            border-color:
+                rgba(15,23,42,0.08);
+        }
 
-.search-box > i{
 
-    position:absolute;
+        .theme-btn {
 
-    left:16px;
-    top:50%;
+            width:
+                38px;
 
-    transform:translateY(-50%);
+            height:
+                34px;
 
-    color:var(--muted);
+            border-radius:
+                9px;
 
-    font-size:13px;
-}
+            background:
+                transparent;
 
+            color:
+                #94a3b8;
 
-.search-box input{
+            cursor:
+                pointer;
 
-    width:100%;
-    height:46px;
+            display:
+                flex;
 
-    padding:
-        0 43px 0 43px;
+            align-items:
+                center;
 
-    border:1px solid var(--border);
+            justify-content:
+                center;
 
-    outline:none;
+            font-size:
+                14px;
 
-    border-radius:13px;
+            transition:
+                all 0.2s ease;
+        }
 
-    background:var(--input);
 
-    color:var(--text);
+        .theme-btn:hover {
 
-    font-size:13px;
+            background:
+                rgba(255,255,255,0.08);
 
-    box-shadow:
-        0 5px 20px
-        var(--shadow);
+            color:
+                #ffffff;
+        }
 
-    transition:.2s;
-}
 
+        .theme-btn.active {
 
-.search-box input:focus{
+            background:
+                #16a34a;
 
-    border-color:
-        rgba(16,185,129,.45);
+            color:
+                #ffffff;
 
-    box-shadow:
-        0 0 0 3px
-        rgba(16,185,129,.07);
-}
+            box-shadow:
+                0 5px 15px
+                rgba(22,163,74,0.22);
+        }
 
 
-.search-box input::placeholder{
+        body.light-theme .theme-btn:hover {
 
-    color:var(--muted);
-}
+            background:
+                rgba(15,23,42,0.07);
 
+            color:
+                #0f172a;
+        }
 
-.clear-search{
 
-    position:absolute;
+        /* =====================================================
+           MAIN
+        ===================================================== */
 
-    right:10px;
-    top:50%;
+        .main {
 
-    transform:translateY(-50%);
+            width:
+                min(1250px, 100%);
 
-    width:27px;
-    height:27px;
+            margin:
+                0 auto;
 
-    border:0;
+            padding:
+                28px 20px 50px;
+        }
 
-    background:transparent;
 
-    color:var(--muted);
+        /* =====================================================
+           SEARCH
+        ===================================================== */
 
-    cursor:pointer;
+        .search-section {
 
-    display:none;
+            margin-bottom:
+                25px;
+        }
 
-    align-items:center;
-    justify-content:center;
-}
 
+        .search-box {
 
-.clear-search:hover{
+            position:
+                relative;
 
-    color:var(--green);
-}
+            width:
+                100%;
+        }
 
 
-.search-result{
+        .search-icon {
 
-    color:var(--muted);
+            position:
+                absolute;
 
-    font-size:11px;
+            left:
+                18px;
 
-    white-space:nowrap;
-}
+            top:
+                50%;
 
+            transform:
+                translateY(-50%);
 
-.search-result strong{
+            color:
+                #64748b;
 
-    color:var(--green);
-}
+            font-size:
+                16px;
 
+            pointer-events:
+                none;
+        }
 
-/* =====================================================
-   GRID
-===================================================== */
 
-.dashboard{
+        .search-input {
 
-    width:92%;
-    max-width:1400px;
+            width:
+                100%;
 
-    margin:
-        0 auto 45px;
+            height:
+                52px;
 
-    display:grid;
+            padding:
+                0 50px 0 48px;
 
-    grid-template-columns:
-        repeat(5,minmax(0,1fr));
+            border-radius:
+                15px;
 
-    gap:18px;
-}
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
 
+            background:
+                #11161e;
 
-/* =====================================================
-   CARD
-===================================================== */
+            color:
+                #f8fafc;
 
-.website-card{
+            outline:
+                none;
 
-    aspect-ratio:1 / 1;
+            font-size:
+                14px;
 
-    position:relative;
+            transition:
+                all 0.25s ease;
+        }
 
-    padding:18px;
 
-    display:flex;
+        .search-input::placeholder {
+            color: #64748b;
+        }
 
-    flex-direction:column;
 
-    overflow:hidden;
+        .search-input:focus {
 
-    border-radius:19px;
+            border-color:
+                rgba(22,163,74,0.7);
 
-    border:1px solid var(--border);
+            box-shadow:
+                0 0 0 4px
+                rgba(22,163,74,0.09);
+        }
 
-    background:var(--card);
 
-    box-shadow:
-        0 10px 28px
-        var(--shadow);
+        body.light-theme .search-input {
 
-    transition:.25s ease;
-}
+            background:
+                #ffffff;
 
+            color:
+                #172033;
 
-.website-card::before{
+            border-color:
+                rgba(15,23,42,0.10);
+        }
 
-    content:"";
 
-    position:absolute;
+        @media
+        (prefers-color-scheme: light) {
 
-    top:0;
-    left:0;
+            body.auto-theme .search-input {
 
-    width:100%;
-    height:2px;
+                background:
+                    #ffffff;
 
-    background:
-        linear-gradient(
-            90deg,
-            #10b981,
-            #22c55e,
-            #06b6d4
-        );
+                color:
+                    #172033;
 
-    opacity:0;
+                border-color:
+                    rgba(15,23,42,0.10);
+            }
 
-    transition:.25s;
-}
+        }
 
 
-.website-card:hover{
+        .clear-search {
 
-    transform:
-        translateY(-5px);
+            position:
+                absolute;
 
-    background:var(--card-hover);
+            right:
+                14px;
 
-    border-color:
-        rgba(16,185,129,.30);
+            top:
+                50%;
 
-    box-shadow:
-        0 18px 35px
-        var(--shadow);
-}
+            transform:
+                translateY(-50%);
 
+            width:
+                30px;
 
-.website-card:hover::before{
+            height:
+                30px;
 
-    opacity:1;
-}
+            border-radius:
+                8px;
 
+            background:
+                transparent;
 
-/* =====================================================
-   CARD TOP
-===================================================== */
+            color:
+                #64748b;
 
-.card-top{
+            cursor:
+                pointer;
 
-    display:flex;
+            display:
+                none;
 
-    align-items:flex-start;
+            align-items:
+                center;
 
-    justify-content:space-between;
+            justify-content:
+                center;
+        }
 
-    gap:8px;
-}
 
+        .clear-search:hover {
 
-/* LOGO */
+            background:
+                rgba(255,255,255,0.06);
 
-.website-logo{
+            color:
+                #ffffff;
+        }
 
-    width:52px;
-    height:52px;
 
-    flex-shrink:0;
+        /* =====================================================
+           TOOLBAR
+        ===================================================== */
 
-    display:flex;
+        .toolbar {
 
-    align-items:center;
-    justify-content:center;
+            display:
+                flex;
 
-    overflow:hidden;
+            align-items:
+                center;
 
-    border-radius:15px;
+            justify-content:
+                space-between;
 
-    border:1px solid var(--border);
+            gap:
+                12px;
 
-    background:
-        rgba(148,163,184,.08);
-}
+            margin-bottom:
+                20px;
+        }
 
 
-.website-logo img{
+        .result-count {
 
-    width:100%;
-    height:100%;
+            color:
+                #94a3b8;
 
-    object-fit:cover;
-}
+            font-size:
+                13px;
+        }
 
 
-.website-logo i{
+        body.light-theme .result-count {
+            color: #64748b;
+        }
 
-    font-size:21px;
 
-    color:var(--green);
-}
+        .refresh-btn {
 
+            display:
+                inline-flex;
 
-/* STATUS */
+            align-items:
+                center;
 
-.status{
+            justify-content:
+                center;
 
-    display:flex;
+            gap:
+                8px;
 
-    align-items:center;
+            padding:
+                9px 14px;
 
-    gap:5px;
+            border-radius:
+                10px;
 
-    padding:5px 8px;
+            background:
+                #11161e;
 
-    border-radius:20px;
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    background:
-        rgba(16,185,129,.07);
+            color:
+                #cbd5e1;
 
-    color:var(--green);
+            cursor:
+                pointer;
 
-    font-size:8px;
+            font-size:
+                12px;
 
-    font-weight:600;
-}
+            transition:
+                all 0.2s ease;
+        }
 
 
-.status-dot{
+        .refresh-btn:hover {
 
-    width:5px;
-    height:5px;
+            background:
+                #17202b;
 
-    border-radius:50%;
+            color:
+                #ffffff;
 
-    background:var(--green);
+            transform:
+                translateY(-1px);
+        }
 
-    box-shadow:
-        0 0 7px
-        rgba(16,185,129,.7);
-}
 
+        body.light-theme .refresh-btn {
 
-/* =====================================================
-   CONTENT
-===================================================== */
+            background:
+                #ffffff;
 
-.card-content{
+            border-color:
+                rgba(15,23,42,0.08);
 
-    margin-top:14px;
-}
+            color:
+                #475569;
+        }
 
 
-.card-content h2{
+        /* =====================================================
+           CARD GRID
+        ===================================================== */
 
-    color:var(--text);
+        .cards-grid {
 
-    font-size:16px;
+            display:
+                grid;
 
-    font-weight:700;
+            grid-template-columns:
+                repeat(5, minmax(0, 1fr));
 
-    white-space:nowrap;
+            gap:
+                16px;
+        }
 
-    overflow:hidden;
 
-    text-overflow:ellipsis;
-}
+        /* =====================================================
+           CARD
+        ===================================================== */
 
+        .website-card {
 
-.card-content p{
+            min-width:
+                0;
 
-    margin-top:7px;
+            min-height:
+                295px;
 
-    color:var(--soft);
+            padding:
+                17px;
 
-    font-size:11px;
+            border-radius:
+                18px;
 
-    line-height:1.55;
+            background:
+                linear-gradient(
+                    145deg,
+                    #11161e,
+                    #0d1219
+                );
 
-    display:-webkit-box;
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    -webkit-box-orient:vertical;
+            position:
+                relative;
 
-    -webkit-line-clamp:3;
+            overflow:
+                hidden;
 
-    overflow:hidden;
-}
+            display:
+                flex;
 
+            flex-direction:
+                column;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
 
-.card-footer{
 
-    margin-top:auto;
+        .website-card::before {
 
-    padding-top:12px;
+            content:
+                "";
 
-    display:flex;
+            position:
+                absolute;
 
-    align-items:center;
+            width:
+                130px;
 
-    justify-content:space-between;
+            height:
+                130px;
 
-    gap:7px;
-}
+            top:
+                -70px;
 
+            right:
+                -70px;
 
-.website-url{
+            border-radius:
+                50%;
 
-    max-width:100px;
+            background:
+                rgba(22,163,74,0.07);
 
-    overflow:hidden;
+            pointer-events:
+                none;
+        }
 
-    white-space:nowrap;
 
-    text-overflow:ellipsis;
+        .website-card:hover {
 
-    color:var(--muted);
+            transform:
+                translateY(-5px);
 
-    font-size:9px;
-}
+            border-color:
+                rgba(22,163,74,0.32);
 
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.25);
+        }
 
-/* OPEN */
 
-.open-btn{
+        body.light-theme .website-card {
 
-    border:0;
+            background:
+                #ffffff;
 
-    cursor:pointer;
+            border-color:
+                rgba(15,23,42,0.08);
 
-    padding:8px 11px;
+            box-shadow:
+                0 8px 25px
+                rgba(15,23,42,0.05);
+        }
 
-    border-radius:9px;
 
-    color:white;
+        body.light-theme .website-card:hover {
 
-    background:
-        linear-gradient(
-            135deg,
-            #10b981,
-            #059669
-        );
+            border-color:
+                rgba(22,163,74,0.35);
 
-    display:flex;
+            box-shadow:
+                0 15px 35px
+                rgba(15,23,42,0.10);
+        }
 
-    align-items:center;
 
-    justify-content:center;
+        @media
+        (prefers-color-scheme: light) {
 
-    gap:5px;
+            body.auto-theme .website-card {
 
-    font-size:10px;
+                background:
+                    #ffffff;
 
-    font-weight:650;
+                border-color:
+                    rgba(15,23,42,0.08);
 
-    transition:.2s;
-}
+                box-shadow:
+                    0 8px 25px
+                    rgba(15,23,42,0.05);
+            }
 
+        }
 
-.open-btn:hover{
 
-    transform:translateY(-2px);
+        /* =====================================================
+           CARD TOP
+        ===================================================== */
 
-    box-shadow:
-        0 8px 18px
-        rgba(16,185,129,.20);
-}
+        .card-top {
 
+            display:
+                flex;
 
-/* =====================================================
-   NO RESULT
-===================================================== */
+            align-items:
+                flex-start;
 
-.no-result{
+            justify-content:
+                space-between;
 
-    grid-column:1/-1;
+            gap:
+                10px;
 
-    display:none;
+            position:
+                relative;
 
-    padding:60px 20px;
+            z-index:
+                1;
+        }
 
-    text-align:center;
 
-    border-radius:18px;
+        .logo-box {
 
-    border:1px dashed var(--border);
+            width:
+                58px;
 
-    background:var(--card);
-}
+            height:
+                58px;
 
+            border-radius:
+                15px;
 
-.no-result i{
+            background:
+                #18202b;
 
-    color:var(--muted);
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
 
-    font-size:30px;
+            display:
+                flex;
 
-    margin-bottom:12px;
-}
+            align-items:
+                center;
 
+            justify-content:
+                center;
 
-.no-result h3{
+            overflow:
+                hidden;
 
-    color:var(--text);
+            flex:
+                0 0 58px;
+        }
 
-    font-size:16px;
-}
 
+        body.light-theme .logo-box {
 
-.no-result p{
+            background:
+                #f1f5f9;
 
-    margin-top:5px;
+            border-color:
+                rgba(15,23,42,0.07);
+        }
 
-    color:var(--muted);
 
-    font-size:11px;
-}
+        .logo-box img {
 
+            width:
+                100%;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            height:
+                100%;
 
-.footer{
+            object-fit:
+                cover;
 
-    text-align:center;
+            display:
+                block;
+        }
 
-    padding:
-        0 20px 25px;
 
-    color:var(--muted);
+        .logo-fallback {
 
-    font-size:10px;
-}
+            color:
+                #22c55e;
 
+            font-size:
+                21px;
+        }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
 
-@media(max-width:1150px){
+        .status {
 
-    .dashboard{
+            display:
+                inline-flex;
 
-        grid-template-columns:
-            repeat(4,1fr);
-    }
-}
+            align-items:
+                center;
 
+            gap:
+                6px;
 
-@media(max-width:850px){
+            padding:
+                6px 9px;
 
-    .dashboard{
+            border-radius:
+                999px;
 
-        grid-template-columns:
-            repeat(3,1fr);
+            background:
+                rgba(34,197,94,0.09);
 
-        gap:15px;
-    }
-}
+            color:
+                #4ade80;
 
+            font-size:
+                10px;
 
-@media(max-width:600px){
+            font-weight:
+                650;
 
-    .top-header{
+            white-space:
+                nowrap;
+        }
 
-        width:92%;
 
-        padding:
-            20px 0 15px;
+        .status-dot {
 
-        align-items:flex-start;
-    }
+            width:
+                6px;
 
+            height:
+                6px;
 
-    .brand-icon{
+            border-radius:
+                50%;
 
-        width:44px;
-        height:44px;
+            background:
+                #22c55e;
 
-        border-radius:12px;
+            box-shadow:
+                0 0 8px
+                rgba(34,197,94,0.7);
+        }
 
-        font-size:18px;
-    }
 
+        /* =====================================================
+           CARD BODY
+        ===================================================== */
 
-    .brand-text h1{
+        .card-body {
 
-        font-size:18px;
-    }
+            padding-top:
+                15px;
 
+            position:
+                relative;
 
-    .brand-text p{
+            z-index:
+                1;
 
-        font-size:9px;
-    }
+            flex:
+                1;
+        }
 
 
-    .theme-buttons{
+        .card-name {
 
-        padding:4px;
-    }
+            font-size:
+                16px;
 
+            font-weight:
+                750;
 
-    .theme-btn{
+            line-height:
+                1.3;
 
-        width:31px;
-        height:30px;
+            color:
+                #f8fafc;
 
-        padding:0;
-    }
+            word-break:
+                break-word;
+        }
 
 
-    .theme-btn span{
+        body.light-theme .card-name {
+            color: #172033;
+        }
 
-        display:none;
-    }
 
+        .card-description {
 
-    .search-area{
+            margin-top:
+                6px;
 
-        width:92%;
+            color:
+                #94a3b8;
 
-        display:block;
+            font-size:
+                12px;
 
-        margin-bottom:17px;
-    }
+            line-height:
+                1.5;
 
+            display:
+                -webkit-box;
 
-    .search-box{
+            -webkit-line-clamp:
+                2;
 
-        max-width:none;
-    }
+            -webkit-box-orient:
+                vertical;
 
+            overflow:
+                hidden;
+        }
 
-    .search-result{
 
-        margin-top:7px;
-    }
+        body.light-theme .card-description {
+            color: #64748b;
+        }
 
 
-    .dashboard{
+        /* =====================================================
+           INFO
+        ===================================================== */
 
-        width:92%;
+        .card-info {
 
-        grid-template-columns:
-            repeat(2,1fr);
+            margin-top:
+                13px;
 
-        gap:12px;
-    }
+            display:
+                flex;
 
+            flex-direction:
+                column;
 
-    .website-card{
+            gap:
+                7px;
+        }
 
-        padding:14px;
 
-        border-radius:16px;
-    }
+        .info-row {
 
+            min-width:
+                0;
 
-    .website-logo{
+            display:
+                flex;
 
-        width:43px;
-        height:43px;
+            align-items:
+                center;
 
-        border-radius:12px;
-    }
+            gap:
+                8px;
 
+            font-size:
+                11px;
 
-    .website-logo i{
+            line-height:
+                1.35;
+        }
 
-        font-size:18px;
-    }
 
+        .info-label {
 
-    .card-content{
+            flex:
+                0 0 auto;
 
-        margin-top:11px;
-    }
+            display:
+                inline-flex;
 
+            align-items:
+                center;
 
-    .card-content h2{
+            gap:
+                5px;
 
-        font-size:14px;
-    }
+            color:
+                #64748b;
 
+            font-weight:
+                600;
+        }
 
-    .card-content p{
 
-        font-size:9px;
+        .info-label i {
 
-        -webkit-line-clamp:2;
-    }
+            font-size:
+                10px;
 
+            color:
+                #22c55e;
+        }
 
-    .website-url{
 
-        display:none;
-    }
+        .info-value {
 
+            min-width:
+                0;
 
-    .open-btn{
+            overflow:
+                hidden;
 
-        width:100%;
+            text-overflow:
+                ellipsis;
 
-        padding:8px;
+            white-space:
+                nowrap;
 
-        font-size:9px;
-    }
-}
+            color:
+                #cbd5e1;
+        }
 
 
-@media(max-width:370px){
+        body.light-theme .info-value {
+            color: #475569;
+        }
 
-    .brand-text p{
 
-        display:none;
-    }
+        /* =====================================================
+           CARD FOOTER
+        ===================================================== */
 
+        .card-footer {
 
-    .dashboard{
+            margin-top:
+                15px;
 
-        gap:9px;
-    }
+            display:
+                flex;
 
+            align-items:
+                center;
 
-    .website-card{
+            gap:
+                9px;
 
-        padding:11px;
+            position:
+                relative;
 
-        border-radius:14px;
-    }
+            z-index:
+                1;
+        }
 
 
-    .website-logo{
+        .link-text {
 
-        width:38px;
-        height:38px;
-    }
+            flex:
+                1;
 
+            min-width:
+                0;
 
-    .card-content h2{
+            overflow:
+                hidden;
 
-        font-size:12px;
-    }
+            text-overflow:
+                ellipsis;
 
+            white-space:
+                nowrap;
 
-    .card-content p{
+            color:
+                #64748b;
 
-        font-size:8px;
-    }
+            font-size:
+                10px;
+        }
 
 
-    .open-btn{
+        .open-btn {
 
-        padding:7px;
+            flex:
+                0 0 auto;
 
-        font-size:8px;
-    }
-}
+            display:
+                inline-flex;
 
-</style>
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            min-height:
+                36px;
+
+            padding:
+                0 13px;
+
+            border-radius:
+                10px;
+
+            background:
+                #16a34a;
+
+            color:
+                #ffffff;
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            text-decoration:
+                none;
+
+            cursor:
+                pointer;
+
+            transition:
+                all 0.2s ease;
+
+            box-shadow:
+                0 7px 18px
+                rgba(22,163,74,0.18);
+        }
+
+
+        .open-btn:hover {
+
+            background:
+                #15803d;
+
+            transform:
+                translateY(-1px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(22,163,74,0.25);
+        }
+
+
+        /* =====================================================
+           LOADING
+        ===================================================== */
+
+        .loading {
+
+            grid-column:
+                1 / -1;
+
+            min-height:
+                300px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                12px;
+
+            color:
+                #94a3b8;
+
+            font-size:
+                13px;
+        }
+
+
+        .spinner {
+
+            width:
+                34px;
+
+            height:
+                34px;
+
+            border:
+                3px solid
+                rgba(255,255,255,0.08);
+
+            border-top-color:
+                #22c55e;
+
+            border-radius:
+                50%;
+
+            animation:
+                spin 0.8s linear infinite;
+        }
+
+
+        @keyframes spin {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        /* =====================================================
+           EMPTY
+        ===================================================== */
+
+        .empty-state {
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                55px 20px;
+
+            text-align:
+                center;
+
+            color:
+                #64748b;
+        }
+
+
+        .empty-icon {
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            margin:
+                0 auto 14px;
+
+            border-radius:
+                15px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color:
+                #64748b;
+
+            font-size:
+                20px;
+        }
+
+
+        .empty-title {
+
+            color:
+                #cbd5e1;
+
+            font-size:
+                15px;
+
+            font-weight:
+                700;
+        }
+
+
+        .empty-text {
+
+            margin-top:
+                5px;
+
+            font-size:
+                12px;
+        }
+
+
+        body.light-theme .empty-icon {
+
+            background:
+                rgba(15,23,42,0.05);
+        }
+
+
+        body.light-theme .empty-title {
+            color: #334155;
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        .error-state {
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                45px 20px;
+
+            text-align:
+                center;
+        }
+
+
+        .error-icon {
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            margin:
+                0 auto 14px;
+
+            border-radius:
+                15px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(239,68,68,0.08);
+
+            color:
+                #f87171;
+
+            font-size:
+                20px;
+        }
+
+
+        .error-title {
+
+            color:
+                #f8fafc;
+
+            font-size:
+                15px;
+
+            font-weight:
+                700;
+        }
+
+
+        .error-message {
+
+            max-width:
+                600px;
+
+            margin:
+                7px auto 15px;
+
+            color:
+                #94a3b8;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.5;
+        }
+
+
+        .retry-btn {
+
+            padding:
+                9px 15px;
+
+            border-radius:
+                9px;
+
+            background:
+                #16a34a;
+
+            color:
+                #ffffff;
+
+            font-size:
+                12px;
+
+            font-weight:
+                650;
+
+            cursor:
+                pointer;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            padding:
+                5px 20px 25px;
+
+            text-align:
+                center;
+
+            color:
+                #475569;
+
+            font-size:
+                11px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media
+        (max-width: 1100px) {
+
+            .cards-grid {
+
+                grid-template-columns:
+                    repeat(4, minmax(0, 1fr));
+
+            }
+
+        }
+
+
+        @media
+        (max-width: 850px) {
+
+            .cards-grid {
+
+                grid-template-columns:
+                    repeat(3, minmax(0, 1fr));
+
+            }
+
+        }
+
+
+        @media
+        (max-width: 650px) {
+
+            .top-header {
+
+                padding:
+                    15px 14px 12px;
+
+            }
+
+
+            .main {
+
+                padding:
+                    20px 14px 35px;
+
+            }
+
+
+            .brand-icon {
+
+                width:
+                    42px;
+
+                height:
+                    42px;
+
+                flex-basis:
+                    42px;
+
+                border-radius:
+                    12px;
+
+                font-size:
+                    18px;
+
+            }
+
+
+            .brand-title {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            .brand-subtitle {
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .theme-buttons {
+
+                padding:
+                    3px;
+
+            }
+
+
+            .theme-btn {
+
+                width:
+                    32px;
+
+                height:
+                    30px;
+
+            }
+
+
+            .cards-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap:
+                    12px;
+
+            }
+
+
+            .website-card {
+
+                min-height:
+                    275px;
+
+                padding:
+                    14px;
+
+                border-radius:
+                    16px;
+
+            }
+
+
+            .logo-box {
+
+                width:
+                    50px;
+
+                height:
+                    50px;
+
+                flex-basis:
+                    50px;
+
+                border-radius:
+                    13px;
+
+            }
+
+
+            .card-name {
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .card-description {
+
+                font-size:
+                    11px;
+
+            }
+
+
+            .info-row {
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .open-btn {
+
+                min-height:
+                    34px;
+
+                padding:
+                    0 10px;
+
+            }
+
+
+            .link-text {
+
+                display:
+                    none;
+
+            }
+
+        }
+
+
+        @media
+        (max-width: 390px) {
+
+            .cards-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .website-card {
+
+                min-height:
+                    auto;
+
+            }
+
+
+            .link-text {
+
+                display:
+                    block;
+
+            }
+
+        }
+
+
+    </style>
 
 </head>
 
@@ -1032,1647 +1825,1157 @@ body{
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<header class="top-header">
+    <header class="top-header">
 
-    <div class="brand">
-
-        <div class="brand-icon">
-
-            <i class="fa-solid fa-globe"></i>
-
-        </div>
-
-        <div class="brand-text">
-
-            <h1>Website Dashboard</h1>
-
-            <p>
-                All websites in one place
-            </p>
-
-        </div>
-
-    </div>
+        <div class="header-inner">
 
 
-    <!-- DARK / LIGHT / AUTO -->
+            <div class="brand">
 
-    <div class="theme-buttons">
+                <div class="brand-icon">
 
-        <button
-            class="theme-btn active"
-            id="darkBtn"
-            onclick="setTheme('dark')"
-        >
+                    <i class="fa-solid fa-globe"></i>
 
-            <i class="fa-solid fa-moon"></i>
-
-            <span>Dark</span>
-
-        </button>
+                </div>
 
 
-        <button
-            class="theme-btn"
-            id="lightBtn"
-            onclick="setTheme('light')"
-        >
+                <div class="brand-text">
 
-            <i class="fa-solid fa-sun"></i>
+                    <div class="brand-title">
+                        Website Dashboard
+                    </div>
 
-            <span>Light</span>
+                    <div class="brand-subtitle">
+                        Quick access to your websites
+                    </div>
 
-        </button>
+                </div>
 
-
-        <button
-            class="theme-btn"
-            id="autoBtn"
-            onclick="setTheme('auto')"
-        >
-
-            <i class="fa-solid fa-desktop"></i>
-
-            <span>Auto</span>
-
-        </button>
-
-    </div>
-
-</header>
+            </div>
 
 
-<!-- =====================================================
-     SEARCH
-===================================================== -->
+            <!-- THEME -->
 
-<section class="search-area">
-
-    <div class="search-box">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="Search website..."
-            autocomplete="off"
-        >
-
-        <button
-            class="clear-search"
-            id="clearSearch"
-        >
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-    </div>
-
-
-    <div
-        class="search-result"
-        id="searchResult"
-    >
-
-        Showing <strong>25</strong> websites
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
-
-<main
-    class="dashboard"
-    id="dashboard"
->
-
-
-<!-- =====================================================
-     01 BAS PLAY
-===================================================== -->
-
-<div
-class="website-card"
-data-name="BAS PLAY"
-data-description="BAS PLAY website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <img
-            src="http://10.20.30.40/favicon.ico"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-            alt="BAS PLAY"
+            <div
+                class="theme-buttons"
+                aria-label="Theme selection"
             >
 
-            <i
-            class="fa-solid fa-play"
-            style="display:none;"
-            ></i>
+                <button
+                    type="button"
+                    class="theme-btn"
+                    data-theme="dark"
+                    title="Dark"
+                >
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="theme-btn"
+                    data-theme="light"
+                    title="Light"
+                >
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="theme-btn"
+                    data-theme="auto"
+                    title="Auto"
+                >
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+
+            </div>
+
 
         </div>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
+    </header>
 
-    </div>
 
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
 
-    <div class="card-content">
+    <main class="main">
 
-        <h2>BAS PLAY</h2>
 
-        <p>
-            Access BAS PLAY website and services.
-        </p>
+        <!-- SEARCH -->
 
-    </div>
+        <section class="search-section">
 
+            <div class="search-box">
 
-    <div class="card-footer">
+                <i
+                    class="fa-solid fa-magnifying-glass search-icon"
+                ></i>
 
-        <span class="website-url">
-            10.20.30.40
-        </span>
 
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://10.20.30.40/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
+                <input
+                    type="search"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search website..."
+                    autocomplete="off"
+                >
 
-    </div>
 
-</div>
+                <button
+                    type="button"
+                    id="clearSearch"
+                    class="clear-search"
+                    title="Clear search"
+                >
 
+                    <i class="fa-solid fa-xmark"></i>
 
-<!-- =====================================================
-     02 FUN TIME
-===================================================== -->
+                </button>
 
-<div
-class="website-card"
-data-name="Fun Time"
-data-description="Fun Time website"
->
+            </div>
 
-    <div class="card-top">
+        </section>
 
-        <div class="website-logo">
 
-            <i class="fa-solid fa-face-smile"></i>
+        <!-- TOOLBAR -->
 
-        </div>
+        <div class="toolbar">
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
+            <div
+                class="result-count"
+                id="resultCount"
+            >
+                Loading websites...
+            </div>
 
-    </div>
 
-    <div class="card-content">
-
-        <h2>Fun Time</h2>
-
-        <p>
-            Access Fun Time website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            172.20.21.22
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://172.20.21.22/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     03 MOVIE WORLD
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Movie World"
-data-description="Movie World website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-film"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Movie World</h2>
-
-        <p>
-            Access Movie World website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            10.10.10.3
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://10.10.10.3/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     04 MINJU ONLINE
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Minju Online"
-data-description="Minju Online website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-tv"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Minju Online</h2>
-
-        <p>
-            Access Minju Online website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            10.10.10.10
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://10.10.10.10/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     05 CTG MOVIE
-===================================================== -->
-
-<div
-class="website-card"
-data-name="CTG Movie"
-data-description="CTG Movie website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <img
-            src="https://ctgmovies.com/favicon.ico"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-            alt="CTG Movie"
+            <button
+                type="button"
+                class="refresh-btn"
+                id="refreshBtn"
             >
 
-            <i
-            class="fa-solid fa-film"
-            style="display:none;"
-            ></i>
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
 
         </div>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
 
-    </div>
+        <!-- CARDS -->
 
-    <div class="card-content">
-
-        <h2>CTG Movie</h2>
-
-        <p>
-            Access CTG Movie website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            ctgmovies.com
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://ctgmovies.com/')"
+        <section
+            class="cards-grid"
+            id="cardsGrid"
         >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
 
-    </div>
+            <div class="loading">
 
-</div>
+                <div class="spinner"></div>
 
+                <div>
+                    Loading websites...
+                </div>
 
-<!-- =====================================================
-     06 ZOMFA MOVIE
-===================================================== -->
+            </div>
 
-<div
-class="website-card"
-data-name="Zomfa Movie"
-data-description="Zomfa Movie website"
->
+        </section>
 
-    <div class="card-top">
 
-        <div class="website-logo">
+    </main>
 
-            <i class="fa-solid fa-clapperboard"></i>
 
-        </div>
+    <!-- FOOTER -->
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
+    <footer class="footer">
 
-    </div>
+        Website Dashboard
 
-    <div class="card-content">
+    </footer>
 
-        <h2>Zomfa Movie</h2>
 
-        <p>
-            Access Zomfa Movie website.
-        </p>
 
-    </div>
+    <script>
 
-    <div class="card-footer">
+        "use strict";
 
-        <span class="website-url">
-            10.10.10.34
-        </span>
 
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://10.10.10.34/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
+        /* =====================================================
+           API
+        ===================================================== */
 
-    </div>
+        const API_URL =
+            "https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
 
-</div>
 
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
 
-<!-- =====================================================
-     07 WOW
-===================================================== -->
+        const cardsGrid =
+            document.getElementById(
+                "cardsGrid"
+            );
 
-<div
-class="website-card"
-data-name="WOW"
-data-description="WOW website"
->
 
-    <div class="card-top">
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
 
-        <div class="website-logo">
 
-            <i class="fa-solid fa-star"></i>
+        const clearSearch =
+            document.getElementById(
+                "clearSearch"
+            );
 
-        </div>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
+        const resultCount =
+            document.getElementById(
+                "resultCount"
+            );
 
-    </div>
 
-    <div class="card-content">
+        const refreshBtn =
+            document.getElementById(
+                "refreshBtn"
+            );
 
-        <h2>WOW</h2>
 
-        <p>
-            Access WOW website and services.
-        </p>
+        const themeButtons =
+            document.querySelectorAll(
+                ".theme-btn"
+            );
 
-    </div>
 
-    <div class="card-footer">
+        /* =====================================================
+           DATA
+        ===================================================== */
 
-        <span class="website-url">
-            172.27.27.84
-        </span>
+        let allCards = [];
 
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://172.27.27.84/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
+        let currentSearch = "";
 
-    </div>
 
-</div>
+        /* =====================================================
+           INIT
+        ===================================================== */
 
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-<!-- =====================================================
-     08 DISCOVER FTP
-===================================================== -->
+                loadTheme();
 
-<div
-class="website-card"
-data-name="Discover Ftp"
-data-description="Discover FTP website"
->
+                loadCards();
 
-    <div class="card-top">
+            }
+        );
 
-        <div class="website-logo">
 
-            <img
-            src="https://discoveryftp.net/favicon.ico"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-            alt="Discover Ftp"
-            >
+        /* =====================================================
+           LOAD CARDS
+        ===================================================== */
 
-            <i
-            class="fa-solid fa-folder-open"
-            style="display:none;"
-            ></i>
+        async function loadCards() {
 
-        </div>
+            showLoading();
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
 
-    </div>
+            try {
 
-    <div class="card-content">
+                const url =
+                    API_URL +
+                    "?action=getCards&t=" +
+                    Date.now();
 
-        <h2>Discover Ftp</h2>
 
-        <p>
-            Access Discover FTP website.
-        </p>
+                const response =
+                    await fetch(
+                        url,
+                        {
+                            method: "GET",
+                            cache: "no-store"
+                        }
+                    );
 
-    </div>
 
-    <div class="card-footer">
+                if (!response.ok) {
 
-        <span class="website-url">
-            discoveryftp.net
-        </span>
+                    throw new Error(
+                        "Server returned HTTP " +
+                        response.status
+                    );
 
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://discoveryftp.net/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
+                }
 
-    </div>
 
-</div>
+                const data =
+                    await response.json();
 
 
-<!-- =====================================================
-     09 IHUB
-===================================================== -->
+                if (
+                    !data ||
+                    data.success !== true
+                ) {
 
-<div
-class="website-card"
-data-name="IHUB"
-data-description="IHUB website"
->
+                    throw new Error(
+                        data &&
+                        data.message
+                            ? data.message
+                            : "Unable to load website data."
+                    );
 
-    <div class="card-top">
+                }
 
-        <div class="website-logo">
 
-            <i class="fa-solid fa-network-wired"></i>
+                allCards =
+                    Array.isArray(data.cards)
+                        ? data.cards
+                        : [];
 
-        </div>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
+                /*
+                 * Only active cards
+                 */
 
-    </div>
+                allCards =
+                    allCards.filter(
+                        function (card) {
 
-    <div class="card-content">
+                            return String(
+                                card.status || "Active"
+                            )
+                            .toLowerCase() ===
+                            "active";
 
-        <h2>IHUB</h2>
+                        }
+                    );
 
-        <p>
-            Access IHUB website.
-        </p>
 
-    </div>
+                /*
+                 * Sort by position
+                 */
 
-    <div class="card-footer">
+                allCards.sort(
+                    function (a, b) {
 
-        <span class="website-url">
-            ihub.live
-        </span>
+                        return (
+                            Number(a.position || 0) -
+                            Number(b.position || 0)
+                        );
 
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://ihub.live/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
+                    }
+                );
 
-    </div>
 
-</div>
+                renderCards();
 
 
-<!-- =====================================================
-     10 DFLIX
-===================================================== -->
+            } catch (error) {
 
-<div
-class="website-card"
-data-name="DFLIX"
-data-description="DFLIX movie website"
->
+                console.error(
+                    "Load cards error:",
+                    error
+                );
 
-    <div class="card-top">
 
-        <div class="website-logo">
+                showError(
+                    error.message
+                );
 
-            <i class="fa-solid fa-video"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>DFLIX</h2>
-
-        <p>
-            Access DFLIX movie website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            movies.discoveryftp.net
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://movies.discoveryftp.net/m')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     11 MOVIE BOX
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Movie Box"
-data-description="Movie Box website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-box"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Movie Box</h2>
-
-        <p>
-            Access Movie Box website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            moviebox.ph
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://moviebox.ph/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     12 DFLIX LIVE
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Dflix"
-data-description="Dflix live website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-play-circle"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Dflix</h2>
-
-        <p>
-            Access Dflix live website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            dflix.live
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://dflix.live/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     13 RELAX TIME
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Relax Time"
-data-description="Relax Time website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-music"></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Relax Time</h2>
-
-        <p>
-            Access Relax Time website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            10.100.100.10
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('http://10.100.100.10/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     14 FIXHUB
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Fixhub"
-data-description="Fixhub website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <img
-            src="https://flixhub.net/favicon.ico"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-            alt="Fixhub"
-            >
-
-            <i
-            class="fa-solid fa-wrench"
-            style="display:none;"
-            ></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Fixhub</h2>
-
-        <p>
-            Access Fixhub website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            flixhub.net
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://flixhub.net/')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     15 ROARZONE
-===================================================== -->
-
-<div
-class="website-card"
-data-name="Roarzone"
-data-description="Roarzone website"
->
-
-    <div class="card-top">
-
-        <div class="website-logo">
-
-            <img
-            src="https://play.roarzone.net/favicon.ico"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-            alt="Roarzone"
-            >
-
-            <i
-            class="fa-solid fa-dragon"
-            style="display:none;"
-            ></i>
-
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Online
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Roarzone</h2>
-
-        <p>
-            Access Roarzone website.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            play.roarzone.net
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://play.roarzone.net/web/index.html#!/home')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     16 - 25 PLACEHOLDER CARDS
-===================================================== -->
-
-<div class="website-card placeholder-card"
-data-name="Website 16"
-data-description="Website 16">
-
-    <div class="card-top">
-
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-
-    </div>
-
-    <div class="card-content">
-
-        <h2>Website 16</h2>
-
-        <p>
-            Add your website link here.
-        </p>
-
-    </div>
-
-    <div class="card-footer">
-
-        <span class="website-url">
-            Add Link
-        </span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')"
-        >
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 17"
-data-description="Website 17">
-
-    <div class="card-top">
-
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 17</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 18"
-data-description="Website 18">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 18</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 19"
-data-description="Website 19">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 19</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 20"
-data-description="Website 20">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 20</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 21"
-data-description="Website 21">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 21</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 22"
-data-description="Website 22">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 22</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 23"
-data-description="Website 23">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 23</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 24"
-data-description="Website 24">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 24</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<div class="website-card placeholder-card"
-data-name="Website 25"
-data-description="Website 25">
-
-    <div class="card-top">
-        <div class="website-logo">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Ready
-        </div>
-    </div>
-
-    <div class="card-content">
-        <h2>Website 25</h2>
-        <p>Add your website link here.</p>
-    </div>
-
-    <div class="card-footer">
-        <span class="website-url">Add Link</span>
-
-        <button
-        class="open-btn"
-        onclick="openWebsite('https://example.com')">
-            Open
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </button>
-    </div>
-
-</div>
-
-
-<!-- NO RESULT -->
-
-<div
-class="no-result"
-id="noResult"
->
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <h3>
-        No website found
-    </h3>
-
-    <p>
-        Try another search keyword.
-    </p>
-
-</div>
-
-
-</main>
-
-
-<footer class="footer">
-
-    © 2026 Website Dashboard
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   THEME
-===================================================== */
-
-const darkBtn =
-document.getElementById("darkBtn");
-
-const lightBtn =
-document.getElementById("lightBtn");
-
-const autoBtn =
-document.getElementById("autoBtn");
-
-
-const systemTheme =
-window.matchMedia(
-"(prefers-color-scheme: dark)"
-);
-
-
-function applyAutoTheme(){
-
-    if(systemTheme.matches){
-
-        document.body.classList.remove("light");
-
-    }else{
-
-        document.body.classList.add("light");
-
-    }
-}
-
-
-function setTheme(theme){
-
-    darkBtn.classList.remove("active");
-
-    lightBtn.classList.remove("active");
-
-    autoBtn.classList.remove("active");
-
-
-    if(theme === "dark"){
-
-        document.body.classList.remove("light");
-
-        darkBtn.classList.add("active");
-
-    }
-
-    else if(theme === "light"){
-
-        document.body.classList.add("light");
-
-        lightBtn.classList.add("active");
-
-    }
-
-    else{
-
-        applyAutoTheme();
-
-        autoBtn.classList.add("active");
-
-    }
-
-
-    localStorage.setItem(
-        "websiteTheme",
-        theme
-    );
-}
-
-
-(function(){
-
-    const saved =
-    localStorage.getItem("websiteTheme");
-
-
-    if(
-        saved === "dark" ||
-        saved === "light" ||
-        saved === "auto"
-    ){
-
-        setTheme(saved);
-
-    }else{
-
-        setTheme("dark");
-
-    }
-
-})();
-
-
-systemTheme.addEventListener(
-"change",
-function(){
-
-    if(
-        localStorage.getItem("websiteTheme")
-        === "auto"
-    ){
-
-        applyAutoTheme();
-
-    }
-
-});
-
-
-/* =====================================================
-   OPEN WEBSITE
-===================================================== */
-
-function openWebsite(url){
-
-    if(
-        typeof url !== "string" ||
-        !url.trim()
-    ){
-
-        return;
-
-    }
-
-
-    window.location.href =
-    url.trim();
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-const searchInput =
-document.getElementById("searchInput");
-
-const clearSearch =
-document.getElementById("clearSearch");
-
-const searchResult =
-document.getElementById("searchResult");
-
-const noResult =
-document.getElementById("noResult");
-
-
-function performSearch(){
-
-    const query =
-    searchInput.value
-    .trim()
-    .toLowerCase();
-
-
-    const cards =
-    Array.from(
-        document.querySelectorAll(
-            ".website-card"
-        )
-    );
-
-
-    let count = 0;
-
-
-    cards.forEach(card=>{
-
-        const name =
-        (
-            card.dataset.name || ""
-        ).toLowerCase();
-
-
-        const description =
-        (
-            card.dataset.description || ""
-        ).toLowerCase();
-
-
-        const url =
-        (
-            card.querySelector(
-                ".website-url"
-            )?.textContent || ""
-        ).toLowerCase();
-
-
-        const match =
-
-        !query ||
-
-        name.includes(query) ||
-
-        description.includes(query) ||
-
-        url.includes(query);
-
-
-        if(match){
-
-            card.style.display =
-            "flex";
-
-            count++;
-
-        }else{
-
-            card.style.display =
-            "none";
+            }
 
         }
 
-    });
+
+        /* =====================================================
+           RENDER CARDS
+        ===================================================== */
+
+        function renderCards() {
+
+            const query =
+                currentSearch
+                    .trim()
+                    .toLowerCase();
 
 
-    searchResult.innerHTML =
-    `Showing <strong>${count}</strong> websites`;
+            let filtered =
+                allCards;
 
 
-    clearSearch.style.display =
-    query ? "flex" : "none";
+            if (query) {
+
+                filtered =
+                    allCards.filter(
+                        function (card) {
+
+                            const searchable =
+                                [
+                                    card.name,
+                                    card.description,
+                                    card.source,
+                                    card.type,
+                                    card.link
+                                ]
+                                .map(
+                                    function (value) {
+
+                                        return String(
+                                            value || ""
+                                        )
+                                        .toLowerCase();
+
+                                    }
+                                )
+                                .join(" ");
 
 
-    noResult.style.display =
-    count === 0
-    ? "block"
-    : "none";
-}
+                            return searchable.includes(
+                                query
+                            );
+
+                        }
+                    );
+
+            }
 
 
-searchInput.addEventListener(
-"input",
-performSearch
-);
+            resultCount.textContent =
+                filtered.length +
+                " website" +
+                (
+                    filtered.length === 1
+                        ? ""
+                        : "s"
+                );
 
 
-clearSearch.addEventListener(
-"click",
-function(){
+            if (
+                filtered.length === 0
+            ) {
 
-    searchInput.value = "";
+                showEmpty();
 
-    searchInput.focus();
+                return;
 
-    performSearch();
-
-});
+            }
 
 
-searchInput.addEventListener(
-"keydown",
-function(event){
+            cardsGrid.innerHTML =
+                filtered
+                    .map(
+                        createCard
+                    )
+                    .join("");
 
-    if(event.key === "Escape"){
+        }
 
-        searchInput.value = "";
 
-        performSearch();
+        /* =====================================================
+           CREATE CARD
+        ===================================================== */
 
-    }
+        function createCard(card) {
 
-});
+            const name =
+                escapeHTML(
+                    card.name ||
+                    "Untitled Website"
+                );
 
-</script>
+
+            const description =
+                escapeHTML(
+                    card.description ||
+                    "Access website."
+                );
+
+
+            const source =
+                escapeHTML(
+                    card.source ||
+                    "Not specified"
+                );
+
+
+            const type =
+                escapeHTML(
+                    card.type ||
+                    "Website"
+                );
+
+
+            const link =
+                safeURL(
+                    card.link
+                );
+
+
+            const logo =
+                safeURL(
+                    card.logo
+                );
+
+
+            let logoHTML;
+
+
+            if (logo) {
+
+                logoHTML = `
+
+                    <img
+                        src="${escapeAttribute(logo)}"
+                        alt="${escapeAttribute(name)}"
+                        loading="lazy"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <span
+                        class="logo-fallback"
+                        style="display:none"
+                    >
+                        <i class="fa-solid fa-globe"></i>
+                    </span>
+
+                `;
+
+            } else {
+
+                logoHTML = `
+
+                    <span class="logo-fallback">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                    </span>
+
+                `;
+
+            }
+
+
+            return `
+
+                <article class="website-card">
+
+
+                    <div class="card-top">
+
+
+                        <div class="logo-box">
+
+                            ${logoHTML}
+
+                        </div>
+
+
+                        <div class="status">
+
+                            <span class="status-dot"></span>
+
+                            Online
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-body">
+
+
+                        <h2 class="card-name">
+
+                            ${name}
+
+                        </h2>
+
+
+                        <p class="card-description">
+
+                            ${description}
+
+                        </p>
+
+
+                        <div class="card-info">
+
+
+                            <div class="info-row">
+
+                                <span class="info-label">
+
+                                    <i class="fa-solid fa-server"></i>
+
+                                    Source
+
+                                </span>
+
+
+                                <span
+                                    class="info-value"
+                                    title="${escapeAttribute(source)}"
+                                >
+
+                                    ${source}
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span class="info-label">
+
+                                    <i class="fa-solid fa-layer-group"></i>
+
+                                    Type
+
+                                </span>
+
+
+                                <span
+                                    class="info-value"
+                                    title="${escapeAttribute(type)}"
+                                >
+
+                                    ${type}
+
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+
+                        <span
+                            class="link-text"
+                            title="${escapeAttribute(link)}"
+                        >
+
+                            ${escapeHTML(
+                                displayURL(link)
+                            )}
+
+                        </span>
+
+
+                        <a
+                            href="${escapeAttribute(link)}"
+                            class="open-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            Open
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+
+                    </div>
+
+
+                </article>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           LOADING
+        ===================================================== */
+
+        function showLoading() {
+
+            resultCount.textContent =
+                "Loading websites...";
+
+
+            cardsGrid.innerHTML = `
+
+                <div class="loading">
+
+                    <div class="spinner"></div>
+
+                    <div>
+                        Loading websites...
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           EMPTY
+        ===================================================== */
+
+        function showEmpty() {
+
+            cardsGrid.innerHTML = `
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                    <div class="empty-title">
+
+                        No website found
+
+                    </div>
+
+
+                    <div class="empty-text">
+
+                        Try another search keyword.
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        function showError(message) {
+
+            resultCount.textContent =
+                "Unable to load websites";
+
+
+            cardsGrid.innerHTML = `
+
+                <div class="error-state">
+
+                    <div class="error-icon">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    </div>
+
+
+                    <div class="error-title">
+
+                        Unable to load websites
+
+                    </div>
+
+
+                    <div class="error-message">
+
+                        ${escapeHTML(
+                            message ||
+                            "Please check the Apps Script API and try again."
+                        )}
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="retry-btn"
+                        onclick="loadCards()"
+                    >
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                        Try Again
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                currentSearch =
+                    this.value;
+
+
+                clearSearch.style.display =
+                    this.value
+                        ? "flex"
+                        : "none";
+
+
+                renderCards();
+
+            }
+        );
+
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value =
+                    "";
+
+                currentSearch =
+                    "";
+
+                clearSearch.style.display =
+                    "none";
+
+                searchInput.focus();
+
+                renderCards();
+
+            }
+        );
+
+
+        /* =====================================================
+           REFRESH
+        ===================================================== */
+
+        refreshBtn.addEventListener(
+            "click",
+            async function () {
+
+                const icon =
+                    refreshBtn.querySelector(
+                        "i"
+                    );
+
+
+                icon.classList.add(
+                    "fa-spin"
+                );
+
+
+                await loadCards();
+
+
+                setTimeout(
+                    function () {
+
+                        icon.classList.remove(
+                            "fa-spin"
+                        );
+
+                    },
+                    300
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           THEME
+        ===================================================== */
+
+        themeButtons.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const theme =
+                            this.dataset.theme;
+
+
+                        setTheme(
+                            theme
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        function setTheme(theme) {
+
+            document.body.classList.remove(
+                "dark-theme",
+                "light-theme",
+                "auto-theme"
+            );
+
+
+            if (
+                theme === "light"
+            ) {
+
+                document.body.classList.add(
+                    "light-theme"
+                );
+
+            }
+
+            else if (
+                theme === "auto"
+            ) {
+
+                document.body.classList.add(
+                    "auto-theme"
+                );
+
+            }
+
+            else {
+
+                document.body.classList.add(
+                    "dark-theme"
+                );
+
+            }
+
+
+            localStorage.setItem(
+                "websiteDashboardTheme",
+                theme
+            );
+
+
+            updateThemeButtons(
+                theme
+            );
+
+        }
+
+
+        function loadTheme() {
+
+            const saved =
+                localStorage.getItem(
+                    "websiteDashboardTheme"
+                ) ||
+                "dark";
+
+
+            setTheme(
+                saved
+            );
+
+        }
+
+
+        function updateThemeButtons(
+            theme
+        ) {
+
+            themeButtons.forEach(
+                function (button) {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.theme ===
+                        theme
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           SAFE URL
+        ===================================================== */
+
+        function safeURL(value) {
+
+            const url =
+                String(
+                    value || ""
+                )
+                .trim();
+
+
+            if (!url) {
+
+                return "#";
+
+            }
+
+
+            /*
+             * Allow only http / https
+             */
+
+            try {
+
+                const parsed =
+                    new URL(
+                        url
+                    );
+
+
+                if (
+                    parsed.protocol !==
+                        "http:" &&
+                    parsed.protocol !==
+                        "https:"
+                ) {
+
+                    return "#";
+
+                }
+
+
+                return parsed.href;
+
+            } catch (error) {
+
+                return "#";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           DISPLAY URL
+        ===================================================== */
+
+        function displayURL(
+            value
+        ) {
+
+            if (!value) {
+
+                return "";
+
+            }
+
+
+            try {
+
+                const parsed =
+                    new URL(
+                        value
+                    );
+
+
+                return (
+                    parsed.host +
+                    (
+                        parsed.pathname !==
+                        "/"
+                            ? parsed.pathname
+                            : ""
+                    )
+                );
+
+            } catch (error) {
+
+                return value;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           HTML ESCAPE
+        ===================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            return String(
+                value || ""
+            )
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+        }
+
+
+        /* =====================================================
+           ATTRIBUTE ESCAPE
+        ===================================================== */
+
+        function escapeAttribute(
+            value
+        ) {
+
+            return escapeHTML(
+                value
+            );
+
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        window.loadCards =
+            loadCards;
+
+    </script>
+
 
 </body>
 
