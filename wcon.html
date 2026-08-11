@@ -1,0 +1,4097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Website Control</title>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#080b10;
+
+    color:#f8fafc;
+
+    overflow-x:hidden;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+button,
+input,
+textarea,
+select{
+
+    font-family:inherit;
+}
+
+button{
+    border:0;
+    outline:0;
+}
+
+
+/* =========================================================
+   LIGHT
+========================================================= */
+
+body.light{
+
+    background:#f4f7fb;
+
+    color:#172033;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    width:100%;
+
+    padding:
+        13px 20px;
+
+    background:
+        rgba(8,11,16,.92);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+body.light .header{
+
+    background:
+        rgba(244,247,251,.92);
+
+    border-color:
+        rgba(15,23,42,.08);
+}
+
+
+.header-inner{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-width:0;
+}
+
+
+.brand-icon{
+
+    width:42px;
+
+    height:42px;
+
+    flex:0 0 42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #15803d
+        );
+
+    color:#fff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(22,163,74,.20);
+}
+
+
+.brand-title{
+
+    font-size:17px;
+
+    font-weight:750;
+}
+
+
+.brand-subtitle{
+
+    margin-top:2px;
+
+    font-size:10px;
+
+    color:#64748b;
+}
+
+
+/* =========================================================
+   HEADER ACTION
+========================================================= */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+
+.theme-buttons{
+
+    display:flex;
+
+    gap:3px;
+
+    padding:3px;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+body.light .theme-buttons{
+
+    background:
+        rgba(15,23,42,.05);
+
+    border-color:
+        rgba(15,23,42,.08);
+}
+
+
+.theme-btn{
+
+    width:33px;
+
+    height:29px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:transparent;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+
+.theme-btn:hover{
+
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+.theme-btn.active{
+
+    color:#fff;
+
+    background:#16a34a;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+
+    width:
+        min(1300px,100%);
+
+    margin:auto;
+
+    padding:
+        20px;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-bottom:16px;
+}
+
+
+.page-title{
+
+    font-size:20px;
+
+    font-weight:750;
+}
+
+
+.page-subtitle{
+
+    margin-top:3px;
+
+    color:#64748b;
+
+    font-size:11px;
+}
+
+
+.top-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+
+    height:38px;
+
+    padding:
+        0 13px;
+
+    border-radius:9px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:650;
+
+    transition:.2s ease;
+}
+
+
+.btn-primary{
+
+    background:#16a34a;
+
+    color:#fff;
+}
+
+
+.btn-primary:hover{
+
+    background:#15803d;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(22,163,74,.20);
+}
+
+
+.btn-secondary{
+
+    background:#11161e;
+
+    color:#94a3b8;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+.btn-secondary:hover{
+
+    background:#17202b;
+
+    color:#fff;
+}
+
+
+.btn-danger{
+
+    background:
+        rgba(239,68,68,.10);
+
+    color:#f87171;
+
+    border:
+        1px solid
+        rgba(239,68,68,.15);
+}
+
+
+.btn-danger:hover{
+
+    background:
+        rgba(239,68,68,.18);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:11px;
+
+    margin-bottom:15px;
+}
+
+
+.stat-card{
+
+    padding:13px;
+
+    border-radius:12px;
+
+    background:#11161e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+body.light .stat-card{
+
+    background:#fff;
+
+    border-color:
+        rgba(15,23,42,.08);
+
+    box-shadow:
+        0 5px 18px
+        rgba(15,23,42,.04);
+}
+
+
+.stat-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+
+.stat-icon{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:
+        rgba(22,163,74,.10);
+
+    color:#22c55e;
+
+    font-size:13px;
+}
+
+
+.stat-value{
+
+    margin-top:9px;
+
+    font-size:22px;
+
+    font-weight:750;
+}
+
+
+.stat-label{
+
+    margin-top:1px;
+
+    color:#64748b;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.search-area{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:13px;
+}
+
+
+.search-box{
+
+    position:relative;
+
+    flex:1;
+
+    max-width:440px;
+}
+
+
+.search-input{
+
+    width:100%;
+
+    height:42px;
+
+    padding:
+        0 40px;
+
+    border-radius:10px;
+
+    outline:none;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:#11161e;
+
+    color:#f8fafc;
+
+    font-size:11px;
+}
+
+
+.search-input::placeholder{
+
+    color:#64748b;
+}
+
+
+.search-input:focus{
+
+    border-color:
+        rgba(22,163,74,.60);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22,163,74,.07);
+}
+
+
+body.light .search-input{
+
+    background:#fff;
+
+    color:#172033;
+
+    border-color:
+        rgba(15,23,42,.10);
+}
+
+
+.search-icon{
+
+    position:absolute;
+
+    left:14px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    color:#64748b;
+
+    font-size:12px;
+}
+
+
+.clear-btn{
+
+    position:absolute;
+
+    right:7px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    width:27px;
+
+    height:27px;
+
+    border-radius:7px;
+
+    background:transparent;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    display:none;
+}
+
+
+.total-label{
+
+    color:#64748b;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    border-radius:13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:#0e131a;
+}
+
+body.light .table-wrapper{
+
+    background:#fff;
+
+    border-color:
+        rgba(15,23,42,.08);
+
+    box-shadow:
+        0 5px 20px
+        rgba(15,23,42,.04);
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:950px;
+}
+
+
+thead{
+
+    background:#151b24;
+}
+
+body.light thead{
+
+    background:#f8fafc;
+}
+
+
+th{
+
+    padding:
+        12px 11px;
+
+    text-align:left;
+
+    color:#64748b;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.4px;
+
+    white-space:nowrap;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+
+td{
+
+    padding:
+        10px 11px;
+
+    font-size:10px;
+
+    color:#cbd5e1;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.05);
+
+    vertical-align:middle;
+}
+
+
+body.light td{
+
+    color:#475569;
+
+    border-color:
+        rgba(15,23,42,.06);
+}
+
+
+tbody tr{
+
+    transition:.15s ease;
+}
+
+
+tbody tr:hover{
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+body.light tbody tr:hover{
+
+    background:#f8fafc;
+}
+
+
+tbody tr:last-child td{
+
+    border-bottom:0;
+}
+
+
+/* =========================================================
+   WEBSITE CELL
+========================================================= */
+
+.website-cell{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-width:180px;
+}
+
+
+.website-logo{
+
+    width:37px;
+
+    height:37px;
+
+    flex:0 0 37px;
+
+    border-radius:9px;
+
+    overflow:hidden;
+
+    background:#18202b;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.website-logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.website-logo i{
+
+    color:#22c55e;
+
+    font-size:13px;
+}
+
+
+.website-name{
+
+    max-width:170px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    color:#f8fafc;
+
+    font-weight:700;
+
+    font-size:11px;
+}
+
+body.light .website-name{
+
+    color:#172033;
+}
+
+
+.website-link{
+
+    max-width:190px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    color:#64748b;
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    padding:
+        5px 8px;
+
+    border-radius:999px;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+
+.badge-active{
+
+    color:#4ade80;
+
+    background:
+        rgba(34,197,94,.09);
+}
+
+
+.badge-inactive{
+
+    color:#f87171;
+
+    background:
+        rgba(239,68,68,.09);
+}
+
+
+.badge-dot{
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:currentColor;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+
+.action-btn{
+
+    width:29px;
+
+    height:29px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    transition:.2s ease;
+}
+
+
+.edit-btn{
+
+    background:
+        rgba(59,130,246,.09);
+
+    color:#60a5fa;
+}
+
+
+.edit-btn:hover{
+
+    background:
+        rgba(59,130,246,.18);
+}
+
+
+.delete-btn{
+
+    background:
+        rgba(239,68,68,.09);
+
+    color:#f87171;
+}
+
+
+.delete-btn:hover{
+
+    background:
+        rgba(239,68,68,.18);
+}
+
+
+.toggle-btn{
+
+    background:
+        rgba(22,163,74,.09);
+
+    color:#4ade80;
+}
+
+
+.toggle-btn:hover{
+
+    background:
+        rgba(22,163,74,.18);
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.empty{
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    color:#64748b;
+}
+
+
+.empty i{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+}
+
+
+.empty-title{
+
+    color:#cbd5e1;
+
+    font-weight:700;
+
+    font-size:13px;
+}
+
+body.light .empty-title{
+
+    color:#334155;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:500;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.68);
+
+    backdrop-filter:
+        blur(7px);
+}
+
+
+.modal.show{
+
+    display:flex;
+}
+
+
+.modal-box{
+
+    width:
+        min(650px,100%);
+
+    max-height:
+        calc(100vh - 40px);
+
+    overflow-y:auto;
+
+    border-radius:16px;
+
+    background:#11161e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.40);
+
+    animation:
+        modalIn .18s ease;
+}
+
+
+@keyframes modalIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(10px)
+            scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+body.light .modal-box{
+
+    background:#fff;
+
+    border-color:
+        rgba(15,23,42,.08);
+}
+
+
+.modal-header{
+
+    padding:
+        15px 17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+.modal-title{
+
+    font-size:15px;
+
+    font-weight:750;
+}
+
+
+.modal-close{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#94a3b8;
+
+    cursor:pointer;
+}
+
+
+.modal-close:hover{
+
+    background:
+        rgba(239,68,68,.10);
+
+    color:#f87171;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form{
+
+    padding:17px;
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:12px;
+}
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+}
+
+
+.form-group.full{
+
+    grid-column:
+        1 / -1;
+}
+
+
+.form-label{
+
+    color:#94a3b8;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.3px;
+}
+
+
+.form-input,
+.form-select,
+.form-textarea{
+
+    width:100%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:#0c1117;
+
+    color:#f8fafc;
+
+    outline:none;
+
+    border-radius:9px;
+
+    font-size:11px;
+
+    transition:.2s ease;
+}
+
+
+.form-input,
+.form-select{
+
+    height:39px;
+
+    padding:
+        0 11px;
+}
+
+
+.form-textarea{
+
+    min-height:75px;
+
+    padding:10px 11px;
+
+    resize:vertical;
+}
+
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus{
+
+    border-color:
+        rgba(22,163,74,.65);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22,163,74,.07);
+}
+
+
+body.light .form-input,
+body.light .form-select,
+body.light .form-textarea{
+
+    background:#f8fafc;
+
+    color:#172033;
+
+    border-color:
+        rgba(15,23,42,.10);
+}
+
+
+.form-footer{
+
+    margin-top:15px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   DELETE MODAL
+========================================================= */
+
+.confirm-box{
+
+    width:
+        min(400px,100%);
+
+    border-radius:15px;
+
+    background:#11161e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    padding:20px;
+
+    text-align:center;
+}
+
+
+body.light .confirm-box{
+
+    background:#fff;
+
+    border-color:
+        rgba(15,23,42,.08);
+}
+
+
+.confirm-icon{
+
+    width:50px;
+
+    height:50px;
+
+    margin:
+        0 auto 12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        rgba(239,68,68,.09);
+
+    color:#f87171;
+
+    font-size:19px;
+}
+
+
+.confirm-title{
+
+    font-size:15px;
+
+    font-weight:750;
+}
+
+
+.confirm-text{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+
+.confirm-actions{
+
+    margin-top:17px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:1000;
+
+    min-width:250px;
+
+    max-width:380px;
+
+    padding:
+        12px 14px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    background:#11161e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.25);
+
+    transform:
+        translateY(20px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s ease;
+
+    font-size:10px;
+}
+
+
+.toast.show{
+
+    transform:
+        translateY(0);
+
+    opacity:1;
+}
+
+
+.toast.success i{
+
+    color:#22c55e;
+}
+
+
+.toast.error i{
+
+    color:#f87171;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .header{
+
+        padding:
+            11px 13px;
+    }
+
+
+    .main{
+
+        padding:
+            15px 13px 30px;
+    }
+
+
+    .brand-icon{
+
+        width:38px;
+
+        height:38px;
+
+        flex-basis:38px;
+    }
+
+
+    .brand-title{
+
+        font-size:15px;
+    }
+
+
+    .brand-subtitle{
+
+        font-size:9px;
+    }
+
+
+    .topbar{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    .top-actions{
+
+        width:100%;
+    }
+
+
+    .top-actions .btn{
+
+        flex:1;
+    }
+
+
+    .search-area{
+
+        align-items:stretch;
+
+        flex-direction:column;
+    }
+
+
+    .search-box{
+
+        max-width:none;
+    }
+
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .form-group.full{
+
+        grid-column:auto;
+    }
+
+
+    .modal{
+
+        padding:10px;
+    }
+
+
+    .modal-box{
+
+        max-height:
+            calc(100vh - 20px);
+
+        border-radius:13px;
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .stats{
+
+        gap:8px;
+    }
+
+
+    .stat-card{
+
+        padding:11px;
+    }
+
+
+    .stat-value{
+
+        font-size:19px;
+    }
+
+
+    .theme-btn{
+
+        width:29px;
+
+        height:27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-sliders"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="brand-title">
+                    Website Control
+                </div>
+
+                <div class="brand-subtitle">
+                    Manage your website cards
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <div class="theme-buttons">
+
+                <button
+                    class="theme-btn"
+                    data-theme="dark"
+                    title="Dark"
+                >
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+
+                <button
+                    class="theme-btn"
+                    data-theme="light"
+                    title="White"
+                >
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+
+                <button
+                    class="theme-btn"
+                    data-theme="auto"
+                    title="Auto"
+                >
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+
+    <div class="topbar">
+
+
+        <div>
+
+            <div class="page-title">
+                Website Management
+            </div>
+
+            <div class="page-subtitle">
+                Add, edit, delete and control your website cards.
+            </div>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="refreshBtn"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="addBtn"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Website
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="stat-value"
+                id="totalCount"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Total Websites
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="stat-value"
+                id="activeCount"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Active Websites
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="stat-value"
+                id="inactiveCount"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Inactive Websites
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="stat-value"
+                id="visibleCount"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Showing
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SEARCH
+    ====================================================== -->
+
+    <div class="search-area">
+
+
+        <div class="search-box">
+
+            <i
+                class="fa-solid fa-magnifying-glass search-icon"
+            ></i>
+
+
+            <input
+                type="search"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search website, source, type..."
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                class="clear-btn"
+                id="clearBtn"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="total-label"
+            id="tableCount"
+        >
+            0 websites
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TABLE
+    ====================================================== -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Website
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Source
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Position
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tableBody">
+
+                <tr>
+
+                    <td
+                        colspan="7"
+                        class="empty"
+                    >
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        <div>
+                            Loading websites...
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     ADD / EDIT MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="formModal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="modalTitle"
+            >
+                Add Website
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeFormBtn"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            class="form"
+            id="websiteForm"
+        >
+
+            <input
+                type="hidden"
+                id="websiteId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Website Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-input"
+                        placeholder="Example: Movie World"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LINK -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Website Link
+                    </label>
+
+                    <input
+                        type="url"
+                        id="link"
+                        class="form-input"
+                        placeholder="https://example.com/"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGO -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Logo URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="logo"
+                        class="form-input"
+                        placeholder="https://example.com/logo.png"
+                    >
+
+                </div>
+
+
+                <!-- SOURCE -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Source
+                    </label>
+
+                    <input
+                        type="text"
+                        id="source"
+                        class="form-input"
+                        placeholder="Example: Local Server"
+                    >
+
+                </div>
+
+
+                <!-- TYPE -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Type
+                    </label>
+
+                    <input
+                        type="text"
+                        id="type"
+                        class="form-input"
+                        placeholder="Example: Movie"
+                    >
+
+                </div>
+
+
+                <!-- POSITION -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Position
+                    </label>
+
+                    <input
+                        type="number"
+                        id="position"
+                        class="form-input"
+                        placeholder="1"
+                        min="1"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Status
+                    </label>
+
+                    <select
+                        id="status"
+                        class="form-select"
+                    >
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group full">
+
+                    <label class="form-label">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        class="form-textarea"
+                        placeholder="Write a short description..."
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelFormBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveBtn"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Website
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DELETE MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="deleteModal"
+>
+
+    <div class="confirm-box">
+
+
+        <div class="confirm-icon">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+
+        <div class="confirm-title">
+            Delete Website?
+        </div>
+
+
+        <div
+            class="confirm-text"
+            id="deleteText"
+        >
+            This website will be permanently deleted.
+        </div>
+
+
+        <div class="confirm-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelDeleteBtn"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteBtn"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Done
+    </span>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   API
+========================================================= */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const tableBody =
+document.getElementById("tableBody");
+
+const searchInput =
+document.getElementById("searchInput");
+
+const clearBtn =
+document.getElementById("clearBtn");
+
+const addBtn =
+document.getElementById("addBtn");
+
+const refreshBtn =
+document.getElementById("refreshBtn");
+
+const formModal =
+document.getElementById("formModal");
+
+const deleteModal =
+document.getElementById("deleteModal");
+
+const websiteForm =
+document.getElementById("websiteForm");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const closeFormBtn =
+document.getElementById("closeFormBtn");
+
+const cancelFormBtn =
+document.getElementById("cancelFormBtn");
+
+const cancelDeleteBtn =
+document.getElementById("cancelDeleteBtn");
+
+const confirmDeleteBtn =
+document.getElementById("confirmDeleteBtn");
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+let websites = [];
+
+let currentSearch = "";
+
+let deleteId = null;
+
+
+/* =========================================================
+   LOAD
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadTheme();
+
+        loadWebsites();
+
+    }
+);
+
+
+/* =========================================================
+   LOAD WEBSITES
+========================================================= */
+
+async function loadWebsites(){
+
+    tableBody.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="7"
+                class="empty"
+            >
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <div>
+                    Loading websites...
+                </div>
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try{
+
+        const url =
+            API_URL +
+            "?action=getCards&t=" +
+            Date.now();
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if(
+            data.success !== true
+        ){
+
+            throw new Error(
+                data.message ||
+                "Unable to load data."
+            );
+        }
+
+
+        websites =
+            Array.isArray(data.cards)
+                ? data.cards
+                : [];
+
+
+        websites.sort(
+            function(a,b){
+
+                return (
+                    Number(a.position || 0) -
+                    Number(b.position || 0)
+                );
+
+            }
+        );
+
+
+        updateStats();
+
+        renderTable();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+
+        tableBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="7"
+                    class="empty"
+                >
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+                        Failed to load websites
+                    </div>
+
+                    <br>
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="loadWebsites()"
+                    >
+
+                        Try Again
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        `;
+
+        showToast(
+            error.message ||
+            "Failed to load websites.",
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+function updateStats(){
+
+    const total =
+        websites.length;
+
+
+    const active =
+        websites.filter(
+            function(item){
+
+                return String(
+                    item.status || "Active"
+                )
+                .toLowerCase()
+                === "active";
+
+            }
+        ).length;
+
+
+    const inactive =
+        total - active;
+
+
+    document.getElementById(
+        "totalCount"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "activeCount"
+    ).textContent =
+        active;
+
+
+    document.getElementById(
+        "inactiveCount"
+    ).textContent =
+        inactive;
+
+}
+
+
+/* =========================================================
+   RENDER TABLE
+========================================================= */
+
+function renderTable(){
+
+    const query =
+        currentSearch
+        .trim()
+        .toLowerCase();
+
+
+    let filtered =
+        websites;
+
+
+    if(query){
+
+        filtered =
+            websites.filter(
+                function(item){
+
+                    const text =
+                        [
+                            item.name,
+                            item.description,
+                            item.source,
+                            item.type,
+                            item.link,
+                            item.status
+                        ]
+                        .join(" ")
+                        .toLowerCase();
+
+
+                    return text.includes(
+                        query
+                    );
+
+                }
+            );
+
+    }
+
+
+    document.getElementById(
+        "visibleCount"
+    ).textContent =
+        filtered.length;
+
+
+    document.getElementById(
+        "tableCount"
+    ).textContent =
+        filtered.length +
+        (
+            filtered.length === 1
+                ? " website"
+                : " websites"
+        );
+
+
+    if(filtered.length === 0){
+
+        tableBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="7"
+                    class="empty"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <div class="empty-title">
+                        No website found
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    tableBody.innerHTML =
+        filtered
+        .map(
+            createRow
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   CREATE ROW
+========================================================= */
+
+function createRow(item){
+
+    const id =
+        escapeHTML(
+            String(
+                item.id ??
+                item.ID ??
+                item.row ??
+                ""
+            )
+        );
+
+
+    const name =
+        escapeHTML(
+            item.name ||
+            "Untitled"
+        );
+
+
+    const link =
+        safeURL(
+            item.link
+        );
+
+
+    const logo =
+        safeURL(
+            item.logo
+        );
+
+
+    const description =
+        escapeHTML(
+            item.description ||
+            "-"
+        );
+
+
+    const source =
+        escapeHTML(
+            item.source ||
+            "-"
+        );
+
+
+    const type =
+        escapeHTML(
+            item.type ||
+            "-"
+        );
+
+
+    const position =
+        escapeHTML(
+            item.position ||
+            "-"
+        );
+
+
+    const status =
+        String(
+            item.status ||
+            "Active"
+        );
+
+
+    const active =
+        status
+        .toLowerCase()
+        === "active";
+
+
+    let logoHTML;
+
+
+    if(logo){
+
+        logoHTML = `
+
+            <img
+                src="${escapeAttribute(logo)}"
+                alt=""
+                onerror="
+                    this.style.display='none';
+                    this.nextElementSibling.style.display='block';
+                "
+            >
+
+            <i
+                class="fa-solid fa-globe"
+                style="display:none"
+            ></i>
+
+        `;
+
+    }
+
+    else{
+
+        logoHTML = `
+
+            <i class="fa-solid fa-globe"></i>
+
+        `;
+
+    }
+
+
+    return `
+
+        <tr>
+
+
+            <td>
+
+                <div class="website-cell">
+
+
+                    <div class="website-logo">
+
+                        ${logoHTML}
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="website-name"
+                            title="${escapeAttribute(name)}"
+                        >
+
+                            ${name}
+
+                        </div>
+
+
+                        <div
+                            class="website-link"
+                            title="${escapeAttribute(link)}"
+                        >
+
+                            ${escapeHTML(
+                                displayURL(link)
+                            )}
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </td>
+
+
+            <td>
+
+                <span
+                    title="${escapeAttribute(description)}"
+                >
+
+                    ${description}
+
+                </span>
+
+            </td>
+
+
+            <td>
+                ${source}
+            </td>
+
+
+            <td>
+                ${type}
+            </td>
+
+
+            <td>
+                ${position}
+            </td>
+
+
+            <td>
+
+                <span
+                    class="badge ${
+                        active
+                            ? "badge-active"
+                            : "badge-inactive"
+                    }"
+                >
+
+                    <span class="badge-dot"></span>
+
+                    ${
+                        active
+                            ? "Active"
+                            : "Inactive"
+                    }
+
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <div class="actions">
+
+
+                    <button
+                        type="button"
+                        class="action-btn edit-btn"
+                        title="Edit"
+                        onclick="editWebsite('${escapeAttribute(id)}')"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="action-btn toggle-btn"
+                        title="${
+                            active
+                                ? "Make Inactive"
+                                : "Make Active"
+                        }"
+                        onclick="toggleWebsite('${escapeAttribute(id)}')"
+                    >
+
+                        <i class="fa-solid ${
+                            active
+                                ? "fa-toggle-on"
+                                : "fa-toggle-off"
+                        }"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="action-btn delete-btn"
+                        title="Delete"
+                        onclick="askDelete('${escapeAttribute(id)}')"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+
+                </div>
+
+            </td>
+
+
+        </tr>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ADD
+========================================================= */
+
+addBtn.addEventListener(
+    "click",
+    function(){
+
+        openAddModal();
+
+    }
+);
+
+
+function openAddModal(){
+
+    websiteForm.reset();
+
+    document.getElementById(
+        "websiteId"
+    ).value = "";
+
+
+    document.getElementById(
+        "position"
+    ).value =
+        websites.length + 1;
+
+
+    document.getElementById(
+        "status"
+    ).value =
+        "Active";
+
+
+    modalTitle.textContent =
+        "Add Website";
+
+
+    formModal.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+function editWebsite(id){
+
+    const item =
+        websites.find(
+            function(site){
+
+                return String(
+                    site.id ??
+                    site.ID ??
+                    site.row ??
+                    ""
+                )
+                === String(id);
+
+            }
+        );
+
+
+    if(!item){
+
+        showToast(
+            "Website not found.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    document.getElementById(
+        "websiteId"
+    ).value =
+        item.id ??
+        item.ID ??
+        item.row ??
+        "";
+
+
+    document.getElementById(
+        "name"
+    ).value =
+        item.name || "";
+
+
+    document.getElementById(
+        "link"
+    ).value =
+        item.link || "";
+
+
+    document.getElementById(
+        "logo"
+    ).value =
+        item.logo || "";
+
+
+    document.getElementById(
+        "description"
+    ).value =
+        item.description || "";
+
+
+    document.getElementById(
+        "source"
+    ).value =
+        item.source || "";
+
+
+    document.getElementById(
+        "type"
+    ).value =
+        item.type || "";
+
+
+    document.getElementById(
+        "position"
+    ).value =
+        item.position || "";
+
+
+    document.getElementById(
+        "status"
+    ).value =
+        item.status || "Active";
+
+
+    modalTitle.textContent =
+        "Edit Website";
+
+
+    formModal.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+websiteForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const saveBtn =
+            document.getElementById(
+                "saveBtn"
+            );
+
+
+        const id =
+            document.getElementById(
+                "websiteId"
+            ).value
+            .trim();
+
+
+        const payload = {
+
+            action:
+                id
+                    ? "updateCard"
+                    : "addCard",
+
+            id:id,
+
+            name:
+                document.getElementById(
+                    "name"
+                ).value.trim(),
+
+            link:
+                document.getElementById(
+                    "link"
+                ).value.trim(),
+
+            logo:
+                document.getElementById(
+                    "logo"
+                ).value.trim(),
+
+            description:
+                document.getElementById(
+                    "description"
+                ).value.trim(),
+
+            source:
+                document.getElementById(
+                    "source"
+                ).value.trim(),
+
+            type:
+                document.getElementById(
+                    "type"
+                ).value.trim(),
+
+            position:
+                document.getElementById(
+                    "position"
+                ).value.trim(),
+
+            status:
+                document.getElementById(
+                    "status"
+                ).value
+
+        };
+
+
+        if(!payload.name){
+
+            showToast(
+                "Website name is required.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if(!payload.link){
+
+            showToast(
+                "Website link is required.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        saveBtn.disabled = true;
+
+        saveBtn.innerHTML = `
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Saving...
+
+        `;
+
+
+        try{
+
+            const response =
+                await fetch(
+                    API_URL,
+                    {
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                payload
+                            )
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if(
+                data.success !== true
+            ){
+
+                throw new Error(
+                    data.message ||
+                    "Save failed."
+                );
+            }
+
+
+            closeForm();
+
+            showToast(
+                id
+                    ? "Website updated successfully."
+                    : "Website added successfully.",
+                "success"
+            );
+
+
+            await loadWebsites();
+
+        }
+
+        catch(error){
+
+            console.error(error);
+
+            showToast(
+                error.message ||
+                "Unable to save website.",
+                "error"
+            );
+
+        }
+
+        finally{
+
+            saveBtn.disabled = false;
+
+            saveBtn.innerHTML = `
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Website
+
+            `;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+async function toggleWebsite(id){
+
+    const item =
+        websites.find(
+            function(site){
+
+                return String(
+                    site.id ??
+                    site.ID ??
+                    site.row ??
+                    ""
+                )
+                === String(id);
+
+            }
+        );
+
+
+    if(!item){
+
+        return;
+    }
+
+
+    const current =
+        String(
+            item.status ||
+            "Active"
+        )
+        .toLowerCase();
+
+
+    const newStatus =
+        current === "active"
+            ? "Inactive"
+            : "Active";
+
+
+    try{
+
+        const payload = {
+
+            action:
+                "updateCard",
+
+            id:
+                item.id ??
+                item.ID ??
+                item.row,
+
+            name:
+                item.name || "",
+
+            link:
+                item.link || "",
+
+            logo:
+                item.logo || "",
+
+            description:
+                item.description || "",
+
+            source:
+                item.source || "",
+
+            type:
+                item.type || "",
+
+            position:
+                item.position || "",
+
+            status:
+                newStatus
+
+        };
+
+
+        const response =
+            await fetch(
+                API_URL,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            payload
+                        )
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if(
+            data.success !== true
+        ){
+
+            throw new Error(
+                data.message ||
+                "Status update failed."
+            );
+        }
+
+
+        showToast(
+            "Status updated successfully.",
+            "success"
+        );
+
+
+        await loadWebsites();
+
+    }
+
+    catch(error){
+
+        showToast(
+            error.message ||
+            "Unable to change status.",
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DELETE ASK
+========================================================= */
+
+function askDelete(id){
+
+    const item =
+        websites.find(
+            function(site){
+
+                return String(
+                    site.id ??
+                    site.ID ??
+                    site.row ??
+                    ""
+                )
+                === String(id);
+
+            }
+        );
+
+
+    if(!item){
+
+        return;
+    }
+
+
+    deleteId = id;
+
+
+    document.getElementById(
+        "deleteText"
+    ).textContent =
+        `"${item.name || "This website"}" will be permanently deleted.`;
+
+
+    deleteModal.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   DELETE CONFIRM
+========================================================= */
+
+confirmDeleteBtn.addEventListener(
+    "click",
+    async function(){
+
+        if(!deleteId){
+
+            return;
+        }
+
+
+        confirmDeleteBtn.disabled =
+            true;
+
+
+        confirmDeleteBtn.innerHTML = `
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Deleting...
+
+        `;
+
+
+        try{
+
+            const payload = {
+
+                action:
+                    "deleteCard",
+
+                id:
+                    deleteId
+
+            };
+
+
+            const response =
+                await fetch(
+                    API_URL,
+                    {
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                payload
+                            )
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if(
+                data.success !== true
+            ){
+
+                throw new Error(
+                    data.message ||
+                    "Delete failed."
+                );
+            }
+
+
+            closeDelete();
+
+            showToast(
+                "Website deleted successfully.",
+                "success"
+            );
+
+
+            await loadWebsites();
+
+        }
+
+        catch(error){
+
+            showToast(
+                error.message ||
+                "Unable to delete website.",
+                "error"
+            );
+
+        }
+
+        finally{
+
+            confirmDeleteBtn.disabled =
+                false;
+
+            confirmDeleteBtn.innerHTML = `
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete
+
+            `;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE FORM
+========================================================= */
+
+closeFormBtn.addEventListener(
+    "click",
+    closeForm
+);
+
+
+cancelFormBtn.addEventListener(
+    "click",
+    closeForm
+);
+
+
+function closeForm(){
+
+    formModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE DELETE
+========================================================= */
+
+cancelDeleteBtn.addEventListener(
+    "click",
+    closeDelete
+);
+
+
+function closeDelete(){
+
+    deleteModal.classList.remove(
+        "show"
+    );
+
+    deleteId = null;
+
+}
+
+
+/* =========================================================
+   OUTSIDE MODAL CLICK
+========================================================= */
+
+formModal.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            formModal
+        ){
+
+            closeForm();
+
+        }
+
+    }
+);
+
+
+deleteModal.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            deleteModal
+        ){
+
+            closeDelete();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key !== "Escape"){
+
+            return;
+        }
+
+
+        closeForm();
+
+        closeDelete();
+
+    }
+);
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    function(){
+
+        currentSearch =
+            this.value;
+
+
+        clearBtn.style.display =
+            this.value
+                ? "flex"
+                : "none";
+
+
+        renderTable();
+
+    }
+);
+
+
+clearBtn.addEventListener(
+    "click",
+    function(){
+
+        searchInput.value = "";
+
+        currentSearch = "";
+
+        clearBtn.style.display =
+            "none";
+
+        searchInput.focus();
+
+        renderTable();
+
+    }
+);
+
+
+/* =========================================================
+   REFRESH
+========================================================= */
+
+refreshBtn.addEventListener(
+    "click",
+    async function(){
+
+        const icon =
+            refreshBtn.querySelector(
+                "i"
+            );
+
+
+        icon.classList.add(
+            "fa-spin"
+        );
+
+
+        await loadWebsites();
+
+
+        setTimeout(
+            function(){
+
+                icon.classList.remove(
+                    "fa-spin"
+                );
+
+            },
+            300
+        );
+
+    }
+);
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const themeButtons =
+document.querySelectorAll(
+    ".theme-btn"
+);
+
+
+themeButtons.forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                setTheme(
+                    this.dataset.theme
+                );
+
+            }
+        );
+
+    }
+);
+
+
+function setTheme(theme){
+
+    document.body.classList.remove(
+        "light"
+    );
+
+
+    if(theme === "light"){
+
+        document.body.classList.add(
+            "light"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "websiteControlTheme",
+        theme
+    );
+
+
+    themeButtons.forEach(
+        function(button){
+
+            button.classList.toggle(
+                "active",
+                button.dataset.theme ===
+                theme
+            );
+
+        }
+    );
+
+}
+
+
+function loadTheme(){
+
+    const saved =
+        localStorage.getItem(
+            "websiteControlTheme"
+        ) ||
+        "dark";
+
+
+    setTheme(saved);
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(
+    message,
+    type="success"
+){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+    const icon =
+        toast.querySelector(
+            "i"
+        );
+
+
+    document.getElementById(
+        "toastMessage"
+    ).textContent =
+        message;
+
+
+    toast.className =
+        "toast " +
+        type;
+
+
+    if(type === "error"){
+
+        icon.className =
+            "fa-solid fa-circle-exclamation";
+
+    }
+
+    else{
+
+        icon.className =
+            "fa-solid fa-circle-check";
+
+    }
+
+
+    requestAnimationFrame(
+        function(){
+
+            toast.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(
+            function(){
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            3000
+        );
+
+}
+
+
+/* =========================================================
+   SAFE URL
+========================================================= */
+
+function safeURL(value){
+
+    const url =
+        String(value || "")
+        .trim();
+
+
+    if(!url){
+
+        return "";
+    }
+
+
+    try{
+
+        const parsed =
+            new URL(url);
+
+
+        if(
+            parsed.protocol !== "http:" &&
+            parsed.protocol !== "https:"
+        ){
+
+            return "";
+        }
+
+
+        return parsed.href;
+
+    }
+
+    catch(error){
+
+        return "";
+    }
+
+}
+
+
+/* =========================================================
+   DISPLAY URL
+========================================================= */
+
+function displayURL(value){
+
+    if(!value){
+
+        return "";
+    }
+
+
+    try{
+
+        const parsed =
+            new URL(value);
+
+
+        return (
+            parsed.host +
+            (
+                parsed.pathname !== "/"
+                    ? parsed.pathname
+                    : ""
+            )
+        );
+
+    }
+
+    catch(error){
+
+        return value;
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function escapeAttribute(value){
+
+    return escapeHTML(value);
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+window.editWebsite =
+    editWebsite;
+
+window.toggleWebsite =
+    toggleWebsite;
+
+window.askDelete =
+    askDelete;
+
+window.loadWebsites =
+    loadWebsites;
+
+</script>
+
+
+</body>
+
+</html>
