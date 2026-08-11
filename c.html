@@ -7,11 +7,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <title>Website Control Dashboard</title>
-
 
 <link
     rel="preconnect"
@@ -29,7 +28,6 @@
     rel="stylesheet"
 >
 
-
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -43,37 +41,28 @@
 ========================================================= */
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
+    -webkit-tap-highlight-color:transparent;
 }
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
-
 body{
-
     font-family:"Inter",sans-serif;
-
     background:
         radial-gradient(
             circle at top left,
-            #182033 0%,
-            #0b0f18 42%,
-            #070a10 100%
+            #172033 0%,
+            #0b1019 42%,
+            #06090e 100%
         );
-
     color:#f8fafc;
-
     min-height:100vh;
-
+    overflow-x:hidden;
 }
 
 
@@ -82,256 +71,124 @@ body{
 ========================================================= */
 
 #loginScreen{
-
     min-height:100vh;
-
+    min-height:100dvh;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    padding:20px;
-
+    padding:18px;
 }
-
 
 .login-box{
-
     width:100%;
-
-    max-width:400px;
-
-    background:
-        rgba(15,23,42,.90);
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
-    border-radius:24px;
-
-    padding:32px;
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.45);
-
-    backdrop-filter:blur(20px);
-
+    max-width:390px;
+    background:rgba(15,23,42,.94);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:28px 22px;
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+    backdrop-filter:blur(18px);
 }
-
 
 .login-icon{
-
-    width:68px;
-
-    height:68px;
-
-    border-radius:20px;
-
-    margin:0 auto 20px;
-
+    width:64px;
+    height:64px;
+    border-radius:18px;
+    margin:0 auto 18px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    font-size:28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
-    color:white;
-
-    box-shadow:
-        0 15px 35px
-        rgba(34,197,94,.25);
-
+    font-size:25px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    box-shadow:0 12px 30px rgba(34,197,94,.20);
 }
-
 
 .login-box h1{
-
     text-align:center;
-
-    font-size:24px;
-
-    margin-bottom:8px;
-
+    font-size:23px;
+    font-weight:800;
 }
-
 
 .login-box p{
-
     text-align:center;
-
     color:#94a3b8;
-
-    font-size:13px;
-
-    margin-bottom:28px;
-
+    font-size:12px;
+    margin-top:7px;
+    margin-bottom:25px;
 }
-
 
 .input-group{
-
-    margin-bottom:18px;
-
+    margin-bottom:16px;
 }
-
 
 .input-group label{
-
     display:block;
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:600;
-
-    margin-bottom:8px;
-
     color:#cbd5e1;
-
+    margin-bottom:7px;
 }
-
 
 .input-wrap{
-
     position:relative;
-
 }
-
 
 .input-wrap i{
-
     position:absolute;
-
-    left:15px;
-
+    left:14px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#64748b;
-
 }
-
 
 .input-wrap input{
-
     width:100%;
-
     height:50px;
-
     border-radius:12px;
-
-    border:1px solid
-        rgba(255,255,255,.09);
-
-    background:#0b1220;
-
+    border:1px solid rgba(255,255,255,.08);
+    background:#080e17;
     color:#fff;
-
     outline:none;
-
-    padding:0 15px 0 45px;
-
+    padding:0 14px 0 42px;
     font-size:14px;
-
-    transition:.2s;
-
 }
-
 
 .input-wrap input:focus{
-
     border-color:#22c55e;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(34,197,94,.10);
-
+    box-shadow:0 0 0 3px rgba(34,197,94,.08);
 }
-
 
 .login-btn{
-
     width:100%;
-
     height:50px;
-
     border:none;
-
     border-radius:12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
-    color:white;
-
-    font-weight:700;
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
     font-size:14px;
-
+    font-weight:700;
     cursor:pointer;
-
-    transition:.2s;
-
 }
 
-
-.login-btn:hover{
-
-    transform:translateY(-1px);
-
-    box-shadow:
-        0 12px 25px
-        rgba(34,197,94,.20);
-
+.login-btn:active{
+    transform:scale(.98);
 }
-
 
 .login-btn:disabled{
-
     opacity:.6;
-
-    cursor:not-allowed;
-
 }
 
-
 .login-error{
-
     display:none;
-
-    margin-top:15px;
-
-    padding:12px;
-
+    margin-top:13px;
+    padding:11px;
     border-radius:10px;
-
-    background:
-        rgba(239,68,68,.10);
-
-    border:1px solid
-        rgba(239,68,68,.20);
-
+    background:rgba(239,68,68,.10);
+    border:1px solid rgba(239,68,68,.20);
     color:#fca5a5;
-
-    font-size:13px;
-
+    font-size:12px;
     text-align:center;
-
 }
 
 
@@ -340,160 +197,92 @@ body{
 ========================================================= */
 
 #dashboard{
-
     display:none;
-
     min-height:100vh;
-
+    min-height:100dvh;
 }
 
+
+/* =========================================================
+   TOPBAR
+========================================================= */
 
 .topbar{
-
-    height:72px;
-
+    height:68px;
     position:sticky;
-
     top:0;
-
     z-index:100;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    padding:0 28px;
-
-    background:
-        rgba(7,10,16,.82);
-
-    border-bottom:1px solid
-        rgba(255,255,255,.07);
-
+    padding:0 24px;
+    background:rgba(7,10,16,.88);
+    border-bottom:1px solid rgba(255,255,255,.07);
     backdrop-filter:blur(18px);
-
 }
-
 
 .brand{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:10px;
 }
-
 
 .brand-logo{
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:12px;
-
+    width:39px;
+    height:39px;
+    border-radius:11px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    font-size:16px;
 }
-
 
 .brand-text h2{
-
-    font-size:16px;
-
+    font-size:15px;
     font-weight:800;
-
 }
-
 
 .brand-text span{
-
     display:block;
-
-    font-size:11px;
-
+    font-size:10px;
     color:#64748b;
-
     margin-top:2px;
-
 }
-
 
 .user-area{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:10px;
 }
-
 
 .user-info{
-
     text-align:right;
-
 }
-
 
 .user-name{
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:700;
-
 }
-
 
 .user-label{
-
-    font-size:10px;
-
+    font-size:9px;
     color:#64748b;
-
+    margin-top:2px;
 }
-
 
 .logout-btn{
-
     width:38px;
-
     height:38px;
-
     border-radius:10px;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
+    border:1px solid rgba(255,255,255,.08);
     background:#111827;
-
     color:#f87171;
-
     cursor:pointer;
-
 }
 
-
-.logout-btn:hover{
-
-    background:#1f2937;
-
+.logout-btn:active{
+    transform:scale(.94);
 }
 
 
@@ -502,93 +291,50 @@ body{
 ========================================================= */
 
 .container{
-
     width:100%;
-
     max-width:1450px;
-
     margin:auto;
-
-    padding:30px;
-
+    padding:27px;
 }
-
 
 .page-head{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:20px;
-
-    margin-bottom:25px;
-
+    gap:15px;
+    margin-bottom:20px;
 }
-
 
 .page-title h1{
-
-    font-size:27px;
-
+    font-size:26px;
     font-weight:800;
-
     letter-spacing:-.5px;
-
 }
-
 
 .page-title p{
-
     color:#64748b;
-
-    font-size:13px;
-
-    margin-top:6px;
-
+    font-size:12px;
+    margin-top:5px;
 }
-
 
 .add-btn{
-
-    height:43px;
-
-    padding:0 18px;
-
+    height:42px;
+    padding:0 16px;
     border:none;
-
-    border-radius:11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
-    color:white;
-
+    border-radius:10px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    font-size:12px;
     font-weight:700;
-
     cursor:pointer;
-
     display:flex;
-
     align-items:center;
-
-    gap:8px;
-
+    gap:7px;
+    white-space:nowrap;
 }
 
-
-.add-btn:hover{
-
-    box-shadow:
-        0 10px 25px
-        rgba(34,197,94,.18);
-
+.add-btn:active{
+    transform:scale(.96);
 }
 
 
@@ -597,67 +343,40 @@ body{
 ========================================================= */
 
 .toolbar{
-
+    width:100%;
     display:flex;
-
     justify-content:flex-end;
-
-    margin-bottom:22px;
-
+    margin-bottom:18px;
 }
-
 
 .search-box{
-
-    width:300px;
-
+    width:310px;
     position:relative;
-
 }
-
 
 .search-box i{
-
     position:absolute;
-
-    left:14px;
-
+    left:13px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#64748b;
-
+    font-size:12px;
 }
-
 
 .search-box input{
-
     width:100%;
-
-    height:43px;
-
-    border-radius:11px;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
-    background:
-        rgba(15,23,42,.75);
-
+    height:42px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(15,23,42,.80);
     color:#fff;
-
     outline:none;
-
-    padding:0 15px 0 42px;
-
+    padding:0 13px 0 38px;
+    font-size:12px;
 }
 
-
 .search-box input:focus{
-
     border-color:#22c55e;
-
 }
 
 
@@ -666,336 +385,188 @@ body{
 ========================================================= */
 
 .cards{
-
     display:grid;
-
     grid-template-columns:
         repeat(
             auto-fill,
-            minmax(
-                235px,
-                1fr
-            )
+            minmax(225px,1fr)
         );
-
-    gap:16px;
-
+    gap:14px;
 }
 
-
 .card{
-
-    position:relative;
-
     min-width:0;
-
-    padding:17px;
-
-    border-radius:17px;
-
+    padding:15px;
+    border-radius:16px;
     background:
         linear-gradient(
             145deg,
-            rgba(20,29,46,.95),
-            rgba(10,15,25,.95)
+            rgba(20,29,46,.96),
+            rgba(9,14,23,.96)
         );
-
-    border:1px solid
-        rgba(255,255,255,.07);
-
-    transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
-
+    border:1px solid rgba(255,255,255,.07);
+    transition:.2s ease;
 }
-
 
 .card:hover{
-
     transform:translateY(-3px);
-
-    border-color:
-        rgba(34,197,94,.25);
-
-    box-shadow:
-        0 18px 35px
-        rgba(0,0,0,.25);
-
+    border-color:rgba(34,197,94,.25);
+    box-shadow:0 16px 32px rgba(0,0,0,.25);
 }
-
 
 .card-top{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:10px;
+    min-width:0;
 }
-
 
 .logo{
-
-    width:48px;
-
-    height:48px;
-
-    min-width:48px;
-
-    border-radius:13px;
-
+    width:45px;
+    height:45px;
+    min-width:45px;
+    border-radius:12px;
     overflow:hidden;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     background:#111827;
-
-    border:1px solid
-        rgba(255,255,255,.07);
-
+    border:1px solid rgba(255,255,255,.07);
 }
-
 
 .logo img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
-
 
 .logo-fallback{
-
-    font-size:19px;
-
+    font-size:17px;
     font-weight:800;
-
     color:#22c55e;
-
 }
-
 
 .card-title{
-
     min-width:0;
-
+    flex:1;
 }
-
 
 .card-title h3{
-
-    font-size:14px;
-
+    font-size:13px;
     font-weight:700;
-
     white-space:nowrap;
-
     overflow:hidden;
-
     text-overflow:ellipsis;
-
 }
-
 
 .card-title span{
-
     display:inline-flex;
-
-    margin-top:5px;
-
-    font-size:9px;
-
-    padding:4px 7px;
-
-    border-radius:6px;
-
-    background:
-        rgba(34,197,94,.10);
-
+    margin-top:4px;
+    font-size:8px;
+    padding:4px 6px;
+    border-radius:5px;
+    background:rgba(34,197,94,.10);
     color:#4ade80;
-
 }
-
 
 .card-description{
-
     color:#94a3b8;
-
-    font-size:11px;
-
-    line-height:1.55;
-
-    margin-top:13px;
-
-    min-height:34px;
-
+    font-size:10px;
+    line-height:1.5;
+    margin-top:11px;
+    min-height:30px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
-
 
 .meta{
-
     display:flex;
-
-    gap:7px;
-
+    gap:5px;
     flex-wrap:wrap;
-
-    margin-top:12px;
-
+    margin-top:9px;
 }
-
 
 .meta span{
-
-    font-size:9px;
-
+    font-size:8px;
     color:#94a3b8;
-
     background:#111827;
-
-    border:1px solid
-        rgba(255,255,255,.05);
-
-    padding:5px 7px;
-
-    border-radius:6px;
-
+    border:1px solid rgba(255,255,255,.05);
+    padding:4px 6px;
+    border-radius:5px;
+    white-space:nowrap;
 }
-
 
 .card-bottom{
-
     display:flex;
-
-    gap:8px;
-
-    margin-top:15px;
-
+    gap:7px;
+    margin-top:12px;
 }
-
 
 .open-btn{
-
     flex:1;
-
-    height:36px;
-
-    border-radius:9px;
-
+    min-width:0;
+    height:34px;
+    border-radius:8px;
     text-decoration:none;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    gap:6px;
-
-    font-size:11px;
-
+    gap:5px;
+    font-size:10px;
     font-weight:700;
-
-    background:
-        rgba(34,197,94,.10);
-
-    border:1px solid
-        rgba(34,197,94,.18);
-
+    background:rgba(34,197,94,.10);
+    border:1px solid rgba(34,197,94,.18);
     color:#4ade80;
-
 }
 
-
-.open-btn:hover{
-
-    background:
-        rgba(34,197,94,.17);
-
+.open-btn:active{
+    transform:scale(.97);
 }
-
 
 .edit-btn{
-
-    width:38px;
-
-    height:36px;
-
-    border-radius:9px;
-
-    border:1px solid
-        rgba(255,255,255,.07);
-
+    width:36px;
+    min-width:36px;
+    height:34px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.07);
     background:#111827;
-
     color:#cbd5e1;
-
     cursor:pointer;
-
 }
 
-
-.edit-btn:hover{
-
-    color:#4ade80;
-
+.edit-btn:active{
+    transform:scale(.94);
 }
 
 
 /* =========================================================
-   EMPTY
-========================================================= */
-
-.empty{
-
-    display:none;
-
-    text-align:center;
-
-    padding:70px 20px;
-
-    color:#64748b;
-
-}
-
-
-.empty i{
-
-    font-size:40px;
-
-    margin-bottom:15px;
-
-}
-
-
-/* =========================================================
-   LOADING
+   LOADING / EMPTY
 ========================================================= */
 
 .loading{
-
     text-align:center;
-
-    padding:60px;
-
+    padding:55px 20px;
     color:#64748b;
-
+    font-size:12px;
 }
 
-
 .loading i{
+    font-size:22px;
+}
 
-    font-size:25px;
+.empty{
+    display:none;
+    text-align:center;
+    padding:60px 20px;
+    color:#64748b;
+    font-size:12px;
+}
 
+.empty i{
+    font-size:35px;
+    margin-bottom:12px;
 }
 
 
@@ -1004,272 +575,145 @@ body{
 ========================================================= */
 
 .modal{
-
     display:none;
-
     position:fixed;
-
     inset:0;
-
     z-index:500;
-
-    background:
-        rgba(0,0,0,.70);
-
-    backdrop-filter:blur(8px);
-
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(7px);
     align-items:center;
-
     justify-content:center;
-
-    padding:20px;
-
+    padding:15px;
 }
-
 
 .modal.show{
-
     display:flex;
-
 }
-
 
 .modal-box{
-
     width:100%;
-
     max-width:570px;
-
-    max-height:
-        calc(100vh - 40px);
-
+    max-height:calc(100vh - 30px);
+    max-height:calc(100dvh - 30px);
     overflow-y:auto;
-
     background:#0f172a;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:24px;
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.55);
-
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:21px;
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
-
 
 .modal-head{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    margin-bottom:20px;
-
+    margin-bottom:18px;
 }
-
 
 .modal-head h2{
-
-    font-size:19px;
-
+    font-size:18px;
 }
-
 
 .close-btn{
-
-    width:35px;
-
-    height:35px;
-
+    width:34px;
+    height:34px;
     border:none;
-
-    border-radius:9px;
-
+    border-radius:8px;
     background:#111827;
-
     color:#94a3b8;
-
     cursor:pointer;
-
 }
-
 
 .form-grid{
-
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:14px;
-
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
-
 
 .form-group{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:7px;
-
+    gap:6px;
 }
-
 
 .form-group.full{
-
-    grid-column:1 / -1;
-
+    grid-column:1/-1;
 }
-
 
 .form-group label{
-
-    font-size:11px;
-
+    font-size:10px;
     font-weight:600;
-
     color:#cbd5e1;
-
 }
-
 
 .form-group input,
-
 .form-group textarea,
-
 .form-group select{
-
     width:100%;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
+    border:1px solid rgba(255,255,255,.08);
     background:#080d16;
-
     color:#fff;
-
-    border-radius:9px;
-
+    border-radius:8px;
     outline:none;
-
-    padding:11px;
-
+    padding:10px;
     font-family:inherit;
-
-    font-size:12px;
-
+    font-size:11px;
 }
-
 
 .form-group input{
-
-    height:40px;
-
+    height:39px;
 }
-
 
 .form-group textarea{
-
-    min-height:75px;
-
+    min-height:70px;
     resize:vertical;
-
 }
-
 
 .form-group input:focus,
-
 .form-group textarea:focus,
-
 .form-group select:focus{
-
     border-color:#22c55e;
-
 }
-
 
 .modal-actions{
-
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
-
     gap:10px;
-
-    margin-top:22px;
-
+    margin-top:20px;
 }
-
 
 .left-actions,
-
 .right-actions{
-
     display:flex;
-
-    gap:8px;
-
+    gap:7px;
 }
-
 
 .btn{
-
-    height:39px;
-
-    padding:0 15px;
-
-    border-radius:9px;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
+    height:37px;
+    padding:0 14px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.08);
     cursor:pointer;
-
-    font-size:11px;
-
+    font-size:10px;
     font-weight:700;
-
 }
-
 
 .cancel-btn{
-
     background:#111827;
-
     color:#cbd5e1;
-
 }
-
 
 .save-btn{
-
     background:#22c55e;
-
-    color:white;
-
+    color:#fff;
     border-color:#22c55e;
-
 }
 
-
 .delete-btn{
-
-    background:
-        rgba(239,68,68,.10);
-
+    background:rgba(239,68,68,.10);
     color:#f87171;
-
-    border-color:
-        rgba(239,68,68,.20);
-
+    border-color:rgba(239,68,68,.20);
 }
 
 
@@ -1278,286 +722,386 @@ body{
 ========================================================= */
 
 .toast{
-
     position:fixed;
-
-    right:22px;
-
-    bottom:22px;
-
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
     z-index:1000;
-
-    min-width:240px;
-
-    padding:13px 16px;
-
-    border-radius:11px;
-
+    width:max-content;
+    max-width:calc(100% - 30px);
+    padding:11px 15px;
+    border-radius:9px;
     background:#111827;
-
-    border:1px solid
-        rgba(255,255,255,.08);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,.35);
-
-    font-size:12px;
-
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    font-size:11px;
     display:none;
-
+    text-align:center;
 }
-
 
 .toast.show{
-
     display:block;
-
 }
-
 
 .toast.success{
-
-    border-color:
-        rgba(34,197,94,.25);
-
+    border-color:rgba(34,197,94,.25);
     color:#4ade80;
+}
 
+.toast.error{
+    border-color:rgba(239,68,68,.25);
+    color:#f87171;
 }
 
 
-.toast.error{
+/* =========================================================
+   TABLET
+========================================================= */
 
-    border-color:
-        rgba(239,68,68,.25);
+@media(max-width:900px){
 
-    color:#f87171;
+    .container{
+        padding:22px;
+    }
+
+    .cards{
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0,1fr)
+            );
+    }
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================= */
 
-@media(
-    max-width:700px
-){
+@media(max-width:650px){
+
+    body{
+        padding-bottom:10px;
+    }
 
     .topbar{
-
-        padding:0 15px;
-
+        height:62px;
+        padding:0 13px;
     }
 
+    .brand{
+        gap:8px;
+    }
 
-    .brand-text{
+    .brand-logo{
+        width:36px;
+        height:36px;
+        border-radius:10px;
+        font-size:14px;
+    }
 
+    .brand-text h2{
+        font-size:13px;
+    }
+
+    .brand-text span{
         display:none;
-
     }
 
+    .user-area{
+        gap:7px;
+    }
 
     .user-info{
-
         display:none;
-
     }
 
+    .logout-btn{
+        width:36px;
+        height:36px;
+    }
 
     .container{
-
-        padding:20px 15px;
-
+        padding:17px 12px 25px;
     }
-
 
     .page-head{
-
-        align-items:flex-start;
-
+        align-items:center;
+        margin-bottom:15px;
     }
-
 
     .page-title h1{
-
-        font-size:22px;
-
+        font-size:20px;
     }
 
+    .page-title p{
+        font-size:10px;
+        margin-top:3px;
+    }
 
     .add-btn{
-
-        padding:0 13px;
-
+        width:40px;
+        height:40px;
+        padding:0;
+        justify-content:center;
+        border-radius:10px;
     }
-
 
     .add-btn span{
-
         display:none;
-
     }
 
-
-    .search-box{
-
-        width:100%;
-
+    .add-btn i{
+        font-size:13px;
     }
-
 
     .toolbar{
-
-        justify-content:stretch;
-
+        margin-bottom:13px;
     }
 
+    .search-box{
+        width:100%;
+    }
+
+    .search-box input{
+        height:40px;
+        font-size:11px;
+    }
 
     .cards{
-
         grid-template-columns:
             repeat(
                 2,
-                minmax(
-                    0,
-                    1fr
-                )
+                minmax(0,1fr)
             );
-
-        gap:10px;
-
+        gap:9px;
     }
-
 
     .card{
-
-        padding:13px;
-
-        border-radius:14px;
-
+        padding:11px;
+        border-radius:13px;
     }
 
+    .card:hover{
+        transform:none;
+    }
 
     .card-top{
-
         gap:8px;
-
     }
-
 
     .logo{
-
-        width:40px;
-
-        height:40px;
-
-        min-width:40px;
-
-        border-radius:10px;
-
+        width:38px;
+        height:38px;
+        min-width:38px;
+        border-radius:9px;
     }
 
+    .logo-fallback{
+        font-size:14px;
+    }
 
     .card-title h3{
-
-        font-size:12px;
-
+        font-size:11px;
     }
 
+    .card-title span{
+        font-size:7px;
+        padding:3px 5px;
+        margin-top:3px;
+    }
 
     .card-description{
-
-        font-size:10px;
-
-        margin-top:10px;
-
+        font-size:9px;
+        margin-top:8px;
+        min-height:27px;
     }
-
 
     .meta{
-
-        margin-top:9px;
-
+        margin-top:7px;
+        gap:4px;
     }
-
 
     .meta span{
-
-        font-size:8px;
-
-        padding:4px 5px;
-
+        font-size:7px;
+        padding:3px 5px;
     }
 
+    .card-bottom{
+        margin-top:9px;
+        gap:5px;
+    }
 
     .open-btn{
-
-        height:32px;
-
-        font-size:9px;
-
+        height:31px;
+        font-size:8px;
     }
-
 
     .edit-btn{
-
-        width:34px;
-
-        height:32px;
-
+        width:32px;
+        min-width:32px;
+        height:31px;
+        font-size:9px;
     }
 
+    .modal{
+        padding:8px;
+        align-items:flex-end;
+    }
+
+    .modal-box{
+        max-height:
+            calc(100dvh - 16px);
+        border-radius:17px 17px 0 0;
+        padding:18px 15px;
+    }
+
+    .modal-head{
+        margin-bottom:15px;
+    }
+
+    .modal-head h2{
+        font-size:16px;
+    }
 
     .form-grid{
-
         grid-template-columns:1fr;
-
+        gap:10px;
     }
-
 
     .form-group.full{
-
         grid-column:auto;
-
     }
 
+    .form-group input{
+        height:42px;
+    }
+
+    .form-group textarea{
+        min-height:75px;
+    }
 
     .modal-actions{
-
         flex-direction:column;
-
+        align-items:stretch;
     }
-
 
     .left-actions,
-
     .right-actions{
-
         width:100%;
-
     }
 
+    .right-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
 
-    .right-actions .btn{
+    .left-actions .btn{
+        width:100%;
+    }
 
-        flex:1;
-
+    .btn{
+        height:40px;
     }
 
 }
 
 
-@media(
-    max-width:380px
-){
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
-    .cards{
+@media(max-width:370px){
 
-        grid-template-columns:1fr;
-
+    .container{
+        padding-left:9px;
+        padding-right:9px;
     }
 
+    .cards{
+        gap:7px;
+    }
+
+    .card{
+        padding:9px;
+    }
+
+    .logo{
+        width:34px;
+        height:34px;
+        min-width:34px;
+    }
+
+    .card-title h3{
+        font-size:10px;
+    }
+
+    .card-description{
+        font-size:8px;
+    }
+
+    .meta span{
+        font-size:6.5px;
+    }
+
+    .open-btn{
+        font-size:7.5px;
+    }
+
+}
+
+
+/* =========================================================
+   ONE COLUMN MOBILE OPTION
+========================================================= */
+
+@media(max-width:300px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SAFE AREA
+========================================================= */
+
+@supports(padding:max(0px)){
+
+    .container{
+        padding-bottom:
+            max(
+                25px,
+                env(safe-area-inset-bottom)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:5px;
+    height:5px;
+}
+
+::-webkit-scrollbar-track{
+    background:#080d16;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#263244;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#334155;
 }
 
 </style>
@@ -1569,49 +1113,34 @@ body{
 
 
 <!-- =====================================================
-     LOGIN SCREEN
+     LOGIN
 ===================================================== -->
 
 <section id="loginScreen">
 
-
     <div class="login-box">
 
-
         <div class="login-icon">
-
             <i class="fa-solid fa-lock"></i>
-
         </div>
 
-
         <h1>
-
             Control Dashboard
-
         </h1>
 
-
         <p>
-
             Enter your username to continue
-
         </p>
-
 
         <div class="input-group">
 
             <label>
-
                 Username
-
             </label>
-
 
             <div class="input-wrap">
 
                 <i class="fa-solid fa-user"></i>
-
 
                 <input
                     type="text"
@@ -1623,7 +1152,6 @@ body{
             </div>
 
         </div>
-
 
         <button
             type="button"
@@ -1640,12 +1168,10 @@ body{
 
         </button>
 
-
         <div
             class="login-error"
             id="loginError"
         ></div>
-
 
     </div>
 
@@ -1660,13 +1186,9 @@ body{
 <section id="dashboard">
 
 
-    <!-- TOPBAR -->
-
     <header class="topbar">
 
-
         <div class="brand">
-
 
             <div class="brand-logo">
 
@@ -1674,29 +1196,22 @@ body{
 
             </div>
 
-
             <div class="brand-text">
 
                 <h2>
-
                     Website Control
-
                 </h2>
 
                 <span>
-
                     Management Dashboard
-
                 </span>
 
             </div>
-
 
         </div>
 
 
         <div class="user-area">
-
 
             <div class="user-info">
 
@@ -1708,9 +1223,7 @@ body{
                 </div>
 
                 <div class="user-label">
-
                     Logged in
-
                 </div>
 
             </div>
@@ -1727,34 +1240,25 @@ body{
 
             </button>
 
-
         </div>
-
 
     </header>
 
 
-
-    <!-- CONTENT -->
 
     <main class="container">
 
 
         <div class="page-head">
 
-
             <div class="page-title">
 
                 <h1>
-
                     Website Control
-
                 </h1>
 
                 <p>
-
-                    Manage your website cards from one place.
-
+                    Manage your website cards
                 </p>
 
             </div>
@@ -1769,27 +1273,20 @@ body{
                 <i class="fa-solid fa-plus"></i>
 
                 <span>
-
                     Add Website
-
                 </span>
 
             </button>
-
 
         </div>
 
 
 
-        <!-- SEARCH -->
-
         <div class="toolbar">
-
 
             <div class="search-box">
 
                 <i class="fa-solid fa-magnifying-glass"></i>
-
 
                 <input
                     type="search"
@@ -1800,12 +1297,9 @@ body{
 
             </div>
 
-
         </div>
 
 
-
-        <!-- LOADING -->
 
         <div
             class="loading"
@@ -1814,17 +1308,13 @@ body{
 
             <i class="fa-solid fa-spinner fa-spin"></i>
 
-            <div style="margin-top:10px;">
-
+            <div style="margin-top:9px;">
                 Loading websites...
-
             </div>
 
         </div>
 
 
-
-        <!-- CARDS -->
 
         <div
             class="cards"
@@ -1832,8 +1322,6 @@ body{
         ></div>
 
 
-
-        <!-- EMPTY -->
 
         <div
             class="empty"
@@ -1843,9 +1331,7 @@ body{
             <i class="fa-regular fa-folder-open"></i>
 
             <div>
-
                 No websites found.
-
             </div>
 
         </div>
@@ -1858,7 +1344,7 @@ body{
 
 
 <!-- =====================================================
-     ADD / EDIT MODAL
+     MODAL
 ===================================================== -->
 
 <div
@@ -1866,19 +1352,14 @@ body{
     id="cardModal"
 >
 
-
     <div class="modal-box">
 
 
         <div class="modal-head">
 
-
             <h2 id="modalTitle">
-
                 Add Website
-
             </h2>
-
 
             <button
                 type="button"
@@ -1890,7 +1371,6 @@ body{
 
             </button>
 
-
         </div>
 
 
@@ -1898,14 +1378,10 @@ body{
         <div class="form-grid">
 
 
-            <!-- NAME -->
-
             <div class="form-group">
 
                 <label>
-
                     Website Name
-
                 </label>
 
                 <input
@@ -1917,15 +1393,10 @@ body{
             </div>
 
 
-
-            <!-- LINK -->
-
             <div class="form-group">
 
                 <label>
-
                     Website Link
-
                 </label>
 
                 <input
@@ -1937,15 +1408,10 @@ body{
             </div>
 
 
-
-            <!-- LOGO -->
-
             <div class="form-group full">
 
                 <label>
-
                     Logo URL
-
                 </label>
 
                 <input
@@ -1957,15 +1423,10 @@ body{
             </div>
 
 
-
-            <!-- DESCRIPTION -->
-
             <div class="form-group full">
 
                 <label>
-
                     Description
-
                 </label>
 
                 <textarea
@@ -1976,15 +1437,10 @@ body{
             </div>
 
 
-
-            <!-- SOURCE -->
-
             <div class="form-group">
 
                 <label>
-
                     Source
-
                 </label>
 
                 <input
@@ -1996,15 +1452,10 @@ body{
             </div>
 
 
-
-            <!-- TYPE -->
-
             <div class="form-group">
 
                 <label>
-
                     Type
-
                 </label>
 
                 <input
@@ -2016,15 +1467,10 @@ body{
             </div>
 
 
-
-            <!-- POSITION -->
-
             <div class="form-group">
 
                 <label>
-
                     Position
-
                 </label>
 
                 <input
@@ -2037,29 +1483,20 @@ body{
             </div>
 
 
-
-            <!-- STATUS -->
-
             <div class="form-group">
 
                 <label>
-
                     Status
-
                 </label>
 
                 <select id="formStatus">
 
                     <option value="Active">
-
                         Active
-
                     </option>
 
                     <option value="Inactive">
-
                         Inactive
-
                     </option>
 
                 </select>
@@ -2100,9 +1537,7 @@ body{
                     class="btn cancel-btn"
                     onclick="closeModal()"
                 >
-
                     Cancel
-
                 </button>
 
 
@@ -2131,10 +1566,6 @@ body{
 
 
 
-<!-- =====================================================
-     TOAST
-===================================================== -->
-
 <div
     class="toast"
     id="toast"
@@ -2145,16 +1576,12 @@ body{
 <script>
 
 /* =========================================================
-   CONFIG
+   API
 ========================================================= */
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
+"https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
 
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 let cards = [];
 
@@ -2162,7 +1589,7 @@ let editingId = null;
 
 
 /* =========================================================
-   PAGE LOAD
+   LOAD
 ========================================================= */
 
 document.addEventListener(
@@ -2171,23 +1598,17 @@ document.addEventListener(
 
         checkSession();
 
-
-        const usernameInput =
+        const input =
             document.getElementById(
                 "usernameInput"
             );
 
-
-        usernameInput.addEventListener(
+        input.addEventListener(
             "keydown",
-            function(event){
+            function(e){
 
-                if(
-                    event.key === "Enter"
-                ){
-
+                if(e.key === "Enter"){
                     login();
-
                 }
 
             }
@@ -2208,21 +1629,17 @@ function checkSession(){
             "websiteControlLoggedIn"
         );
 
-
     const name =
         localStorage.getItem(
             "websiteControlName"
         );
-
 
     if(
         logged === "true" &&
         name
     ){
 
-        showDashboard(
-            name
-        );
+        showDashboard(name);
 
     }
 
@@ -2240,25 +1657,18 @@ async function login(){
             "usernameInput"
         );
 
-
     const button =
         document.getElementById(
             "loginBtn"
         );
 
-
-    const error =
-        document.getElementById(
-            "loginError"
-        );
-
-
     const username =
         input.value.trim();
 
 
-    error.style.display =
-        "none";
+    document.getElementById(
+        "loginError"
+    ).style.display = "none";
 
 
     if(!username){
@@ -2267,16 +1677,12 @@ async function login(){
             "Please enter your username."
         );
 
-        input.focus();
-
         return;
 
     }
 
 
-    button.disabled =
-        true;
-
+    button.disabled = true;
 
     button.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
@@ -2284,17 +1690,13 @@ async function login(){
 
     try{
 
-        const url =
-            API_URL +
-            "?action=login&username=" +
-            encodeURIComponent(
-                username
-            );
-
-
         const response =
             await fetch(
-                url,
+                API_URL +
+                "?action=login&username=" +
+                encodeURIComponent(username) +
+                "&ts=" +
+                Date.now(),
                 {
                     method:"GET",
                     cache:"no-store"
@@ -2306,37 +1708,29 @@ async function login(){
             await response.json();
 
 
-        if(
-            data.success
-        ){
+        if(data.success){
 
             localStorage.setItem(
                 "websiteControlLoggedIn",
                 "true"
             );
 
-
             localStorage.setItem(
                 "websiteControlUsername",
-                data.username ||
-                username
+                data.username || username
             );
-
 
             localStorage.setItem(
                 "websiteControlName",
-                data.name ||
-                username
+                data.name || username
             );
 
 
             showDashboard(
-                data.name ||
-                username
+                data.name || username
             );
 
         }
-
         else{
 
             showLoginError(
@@ -2347,13 +1741,9 @@ async function login(){
         }
 
     }
-
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showLoginError(
             "Unable to connect with server."
@@ -2362,9 +1752,7 @@ async function login(){
     }
 
 
-    button.disabled =
-        false;
-
+    button.disabled = false;
 
     button.innerHTML =
         '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
@@ -2376,19 +1764,15 @@ async function login(){
    LOGIN ERROR
 ========================================================= */
 
-function showLoginError(
-    message
-){
+function showLoginError(message){
 
     const error =
         document.getElementById(
             "loginError"
         );
 
-
     error.textContent =
         message;
-
 
     error.style.display =
         "block";
@@ -2397,30 +1781,25 @@ function showLoginError(
 
 
 /* =========================================================
-   SHOW DASHBOARD
+   DASHBOARD
 ========================================================= */
 
-function showDashboard(
-    name
-){
+function showDashboard(name){
 
     document.getElementById(
         "loginScreen"
     ).style.display =
         "none";
 
-
     document.getElementById(
         "dashboard"
     ).style.display =
         "block";
 
-
     document.getElementById(
         "loggedUserName"
     ).textContent =
         name;
-
 
     loadCards();
 
@@ -2437,41 +1816,30 @@ function logout(){
         "websiteControlLoggedIn"
     );
 
-
     localStorage.removeItem(
         "websiteControlUsername"
     );
-
 
     localStorage.removeItem(
         "websiteControlName"
     );
 
-
     cards = [];
-
 
     document.getElementById(
         "dashboard"
     ).style.display =
         "none";
 
-
     document.getElementById(
         "loginScreen"
     ).style.display =
         "flex";
 
-
     document.getElementById(
         "usernameInput"
     ).value =
         "";
-
-
-    document.getElementById(
-        "usernameInput"
-    ).focus();
 
 }
 
@@ -2487,8 +1855,7 @@ async function loadCards(){
             "loading"
         );
 
-
-    const cardsBox =
+    const box =
         document.getElementById(
             "cards"
         );
@@ -2497,8 +1864,7 @@ async function loadCards(){
     loading.style.display =
         "block";
 
-
-    cardsBox.innerHTML =
+    box.innerHTML =
         "";
 
 
@@ -2520,9 +1886,7 @@ async function loadCards(){
             await response.json();
 
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
@@ -2533,9 +1897,7 @@ async function loadCards(){
 
 
         cards =
-            Array.isArray(
-                data.cards
-            )
+            Array.isArray(data.cards)
             ? data.cards
             : [];
 
@@ -2543,17 +1905,9 @@ async function loadCards(){
         renderCards();
 
     }
-
     catch(error){
 
-        console.error(
-            error
-        );
-
-
-        cardsBox.innerHTML =
-            "";
-
+        console.error(error);
 
         showToast(
             error.message ||
@@ -2571,7 +1925,7 @@ async function loadCards(){
 
 
 /* =========================================================
-   RENDER CARDS
+   RENDER
 ========================================================= */
 
 function renderCards(){
@@ -2581,12 +1935,10 @@ function renderCards(){
             "cards"
         );
 
-
     const empty =
         document.getElementById(
             "empty"
         );
-
 
     const search =
         document.getElementById(
@@ -2596,13 +1948,12 @@ function renderCards(){
         .toLowerCase();
 
 
-    box.innerHTML =
-        "";
+    box.innerHTML = "";
 
 
-    let filtered =
+    const filtered =
         cards.filter(
-            function(card){
+            card => {
 
                 if(
                     String(
@@ -2619,14 +1970,11 @@ function renderCards(){
 
 
                 if(!search){
-
                     return true;
-
                 }
 
 
                 const text = (
-
                     card.name +
                     " " +
                     card.description +
@@ -2634,7 +1982,6 @@ function renderCards(){
                     card.source +
                     " " +
                     card.type
-
                 ).toLowerCase();
 
 
@@ -2646,9 +1993,7 @@ function renderCards(){
         );
 
 
-    if(
-        filtered.length === 0
-    ){
+    if(filtered.length === 0){
 
         empty.style.display =
             "block";
@@ -2663,12 +2008,10 @@ function renderCards(){
 
 
     filtered.forEach(
-        function(card){
+        card => {
 
             box.appendChild(
-                createCard(
-                    card
-                )
+                createCard(card)
             );
 
         }
@@ -2681,48 +2024,45 @@ function renderCards(){
    CREATE CARD
 ========================================================= */
 
-function createCard(
-    card
-){
+function createCard(card){
 
     const article =
         document.createElement(
             "article"
         );
 
-
     article.className =
         "card";
 
 
+    const initials =
+        getInitials(
+            card.name
+        );
+
+
     const logo =
         card.logo
-        ? `
-            <img
-                src="${escapeAttribute(card.logo)}"
-                alt=""
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            >
-            <div
-                class="logo-fallback"
-                style="display:none;"
-            >
-                ${escapeHTML(
-                    getInitials(
-                        card.name
-                    )
-                )}
-            </div>
+        ?
+        `
+        <img
+            src="${escapeAttribute(card.logo)}"
+            alt=""
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div
+            class="logo-fallback"
+            style="display:none;"
+        >
+            ${escapeHTML(initials)}
+        </div>
         `
         :
         `
-            <div class="logo-fallback">
-                ${escapeHTML(
-                    getInitials(
-                        card.name
-                    )
-                )}
-            </div>
+        <div class="logo-fallback">
+            ${escapeHTML(initials)}
+        </div>
         `;
 
 
@@ -2739,23 +2079,18 @@ function createCard(
 
             <div class="card-title">
 
-                <h3 title="${escapeAttribute(card.name)}">
-
+                <h3>
                     ${escapeHTML(
                         card.name ||
                         "Unnamed Website"
                     )}
-
                 </h3>
 
-
                 <span>
-
                     ${escapeHTML(
                         card.type ||
                         "Website"
                     )}
-
                 </span>
 
             </div>
@@ -2777,25 +2112,28 @@ function createCard(
 
             ${
                 card.source
-                ? `
-                    <span>
-                        <i class="fa-solid fa-server"></i>
-                        ${escapeHTML(card.source)}
-                    </span>
+                ?
                 `
-                : ""
+                <span>
+                    <i class="fa-solid fa-server"></i>
+                    ${escapeHTML(card.source)}
+                </span>
+                `
+                :
+                ""
             }
-
 
             ${
                 card.type
-                ? `
-                    <span>
-                        <i class="fa-solid fa-tag"></i>
-                        ${escapeHTML(card.type)}
-                    </span>
+                ?
                 `
-                : ""
+                <span>
+                    <i class="fa-solid fa-tag"></i>
+                    ${escapeHTML(card.type)}
+                </span>
+                `
+                :
+                ""
             }
 
         </div>
@@ -2820,7 +2158,6 @@ function createCard(
             <button
                 type="button"
                 class="edit-btn"
-                title="Edit"
                 onclick="openEditModal('${escapeAttribute(card.id)}')"
             >
 
@@ -2843,36 +2180,29 @@ function createCard(
 ========================================================= */
 
 function filterCards(){
-
     renderCards();
-
 }
 
 
 /* =========================================================
-   ADD MODAL
+   ADD
 ========================================================= */
 
 function openAddModal(){
 
-    editingId =
-        null;
-
+    editingId = null;
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Add Website";
 
-
     document.getElementById(
         "deleteBtn"
     ).style.display =
         "none";
 
-
     clearForm();
-
 
     document.getElementById(
         "cardModal"
@@ -2880,40 +2210,20 @@ function openAddModal(){
         "show"
     );
 
-
-    setTimeout(
-        function(){
-
-            document.getElementById(
-                "formName"
-            ).focus();
-
-        },
-        100
-    );
-
 }
 
 
 /* =========================================================
-   EDIT MODAL
+   EDIT
 ========================================================= */
 
-function openEditModal(
-    id
-){
+function openEditModal(id){
 
     const card =
         cards.find(
-            function(item){
-
-                return (
-                    String(item.id)
-                    ===
-                    String(id)
-                );
-
-            }
+            item =>
+                String(item.id) ===
+                String(id)
         );
 
 
@@ -3003,51 +2313,28 @@ function openEditModal(
 
 
 /* =========================================================
-   CLEAR FORM
+   CLEAR
 ========================================================= */
 
 function clearForm(){
 
-    document.getElementById(
-        "formName"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "formLink"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "formLogo"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "formDescription"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "formSource"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "formType"
-    ).value =
-        "";
-
-
-    document.getElementById(
+    [
+        "formName",
+        "formLink",
+        "formLogo",
+        "formDescription",
+        "formSource",
+        "formType",
         "formPosition"
-    ).value =
-        "";
+    ].forEach(
+        id => {
+
+            document.getElementById(
+                id
+            ).value = "";
+
+        }
+    );
 
 
     document.getElementById(
@@ -3059,7 +2346,7 @@ function clearForm(){
 
 
 /* =========================================================
-   CLOSE MODAL
+   CLOSE
 ========================================================= */
 
 function closeModal(){
@@ -3070,68 +2357,71 @@ function closeModal(){
         "show"
     );
 
-
-    editingId =
-        null;
+    editingId = null;
 
 }
 
 
 /* =========================================================
-   SAVE CARD
+   SAVE
 ========================================================= */
 
 async function saveCard(){
 
-    const name =
-        document.getElementById(
-            "formName"
-        ).value.trim();
+    const payload = {
+
+        action:
+            editingId
+            ? "updateCard"
+            : "addCard",
+
+        id:
+            editingId || "",
+
+        name:
+            document.getElementById(
+                "formName"
+            ).value.trim(),
+
+        link:
+            document.getElementById(
+                "formLink"
+            ).value.trim(),
+
+        logo:
+            document.getElementById(
+                "formLogo"
+            ).value.trim(),
+
+        description:
+            document.getElementById(
+                "formDescription"
+            ).value.trim(),
+
+        source:
+            document.getElementById(
+                "formSource"
+            ).value.trim(),
+
+        type:
+            document.getElementById(
+                "formType"
+            ).value.trim(),
+
+        position:
+            document.getElementById(
+                "formPosition"
+            ).value,
+
+        status:
+            document.getElementById(
+                "formStatus"
+            ).value
+
+    };
 
 
-    const link =
-        document.getElementById(
-            "formLink"
-        ).value.trim();
-
-
-    const logo =
-        document.getElementById(
-            "formLogo"
-        ).value.trim();
-
-
-    const description =
-        document.getElementById(
-            "formDescription"
-        ).value.trim();
-
-
-    const source =
-        document.getElementById(
-            "formSource"
-        ).value.trim();
-
-
-    const type =
-        document.getElementById(
-            "formType"
-        ).value.trim();
-
-
-    const position =
-        document.getElementById(
-            "formPosition"
-        ).value;
-
-
-    const status =
-        document.getElementById(
-            "formStatus"
-        ).value;
-
-
-    if(!name){
+    if(!payload.name){
 
         showToast(
             "Website name is required.",
@@ -3143,7 +2433,7 @@ async function saveCard(){
     }
 
 
-    if(!link){
+    if(!payload.link){
 
         showToast(
             "Website link is required.",
@@ -3161,49 +2451,10 @@ async function saveCard(){
         );
 
 
-    saveBtn.disabled =
-        true;
-
+    saveBtn.disabled = true;
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-
-    const payload = {
-
-        action:
-            editingId
-            ? "updateCard"
-            : "addCard",
-
-        id:
-            editingId || "",
-
-        name:
-            name,
-
-        link:
-            link,
-
-        logo:
-            logo,
-
-        description:
-            description,
-
-        source:
-            source,
-
-        type:
-            type,
-
-        position:
-            position,
-
-        status:
-            status
-
-    };
 
 
     try{
@@ -3213,12 +2464,10 @@ async function saveCard(){
                 API_URL,
                 {
                     method:"POST",
-
                     headers:{
                         "Content-Type":
                             "text/plain;charset=utf-8"
                     },
-
                     body:
                         JSON.stringify(
                             payload
@@ -3231,13 +2480,11 @@ async function saveCard(){
             await response.json();
 
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
-                "Failed to save website."
+                "Save failed."
             );
 
         }
@@ -3256,26 +2503,20 @@ async function saveCard(){
         await loadCards();
 
     }
-
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showToast(
             error.message ||
-            "Failed to save website.",
+            "Save failed.",
             "error"
         );
 
     }
 
 
-    saveBtn.disabled =
-        false;
-
+    saveBtn.disabled = false;
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-check"></i> Save';
@@ -3284,25 +2525,21 @@ async function saveCard(){
 
 
 /* =========================================================
-   DELETE CURRENT CARD
+   DELETE
 ========================================================= */
 
 async function deleteCurrentCard(){
 
     if(!editingId){
-
         return;
-
     }
 
 
-    const confirmed =
-        confirm(
+    if(
+        !confirm(
             "Are you sure you want to delete this website?"
-        );
-
-
-    if(!confirmed){
+        )
+    ){
 
         return;
 
@@ -3316,12 +2553,10 @@ async function deleteCurrentCard(){
                 API_URL,
                 {
                     method:"POST",
-
                     headers:{
                         "Content-Type":
                             "text/plain;charset=utf-8"
                     },
-
                     body:
                         JSON.stringify({
 
@@ -3332,7 +2567,6 @@ async function deleteCurrentCard(){
                                 editingId
 
                         })
-
                 }
             );
 
@@ -3341,9 +2575,7 @@ async function deleteCurrentCard(){
             await response.json();
 
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
@@ -3366,13 +2598,7 @@ async function deleteCurrentCard(){
         await loadCards();
 
     }
-
     catch(error){
-
-        console.error(
-            error
-        );
-
 
         showToast(
             error.message ||
@@ -3386,82 +2612,42 @@ async function deleteCurrentCard(){
 
 
 /* =========================================================
-   ESCAPE HTML
+   HELPERS
 ========================================================= */
 
-function escapeHTML(
-    value
-){
+function escapeHTML(value){
 
-    return String(
-        value || ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================================
-   ESCAPE ATTRIBUTE
-========================================================= */
+function escapeAttribute(value){
 
-function escapeAttribute(
-    value
-){
-
-    return escapeHTML(
-        value
-    );
+    return escapeHTML(value);
 
 }
 
 
-/* =========================================================
-   INITIALS
-========================================================= */
-
-function getInitials(
-    name
-){
+function getInitials(name){
 
     const words =
         String(
             name || "W"
         )
         .trim()
-        .split(
-            /\s+/
-        );
+        .split(/\s+/);
 
 
-    if(
-        words.length === 1
-    ){
+    if(words.length === 1){
 
         return words[0]
-            .substring(
-                0,
-                2
-            )
+            .substring(0,2)
             .toUpperCase();
 
     }
@@ -3480,7 +2666,6 @@ function getInitials(
 ========================================================= */
 
 let toastTimer;
-
 
 function showToast(
     message,
@@ -3513,7 +2698,7 @@ function showToast(
 
     toastTimer =
         setTimeout(
-            function(){
+            () => {
 
                 toast.classList.remove(
                     "show"
@@ -3527,17 +2712,17 @@ function showToast(
 
 
 /* =========================================================
-   CLOSE MODAL WHEN CLICK OUTSIDE
+   MODAL OUTSIDE CLICK
 ========================================================= */
 
 document.getElementById(
     "cardModal"
 ).addEventListener(
     "click",
-    function(event){
+    function(e){
 
         if(
-            event.target === this
+            e.target === this
         ){
 
             closeModal();
@@ -3549,15 +2734,15 @@ document.getElementById(
 
 
 /* =========================================================
-   ESC KEY
+   ESC
 ========================================================= */
 
 document.addEventListener(
     "keydown",
-    function(event){
+    function(e){
 
         if(
-            event.key === "Escape"
+            e.key === "Escape"
         ){
 
             closeModal();
