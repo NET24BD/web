@@ -10,7 +10,25 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>Website Control</title>
+<title>Website Control Dashboard</title>
+
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
 
 <link
     rel="stylesheet"
@@ -25,66 +43,314 @@
 ========================================================= */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
+
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
 
-    min-height:100vh;
+    font-family:"Inter",sans-serif;
 
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background:#080b10;
+    background:
+        radial-gradient(
+            circle at top left,
+            #182033 0%,
+            #0b0f18 42%,
+            #070a10 100%
+        );
 
     color:#f8fafc;
 
-    overflow-x:hidden;
+    min-height:100vh;
 
-    transition:
-        background .25s ease,
-        color .25s ease;
-}
-
-button,
-input,
-textarea,
-select{
-
-    font-family:inherit;
-}
-
-button{
-    border:0;
-    outline:0;
 }
 
 
 /* =========================================================
-   LIGHT
+   LOGIN
 ========================================================= */
 
-body.light{
+#loginScreen{
 
-    background:#f4f7fb;
+    min-height:100vh;
 
-    color:#172033;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+
+.login-box{
+
+    width:100%;
+
+    max-width:400px;
+
+    background:
+        rgba(15,23,42,.90);
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:32px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.45);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+.login-icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:20px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color:white;
+
+    box-shadow:
+        0 15px 35px
+        rgba(34,197,94,.25);
+
+}
+
+
+.login-box h1{
+
+    text-align:center;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+
+.login-box p{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    margin-bottom:28px;
+
+}
+
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+
+.input-group label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#cbd5e1;
+
+}
+
+
+.input-wrap{
+
+    position:relative;
+
+}
+
+
+.input-wrap i{
+
+    position:absolute;
+
+    left:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#64748b;
+
+}
+
+
+.input-wrap input{
+
+    width:100%;
+
+    height:50px;
+
+    border-radius:12px;
+
+    border:1px solid
+        rgba(255,255,255,.09);
+
+    background:#0b1220;
+
+    color:#fff;
+
+    outline:none;
+
+    padding:0 15px 0 45px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+
+.input-wrap input:focus{
+
+    border-color:#22c55e;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34,197,94,.10);
+
+}
+
+
+.login-btn{
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.login-btn:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(34,197,94,.20);
+
+}
+
+
+.login-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+.login-error{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:
+        rgba(239,68,68,.10);
+
+    border:1px solid
+        rgba(239,68,68,.20);
+
+    color:#fca5a5;
+
+    font-size:13px;
+
+    text-align:center;
+
 }
 
 
 /* =========================================================
-   HEADER
+   DASHBOARD
 ========================================================= */
 
-.header{
+#dashboard{
+
+    display:none;
+
+    min-height:100vh;
+
+}
+
+
+.topbar{
+
+    height:72px;
 
     position:sticky;
 
@@ -92,51 +358,24 @@ body.light{
 
     z-index:100;
 
-    width:100%;
-
-    padding:
-        13px 20px;
-
-    background:
-        rgba(8,11,16,.92);
-
-    backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-}
-
-body.light .header{
-
-    background:
-        rgba(244,247,251,.92);
-
-    border-color:
-        rgba(15,23,42,.08);
-}
-
-
-.header-inner{
-
-    max-width:1300px;
-
-    margin:auto;
-
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
 
-    gap:15px;
+    padding:0 28px;
+
+    background:
+        rgba(7,10,16,.82);
+
+    border-bottom:1px solid
+        rgba(255,255,255,.07);
+
+    backdrop-filter:blur(18px);
+
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
 
 .brand{
 
@@ -144,165 +383,138 @@ body.light .header{
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    min-width:0;
 }
 
 
-.brand-icon{
+.brand-logo{
 
-    width:42px;
+    width:40px;
 
-    height:42px;
+    height:40px;
 
-    flex:0 0 42px;
+    border-radius:12px;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
-
-    border-radius:12px;
 
     background:
         linear-gradient(
             135deg,
-            #16a34a,
-            #15803d
+            #22c55e,
+            #16a34a
         );
 
-    color:#fff;
-
-    box-shadow:
-        0 8px 20px
-        rgba(22,163,74,.20);
 }
 
 
-.brand-title{
+.brand-text h2{
 
-    font-size:17px;
+    font-size:16px;
 
-    font-weight:750;
+    font-weight:800;
+
 }
 
 
-.brand-subtitle{
+.brand-text span{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#64748b;
 
     margin-top:2px;
+
+}
+
+
+.user-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.user-info{
+
+    text-align:right;
+
+}
+
+
+.user-name{
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.user-label{
 
     font-size:10px;
 
     color:#64748b;
+
 }
 
 
-/* =========================================================
-   HEADER ACTION
-========================================================= */
+.logout-btn{
 
-.header-actions{
+    width:38px;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-}
-
-
-.theme-buttons{
-
-    display:flex;
-
-    gap:3px;
-
-    padding:3px;
+    height:38px;
 
     border-radius:10px;
 
-    background:
-        rgba(255,255,255,.05);
+    border:1px solid
+        rgba(255,255,255,.08);
 
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-}
+    background:#111827;
 
-body.light .theme-buttons{
-
-    background:
-        rgba(15,23,42,.05);
-
-    border-color:
-        rgba(15,23,42,.08);
-}
-
-
-.theme-btn{
-
-    width:33px;
-
-    height:29px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:8px;
-
-    background:transparent;
-
-    color:#64748b;
+    color:#f87171;
 
     cursor:pointer;
 
-    transition:.2s ease;
 }
 
 
-.theme-btn:hover{
+.logout-btn:hover{
 
-    color:#fff;
+    background:#1f2937;
 
-    background:
-        rgba(255,255,255,.08);
-}
-
-
-.theme-btn.active{
-
-    color:#fff;
-
-    background:#16a34a;
 }
 
 
 /* =========================================================
-   MAIN
+   CONTENT
 ========================================================= */
 
-.main{
+.container{
 
-    width:
-        min(1300px,100%);
+    width:100%;
+
+    max-width:1450px;
 
     margin:auto;
 
-    padding:
-        20px;
+    padding:30px;
+
 }
 
 
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.topbar{
+.page-head{
 
     display:flex;
 
@@ -310,310 +522,101 @@ body.light .theme-buttons{
 
     justify-content:space-between;
 
-    gap:12px;
+    gap:20px;
 
-    margin-bottom:16px;
+    margin-bottom:25px;
+
 }
 
 
-.page-title{
+.page-title h1{
 
-    font-size:20px;
+    font-size:27px;
 
-    font-weight:750;
+    font-weight:800;
+
+    letter-spacing:-.5px;
+
 }
 
 
-.page-subtitle{
-
-    margin-top:3px;
+.page-title p{
 
     color:#64748b;
 
-    font-size:11px;
+    font-size:13px;
+
+    margin-top:6px;
+
 }
 
 
-.top-actions{
+.add-btn{
+
+    height:43px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
 
     display:flex;
 
     align-items:center;
 
     gap:8px;
+
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn{
-
-    height:38px;
-
-    padding:
-        0 13px;
-
-    border-radius:9px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    cursor:pointer;
-
-    font-size:11px;
-
-    font-weight:650;
-
-    transition:.2s ease;
-}
-
-
-.btn-primary{
-
-    background:#16a34a;
-
-    color:#fff;
-}
-
-
-.btn-primary:hover{
-
-    background:#15803d;
-
-    transform:
-        translateY(-1px);
+.add-btn:hover{
 
     box-shadow:
-        0 7px 18px
-        rgba(22,163,74,.20);
-}
+        0 10px 25px
+        rgba(34,197,94,.18);
 
-
-.btn-secondary{
-
-    background:#11161e;
-
-    color:#94a3b8;
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-}
-
-
-.btn-secondary:hover{
-
-    background:#17202b;
-
-    color:#fff;
-}
-
-
-.btn-danger{
-
-    background:
-        rgba(239,68,68,.10);
-
-    color:#f87171;
-
-    border:
-        1px solid
-        rgba(239,68,68,.15);
-}
-
-
-.btn-danger:hover{
-
-    background:
-        rgba(239,68,68,.18);
 }
 
 
 /* =========================================================
-   STATS
+   SEARCH
 ========================================================= */
 
-.stats{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:11px;
-
-    margin-bottom:15px;
-}
-
-
-.stat-card{
-
-    padding:13px;
-
-    border-radius:12px;
-
-    background:#11161e;
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-}
-
-body.light .stat-card{
-
-    background:#fff;
-
-    border-color:
-        rgba(15,23,42,.08);
-
-    box-shadow:
-        0 5px 18px
-        rgba(15,23,42,.04);
-}
-
-
-.stat-top{
+.toolbar{
 
     display:flex;
 
-    align-items:center;
+    justify-content:flex-end;
 
-    justify-content:space-between;
-}
+    margin-bottom:22px;
 
-
-.stat-icon{
-
-    width:34px;
-
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:9px;
-
-    background:
-        rgba(22,163,74,.10);
-
-    color:#22c55e;
-
-    font-size:13px;
-}
-
-
-.stat-value{
-
-    margin-top:9px;
-
-    font-size:22px;
-
-    font-weight:750;
-}
-
-
-.stat-label{
-
-    margin-top:1px;
-
-    color:#64748b;
-
-    font-size:10px;
-}
-
-
-/* =========================================================
-   SEARCH BAR
-========================================================= */
-
-.search-area{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    margin-bottom:13px;
 }
 
 
 .search-box{
 
+    width:300px;
+
     position:relative;
 
-    flex:1;
-
-    max-width:440px;
 }
 
 
-.search-input{
-
-    width:100%;
-
-    height:42px;
-
-    padding:
-        0 40px;
-
-    border-radius:10px;
-
-    outline:none;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    background:#11161e;
-
-    color:#f8fafc;
-
-    font-size:11px;
-}
-
-
-.search-input::placeholder{
-
-    color:#64748b;
-}
-
-
-.search-input:focus{
-
-    border-color:
-        rgba(22,163,74,.60);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(22,163,74,.07);
-}
-
-
-body.light .search-input{
-
-    background:#fff;
-
-    color:#172033;
-
-    border-color:
-        rgba(15,23,42,.10);
-}
-
-
-.search-icon{
+.search-box i{
 
     position:absolute;
 
@@ -621,349 +624,274 @@ body.light .search-input{
 
     top:50%;
 
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
     color:#64748b;
 
-    font-size:12px;
 }
 
 
-.clear-btn{
-
-    position:absolute;
-
-    right:7px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    width:27px;
-
-    height:27px;
-
-    border-radius:7px;
-
-    background:transparent;
-
-    color:#64748b;
-
-    cursor:pointer;
-
-    display:none;
-}
-
-
-.total-label{
-
-    color:#64748b;
-
-    font-size:10px;
-}
-
-
-/* =========================================================
-   TABLE CONTAINER
-========================================================= */
-
-.table-wrapper{
+.search-box input{
 
     width:100%;
 
-    overflow-x:auto;
+    height:43px;
 
-    border-radius:13px;
+    border-radius:11px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-
-    background:#0e131a;
-}
-
-body.light .table-wrapper{
-
-    background:#fff;
-
-    border-color:
-        rgba(15,23,42,.08);
-
-    box-shadow:
-        0 5px 20px
-        rgba(15,23,42,.04);
-}
-
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    min-width:950px;
-}
-
-
-thead{
-
-    background:#151b24;
-}
-
-body.light thead{
-
-    background:#f8fafc;
-}
-
-
-th{
-
-    padding:
-        12px 11px;
-
-    text-align:left;
-
-    color:#64748b;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    letter-spacing:.4px;
-
-    white-space:nowrap;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.06);
-}
-
-
-td{
-
-    padding:
-        10px 11px;
-
-    font-size:10px;
-
-    color:#cbd5e1;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.05);
-
-    vertical-align:middle;
-}
-
-
-body.light td{
-
-    color:#475569;
-
-    border-color:
-        rgba(15,23,42,.06);
-}
-
-
-tbody tr{
-
-    transition:.15s ease;
-}
-
-
-tbody tr:hover{
+    border:1px solid
+        rgba(255,255,255,.08);
 
     background:
-        rgba(255,255,255,.025);
+        rgba(15,23,42,.75);
+
+    color:#fff;
+
+    outline:none;
+
+    padding:0 15px 0 42px;
+
 }
 
-body.light tbody tr:hover{
 
-    background:#f8fafc;
-}
+.search-box input:focus{
 
+    border-color:#22c55e;
 
-tbody tr:last-child td{
-
-    border-bottom:0;
 }
 
 
 /* =========================================================
-   WEBSITE CELL
+   CARDS
 ========================================================= */
 
-.website-cell{
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(
+                235px,
+                1fr
+            )
+        );
+
+    gap:16px;
+
+}
+
+
+.card{
+
+    position:relative;
+
+    min-width:0;
+
+    padding:17px;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,29,46,.95),
+            rgba(10,15,25,.95)
+        );
+
+    border:1px solid
+        rgba(255,255,255,.07);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(34,197,94,.25);
+
+    box-shadow:
+        0 18px 35px
+        rgba(0,0,0,.25);
+
+}
+
+
+.card-top{
 
     display:flex;
 
     align-items:center;
 
-    gap:9px;
+    gap:12px;
 
-    min-width:180px;
 }
 
 
-.website-logo{
+.logo{
 
-    width:37px;
+    width:48px;
 
-    height:37px;
+    height:48px;
 
-    flex:0 0 37px;
+    min-width:48px;
 
-    border-radius:9px;
+    border-radius:13px;
 
     overflow:hidden;
-
-    background:#18202b;
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    background:#111827;
+
+    border:1px solid
+        rgba(255,255,255,.07);
+
 }
 
 
-.website-logo img{
+.logo img{
 
     width:100%;
 
     height:100%;
 
     object-fit:cover;
+
 }
 
 
-.website-logo i{
+.logo-fallback{
+
+    font-size:19px;
+
+    font-weight:800;
 
     color:#22c55e;
 
-    font-size:13px;
 }
 
 
-.website-name{
+.card-title{
 
-    max-width:170px;
+    min-width:0;
 
-    overflow:hidden;
+}
 
-    text-overflow:ellipsis;
 
-    white-space:nowrap;
+.card-title h3{
 
-    color:#f8fafc;
+    font-size:14px;
 
     font-weight:700;
 
-    font-size:11px;
-}
-
-body.light .website-name{
-
-    color:#172033;
-}
-
-
-.website-link{
-
-    max-width:190px;
+    white-space:nowrap;
 
     overflow:hidden;
 
     text-overflow:ellipsis;
 
-    white-space:nowrap;
-
-    color:#64748b;
-
-    font-size:9px;
 }
 
 
-/* =========================================================
-   BADGES
-========================================================= */
-
-.badge{
+.card-title span{
 
     display:inline-flex;
 
-    align-items:center;
+    margin-top:5px;
 
-    gap:5px;
+    font-size:9px;
 
-    padding:
-        5px 8px;
+    padding:4px 7px;
 
-    border-radius:999px;
+    border-radius:6px;
 
-    font-size:8px;
-
-    font-weight:700;
-}
-
-
-.badge-active{
+    background:
+        rgba(34,197,94,.10);
 
     color:#4ade80;
 
-    background:
-        rgba(34,197,94,.09);
 }
 
 
-.badge-inactive{
+.card-description{
 
-    color:#f87171;
+    color:#94a3b8;
 
-    background:
-        rgba(239,68,68,.09);
+    font-size:11px;
+
+    line-height:1.55;
+
+    margin-top:13px;
+
+    min-height:34px;
+
 }
 
 
-.badge-dot{
-
-    width:5px;
-
-    height:5px;
-
-    border-radius:50%;
-
-    background:currentColor;
-}
-
-
-/* =========================================================
-   ACTION BUTTONS
-========================================================= */
-
-.actions{
+.meta{
 
     display:flex;
 
-    align-items:center;
+    gap:7px;
 
-    gap:5px;
+    flex-wrap:wrap;
+
+    margin-top:12px;
+
 }
 
 
-.action-btn{
+.meta span{
 
-    width:29px;
+    font-size:9px;
 
-    height:29px;
+    color:#94a3b8;
+
+    background:#111827;
+
+    border:1px solid
+        rgba(255,255,255,.05);
+
+    padding:5px 7px;
+
+    border-radius:6px;
+
+}
+
+
+.card-bottom{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+
+}
+
+
+.open-btn{
+
+    flex:1;
+
+    height:36px;
+
+    border-radius:9px;
+
+    text-decoration:none;
 
     display:flex;
 
@@ -971,98 +899,103 @@ body.light .website-name{
 
     justify-content:center;
 
-    border-radius:7px;
+    gap:6px;
 
-    cursor:pointer;
+    font-size:11px;
 
-    font-size:10px;
+    font-weight:700;
 
-    transition:.2s ease;
+    background:
+        rgba(34,197,94,.10);
+
+    border:1px solid
+        rgba(34,197,94,.18);
+
+    color:#4ade80;
+
+}
+
+
+.open-btn:hover{
+
+    background:
+        rgba(34,197,94,.17);
+
 }
 
 
 .edit-btn{
 
-    background:
-        rgba(59,130,246,.09);
+    width:38px;
 
-    color:#60a5fa;
+    height:36px;
+
+    border-radius:9px;
+
+    border:1px solid
+        rgba(255,255,255,.07);
+
+    background:#111827;
+
+    color:#cbd5e1;
+
+    cursor:pointer;
+
 }
 
 
 .edit-btn:hover{
 
-    background:
-        rgba(59,130,246,.18);
-}
-
-
-.delete-btn{
-
-    background:
-        rgba(239,68,68,.09);
-
-    color:#f87171;
-}
-
-
-.delete-btn:hover{
-
-    background:
-        rgba(239,68,68,.18);
-}
-
-
-.toggle-btn{
-
-    background:
-        rgba(22,163,74,.09);
-
     color:#4ade80;
-}
 
-
-.toggle-btn:hover{
-
-    background:
-        rgba(22,163,74,.18);
 }
 
 
 /* =========================================================
-   EMPTY / LOADING
+   EMPTY
 ========================================================= */
 
 .empty{
 
-    padding:60px 20px;
+    display:none;
 
     text-align:center;
 
+    padding:70px 20px;
+
     color:#64748b;
+
 }
 
 
 .empty i{
 
-    font-size:22px;
+    font-size:40px;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
+
 }
 
 
-.empty-title{
+/* =========================================================
+   LOADING
+========================================================= */
 
-    color:#cbd5e1;
+.loading{
 
-    font-weight:700;
+    text-align:center;
 
-    font-size:13px;
+    padding:60px;
+
+    color:#64748b;
+
 }
 
-body.light .empty-title{
 
-    color:#334155;
+.loading i{
+
+    font-size:25px;
+
 }
 
 
@@ -1072,13 +1005,18 @@ body.light .empty-title{
 
 .modal{
 
+    display:none;
+
     position:fixed;
 
     inset:0;
 
     z-index:500;
 
-    display:none;
+    background:
+        rgba(0,0,0,.70);
+
+    backdrop-filter:blur(8px);
 
     align-items:center;
 
@@ -1086,78 +1024,44 @@ body.light .empty-title{
 
     padding:20px;
 
-    background:
-        rgba(0,0,0,.68);
-
-    backdrop-filter:
-        blur(7px);
 }
 
 
 .modal.show{
 
     display:flex;
+
 }
 
 
 .modal-box{
 
-    width:
-        min(650px,100%);
+    width:100%;
+
+    max-width:570px;
 
     max-height:
         calc(100vh - 40px);
 
     overflow-y:auto;
 
-    border-radius:16px;
+    background:#0f172a;
 
-    background:#11161e;
-
-    border:
-        1px solid
+    border:1px solid
         rgba(255,255,255,.08);
 
+    border-radius:20px;
+
+    padding:24px;
+
     box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.40);
+        0 30px 80px
+        rgba(0,0,0,.55);
 
-    animation:
-        modalIn .18s ease;
 }
 
 
-@keyframes modalIn{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(10px)
-            scale(.98);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-body.light .modal-box{
-
-    background:#fff;
-
-    border-color:
-        rgba(15,23,42,.08);
-}
-
-
-.modal-header{
-
-    padding:
-        15px 17px;
+.modal-head{
 
     display:flex;
 
@@ -1165,53 +1069,34 @@ body.light .modal-box{
 
     justify-content:space-between;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
+    margin-bottom:20px;
+
 }
 
 
-.modal-title{
+.modal-head h2{
 
-    font-size:15px;
+    font-size:19px;
 
-    font-weight:750;
 }
 
 
-.modal-close{
+.close-btn{
 
-    width:30px;
+    width:35px;
 
-    height:30px;
+    height:35px;
 
-    border-radius:8px;
+    border:none;
 
-    background:
-        rgba(255,255,255,.05);
+    border-radius:9px;
+
+    background:#111827;
 
     color:#94a3b8;
 
     cursor:pointer;
-}
 
-
-.modal-close:hover{
-
-    background:
-        rgba(239,68,68,.10);
-
-    color:#f87171;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form{
-
-    padding:17px;
 }
 
 
@@ -1220,9 +1105,10 @@ body.light .modal-box{
     display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        1fr 1fr;
 
-    gap:12px;
+    gap:14px;
+
 }
 
 
@@ -1232,200 +1118,158 @@ body.light .modal-box{
 
     flex-direction:column;
 
-    gap:5px;
+    gap:7px;
+
 }
 
 
 .form-group.full{
 
-    grid-column:
-        1 / -1;
+    grid-column:1 / -1;
+
 }
 
 
-.form-label{
-
-    color:#94a3b8;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    letter-spacing:.3px;
-}
-
-
-.form-input,
-.form-select,
-.form-textarea{
-
-    width:100%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    background:#0c1117;
-
-    color:#f8fafc;
-
-    outline:none;
-
-    border-radius:9px;
+.form-group label{
 
     font-size:11px;
 
-    transition:.2s ease;
+    font-weight:600;
+
+    color:#cbd5e1;
+
 }
 
 
-.form-input,
-.form-select{
+.form-group input,
 
-    height:39px;
+.form-group textarea,
 
-    padding:
-        0 11px;
+.form-group select{
+
+    width:100%;
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    background:#080d16;
+
+    color:#fff;
+
+    border-radius:9px;
+
+    outline:none;
+
+    padding:11px;
+
+    font-family:inherit;
+
+    font-size:12px;
+
 }
 
 
-.form-textarea{
+.form-group input{
+
+    height:40px;
+
+}
+
+
+.form-group textarea{
 
     min-height:75px;
 
-    padding:10px 11px;
-
     resize:vertical;
+
 }
 
 
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus{
+.form-group input:focus,
 
-    border-color:
-        rgba(22,163,74,.65);
+.form-group textarea:focus,
 
-    box-shadow:
-        0 0 0 3px
-        rgba(22,163,74,.07);
+.form-group select:focus{
+
+    border-color:#22c55e;
+
 }
 
 
-body.light .form-input,
-body.light .form-select,
-body.light .form-textarea{
-
-    background:#f8fafc;
-
-    color:#172033;
-
-    border-color:
-        rgba(15,23,42,.10);
-}
-
-
-.form-footer{
-
-    margin-top:15px;
+.modal-actions{
 
     display:flex;
 
-    justify-content:flex-end;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:22px;
+
+}
+
+
+.left-actions,
+
+.right-actions{
+
+    display:flex;
 
     gap:8px;
+
 }
 
 
-/* =========================================================
-   DELETE MODAL
-========================================================= */
+.btn{
 
-.confirm-box{
+    height:39px;
 
-    width:
-        min(400px,100%);
+    padding:0 15px;
 
-    border-radius:15px;
+    border-radius:9px;
 
-    background:#11161e;
-
-    border:
-        1px solid
+    border:1px solid
         rgba(255,255,255,.08);
 
-    padding:20px;
+    cursor:pointer;
 
-    text-align:center;
+    font-size:11px;
+
+    font-weight:700;
+
 }
 
 
-body.light .confirm-box{
+.cancel-btn{
 
-    background:#fff;
+    background:#111827;
 
-    border-color:
-        rgba(15,23,42,.08);
+    color:#cbd5e1;
+
 }
 
 
-.confirm-icon{
+.save-btn{
 
-    width:50px;
+    background:#22c55e;
 
-    height:50px;
+    color:white;
 
-    margin:
-        0 auto 12px;
+    border-color:#22c55e;
 
-    display:flex;
+}
 
-    align-items:center;
 
-    justify-content:center;
-
-    border-radius:14px;
+.delete-btn{
 
     background:
-        rgba(239,68,68,.09);
+        rgba(239,68,68,.10);
 
     color:#f87171;
 
-    font-size:19px;
-}
+    border-color:
+        rgba(239,68,68,.20);
 
-
-.confirm-title{
-
-    font-size:15px;
-
-    font-weight:750;
-}
-
-
-.confirm-text{
-
-    margin-top:6px;
-
-    color:#64748b;
-
-    font-size:10px;
-
-    line-height:1.5;
-}
-
-
-.confirm-actions{
-
-    margin-top:17px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:8px;
 }
 
 
@@ -1437,68 +1281,58 @@ body.light .confirm-box{
 
     position:fixed;
 
-    right:20px;
+    right:22px;
 
-    bottom:20px;
+    bottom:22px;
 
     z-index:1000;
 
-    min-width:250px;
+    min-width:240px;
 
-    max-width:380px;
+    padding:13px 16px;
 
-    padding:
-        12px 14px;
+    border-radius:11px;
 
-    border-radius:10px;
+    background:#111827;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    background:#11161e;
-
-    border:
-        1px solid
+    border:1px solid
         rgba(255,255,255,.08);
 
     box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.25);
+        0 15px 35px
+        rgba(0,0,0,.35);
 
-    transform:
-        translateY(20px);
+    font-size:12px;
 
-    opacity:0;
+    display:none;
 
-    pointer-events:none;
-
-    transition:.25s ease;
-
-    font-size:10px;
 }
 
 
 .toast.show{
 
-    transform:
-        translateY(0);
+    display:block;
 
-    opacity:1;
 }
 
 
-.toast.success i{
+.toast.success{
 
-    color:#22c55e;
+    border-color:
+        rgba(34,197,94,.25);
+
+    color:#4ade80;
+
 }
 
 
-.toast.error i{
+.toast.error{
+
+    border-color:
+        rgba(239,68,68,.25);
 
     color:#f87171;
+
 }
 
 
@@ -1506,143 +1340,222 @@ body.light .confirm-box{
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:900px){
-
-    .stats{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-
-@media(max-width:650px){
-
-    .header{
-
-        padding:
-            11px 13px;
-    }
-
-
-    .main{
-
-        padding:
-            15px 13px 30px;
-    }
-
-
-    .brand-icon{
-
-        width:38px;
-
-        height:38px;
-
-        flex-basis:38px;
-    }
-
-
-    .brand-title{
-
-        font-size:15px;
-    }
-
-
-    .brand-subtitle{
-
-        font-size:9px;
-    }
-
+@media(
+    max-width:700px
+){
 
     .topbar{
 
+        padding:0 15px;
+
+    }
+
+
+    .brand-text{
+
+        display:none;
+
+    }
+
+
+    .user-info{
+
+        display:none;
+
+    }
+
+
+    .container{
+
+        padding:20px 15px;
+
+    }
+
+
+    .page-head{
+
         align-items:flex-start;
 
-        flex-direction:column;
     }
 
 
-    .top-actions{
+    .page-title h1{
 
-        width:100%;
+        font-size:22px;
+
     }
 
 
-    .top-actions .btn{
+    .add-btn{
 
-        flex:1;
+        padding:0 13px;
+
     }
 
 
-    .search-area{
+    .add-btn span{
 
-        align-items:stretch;
+        display:none;
 
-        flex-direction:column;
     }
 
 
     .search-box{
 
-        max-width:none;
+        width:100%;
+
+    }
+
+
+    .toolbar{
+
+        justify-content:stretch;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:10px;
+
+    }
+
+
+    .card{
+
+        padding:13px;
+
+        border-radius:14px;
+
+    }
+
+
+    .card-top{
+
+        gap:8px;
+
+    }
+
+
+    .logo{
+
+        width:40px;
+
+        height:40px;
+
+        min-width:40px;
+
+        border-radius:10px;
+
+    }
+
+
+    .card-title h3{
+
+        font-size:12px;
+
+    }
+
+
+    .card-description{
+
+        font-size:10px;
+
+        margin-top:10px;
+
+    }
+
+
+    .meta{
+
+        margin-top:9px;
+
+    }
+
+
+    .meta span{
+
+        font-size:8px;
+
+        padding:4px 5px;
+
+    }
+
+
+    .open-btn{
+
+        height:32px;
+
+        font-size:9px;
+
+    }
+
+
+    .edit-btn{
+
+        width:34px;
+
+        height:32px;
+
     }
 
 
     .form-grid{
 
         grid-template-columns:1fr;
+
     }
 
 
     .form-group.full{
 
         grid-column:auto;
+
     }
 
 
-    .modal{
+    .modal-actions{
 
-        padding:10px;
+        flex-direction:column;
+
     }
 
 
-    .modal-box{
+    .left-actions,
 
-        max-height:
-            calc(100vh - 20px);
+    .right-actions{
 
-        border-radius:13px;
+        width:100%;
+
+    }
+
+
+    .right-actions .btn{
+
+        flex:1;
+
     }
 
 }
 
 
-@media(max-width:400px){
+@media(
+    max-width:380px
+){
 
-    .stats{
+    .cards{
 
-        gap:8px;
-    }
+        grid-template-columns:1fr;
 
-
-    .stat-card{
-
-        padding:11px;
-    }
-
-
-    .stat-value{
-
-        font-size:19px;
-    }
-
-
-    .theme-btn{
-
-        width:29px;
-
-        height:27px;
     }
 
 }
@@ -1655,607 +1568,561 @@ body.light .confirm-box{
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- =====================================================
+     LOGIN SCREEN
+===================================================== -->
 
-<header class="header">
+<section id="loginScreen">
 
-    <div class="header-inner">
+
+    <div class="login-box">
+
+
+        <div class="login-icon">
+
+            <i class="fa-solid fa-lock"></i>
+
+        </div>
+
+
+        <h1>
+
+            Control Dashboard
+
+        </h1>
+
+
+        <p>
+
+            Enter your username to continue
+
+        </p>
+
+
+        <div class="input-group">
+
+            <label>
+
+                Username
+
+            </label>
+
+
+            <div class="input-wrap">
+
+                <i class="fa-solid fa-user"></i>
+
+
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                >
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="login-btn"
+            id="loginBtn"
+            onclick="login()"
+        >
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            &nbsp;
+
+            Login
+
+        </button>
+
+
+        <div
+            class="login-error"
+            id="loginError"
+        ></div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section id="dashboard">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
 
 
         <div class="brand">
 
-            <div class="brand-icon">
 
-                <i class="fa-solid fa-sliders"></i>
+            <div class="brand-logo">
+
+                <i class="fa-solid fa-layer-group"></i>
 
             </div>
 
 
-            <div>
+            <div class="brand-text">
 
-                <div class="brand-title">
+                <h2>
+
                     Website Control
+
+                </h2>
+
+                <span>
+
+                    Management Dashboard
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="user-area">
+
+
+            <div class="user-info">
+
+                <div
+                    class="user-name"
+                    id="loggedUserName"
+                >
+                    User
                 </div>
 
-                <div class="brand-subtitle">
-                    Manage your website cards
+                <div class="user-label">
+
+                    Logged in
+
                 </div>
 
             </div>
 
-        </div>
-
-
-        <div class="header-actions">
-
-            <div class="theme-buttons">
-
-                <button
-                    class="theme-btn"
-                    data-theme="dark"
-                    title="Dark"
-                >
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-
-
-                <button
-                    class="theme-btn"
-                    data-theme="light"
-                    title="White"
-                >
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-
-
-                <button
-                    class="theme-btn"
-                    data-theme="auto"
-                    title="Auto"
-                >
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main class="main">
-
-
-    <div class="topbar">
-
-
-        <div>
-
-            <div class="page-title">
-                Website Management
-            </div>
-
-            <div class="page-subtitle">
-                Add, edit, delete and control your website cards.
-            </div>
-
-        </div>
-
-
-        <div class="top-actions">
 
             <button
                 type="button"
-                class="btn btn-secondary"
-                id="refreshBtn"
+                class="logout-btn"
+                onclick="logout()"
+                title="Logout"
             >
 
-                <i class="fa-solid fa-rotate"></i>
-
-                Refresh
+                <i class="fa-solid fa-right-from-bracket"></i>
 
             </button>
 
 
+        </div>
+
+
+    </header>
+
+
+
+    <!-- CONTENT -->
+
+    <main class="container">
+
+
+        <div class="page-head">
+
+
+            <div class="page-title">
+
+                <h1>
+
+                    Website Control
+
+                </h1>
+
+                <p>
+
+                    Manage your website cards from one place.
+
+                </p>
+
+            </div>
+
+
             <button
                 type="button"
-                class="btn btn-primary"
-                id="addBtn"
+                class="add-btn"
+                onclick="openAddModal()"
             >
 
                 <i class="fa-solid fa-plus"></i>
 
-                Add Website
+                <span>
+
+                    Add Website
+
+                </span>
 
             </button>
 
-        </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         STATS
-    ====================================================== -->
-
-    <section class="stats">
-
-
-        <div class="stat-card">
-
-            <div class="stat-top">
-
-                <div class="stat-icon">
-
-                    <i class="fa-solid fa-globe"></i>
-
-                </div>
-
-            </div>
-
-            <div
-                class="stat-value"
-                id="totalCount"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Total Websites
-            </div>
 
         </div>
 
 
-        <div class="stat-card">
 
-            <div class="stat-top">
+        <!-- SEARCH -->
 
-                <div class="stat-icon">
+        <div class="toolbar">
 
-                    <i class="fa-solid fa-circle-check"></i>
 
-                </div>
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search website..."
+                    oninput="filterCards()"
+                >
 
             </div>
 
-            <div
-                class="stat-value"
-                id="activeCount"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Active Websites
-            </div>
 
         </div>
 
 
-        <div class="stat-card">
 
-            <div class="stat-top">
-
-                <div class="stat-icon">
-
-                    <i class="fa-solid fa-circle-xmark"></i>
-
-                </div>
-
-            </div>
-
-            <div
-                class="stat-value"
-                id="inactiveCount"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Inactive Websites
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-top">
-
-                <div class="stat-icon">
-
-                    <i class="fa-solid fa-layer-group"></i>
-
-                </div>
-
-            </div>
-
-            <div
-                class="stat-value"
-                id="visibleCount"
-            >
-                0
-            </div>
-
-            <div class="stat-label">
-                Showing
-            </div>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SEARCH
-    ====================================================== -->
-
-    <div class="search-area">
-
-
-        <div class="search-box">
-
-            <i
-                class="fa-solid fa-magnifying-glass search-icon"
-            ></i>
-
-
-            <input
-                type="search"
-                id="searchInput"
-                class="search-input"
-                placeholder="Search website, source, type..."
-                autocomplete="off"
-            >
-
-
-            <button
-                type="button"
-                class="clear-btn"
-                id="clearBtn"
-            >
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-        </div>
-
+        <!-- LOADING -->
 
         <div
-            class="total-label"
-            id="tableCount"
+            class="loading"
+            id="loading"
         >
-            0 websites
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <div style="margin-top:10px;">
+
+                Loading websites...
+
+            </div>
+
         </div>
 
-    </div>
+
+
+        <!-- CARDS -->
+
+        <div
+            class="cards"
+            id="cards"
+        ></div>
 
 
 
-    <!-- =====================================================
-         TABLE
-    ====================================================== -->
+        <!-- EMPTY -->
 
-    <div class="table-wrapper">
+        <div
+            class="empty"
+            id="empty"
+        >
 
-        <table>
+            <i class="fa-regular fa-folder-open"></i>
 
-            <thead>
+            <div>
 
-                <tr>
+                No websites found.
 
-                    <th>
-                        Website
-                    </th>
+            </div>
 
-                    <th>
-                        Description
-                    </th>
-
-                    <th>
-                        Source
-                    </th>
-
-                    <th>
-                        Type
-                    </th>
-
-                    <th>
-                        Position
-                    </th>
-
-                    <th>
-                        Status
-                    </th>
-
-                    <th>
-                        Action
-                    </th>
-
-                </tr>
-
-            </thead>
+        </div>
 
 
-            <tbody id="tableBody">
+    </main>
 
-                <tr>
-
-                    <td
-                        colspan="7"
-                        class="empty"
-                    >
-
-                        <i class="fa-solid fa-spinner fa-spin"></i>
-
-                        <div>
-                            Loading websites...
-                        </div>
-
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-
-</main>
+</section>
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      ADD / EDIT MODAL
-========================================================= -->
+===================================================== -->
 
 <div
     class="modal"
-    id="formModal"
+    id="cardModal"
 >
+
 
     <div class="modal-box">
 
 
-        <div class="modal-header">
+        <div class="modal-head">
 
-            <div
-                class="modal-title"
-                id="modalTitle"
-            >
+
+            <h2 id="modalTitle">
+
                 Add Website
-            </div>
+
+            </h2>
 
 
             <button
                 type="button"
-                class="modal-close"
-                id="closeFormBtn"
+                class="close-btn"
+                onclick="closeModal()"
             >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
 
+
         </div>
 
 
 
-        <form
-            class="form"
-            id="websiteForm"
-        >
-
-            <input
-                type="hidden"
-                id="websiteId"
-            >
+        <div class="form-grid">
 
 
-            <div class="form-grid">
+            <!-- NAME -->
 
+            <div class="form-group">
 
-                <!-- NAME -->
+                <label>
 
-                <div class="form-group">
+                    Website Name
 
-                    <label class="form-label">
-                        Website Name
-                    </label>
+                </label>
 
-                    <input
-                        type="text"
-                        id="name"
-                        class="form-input"
-                        placeholder="Example: Movie World"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- LINK -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Website Link
-                    </label>
-
-                    <input
-                        type="url"
-                        id="link"
-                        class="form-input"
-                        placeholder="https://example.com/"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- LOGO -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Logo URL
-                    </label>
-
-                    <input
-                        type="url"
-                        id="logo"
-                        class="form-input"
-                        placeholder="https://example.com/logo.png"
-                    >
-
-                </div>
-
-
-                <!-- SOURCE -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Source
-                    </label>
-
-                    <input
-                        type="text"
-                        id="source"
-                        class="form-input"
-                        placeholder="Example: Local Server"
-                    >
-
-                </div>
-
-
-                <!-- TYPE -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Type
-                    </label>
-
-                    <input
-                        type="text"
-                        id="type"
-                        class="form-input"
-                        placeholder="Example: Movie"
-                    >
-
-                </div>
-
-
-                <!-- POSITION -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Position
-                    </label>
-
-                    <input
-                        type="number"
-                        id="position"
-                        class="form-input"
-                        placeholder="1"
-                        min="1"
-                    >
-
-                </div>
-
-
-                <!-- STATUS -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Status
-                    </label>
-
-                    <select
-                        id="status"
-                        class="form-select"
-                    >
-
-                        <option value="Active">
-                            Active
-                        </option>
-
-                        <option value="Inactive">
-                            Inactive
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- DESCRIPTION -->
-
-                <div class="form-group full">
-
-                    <label class="form-label">
-                        Description
-                    </label>
-
-                    <textarea
-                        id="description"
-                        class="form-textarea"
-                        placeholder="Write a short description..."
-                    ></textarea>
-
-                </div>
-
+                <input
+                    type="text"
+                    id="formName"
+                    placeholder="Movie World"
+                >
 
             </div>
 
 
 
-            <div class="form-footer">
+            <!-- LINK -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Website Link
+
+                </label>
+
+                <input
+                    type="url"
+                    id="formLink"
+                    placeholder="https://example.com"
+                >
+
+            </div>
+
+
+
+            <!-- LOGO -->
+
+            <div class="form-group full">
+
+                <label>
+
+                    Logo URL
+
+                </label>
+
+                <input
+                    type="url"
+                    id="formLogo"
+                    placeholder="https://example.com/logo.png"
+                >
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full">
+
+                <label>
+
+                    Description
+
+                </label>
+
+                <textarea
+                    id="formDescription"
+                    placeholder="Access Movie World website"
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- SOURCE -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Source
+
+                </label>
+
+                <input
+                    type="text"
+                    id="formSource"
+                    placeholder="Local Server"
+                >
+
+            </div>
+
+
+
+            <!-- TYPE -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Type
+
+                </label>
+
+                <input
+                    type="text"
+                    id="formType"
+                    placeholder="Movie"
+                >
+
+            </div>
+
+
+
+            <!-- POSITION -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Position
+
+                </label>
+
+                <input
+                    type="number"
+                    id="formPosition"
+                    min="1"
+                    placeholder="1"
+                >
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Status
+
+                </label>
+
+                <select id="formStatus">
+
+                    <option value="Active">
+
+                        Active
+
+                    </option>
+
+                    <option value="Inactive">
+
+                        Inactive
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <div class="left-actions">
 
                 <button
                     type="button"
-                    class="btn btn-secondary"
-                    id="cancelFormBtn"
-                >
-                    Cancel
-                </button>
-
-
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                    id="saveBtn"
+                    class="btn delete-btn"
+                    id="deleteBtn"
+                    onclick="deleteCurrentCard()"
+                    style="display:none;"
                 >
 
-                    <i class="fa-solid fa-floppy-disk"></i>
+                    <i class="fa-solid fa-trash"></i>
 
-                    Save Website
+                    Delete
 
                 </button>
 
             </div>
 
 
-        </form>
+            <div class="right-actions">
+
+                <button
+                    type="button"
+                    class="btn cancel-btn"
+                    onclick="closeModal()"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn save-btn"
+                    id="saveBtn"
+                    onclick="saveCard()"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save
+
+                </button>
+
+            </div>
+
+
+        </div>
 
 
     </div>
@@ -2264,203 +2131,165 @@ body.light .confirm-box{
 
 
 
-<!-- =========================================================
-     DELETE MODAL
-========================================================= -->
-
-<div
-    class="modal"
-    id="deleteModal"
->
-
-    <div class="confirm-box">
-
-
-        <div class="confirm-icon">
-
-            <i class="fa-solid fa-trash"></i>
-
-        </div>
-
-
-        <div class="confirm-title">
-            Delete Website?
-        </div>
-
-
-        <div
-            class="confirm-text"
-            id="deleteText"
-        >
-            This website will be permanently deleted.
-        </div>
-
-
-        <div class="confirm-actions">
-
-            <button
-                type="button"
-                class="btn btn-secondary"
-                id="cancelDeleteBtn"
-            >
-                Cancel
-            </button>
-
-
-            <button
-                type="button"
-                class="btn btn-danger"
-                id="confirmDeleteBtn"
-            >
-
-                <i class="fa-solid fa-trash"></i>
-
-                Delete
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
+<!-- =====================================================
      TOAST
-========================================================= -->
+===================================================== -->
 
 <div
     class="toast"
     id="toast"
->
-
-    <i class="fa-solid fa-circle-check"></i>
-
-    <span id="toastMessage">
-        Done
-    </span>
-
-</div>
+></div>
 
 
 
 <script>
 
 /* =========================================================
-   API
+   CONFIG
 ========================================================= */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
+    "https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
 
 
 /* =========================================================
-   ELEMENTS
+   GLOBAL
 ========================================================= */
 
-const tableBody =
-document.getElementById("tableBody");
+let cards = [];
 
-const searchInput =
-document.getElementById("searchInput");
-
-const clearBtn =
-document.getElementById("clearBtn");
-
-const addBtn =
-document.getElementById("addBtn");
-
-const refreshBtn =
-document.getElementById("refreshBtn");
-
-const formModal =
-document.getElementById("formModal");
-
-const deleteModal =
-document.getElementById("deleteModal");
-
-const websiteForm =
-document.getElementById("websiteForm");
-
-const modalTitle =
-document.getElementById("modalTitle");
-
-const closeFormBtn =
-document.getElementById("closeFormBtn");
-
-const cancelFormBtn =
-document.getElementById("cancelFormBtn");
-
-const cancelDeleteBtn =
-document.getElementById("cancelDeleteBtn");
-
-const confirmDeleteBtn =
-document.getElementById("confirmDeleteBtn");
+let editingId = null;
 
 
 /* =========================================================
-   DATA
-========================================================= */
-
-let websites = [];
-
-let currentSearch = "";
-
-let deleteId = null;
-
-
-/* =========================================================
-   LOAD
+   PAGE LOAD
 ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        loadTheme();
+        checkSession();
 
-        loadWebsites();
+
+        const usernameInput =
+            document.getElementById(
+                "usernameInput"
+            );
+
+
+        usernameInput.addEventListener(
+            "keydown",
+            function(event){
+
+                if(
+                    event.key === "Enter"
+                ){
+
+                    login();
+
+                }
+
+            }
+        );
 
     }
 );
 
 
 /* =========================================================
-   LOAD WEBSITES
+   SESSION
 ========================================================= */
 
-async function loadWebsites(){
+function checkSession(){
 
-    tableBody.innerHTML = `
+    const logged =
+        localStorage.getItem(
+            "websiteControlLoggedIn"
+        );
 
-        <tr>
 
-            <td
-                colspan="7"
-                class="empty"
-            >
+    const name =
+        localStorage.getItem(
+            "websiteControlName"
+        );
 
-                <i class="fa-solid fa-spinner fa-spin"></i>
 
-                <div>
-                    Loading websites...
-                </div>
+    if(
+        logged === "true" &&
+        name
+    ){
 
-            </td>
+        showDashboard(
+            name
+        );
 
-        </tr>
+    }
 
-    `;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+async function login(){
+
+    const input =
+        document.getElementById(
+            "usernameInput"
+        );
+
+
+    const button =
+        document.getElementById(
+            "loginBtn"
+        );
+
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+
+    const username =
+        input.value.trim();
+
+
+    error.style.display =
+        "none";
+
+
+    if(!username){
+
+        showLoginError(
+            "Please enter your username."
+        );
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    button.disabled =
+        true;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
 
 
     try{
 
         const url =
             API_URL +
-            "?action=getCards&t=" +
-            Date.now();
+            "?action=login&username=" +
+            encodeURIComponent(
+                username
+            );
 
 
         const response =
@@ -2473,13 +2302,218 @@ async function loadWebsites(){
             );
 
 
-        if(!response.ok){
+        const data =
+            await response.json();
 
-            throw new Error(
-                "HTTP " +
-                response.status
+
+        if(
+            data.success
+        ){
+
+            localStorage.setItem(
+                "websiteControlLoggedIn",
+                "true"
             );
+
+
+            localStorage.setItem(
+                "websiteControlUsername",
+                data.username ||
+                username
+            );
+
+
+            localStorage.setItem(
+                "websiteControlName",
+                data.name ||
+                username
+            );
+
+
+            showDashboard(
+                data.name ||
+                username
+            );
+
         }
+
+        else{
+
+            showLoginError(
+                data.message ||
+                "Username not found."
+            );
+
+        }
+
+    }
+
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        showLoginError(
+            "Unable to connect with server."
+        );
+
+    }
+
+
+    button.disabled =
+        false;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
+
+}
+
+
+/* =========================================================
+   LOGIN ERROR
+========================================================= */
+
+function showLoginError(
+    message
+){
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+
+    error.textContent =
+        message;
+
+
+    error.style.display =
+        "block";
+
+}
+
+
+/* =========================================================
+   SHOW DASHBOARD
+========================================================= */
+
+function showDashboard(
+    name
+){
+
+    document.getElementById(
+        "loginScreen"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "dashboard"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "loggedUserName"
+    ).textContent =
+        name;
+
+
+    loadCards();
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout(){
+
+    localStorage.removeItem(
+        "websiteControlLoggedIn"
+    );
+
+
+    localStorage.removeItem(
+        "websiteControlUsername"
+    );
+
+
+    localStorage.removeItem(
+        "websiteControlName"
+    );
+
+
+    cards = [];
+
+
+    document.getElementById(
+        "dashboard"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "loginScreen"
+    ).style.display =
+        "flex";
+
+
+    document.getElementById(
+        "usernameInput"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "usernameInput"
+    ).focus();
+
+}
+
+
+/* =========================================================
+   LOAD CARDS
+========================================================= */
+
+async function loadCards(){
+
+    const loading =
+        document.getElementById(
+            "loading"
+        );
+
+
+    const cardsBox =
+        document.getElementById(
+            "cards"
+        );
+
+
+    loading.style.display =
+        "block";
+
+
+    cardsBox.innerHTML =
+        "";
+
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL +
+                "?action=getCards&ts=" +
+                Date.now(),
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
 
 
         const data =
@@ -2487,76 +2521,39 @@ async function loadWebsites(){
 
 
         if(
-            data.success !== true
+            !data.success
         ){
 
             throw new Error(
                 data.message ||
-                "Unable to load data."
+                "Failed to load websites."
             );
+
         }
 
 
-        websites =
-            Array.isArray(data.cards)
-                ? data.cards
-                : [];
+        cards =
+            Array.isArray(
+                data.cards
+            )
+            ? data.cards
+            : [];
 
 
-        websites.sort(
-            function(a,b){
-
-                return (
-                    Number(a.position || 0) -
-                    Number(b.position || 0)
-                );
-
-            }
-        );
-
-
-        updateStats();
-
-        renderTable();
+        renderCards();
 
     }
 
     catch(error){
 
-        console.error(error);
+        console.error(
+            error
+        );
 
 
-        tableBody.innerHTML = `
+        cardsBox.innerHTML =
+            "";
 
-            <tr>
-
-                <td
-                    colspan="7"
-                    class="empty"
-                >
-
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-
-                    <div>
-                        Failed to load websites
-                    </div>
-
-                    <br>
-
-                    <button
-                        class="btn btn-primary"
-                        onclick="loadWebsites()"
-                    >
-
-                        Try Again
-
-                    </button>
-
-                </td>
-
-            </tr>
-
-        `;
 
         showToast(
             error.message ||
@@ -2566,499 +2563,361 @@ async function loadWebsites(){
 
     }
 
-}
 
-
-/* =========================================================
-   STATS
-========================================================= */
-
-function updateStats(){
-
-    const total =
-        websites.length;
-
-
-    const active =
-        websites.filter(
-            function(item){
-
-                return String(
-                    item.status || "Active"
-                )
-                .toLowerCase()
-                === "active";
-
-            }
-        ).length;
-
-
-    const inactive =
-        total - active;
-
-
-    document.getElementById(
-        "totalCount"
-    ).textContent =
-        total;
-
-
-    document.getElementById(
-        "activeCount"
-    ).textContent =
-        active;
-
-
-    document.getElementById(
-        "inactiveCount"
-    ).textContent =
-        inactive;
+    loading.style.display =
+        "none";
 
 }
 
 
 /* =========================================================
-   RENDER TABLE
+   RENDER CARDS
 ========================================================= */
 
-function renderTable(){
+function renderCards(){
 
-    const query =
-        currentSearch
+    const box =
+        document.getElementById(
+            "cards"
+        );
+
+
+    const empty =
+        document.getElementById(
+            "empty"
+        );
+
+
+    const search =
+        document.getElementById(
+            "searchInput"
+        ).value
         .trim()
         .toLowerCase();
 
 
+    box.innerHTML =
+        "";
+
+
     let filtered =
-        websites;
+        cards.filter(
+            function(card){
 
+                if(
+                    String(
+                        card.status ||
+                        "Active"
+                    ).toLowerCase()
+                    ===
+                    "inactive"
+                ){
 
-    if(query){
-
-        filtered =
-            websites.filter(
-                function(item){
-
-                    const text =
-                        [
-                            item.name,
-                            item.description,
-                            item.source,
-                            item.type,
-                            item.link,
-                            item.status
-                        ]
-                        .join(" ")
-                        .toLowerCase();
-
-
-                    return text.includes(
-                        query
-                    );
+                    return false;
 
                 }
-            );
-
-    }
 
 
-    document.getElementById(
-        "visibleCount"
-    ).textContent =
-        filtered.length;
+                if(!search){
+
+                    return true;
+
+                }
 
 
-    document.getElementById(
-        "tableCount"
-    ).textContent =
-        filtered.length +
-        (
-            filtered.length === 1
-                ? " website"
-                : " websites"
+                const text = (
+
+                    card.name +
+                    " " +
+                    card.description +
+                    " " +
+                    card.source +
+                    " " +
+                    card.type
+
+                ).toLowerCase();
+
+
+                return text.includes(
+                    search
+                );
+
+            }
         );
 
 
-    if(filtered.length === 0){
+    if(
+        filtered.length === 0
+    ){
 
-        tableBody.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="7"
-                    class="empty"
-                >
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <div class="empty-title">
-                        No website found
-                    </div>
-
-                </td>
-
-            </tr>
-
-        `;
+        empty.style.display =
+            "block";
 
         return;
 
     }
 
 
-    tableBody.innerHTML =
-        filtered
-        .map(
-            createRow
-        )
-        .join("");
+    empty.style.display =
+        "none";
 
-}
 
+    filtered.forEach(
+        function(card){
 
-/* =========================================================
-   CREATE ROW
-========================================================= */
+            box.appendChild(
+                createCard(
+                    card
+                )
+            );
 
-function createRow(item){
-
-    const id =
-        escapeHTML(
-            String(
-                item.id ??
-                item.ID ??
-                item.row ??
-                ""
-            )
-        );
-
-
-    const name =
-        escapeHTML(
-            item.name ||
-            "Untitled"
-        );
-
-
-    const link =
-        safeURL(
-            item.link
-        );
-
-
-    const logo =
-        safeURL(
-            item.logo
-        );
-
-
-    const description =
-        escapeHTML(
-            item.description ||
-            "-"
-        );
-
-
-    const source =
-        escapeHTML(
-            item.source ||
-            "-"
-        );
-
-
-    const type =
-        escapeHTML(
-            item.type ||
-            "-"
-        );
-
-
-    const position =
-        escapeHTML(
-            item.position ||
-            "-"
-        );
-
-
-    const status =
-        String(
-            item.status ||
-            "Active"
-        );
-
-
-    const active =
-        status
-        .toLowerCase()
-        === "active";
-
-
-    let logoHTML;
-
-
-    if(logo){
-
-        logoHTML = `
-
-            <img
-                src="${escapeAttribute(logo)}"
-                alt=""
-                onerror="
-                    this.style.display='none';
-                    this.nextElementSibling.style.display='block';
-                "
-            >
-
-            <i
-                class="fa-solid fa-globe"
-                style="display:none"
-            ></i>
-
-        `;
-
-    }
-
-    else{
-
-        logoHTML = `
-
-            <i class="fa-solid fa-globe"></i>
-
-        `;
-
-    }
-
-
-    return `
-
-        <tr>
-
-
-            <td>
-
-                <div class="website-cell">
-
-
-                    <div class="website-logo">
-
-                        ${logoHTML}
-
-                    </div>
-
-
-                    <div>
-
-                        <div
-                            class="website-name"
-                            title="${escapeAttribute(name)}"
-                        >
-
-                            ${name}
-
-                        </div>
-
-
-                        <div
-                            class="website-link"
-                            title="${escapeAttribute(link)}"
-                        >
-
-                            ${escapeHTML(
-                                displayURL(link)
-                            )}
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </td>
-
-
-            <td>
-
-                <span
-                    title="${escapeAttribute(description)}"
-                >
-
-                    ${description}
-
-                </span>
-
-            </td>
-
-
-            <td>
-                ${source}
-            </td>
-
-
-            <td>
-                ${type}
-            </td>
-
-
-            <td>
-                ${position}
-            </td>
-
-
-            <td>
-
-                <span
-                    class="badge ${
-                        active
-                            ? "badge-active"
-                            : "badge-inactive"
-                    }"
-                >
-
-                    <span class="badge-dot"></span>
-
-                    ${
-                        active
-                            ? "Active"
-                            : "Inactive"
-                    }
-
-                </span>
-
-            </td>
-
-
-            <td>
-
-                <div class="actions">
-
-
-                    <button
-                        type="button"
-                        class="action-btn edit-btn"
-                        title="Edit"
-                        onclick="editWebsite('${escapeAttribute(id)}')"
-                    >
-
-                        <i class="fa-solid fa-pen"></i>
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="action-btn toggle-btn"
-                        title="${
-                            active
-                                ? "Make Inactive"
-                                : "Make Active"
-                        }"
-                        onclick="toggleWebsite('${escapeAttribute(id)}')"
-                    >
-
-                        <i class="fa-solid ${
-                            active
-                                ? "fa-toggle-on"
-                                : "fa-toggle-off"
-                        }"></i>
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="action-btn delete-btn"
-                        title="Delete"
-                        onclick="askDelete('${escapeAttribute(id)}')"
-                    >
-
-                        <i class="fa-solid fa-trash"></i>
-
-                    </button>
-
-
-                </div>
-
-            </td>
-
-
-        </tr>
-
-    `;
-
-}
-
-
-/* =========================================================
-   ADD
-========================================================= */
-
-addBtn.addEventListener(
-    "click",
-    function(){
-
-        openAddModal();
-
-    }
-);
-
-
-function openAddModal(){
-
-    websiteForm.reset();
-
-    document.getElementById(
-        "websiteId"
-    ).value = "";
-
-
-    document.getElementById(
-        "position"
-    ).value =
-        websites.length + 1;
-
-
-    document.getElementById(
-        "status"
-    ).value =
-        "Active";
-
-
-    modalTitle.textContent =
-        "Add Website";
-
-
-    formModal.classList.add(
-        "show"
+        }
     );
 
 }
 
 
 /* =========================================================
-   EDIT
+   CREATE CARD
 ========================================================= */
 
-function editWebsite(id){
+function createCard(
+    card
+){
 
-    const item =
-        websites.find(
-            function(site){
+    const article =
+        document.createElement(
+            "article"
+        );
 
-                return String(
-                    site.id ??
-                    site.ID ??
-                    site.row ??
-                    ""
-                )
-                === String(id);
+
+    article.className =
+        "card";
+
+
+    const logo =
+        card.logo
+        ? `
+            <img
+                src="${escapeAttribute(card.logo)}"
+                alt=""
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+            <div
+                class="logo-fallback"
+                style="display:none;"
+            >
+                ${escapeHTML(
+                    getInitials(
+                        card.name
+                    )
+                )}
+            </div>
+        `
+        :
+        `
+            <div class="logo-fallback">
+                ${escapeHTML(
+                    getInitials(
+                        card.name
+                    )
+                )}
+            </div>
+        `;
+
+
+    article.innerHTML = `
+
+        <div class="card-top">
+
+            <div class="logo">
+
+                ${logo}
+
+            </div>
+
+
+            <div class="card-title">
+
+                <h3 title="${escapeAttribute(card.name)}">
+
+                    ${escapeHTML(
+                        card.name ||
+                        "Unnamed Website"
+                    )}
+
+                </h3>
+
+
+                <span>
+
+                    ${escapeHTML(
+                        card.type ||
+                        "Website"
+                    )}
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-description">
+
+            ${escapeHTML(
+                card.description ||
+                "Access website"
+            )}
+
+        </div>
+
+
+        <div class="meta">
+
+            ${
+                card.source
+                ? `
+                    <span>
+                        <i class="fa-solid fa-server"></i>
+                        ${escapeHTML(card.source)}
+                    </span>
+                `
+                : ""
+            }
+
+
+            ${
+                card.type
+                ? `
+                    <span>
+                        <i class="fa-solid fa-tag"></i>
+                        ${escapeHTML(card.type)}
+                    </span>
+                `
+                : ""
+            }
+
+        </div>
+
+
+        <div class="card-bottom">
+
+            <a
+                class="open-btn"
+                href="${escapeAttribute(card.link)}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                Open
+
+            </a>
+
+
+            <button
+                type="button"
+                class="edit-btn"
+                title="Edit"
+                onclick="openEditModal('${escapeAttribute(card.id)}')"
+            >
+
+                <i class="fa-solid fa-pen"></i>
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    return article;
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function filterCards(){
+
+    renderCards();
+
+}
+
+
+/* =========================================================
+   ADD MODAL
+========================================================= */
+
+function openAddModal(){
+
+    editingId =
+        null;
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        "Add Website";
+
+
+    document.getElementById(
+        "deleteBtn"
+    ).style.display =
+        "none";
+
+
+    clearForm();
+
+
+    document.getElementById(
+        "cardModal"
+    ).classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function(){
+
+            document.getElementById(
+                "formName"
+            ).focus();
+
+        },
+        100
+    );
+
+}
+
+
+/* =========================================================
+   EDIT MODAL
+========================================================= */
+
+function openEditModal(
+    id
+){
+
+    const card =
+        cards.find(
+            function(item){
+
+                return (
+                    String(item.id)
+                    ===
+                    String(id)
+                );
 
             }
         );
 
 
-    if(!item){
+    if(!card){
 
         showToast(
             "Website not found.",
@@ -3066,71 +2925,77 @@ function editWebsite(id){
         );
 
         return;
+
     }
 
 
-    document.getElementById(
-        "websiteId"
-    ).value =
-        item.id ??
-        item.ID ??
-        item.row ??
-        "";
+    editingId =
+        card.id;
 
 
     document.getElementById(
-        "name"
-    ).value =
-        item.name || "";
-
-
-    document.getElementById(
-        "link"
-    ).value =
-        item.link || "";
-
-
-    document.getElementById(
-        "logo"
-    ).value =
-        item.logo || "";
-
-
-    document.getElementById(
-        "description"
-    ).value =
-        item.description || "";
-
-
-    document.getElementById(
-        "source"
-    ).value =
-        item.source || "";
-
-
-    document.getElementById(
-        "type"
-    ).value =
-        item.type || "";
-
-
-    document.getElementById(
-        "position"
-    ).value =
-        item.position || "";
-
-
-    document.getElementById(
-        "status"
-    ).value =
-        item.status || "Active";
-
-
-    modalTitle.textContent =
+        "modalTitle"
+    ).textContent =
         "Edit Website";
 
 
-    formModal.classList.add(
+    document.getElementById(
+        "deleteBtn"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "formName"
+    ).value =
+        card.name || "";
+
+
+    document.getElementById(
+        "formLink"
+    ).value =
+        card.link || "";
+
+
+    document.getElementById(
+        "formLogo"
+    ).value =
+        card.logo || "";
+
+
+    document.getElementById(
+        "formDescription"
+    ).value =
+        card.description || "";
+
+
+    document.getElementById(
+        "formSource"
+    ).value =
+        card.source || "";
+
+
+    document.getElementById(
+        "formType"
+    ).value =
+        card.type || "";
+
+
+    document.getElementById(
+        "formPosition"
+    ).value =
+        card.position || "";
+
+
+    document.getElementById(
+        "formStatus"
+    ).value =
+        card.status || "Active";
+
+
+    document.getElementById(
+        "cardModal"
+    ).classList.add(
         "show"
     );
 
@@ -3138,274 +3003,210 @@ function editWebsite(id){
 
 
 /* =========================================================
-   SAVE
+   CLEAR FORM
 ========================================================= */
 
-websiteForm.addEventListener(
-    "submit",
-    async function(event){
+function clearForm(){
 
-        event.preventDefault();
-
-
-        const saveBtn =
-            document.getElementById(
-                "saveBtn"
-            );
+    document.getElementById(
+        "formName"
+    ).value =
+        "";
 
 
-        const id =
-            document.getElementById(
-                "websiteId"
-            ).value
-            .trim();
+    document.getElementById(
+        "formLink"
+    ).value =
+        "";
 
 
-        const payload = {
-
-            action:
-                id
-                    ? "updateCard"
-                    : "addCard",
-
-            id:id,
-
-            name:
-                document.getElementById(
-                    "name"
-                ).value.trim(),
-
-            link:
-                document.getElementById(
-                    "link"
-                ).value.trim(),
-
-            logo:
-                document.getElementById(
-                    "logo"
-                ).value.trim(),
-
-            description:
-                document.getElementById(
-                    "description"
-                ).value.trim(),
-
-            source:
-                document.getElementById(
-                    "source"
-                ).value.trim(),
-
-            type:
-                document.getElementById(
-                    "type"
-                ).value.trim(),
-
-            position:
-                document.getElementById(
-                    "position"
-                ).value.trim(),
-
-            status:
-                document.getElementById(
-                    "status"
-                ).value
-
-        };
+    document.getElementById(
+        "formLogo"
+    ).value =
+        "";
 
 
-        if(!payload.name){
-
-            showToast(
-                "Website name is required.",
-                "error"
-            );
-
-            return;
-        }
+    document.getElementById(
+        "formDescription"
+    ).value =
+        "";
 
 
-        if(!payload.link){
-
-            showToast(
-                "Website link is required.",
-                "error"
-            );
-
-            return;
-        }
+    document.getElementById(
+        "formSource"
+    ).value =
+        "";
 
 
-        saveBtn.disabled = true;
-
-        saveBtn.innerHTML = `
-
-            <i class="fa-solid fa-spinner fa-spin"></i>
-
-            Saving...
-
-        `;
+    document.getElementById(
+        "formType"
+    ).value =
+        "";
 
 
-        try{
-
-            const response =
-                await fetch(
-                    API_URL,
-                    {
-                        method:"POST",
-
-                        headers:{
-                            "Content-Type":
-                                "text/plain;charset=utf-8"
-                        },
-
-                        body:
-                            JSON.stringify(
-                                payload
-                            )
-                    }
-                );
+    document.getElementById(
+        "formPosition"
+    ).value =
+        "";
 
 
-            const data =
-                await response.json();
+    document.getElementById(
+        "formStatus"
+    ).value =
+        "Active";
 
-
-            if(
-                data.success !== true
-            ){
-
-                throw new Error(
-                    data.message ||
-                    "Save failed."
-                );
-            }
-
-
-            closeForm();
-
-            showToast(
-                id
-                    ? "Website updated successfully."
-                    : "Website added successfully.",
-                "success"
-            );
-
-
-            await loadWebsites();
-
-        }
-
-        catch(error){
-
-            console.error(error);
-
-            showToast(
-                error.message ||
-                "Unable to save website.",
-                "error"
-            );
-
-        }
-
-        finally{
-
-            saveBtn.disabled = false;
-
-            saveBtn.innerHTML = `
-
-                <i class="fa-solid fa-floppy-disk"></i>
-
-                Save Website
-
-            `;
-
-        }
-
-    }
-);
+}
 
 
 /* =========================================================
-   TOGGLE
+   CLOSE MODAL
 ========================================================= */
 
-async function toggleWebsite(id){
+function closeModal(){
 
-    const item =
-        websites.find(
-            function(site){
+    document.getElementById(
+        "cardModal"
+    ).classList.remove(
+        "show"
+    );
 
-                return String(
-                    site.id ??
-                    site.ID ??
-                    site.row ??
-                    ""
-                )
-                === String(id);
 
-            }
+    editingId =
+        null;
+
+}
+
+
+/* =========================================================
+   SAVE CARD
+========================================================= */
+
+async function saveCard(){
+
+    const name =
+        document.getElementById(
+            "formName"
+        ).value.trim();
+
+
+    const link =
+        document.getElementById(
+            "formLink"
+        ).value.trim();
+
+
+    const logo =
+        document.getElementById(
+            "formLogo"
+        ).value.trim();
+
+
+    const description =
+        document.getElementById(
+            "formDescription"
+        ).value.trim();
+
+
+    const source =
+        document.getElementById(
+            "formSource"
+        ).value.trim();
+
+
+    const type =
+        document.getElementById(
+            "formType"
+        ).value.trim();
+
+
+    const position =
+        document.getElementById(
+            "formPosition"
+        ).value;
+
+
+    const status =
+        document.getElementById(
+            "formStatus"
+        ).value;
+
+
+    if(!name){
+
+        showToast(
+            "Website name is required.",
+            "error"
         );
 
-
-    if(!item){
-
         return;
+
     }
 
 
-    const current =
-        String(
-            item.status ||
-            "Active"
-        )
-        .toLowerCase();
+    if(!link){
+
+        showToast(
+            "Website link is required.",
+            "error"
+        );
+
+        return;
+
+    }
 
 
-    const newStatus =
-        current === "active"
-            ? "Inactive"
-            : "Active";
+    const saveBtn =
+        document.getElementById(
+            "saveBtn"
+        );
+
+
+    saveBtn.disabled =
+        true;
+
+
+    saveBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+
+
+    const payload = {
+
+        action:
+            editingId
+            ? "updateCard"
+            : "addCard",
+
+        id:
+            editingId || "",
+
+        name:
+            name,
+
+        link:
+            link,
+
+        logo:
+            logo,
+
+        description:
+            description,
+
+        source:
+            source,
+
+        type:
+            type,
+
+        position:
+            position,
+
+        status:
+            status
+
+    };
 
 
     try{
-
-        const payload = {
-
-            action:
-                "updateCard",
-
-            id:
-                item.id ??
-                item.ID ??
-                item.row,
-
-            name:
-                item.name || "",
-
-            link:
-                item.link || "",
-
-            logo:
-                item.logo || "",
-
-            description:
-                item.description || "",
-
-            source:
-                item.source || "",
-
-            type:
-                item.type || "",
-
-            position:
-                item.position || "",
-
-            status:
-                newStatus
-
-        };
-
 
         const response =
             await fetch(
@@ -3431,31 +3232,151 @@ async function toggleWebsite(id){
 
 
         if(
-            data.success !== true
+            !data.success
         ){
 
             throw new Error(
                 data.message ||
-                "Status update failed."
+                "Failed to save website."
             );
+
         }
 
 
+        closeModal();
+
+
         showToast(
-            "Status updated successfully.",
+            data.message ||
+            "Saved successfully.",
             "success"
         );
 
 
-        await loadWebsites();
+        await loadCards();
 
     }
 
     catch(error){
 
+        console.error(
+            error
+        );
+
+
         showToast(
             error.message ||
-            "Unable to change status.",
+            "Failed to save website.",
+            "error"
+        );
+
+    }
+
+
+    saveBtn.disabled =
+        false;
+
+
+    saveBtn.innerHTML =
+        '<i class="fa-solid fa-check"></i> Save';
+
+}
+
+
+/* =========================================================
+   DELETE CURRENT CARD
+========================================================= */
+
+async function deleteCurrentCard(){
+
+    if(!editingId){
+
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete this website?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            action:
+                                "deleteCard",
+
+                            id:
+                                editingId
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if(
+            !data.success
+        ){
+
+            throw new Error(
+                data.message ||
+                "Delete failed."
+            );
+
+        }
+
+
+        closeModal();
+
+
+        showToast(
+            data.message ||
+            "Website deleted.",
+            "success"
+        );
+
+
+        await loadCards();
+
+    }
+
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        showToast(
+            error.message ||
+            "Delete failed.",
             "error"
         );
 
@@ -3465,425 +3386,91 @@ async function toggleWebsite(id){
 
 
 /* =========================================================
-   DELETE ASK
+   ESCAPE HTML
 ========================================================= */
 
-function askDelete(id){
+function escapeHTML(
+    value
+){
 
-    const item =
-        websites.find(
-            function(site){
-
-                return String(
-                    site.id ??
-                    site.ID ??
-                    site.row ??
-                    ""
-                )
-                === String(id);
-
-            }
-        );
-
-
-    if(!item){
-
-        return;
-    }
-
-
-    deleteId = id;
-
-
-    document.getElementById(
-        "deleteText"
-    ).textContent =
-        `"${item.name || "This website"}" will be permanently deleted.`;
-
-
-    deleteModal.classList.add(
-        "show"
+    return String(
+        value || ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
     );
 
 }
 
 
 /* =========================================================
-   DELETE CONFIRM
+   ESCAPE ATTRIBUTE
 ========================================================= */
 
-confirmDeleteBtn.addEventListener(
-    "click",
-    async function(){
+function escapeAttribute(
+    value
+){
 
-        if(!deleteId){
-
-            return;
-        }
-
-
-        confirmDeleteBtn.disabled =
-            true;
-
-
-        confirmDeleteBtn.innerHTML = `
-
-            <i class="fa-solid fa-spinner fa-spin"></i>
-
-            Deleting...
-
-        `;
-
-
-        try{
-
-            const payload = {
-
-                action:
-                    "deleteCard",
-
-                id:
-                    deleteId
-
-            };
-
-
-            const response =
-                await fetch(
-                    API_URL,
-                    {
-                        method:"POST",
-
-                        headers:{
-                            "Content-Type":
-                                "text/plain;charset=utf-8"
-                        },
-
-                        body:
-                            JSON.stringify(
-                                payload
-                            )
-                    }
-                );
-
-
-            const data =
-                await response.json();
-
-
-            if(
-                data.success !== true
-            ){
-
-                throw new Error(
-                    data.message ||
-                    "Delete failed."
-                );
-            }
-
-
-            closeDelete();
-
-            showToast(
-                "Website deleted successfully.",
-                "success"
-            );
-
-
-            await loadWebsites();
-
-        }
-
-        catch(error){
-
-            showToast(
-                error.message ||
-                "Unable to delete website.",
-                "error"
-            );
-
-        }
-
-        finally{
-
-            confirmDeleteBtn.disabled =
-                false;
-
-            confirmDeleteBtn.innerHTML = `
-
-                <i class="fa-solid fa-trash"></i>
-
-                Delete
-
-            `;
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE FORM
-========================================================= */
-
-closeFormBtn.addEventListener(
-    "click",
-    closeForm
-);
-
-
-cancelFormBtn.addEventListener(
-    "click",
-    closeForm
-);
-
-
-function closeForm(){
-
-    formModal.classList.remove(
-        "show"
+    return escapeHTML(
+        value
     );
 
 }
 
 
 /* =========================================================
-   CLOSE DELETE
+   INITIALS
 ========================================================= */
 
-cancelDeleteBtn.addEventListener(
-    "click",
-    closeDelete
-);
+function getInitials(
+    name
+){
 
-
-function closeDelete(){
-
-    deleteModal.classList.remove(
-        "show"
-    );
-
-    deleteId = null;
-
-}
-
-
-/* =========================================================
-   OUTSIDE MODAL CLICK
-========================================================= */
-
-formModal.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            formModal
-        ){
-
-            closeForm();
-
-        }
-
-    }
-);
-
-
-deleteModal.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            deleteModal
-        ){
-
-            closeDelete();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   ESC
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key !== "Escape"){
-
-            return;
-        }
-
-
-        closeForm();
-
-        closeDelete();
-
-    }
-);
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-searchInput.addEventListener(
-    "input",
-    function(){
-
-        currentSearch =
-            this.value;
-
-
-        clearBtn.style.display =
-            this.value
-                ? "flex"
-                : "none";
-
-
-        renderTable();
-
-    }
-);
-
-
-clearBtn.addEventListener(
-    "click",
-    function(){
-
-        searchInput.value = "";
-
-        currentSearch = "";
-
-        clearBtn.style.display =
-            "none";
-
-        searchInput.focus();
-
-        renderTable();
-
-    }
-);
-
-
-/* =========================================================
-   REFRESH
-========================================================= */
-
-refreshBtn.addEventListener(
-    "click",
-    async function(){
-
-        const icon =
-            refreshBtn.querySelector(
-                "i"
-            );
-
-
-        icon.classList.add(
-            "fa-spin"
+    const words =
+        String(
+            name || "W"
+        )
+        .trim()
+        .split(
+            /\s+/
         );
 
 
-        await loadWebsites();
+    if(
+        words.length === 1
+    ){
 
-
-        setTimeout(
-            function(){
-
-                icon.classList.remove(
-                    "fa-spin"
-                );
-
-            },
-            300
-        );
-
-    }
-);
-
-
-/* =========================================================
-   THEME
-========================================================= */
-
-const themeButtons =
-document.querySelectorAll(
-    ".theme-btn"
-);
-
-
-themeButtons.forEach(
-    function(button){
-
-        button.addEventListener(
-            "click",
-            function(){
-
-                setTheme(
-                    this.dataset.theme
-                );
-
-            }
-        );
-
-    }
-);
-
-
-function setTheme(theme){
-
-    document.body.classList.remove(
-        "light"
-    );
-
-
-    if(theme === "light"){
-
-        document.body.classList.add(
-            "light"
-        );
+        return words[0]
+            .substring(
+                0,
+                2
+            )
+            .toUpperCase();
 
     }
 
 
-    localStorage.setItem(
-        "websiteControlTheme",
-        theme
-    );
-
-
-    themeButtons.forEach(
-        function(button){
-
-            button.classList.toggle(
-                "active",
-                button.dataset.theme ===
-                theme
-            );
-
-        }
-    );
-
-}
-
-
-function loadTheme(){
-
-    const saved =
-        localStorage.getItem(
-            "websiteControlTheme"
-        ) ||
-        "dark";
-
-
-    setTheme(saved);
+    return (
+        words[0][0] +
+        words[1][0]
+    ).toUpperCase();
 
 }
 
@@ -3897,7 +3484,7 @@ let toastTimer;
 
 function showToast(
     message,
-    type="success"
+    type
 ){
 
     const toast =
@@ -3905,47 +3492,18 @@ function showToast(
             "toast"
         );
 
-    const icon =
-        toast.querySelector(
-            "i"
-        );
 
-
-    document.getElementById(
-        "toastMessage"
-    ).textContent =
+    toast.textContent =
         message;
 
 
     toast.className =
-        "toast " +
-        type;
-
-
-    if(type === "error"){
-
-        icon.className =
-            "fa-solid fa-circle-exclamation";
-
-    }
-
-    else{
-
-        icon.className =
-            "fa-solid fa-circle-check";
-
-    }
-
-
-    requestAnimationFrame(
-        function(){
-
-            toast.classList.add(
-                "show"
-            );
-
-        }
-    );
+        "toast show " +
+        (
+            type === "error"
+            ? "error"
+            : "success"
+        );
 
 
     clearTimeout(
@@ -3969,125 +3527,45 @@ function showToast(
 
 
 /* =========================================================
-   SAFE URL
+   CLOSE MODAL WHEN CLICK OUTSIDE
 ========================================================= */
 
-function safeURL(value){
-
-    const url =
-        String(value || "")
-        .trim();
-
-
-    if(!url){
-
-        return "";
-    }
-
-
-    try{
-
-        const parsed =
-            new URL(url);
-
+document.getElementById(
+    "cardModal"
+).addEventListener(
+    "click",
+    function(event){
 
         if(
-            parsed.protocol !== "http:" &&
-            parsed.protocol !== "https:"
+            event.target === this
         ){
 
-            return "";
+            closeModal();
+
         }
 
-
-        return parsed.href;
-
     }
-
-    catch(error){
-
-        return "";
-    }
-
-}
+);
 
 
 /* =========================================================
-   DISPLAY URL
+   ESC KEY
 ========================================================= */
 
-function displayURL(value){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    if(!value){
+        if(
+            event.key === "Escape"
+        ){
 
-        return "";
-    }
+            closeModal();
 
-
-    try{
-
-        const parsed =
-            new URL(value);
-
-
-        return (
-            parsed.host +
-            (
-                parsed.pathname !== "/"
-                    ? parsed.pathname
-                    : ""
-            )
-        );
+        }
 
     }
-
-    catch(error){
-
-        return value;
-
-    }
-
-}
-
-
-/* =========================================================
-   ESCAPE
-========================================================= */
-
-function escapeHTML(value){
-
-    return String(value ?? "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeAttribute(value){
-
-    return escapeHTML(value);
-
-}
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-window.editWebsite =
-    editWebsite;
-
-window.toggleWebsite =
-    toggleWebsite;
-
-window.askDelete =
-    askDelete;
-
-window.loadWebsites =
-    loadWebsites;
+);
 
 </script>
 
