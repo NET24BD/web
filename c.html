@@ -12,17 +12,8 @@
 
 <title>Website Control Dashboard</title>
 
-
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -288,7 +279,7 @@ body{
 
 
 /* =========================================================
-   CONTENT
+   CONTAINER
 ========================================================= */
 
 .container{
@@ -298,24 +289,29 @@ body{
     padding:24px 27px 35px;
 }
 
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
 .page-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:15px;
-    margin-bottom:16px;
+    margin-bottom:17px;
 }
 
 .page-title h1{
-    font-size:25px;
+    font-size:26px;
     font-weight:800;
     letter-spacing:-.5px;
 }
 
 .page-title p{
     color:#64748b;
-    font-size:11px;
-    margin-top:4px;
+    font-size:12px;
+    margin-top:5px;
 }
 
 .add-btn{
@@ -340,26 +336,26 @@ body{
 
 
 /* =========================================================
-   STAT CARDS
+   STATISTICS
 ========================================================= */
 
 .stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
-    margin-bottom:13px;
+    margin-bottom:15px;
 }
 
 .stat-card{
     min-width:0;
-    height:112px;
+    min-height:108px;
     padding:15px;
     border-radius:15px;
     background:
         linear-gradient(
             145deg,
-            rgba(20,29,46,.96),
-            rgba(9,14,23,.96)
+            rgba(18,27,43,.97),
+            rgba(9,14,23,.97)
         );
     border:1px solid rgba(255,255,255,.07);
     position:relative;
@@ -367,85 +363,85 @@ body{
 }
 
 .stat-card.total{
-    border-color:rgba(34,197,94,.45);
+    border-color:rgba(34,197,94,.35);
 }
 
 .stat-card.active{
-    border-color:rgba(255,255,255,.07);
+    border-color:rgba(34,197,94,.15);
 }
 
 .stat-card.inactive{
-    border-color:rgba(255,255,255,.07);
+    border-color:rgba(248,113,113,.15);
 }
 
 .stat-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:8px;
 }
 
 .stat-icon{
-    width:35px;
-    height:35px;
+    width:39px;
+    height:39px;
     border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:13px;
+    font-size:14px;
 }
 
-.total .stat-icon{
+.stat-card.total .stat-icon{
     background:rgba(59,130,246,.15);
     color:#60a5fa;
 }
 
-.active .stat-icon{
-    background:rgba(34,197,94,.13);
+.stat-card.active .stat-icon{
+    background:rgba(34,197,94,.14);
     color:#4ade80;
 }
 
-.inactive .stat-icon{
-    background:rgba(239,68,68,.13);
+.stat-card.inactive .stat-icon{
+    background:rgba(248,113,113,.14);
     color:#f87171;
 }
 
 .stat-label{
+    color:#64748b;
     font-size:9px;
     font-weight:700;
-    color:#64748b;
     text-transform:uppercase;
 }
 
 .stat-number{
-    font-size:25px;
-    line-height:1;
+    font-size:27px;
     font-weight:800;
+    line-height:1;
     margin-top:12px;
 }
 
-.stat-description{
-    font-size:8px;
+.stat-bottom{
     color:#64748b;
-    margin-top:5px;
+    font-size:8px;
+    margin-top:6px;
 }
 
 
 /* =========================================================
-   FILTER + SEARCH
+   FILTER TABS
 ========================================================= */
 
-.controls{
+.filter-tabs{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:12px;
+    gap:7px;
     margin-bottom:15px;
+    overflow-x:auto;
+    scrollbar-width:none;
 }
 
-.filters{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
+.filter-tabs::-webkit-scrollbar{
+    display:none;
 }
 
 .filter-btn{
@@ -453,32 +449,47 @@ body{
     padding:0 12px;
     border-radius:9px;
     border:1px solid rgba(255,255,255,.07);
-    background:rgba(15,23,42,.85);
+    background:#0d1522;
     color:#94a3b8;
-    font-size:10px;
+    font-size:9px;
     font-weight:700;
     cursor:pointer;
     display:flex;
     align-items:center;
-    gap:5px;
+    gap:6px;
+    white-space:nowrap;
 }
 
-.filter-btn:hover{
-    border-color:rgba(34,197,94,.25);
+.filter-btn i{
+    font-size:8px;
 }
 
-.filter-btn.active-filter{
-    background:rgba(34,197,94,.12);
+.filter-btn.active{
+    background:rgba(34,197,94,.10);
+    border-color:rgba(34,197,94,.30);
     color:#4ade80;
-    border-color:rgba(34,197,94,.28);
 }
 
-.filter-btn .count{
-    opacity:.75;
+.filter-btn.inactive.active{
+    background:rgba(248,113,113,.10);
+    border-color:rgba(248,113,113,.30);
+    color:#f87171;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.toolbar{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:15px;
 }
 
 .search-box{
-    width:300px;
+    width:310px;
     position:relative;
 }
 
@@ -493,8 +504,8 @@ body{
 
 .search-box input{
     width:100%;
-    height:38px;
-    border-radius:9px;
+    height:40px;
+    border-radius:10px;
     border:1px solid rgba(255,255,255,.08);
     background:rgba(15,23,42,.80);
     color:#fff;
@@ -517,15 +528,15 @@ body{
     grid-template-columns:
         repeat(
             auto-fill,
-            minmax(260px,1fr)
+            minmax(225px,1fr)
         );
-    gap:13px;
+    gap:14px;
 }
 
 .card{
     min-width:0;
-    padding:14px;
-    border-radius:15px;
+    padding:15px;
+    border-radius:16px;
     background:
         linear-gradient(
             145deg,
@@ -536,14 +547,18 @@ body{
     transition:.2s ease;
 }
 
-.card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(34,197,94,.25);
-    box-shadow:0 15px 30px rgba(0,0,0,.25);
+.card.inactive-card{
+    border-color:rgba(248,113,113,.18);
 }
 
-.card.inactive-card{
-    border-color:rgba(239,68,68,.25);
+.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(34,197,94,.25);
+    box-shadow:0 16px 32px rgba(0,0,0,.25);
+}
+
+.card.inactive-card:hover{
+    border-color:rgba(248,113,113,.35);
 }
 
 .card-top{
@@ -573,21 +588,18 @@ body{
 }
 
 .logo-fallback{
-    font-size:16px;
+    font-size:17px;
     font-weight:800;
     color:#22c55e;
+}
+
+.card.inactive-card .logo-fallback{
+    color:#f87171;
 }
 
 .card-title{
     min-width:0;
     flex:1;
-}
-
-.card-title-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:7px;
 }
 
 .card-title h3{
@@ -598,32 +610,21 @@ body{
     text-overflow:ellipsis;
 }
 
-.card-status{
-    flex-shrink:0;
-    font-size:8px;
-    font-weight:700;
-    padding:4px 7px;
-    border-radius:6px;
-}
-
-.card-status.active{
-    background:rgba(34,197,94,.11);
-    color:#4ade80;
-}
-
-.card-status.inactive{
-    background:rgba(239,68,68,.11);
-    color:#f87171;
-}
-
-.type-badge{
+.status-badge{
     display:inline-flex;
-    margin-top:5px;
+    align-items:center;
+    gap:4px;
+    margin-top:4px;
     font-size:8px;
-    padding:3px 6px;
+    padding:4px 6px;
     border-radius:5px;
     background:rgba(34,197,94,.10);
     color:#4ade80;
+}
+
+.status-badge.inactive{
+    background:rgba(248,113,113,.10);
+    color:#f87171;
 }
 
 .card-description{
@@ -676,6 +677,12 @@ body{
     background:rgba(34,197,94,.10);
     border:1px solid rgba(34,197,94,.18);
     color:#4ade80;
+}
+
+.inactive-card .open-btn{
+    background:rgba(248,113,113,.08);
+    border-color:rgba(248,113,113,.18);
+    color:#f87171;
 }
 
 .open-btn:active{
@@ -915,11 +922,11 @@ body{
    MOBILE
 ========================================================= */
 
-@media(max-width:700px){
+@media(max-width:650px){
 
     .topbar{
         height:62px;
-        padding:0 12px;
+        padding:0 13px;
     }
 
     .brand{
@@ -955,7 +962,7 @@ body{
     }
 
     .container{
-        padding:15px 11px 25px;
+        padding:15px 10px 25px;
     }
 
     .page-head{
@@ -963,19 +970,20 @@ body{
     }
 
     .page-title h1{
-        font-size:20px;
+        font-size:19px;
     }
 
     .page-title p{
         font-size:9px;
+        margin-top:3px;
     }
 
     .add-btn{
-        width:40px;
-        height:40px;
+        width:39px;
+        height:39px;
         padding:0;
         justify-content:center;
-        border-radius:10px;
+        border-radius:9px;
     }
 
     .add-btn span{
@@ -983,68 +991,60 @@ body{
     }
 
 
-    /* SMALL STATS */
+    /* SMALL MOBILE STATS */
 
     .stats{
-        grid-template-columns:repeat(3,1fr);
         gap:7px;
-        margin-bottom:9px;
+        margin-bottom:10px;
     }
 
     .stat-card{
-        height:78px;
+        min-height:78px;
         padding:9px;
         border-radius:11px;
     }
 
     .stat-icon{
-        width:26px;
-        height:26px;
+        width:27px;
+        height:27px;
         border-radius:7px;
         font-size:10px;
     }
 
     .stat-label{
-        font-size:7px;
+        font-size:6px;
     }
 
     .stat-number{
-        font-size:18px;
+        font-size:19px;
         margin-top:7px;
     }
 
-    .stat-description{
-        display:none;
+    .stat-bottom{
+        font-size:6px;
+        margin-top:3px;
     }
 
 
-    /* CONTROLS */
+    /* FILTER */
 
-    .controls{
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
-        margin-bottom:11px;
-    }
-
-    .filters{
-        width:100%;
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
+    .filter-tabs{
         gap:5px;
+        margin-bottom:10px;
     }
 
     .filter-btn{
-        height:32px;
-        padding:0 5px;
-        justify-content:center;
+        height:30px;
+        padding:0 9px;
         font-size:8px;
-        border-radius:8px;
+        border-radius:7px;
     }
 
-    .filter-btn i{
-        font-size:8px;
+
+    /* SEARCH */
+
+    .toolbar{
+        margin-bottom:10px;
     }
 
     .search-box{
@@ -1060,12 +1060,16 @@ body{
     /* CARDS */
 
     .cards{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:8px;
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+        gap:7px;
     }
 
     .card{
-        padding:10px;
+        padding:9px;
         border-radius:11px;
     }
 
@@ -1078,9 +1082,9 @@ body{
     }
 
     .logo{
-        width:36px;
-        height:36px;
-        min-width:36px;
+        width:34px;
+        height:34px;
+        min-width:34px;
         border-radius:8px;
     }
 
@@ -1088,33 +1092,21 @@ body{
         font-size:12px;
     }
 
-    .card-title-row{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:3px;
-    }
-
     .card-title h3{
         font-size:10px;
-        max-width:100%;
     }
 
-    .card-status{
-        font-size:6.5px;
-        padding:3px 5px;
-    }
-
-    .type-badge{
-        font-size:6.5px;
+    .status-badge{
+        font-size:6px;
         padding:3px 4px;
-        margin-top:2px;
+        margin-top:3px;
     }
 
     .card-description{
         font-size:8px;
         margin-top:7px;
-        min-height:25px;
-        line-height:1.45;
+        min-height:24px;
+        line-height:1.4;
     }
 
     .meta{
@@ -1123,18 +1115,18 @@ body{
     }
 
     .meta span{
-        font-size:6.5px;
+        font-size:6px;
         padding:3px 4px;
     }
 
     .card-bottom{
-        margin-top:8px;
+        margin-top:7px;
         gap:4px;
     }
 
     .open-btn{
         height:29px;
-        font-size:7.5px;
+        font-size:7px;
     }
 
     .edit-btn{
@@ -1148,13 +1140,13 @@ body{
     /* MODAL */
 
     .modal{
-        padding:8px;
+        padding:7px;
         align-items:flex-end;
     }
 
     .modal-box{
-        max-height:calc(100dvh - 16px);
-        border-radius:17px 17px 0 0;
+        max-height:calc(100dvh - 14px);
+        border-radius:16px 16px 0 0;
         padding:17px 14px;
     }
 
@@ -1197,27 +1189,11 @@ body{
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media(max-width:360px){
+@media(max-width:370px){
 
     .container{
         padding-left:8px;
         padding-right:8px;
-    }
-
-    .stats{
-        gap:5px;
-    }
-
-    .stat-card{
-        padding:8px;
-    }
-
-    .stat-number{
-        font-size:17px;
     }
 
     .cards{
@@ -1228,10 +1204,18 @@ body{
         padding:8px;
     }
 
+    .stat-card{
+        padding:8px;
+    }
+
+    .stat-number{
+        font-size:17px;
+    }
+
     .logo{
-        width:33px;
-        height:33px;
-        min-width:33px;
+        width:31px;
+        height:31px;
+        min-width:31px;
     }
 
     .card-title h3{
@@ -1239,19 +1223,19 @@ body{
     }
 
     .card-description{
-        font-size:7.5px;
+        font-size:7px;
+    }
+
+    .meta span{
+        font-size:5.5px;
     }
 
     .open-btn{
-        font-size:7px;
+        font-size:6.5px;
     }
 
 }
 
-
-/* =========================================================
-   ONE COLUMN VERY SMALL
-========================================================= */
 
 @media(max-width:300px){
 
@@ -1259,16 +1243,10 @@ body{
         grid-template-columns:1fr;
     }
 
-    .stats{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
 }
 
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar{
     width:5px;
@@ -1341,9 +1319,7 @@ body{
         >
 
             <i class="fa-solid fa-right-to-bracket"></i>
-
             &nbsp;
-
             Login
 
         </button>
@@ -1470,12 +1446,9 @@ body{
 
 <div class="stats">
 
+    <!-- TOTAL -->
 
-    <div
-        class="stat-card total"
-        onclick="setFilter('all')"
-        style="cursor:pointer;"
-    >
+    <div class="stat-card total">
 
         <div class="stat-top">
 
@@ -1496,19 +1469,16 @@ body{
             0
         </div>
 
-        <div class="stat-description">
+        <div class="stat-bottom">
             All websites
         </div>
 
     </div>
 
 
+    <!-- ACTIVE -->
 
-    <div
-        class="stat-card active"
-        onclick="setFilter('active')"
-        style="cursor:pointer;"
-    >
+    <div class="stat-card active">
 
         <div class="stat-top">
 
@@ -1529,19 +1499,16 @@ body{
             0
         </div>
 
-        <div class="stat-description">
+        <div class="stat-bottom">
             Running websites
         </div>
 
     </div>
 
 
+    <!-- INACTIVE -->
 
-    <div
-        class="stat-card inactive"
-        onclick="setFilter('inactive')"
-        style="cursor:pointer;"
-    >
+    <div class="stat-card inactive">
 
         <div class="stat-top">
 
@@ -1562,91 +1529,72 @@ body{
             0
         </div>
 
-        <div class="stat-description">
+        <div class="stat-bottom">
             Disabled websites
         </div>
 
     </div>
-
 
 </div>
 
 
 
 <!-- =====================================================
-     FILTER + SEARCH
+     FILTER
 ===================================================== -->
 
-<div class="controls">
+<div class="filter-tabs">
+
+    <button
+        type="button"
+        class="filter-btn active"
+        id="filterAll"
+        onclick="setFilter('all')"
+    >
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        All
+
+    </button>
 
 
-    <div class="filters">
+    <button
+        type="button"
+        class="filter-btn"
+        id="filterActive"
+        onclick="setFilter('active')"
+    >
 
-        <button
-            type="button"
-            class="filter-btn active-filter"
-            id="filterAll"
-            onclick="setFilter('all')"
-        >
+        <i class="fa-solid fa-circle-check"></i>
 
-            <i class="fa-solid fa-layer-group"></i>
+        Active
 
-            All
-
-            <span
-                class="count"
-                id="allFilterCount"
-            >
-                0
-            </span>
-
-        </button>
+    </button>
 
 
-        <button
-            type="button"
-            class="filter-btn"
-            id="filterActive"
-            onclick="setFilter('active')"
-        >
+    <button
+        type="button"
+        class="filter-btn inactive"
+        id="filterInactive"
+        onclick="setFilter('inactive')"
+    >
 
-            <i class="fa-solid fa-circle-check"></i>
+        <i class="fa-solid fa-circle-xmark"></i>
 
-            Active
+        Inactive
 
-            <span
-                class="count"
-                id="activeFilterCount"
-            >
-                0
-            </span>
+    </button>
 
-        </button>
+</div>
 
 
-        <button
-            type="button"
-            class="filter-btn"
-            id="filterInactive"
-            onclick="setFilter('inactive')"
-        >
 
-            <i class="fa-solid fa-circle-xmark"></i>
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
-            Inactive
-
-            <span
-                class="count"
-                id="inactiveFilterCount"
-            >
-                0
-            </span>
-
-        </button>
-
-    </div>
-
-
+<div class="toolbar">
 
     <div class="search-box">
 
@@ -1660,7 +1608,6 @@ body{
         >
 
     </div>
-
 
 </div>
 
@@ -1770,7 +1717,6 @@ body{
 </div>
 
 
-
 <div class="form-group">
 
     <label>
@@ -1797,7 +1743,6 @@ body{
 </div>
 
 
-
 <div class="form-group full">
 
     <label>
@@ -1814,7 +1759,6 @@ body{
 </div>
 
 
-
 <div class="form-group full">
 
     <label>
@@ -1827,7 +1771,6 @@ body{
     ></textarea>
 
 </div>
-
 
 
 <div class="form-group">
@@ -1845,7 +1788,6 @@ body{
 </div>
 
 
-
 <div class="form-group">
 
     <label>
@@ -1859,7 +1801,6 @@ body{
     >
 
 </div>
-
 
 
 <div class="form-group">
@@ -1876,7 +1817,6 @@ body{
     >
 
 </div>
-
 
 
 <div class="form-group">
@@ -1926,7 +1866,6 @@ body{
 </div>
 
 
-
 <div class="right-actions">
 
     <button
@@ -1963,9 +1902,7 @@ body{
 
 
 
-<!-- =====================================================
-     TOAST
-===================================================== -->
+<!-- TOAST -->
 
 <div
     class="toast"
@@ -2047,8 +1984,6 @@ function autoLogout(){
 
     editingId = null;
 
-    currentFilter = "all";
-
     document.getElementById(
         "dashboard"
     ).style.display = "none";
@@ -2061,21 +1996,12 @@ function autoLogout(){
         "usernameInput"
     ).value = "";
 
-    const error =
-        document.getElementById(
-            "loginError"
-        );
-
-    error.textContent =
-        "Automatically logged out after 3 minutes of inactivity.";
-
-    error.style.display =
-        "block";
-
     document.getElementById(
         "cardModal"
-    ).classList.remove(
-        "show"
+    ).classList.remove("show");
+
+    showLoginError(
+        "Automatically logged out after 3 minutes of inactivity."
     );
 }
 
@@ -2175,9 +2101,7 @@ function checkSession(){
         name
     ){
 
-        showDashboard(
-            name
-        );
+        showDashboard(name);
 
     }
 
@@ -2240,9 +2164,7 @@ async function login(){
         const data =
             await response.json();
 
-        if(
-            data.success
-        ){
+        if(data.success){
 
             localStorage.setItem(
                 "websiteControlLoggedIn",
@@ -2251,19 +2173,16 @@ async function login(){
 
             localStorage.setItem(
                 "websiteControlUsername",
-                data.username ||
-                username
+                data.username || username
             );
 
             localStorage.setItem(
                 "websiteControlName",
-                data.name ||
-                username
+                data.name || username
             );
 
             showDashboard(
-                data.name ||
-                username
+                data.name || username
             );
 
         }
@@ -2306,11 +2225,9 @@ function showLoginError(message){
             "loginError"
         );
 
-    error.textContent =
-        message;
+    error.textContent = message;
 
-    error.style.display =
-        "block";
+    error.style.display = "block";
 
 }
 
@@ -2366,8 +2283,6 @@ function logout(){
 
     editingId = null;
 
-    currentFilter = "all";
-
     document.getElementById(
         "dashboard"
     ).style.display = "none";
@@ -2386,9 +2301,7 @@ function logout(){
 
     document.getElementById(
         "cardModal"
-    ).classList.remove(
-        "show"
-    );
+    ).classList.remove("show");
 
 }
 
@@ -2429,9 +2342,7 @@ async function loadCards(){
         const data =
             await response.json();
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
@@ -2441,19 +2352,16 @@ async function loadCards(){
         }
 
         cards =
-            Array.isArray(
-                data.cards
-            )
-            ?
-            data.cards
-            :
-            [];
+            Array.isArray(data.cards)
+            ? data.cards
+            : [];
 
         /*
-         IMPORTANT:
-         Statistics are calculated from ALL cards.
-         No filter is applied here.
-        */
+         * IMPORTANT:
+         *
+         * এখানে আর Inactive card বাদ দেওয়া হচ্ছে না।
+         * Sheet থেকে যতগুলো card আসবে সব cards array-তে থাকবে।
+         */
 
         updateStatistics();
 
@@ -2478,25 +2386,24 @@ async function loadCards(){
 
 
 /* =========================================================
-   STATUS NORMALIZER
+   NORMALIZE STATUS
 ========================================================= */
 
 function getCardStatus(card){
 
-    const raw =
+    const value =
         String(
-            card.status ?? ""
+            card.status || "Active"
         )
         .trim()
         .toLowerCase();
 
     if(
-        raw === "inactive" ||
-        raw === "in-active" ||
-        raw === "disabled" ||
-        raw === "off" ||
-        raw === "false" ||
-        raw === "0"
+        value === "inactive" ||
+        value === "disabled" ||
+        value === "off" ||
+        value === "false" ||
+        value === "0"
     ){
 
         return "inactive";
@@ -2509,77 +2416,51 @@ function getCardStatus(card){
 
 
 /* =========================================================
-   STATISTICS
+   UPDATE STATISTICS
 ========================================================= */
 
 function updateStatistics(){
 
+    /*
+     * Statistics সরাসরি cards array থেকে calculate হচ্ছে।
+     * তাই Sheet-এ Inactive থাকলে অবশ্যই এখানে count হবে।
+     */
+
     const total =
         cards.length;
 
-    let active = 0;
+    const active =
+        cards.filter(
+            function(card){
 
-    let inactive = 0;
-
-
-    cards.forEach(
-        function(card){
-
-            const status =
-                getCardStatus(card);
-
-            if(
-                status === "inactive"
-            ){
-
-                inactive++;
+                return getCardStatus(card) === "active";
 
             }
-            else{
+        ).length;
 
-                active++;
+    const inactive =
+        cards.filter(
+            function(card){
+
+                return getCardStatus(card) === "inactive";
 
             }
+        ).length;
 
-        }
-    );
-
-
-    /*
-     These values ALWAYS come from
-     the complete cards array.
-    */
 
     document.getElementById(
         "totalCount"
-    ).textContent =
-        total;
+    ).textContent = total;
+
 
     document.getElementById(
         "activeCount"
-    ).textContent =
-        active;
+    ).textContent = active;
+
 
     document.getElementById(
         "inactiveCount"
-    ).textContent =
-        inactive;
-
-
-    document.getElementById(
-        "allFilterCount"
-    ).textContent =
-        total;
-
-    document.getElementById(
-        "activeFilterCount"
-    ).textContent =
-        active;
-
-    document.getElementById(
-        "inactiveFilterCount"
-    ).textContent =
-        inactive;
+    ).textContent = inactive;
 
 }
 
@@ -2590,60 +2471,61 @@ function updateStatistics(){
 
 function setFilter(filter){
 
-    resetInactivityTimer();
+    currentFilter = filter;
 
-    currentFilter =
-        filter;
+    document
+        .querySelectorAll(
+            ".filter-btn"
+        )
+        .forEach(
+            function(button){
 
-    document.querySelectorAll(
-        ".filter-btn"
-    ).forEach(
-        function(button){
+                button.classList.remove(
+                    "active"
+                );
 
-            button.classList.remove(
-                "active-filter"
+            }
+        );
+
+
+    if(filter === "all"){
+
+        document
+            .getElementById(
+                "filterAll"
+            )
+            .classList.add(
+                "active"
             );
 
-        }
-    );
+    }
 
+    else if(filter === "active"){
 
-    if(
-        filter === "all"
-    ){
-
-        document.getElementById(
-            "filterAll"
-        ).classList.add(
-            "active-filter"
-        );
+        document
+            .getElementById(
+                "filterActive"
+            )
+            .classList.add(
+                "active"
+            );
 
     }
 
-    else if(
-        filter === "active"
-    ){
+    else if(filter === "inactive"){
 
-        document.getElementById(
-            "filterActive"
-        ).classList.add(
-            "active-filter"
-        );
-
-    }
-
-    else if(
-        filter === "inactive"
-    ){
-
-        document.getElementById(
-            "filterInactive"
-        ).classList.add(
-            "active-filter"
-        );
+        document
+            .getElementById(
+                "filterInactive"
+            )
+            .classList.add(
+                "active"
+            );
 
     }
 
+
+    resetInactivityTimer();
 
     renderCards();
 
@@ -2683,12 +2565,7 @@ function renderCards(){
     box.innerHTML = "";
 
 
-    /*
-     Start with ALL cards.
-     This is the important fix.
-    */
-
-    let filtered =
+    const filtered =
         cards.filter(
             function(card){
 
@@ -2696,7 +2573,9 @@ function renderCards(){
                     getCardStatus(card);
 
 
-                /* STATUS FILTER */
+                /*
+                 * FILTER
+                 */
 
                 if(
                     currentFilter === "active" &&
@@ -2718,41 +2597,32 @@ function renderCards(){
                 }
 
 
-                /* SEARCH FILTER */
+                /*
+                 * SEARCH
+                 */
 
-                if(
-                    search
-                ){
+                if(!search){
 
-                    const text = (
-
-                        String(card.name || "") +
-                        " " +
-                        String(card.description || "") +
-                        " " +
-                        String(card.source || "") +
-                        " " +
-                        String(card.type || "") +
-                        " " +
-                        String(card.link || "") +
-                        " " +
-                        status
-
-                    ).toLowerCase();
-
-
-                    if(
-                        !text.includes(search)
-                    ){
-
-                        return false;
-
-                    }
+                    return true;
 
                 }
 
 
-                return true;
+                const text = [
+
+                    card.name,
+                    card.description,
+                    card.source,
+                    card.type,
+                    card.link,
+                    card.status
+
+                ]
+                .join(" ")
+                .toLowerCase();
+
+
+                return text.includes(search);
 
             }
         );
@@ -2762,8 +2632,7 @@ function renderCards(){
         filtered.length === 0
     ){
 
-        empty.style.display =
-            "block";
+        empty.style.display = "block";
 
 
         if(
@@ -2782,14 +2651,6 @@ function renderCards(){
                 "No active websites found.";
 
         }
-        else if(
-            search
-        ){
-
-            emptyText.textContent =
-                "No websites match your search.";
-
-        }
         else{
 
             emptyText.textContent =
@@ -2797,19 +2658,17 @@ function renderCards(){
 
         }
 
-
         return;
 
     }
 
 
-    empty.style.display =
-        "none";
+    empty.style.display = "none";
 
 
     /*
-     Position sorting
-    */
+     * Position থাকলে সেটার ভিত্তিতে sort
+     */
 
     filtered.sort(
         function(a,b){
@@ -2850,17 +2709,17 @@ function createCard(card){
             "article"
         );
 
-    article.className =
-        "card";
+    article.className = "card";
 
 
     const status =
         getCardStatus(card);
 
+    const isInactive =
+        status === "inactive";
 
-    if(
-        status === "inactive"
-    ){
+
+    if(isInactive){
 
         article.classList.add(
             "inactive-card"
@@ -2875,50 +2734,47 @@ function createCard(card){
         );
 
 
-    let logo = "";
-
-
-    if(
+    const logo =
         card.logo
-    ){
+        ?
+        `
+        <img
+            src="${escapeAttribute(card.logo)}"
+            alt=""
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
 
-        logo = `
-            <img
-                src="${escapeAttribute(card.logo)}"
-                alt=""
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            >
-
-            <div
-                class="logo-fallback"
-                style="display:none;"
-            >
-                ${escapeHTML(initials)}
-            </div>
+        <div
+            class="logo-fallback"
+            style="display:none;"
+        >
+            ${escapeHTML(initials)}
+        </div>
+        `
+        :
+        `
+        <div class="logo-fallback">
+            ${escapeHTML(initials)}
+        </div>
         `;
 
-    }
-    else{
 
-        logo = `
-            <div class="logo-fallback">
-                ${escapeHTML(initials)}
-            </div>
+    const statusBadge =
+        isInactive
+        ?
+        `
+        <span class="status-badge inactive">
+            <i class="fa-solid fa-circle-xmark"></i>
+            Inactive
+        </span>
+        `
+        :
+        `
+        <span class="status-badge">
+            <i class="fa-solid fa-circle-check"></i>
+            Active
+        </span>
         `;
-
-    }
-
-
-    const statusText =
-        status === "inactive"
-        ? "Inactive"
-        : "Active";
-
-
-    const statusIcon =
-        status === "inactive"
-        ? "fa-circle-xmark"
-        : "fa-circle-check";
 
 
     article.innerHTML = `
@@ -2926,42 +2782,22 @@ function createCard(card){
         <div class="card-top">
 
             <div class="logo">
+
                 ${logo}
+
             </div>
 
 
             <div class="card-title">
 
-                <div class="card-title-row">
-
-                    <h3>
-                        ${escapeHTML(
-                            card.name ||
-                            "Unnamed Website"
-                        )}
-                    </h3>
-
-                    <span
-                        class="card-status ${status}"
-                    >
-
-                        <i class="fa-solid ${statusIcon}"></i>
-
-                        ${statusText}
-
-                    </span>
-
-                </div>
-
-
-                <span class="type-badge">
-
+                <h3>
                     ${escapeHTML(
-                        card.type ||
-                        "Website"
+                        card.name ||
+                        "Unnamed Website"
                     )}
+                </h3>
 
-                </span>
+                ${statusBadge}
 
             </div>
 
@@ -3007,6 +2843,20 @@ function createCard(card){
                 ""
             }
 
+
+            ${
+                card.position
+                ?
+                `
+                <span>
+                    <i class="fa-solid fa-sort"></i>
+                    #${escapeHTML(card.position)}
+                </span>
+                `
+                :
+                ""
+            }
+
         </div>
 
 
@@ -3015,9 +2865,7 @@ function createCard(card){
             <a
                 class="open-btn"
                 href="${escapeAttribute(
-                    normalizeWebsiteURL(
-                        card.link
-                    )
+                    normalizeWebsiteURL(card.link)
                 )}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -3033,9 +2881,7 @@ function createCard(card){
             <button
                 type="button"
                 class="edit-btn"
-                onclick="openEditModal('${escapeAttribute(
-                    card.id
-                )}')"
+                onclick="openEditModal('${escapeAttribute(card.id)}')"
                 title="Edit"
             >
 
@@ -3067,7 +2913,7 @@ function filterCards(){
 
 
 /* =========================================================
-   ADD
+   ADD MODAL
 ========================================================= */
 
 function openAddModal(){
@@ -3098,13 +2944,12 @@ function openAddModal(){
 
 
 /* =========================================================
-   EDIT
+   EDIT MODAL
 ========================================================= */
 
 function openEditModal(id){
 
     resetInactivityTimer();
-
 
     const card =
         cards.find(
@@ -3187,11 +3032,6 @@ function openEditModal(id){
     ).value =
         card.position || "";
 
-
-    /*
-     Important:
-     Always convert status to correct select value.
-    */
 
     document.getElementById(
         "formStatus"
@@ -3328,10 +3168,12 @@ async function saveCard(){
     resetInactivityTimer();
 
 
-    let rawLink =
+    const rawLink =
         document.getElementById(
             "formLink"
-        ).value.trim();
+        )
+        .value
+        .trim();
 
 
     const normalizedLink =
@@ -3356,7 +3198,9 @@ async function saveCard(){
         name:
             document.getElementById(
                 "formName"
-            ).value.trim(),
+            )
+            .value
+            .trim(),
 
         link:
             normalizedLink,
@@ -3364,39 +3208,47 @@ async function saveCard(){
         logo:
             document.getElementById(
                 "formLogo"
-            ).value.trim(),
+            )
+            .value
+            .trim(),
 
         description:
             document.getElementById(
                 "formDescription"
-            ).value.trim(),
+            )
+            .value
+            .trim(),
 
         source:
             document.getElementById(
                 "formSource"
-            ).value.trim(),
+            )
+            .value
+            .trim(),
 
         type:
             document.getElementById(
                 "formType"
-            ).value.trim(),
+            )
+            .value
+            .trim(),
 
         position:
             document.getElementById(
                 "formPosition"
-            ).value,
+            )
+            .value,
 
         status:
             document.getElementById(
                 "formStatus"
-            ).value
+            )
+            .value
 
     };
 
 
-    if(
-        !payload.name
-    ){
+    if(!payload.name){
 
         showToast(
             "Website name is required.",
@@ -3408,9 +3260,7 @@ async function saveCard(){
     }
 
 
-    if(
-        !payload.link
-    ){
+    if(!payload.link){
 
         showToast(
             "Website link is required.",
@@ -3465,9 +3315,7 @@ async function saveCard(){
             await response.json();
 
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
@@ -3520,9 +3368,7 @@ async function deleteCurrentCard(){
     resetInactivityTimer();
 
 
-    if(
-        !editingId
-    ){
+    if(!editingId){
 
         return;
 
@@ -3571,9 +3417,7 @@ async function deleteCurrentCard(){
             await response.json();
 
 
-        if(
-            !data.success
-        ){
+        if(!data.success){
 
             throw new Error(
                 data.message ||
@@ -3646,9 +3490,7 @@ function escapeHTML(value){
 
 function escapeAttribute(value){
 
-    return escapeHTML(
-        value
-    );
+    return escapeHTML(value);
 
 }
 
@@ -3661,13 +3503,10 @@ function getInitials(name){
 
     const words =
         String(
-            name ||
-            "W"
+            name || "W"
         )
         .trim()
-        .split(
-            /\s+/
-        );
+        .split(/\s+/);
 
 
     if(
@@ -3675,10 +3514,7 @@ function getInitials(name){
     ){
 
         return words[0]
-            .substring(
-                0,
-                2
-            )
+            .substring(0,2)
             .toUpperCase();
 
     }
