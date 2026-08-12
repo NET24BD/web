@@ -12,7 +12,11 @@
 
 <title>Website Control Dashboard</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
 
 <link
     rel="preconnect"
@@ -50,7 +54,6 @@ html{
 
 body{
     font-family:"Inter",sans-serif;
-
     background:
         radial-gradient(
             circle at top left,
@@ -58,9 +61,7 @@ body{
             #0b1019 42%,
             #06090e 100%
         );
-
     color:#f8fafc;
-
     min-height:100vh;
     overflow-x:hidden;
 }
@@ -73,57 +74,35 @@ body{
 #loginScreen{
     min-height:100vh;
     min-height:100dvh;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:18px;
 }
 
 .login-box{
     width:100%;
     max-width:390px;
-
     background:rgba(15,23,42,.94);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:22px;
-
     padding:28px 22px;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.45);
-
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
     backdrop-filter:blur(18px);
 }
 
 .login-icon{
     width:64px;
     height:64px;
-
     border-radius:18px;
-
     margin:0 auto 18px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
     color:#fff;
-
-    box-shadow:
-        0 12px 30px rgba(34,197,94,.20);
+    box-shadow:0 12px 30px rgba(34,197,94,.20);
 }
 
 .login-box h1{
@@ -134,11 +113,8 @@ body{
 
 .login-box p{
     text-align:center;
-
     color:#94a3b8;
-
     font-size:12px;
-
     margin-top:7px;
     margin-bottom:25px;
 }
@@ -149,12 +125,9 @@ body{
 
 .input-group label{
     display:block;
-
     font-size:12px;
     font-weight:600;
-
     color:#cbd5e1;
-
     margin-bottom:7px;
 }
 
@@ -164,60 +137,38 @@ body{
 
 .input-wrap i{
     position:absolute;
-
     left:14px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#64748b;
 }
 
 .input-wrap input{
     width:100%;
     height:50px;
-
     border-radius:12px;
-
     border:1px solid rgba(255,255,255,.08);
-
     background:#080e17;
-
     color:#fff;
-
     outline:none;
-
     padding:0 14px 0 42px;
-
     font-size:14px;
 }
 
 .input-wrap input:focus{
     border-color:#22c55e;
-
-    box-shadow:
-        0 0 0 3px rgba(34,197,94,.08);
+    box-shadow:0 0 0 3px rgba(34,197,94,.08);
 }
 
 .login-btn{
     width:100%;
     height:50px;
-
     border:none;
     border-radius:12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
     color:#fff;
-
     font-size:14px;
     font-weight:700;
-
     cursor:pointer;
 }
 
@@ -231,21 +182,13 @@ body{
 
 .login-error{
     display:none;
-
     margin-top:13px;
-
     padding:11px;
-
     border-radius:10px;
-
     background:rgba(239,68,68,.10);
-
     border:1px solid rgba(239,68,68,.20);
-
     color:#fca5a5;
-
     font-size:12px;
-
     text-align:center;
 }
 
@@ -256,7 +199,6 @@ body{
 
 #dashboard{
     display:none;
-
     min-height:100vh;
     min-height:100dvh;
 }
@@ -268,49 +210,32 @@ body{
 
 .topbar{
     height:68px;
-
     position:sticky;
     top:0;
-
     z-index:100;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 24px;
-
     background:rgba(7,10,16,.88);
-
     border-bottom:1px solid rgba(255,255,255,.07);
-
     backdrop-filter:blur(18px);
 }
 
 .brand{
     display:flex;
     align-items:center;
-
     gap:10px;
 }
 
 .brand-logo{
     width:39px;
     height:39px;
-
     border-radius:11px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
     font-size:16px;
 }
 
@@ -321,18 +246,14 @@ body{
 
 .brand-text span{
     display:block;
-
     font-size:10px;
-
     color:#64748b;
-
     margin-top:2px;
 }
 
 .user-area{
     display:flex;
     align-items:center;
-
     gap:10px;
 }
 
@@ -347,24 +268,17 @@ body{
 
 .user-label{
     font-size:9px;
-
     color:#64748b;
-
     margin-top:2px;
 }
 
 .logout-btn{
     width:38px;
     height:38px;
-
     border-radius:10px;
-
     border:1px solid rgba(255,255,255,.08);
-
     background:#111827;
-
     color:#f87171;
-
     cursor:pointer;
 }
 
@@ -379,69 +293,44 @@ body{
 
 .container{
     width:100%;
-
     max-width:1450px;
-
     margin:auto;
-
-    padding:27px;
+    padding:24px 27px 35px;
 }
 
 .page-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     gap:15px;
-
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .page-title h1{
-    font-size:26px;
-
+    font-size:25px;
     font-weight:800;
-
     letter-spacing:-.5px;
 }
 
 .page-title p{
     color:#64748b;
-
-    font-size:12px;
-
-    margin-top:5px;
+    font-size:11px;
+    margin-top:4px;
 }
 
 .add-btn{
     height:42px;
-
     padding:0 16px;
-
     border:none;
-
     border-radius:10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
+    background:linear-gradient(135deg,#22c55e,#16a34a);
     color:#fff;
-
     font-size:12px;
-
     font-weight:700;
-
     cursor:pointer;
-
     display:flex;
     align-items:center;
-
     gap:7px;
-
     white-space:nowrap;
 }
 
@@ -451,257 +340,167 @@ body{
 
 
 /* =========================================================
-   SUMMARY
+   STAT CARDS
 ========================================================= */
 
-.summary-grid{
+.stats{
     display:grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(0,1fr)
-        );
-
-    gap:13px;
-
-    margin-bottom:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:13px;
 }
 
-.summary-card{
-    position:relative;
-
-    overflow:hidden;
-
+.stat-card{
     min-width:0;
-
-    padding:17px;
-
+    height:112px;
+    padding:15px;
     border-radius:15px;
-
     background:
         linear-gradient(
             145deg,
             rgba(20,29,46,.96),
             rgba(9,14,23,.96)
         );
-
     border:1px solid rgba(255,255,255,.07);
-
-    transition:.2s ease;
-
-    cursor:pointer;
+    position:relative;
+    overflow:hidden;
 }
 
-.summary-card:hover{
-    transform:translateY(-2px);
-
-    border-color:
-        rgba(255,255,255,.14);
-
-    box-shadow:
-        0 14px 30px rgba(0,0,0,.25);
+.stat-card.total{
+    border-color:rgba(34,197,94,.45);
 }
 
-.summary-card.active-filter{
-    border-color:
-        rgba(34,197,94,.45);
-
-    box-shadow:
-        0 0 0 1px rgba(34,197,94,.12),
-        0 14px 30px rgba(0,0,0,.20);
+.stat-card.active{
+    border-color:rgba(255,255,255,.07);
 }
 
-.summary-top{
+.stat-card.inactive{
+    border-color:rgba(255,255,255,.07);
+}
+
+.stat-top{
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
-    gap:10px;
 }
 
-.summary-icon{
-    width:39px;
-    height:39px;
-
+.stat-icon{
+    width:35px;
+    height:35px;
     border-radius:10px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    background:rgba(255,255,255,.06);
-
-    color:#cbd5e1;
-
-    font-size:15px;
+    font-size:13px;
 }
 
-.summary-card.total .summary-icon{
-    background:rgba(59,130,246,.12);
+.total .stat-icon{
+    background:rgba(59,130,246,.15);
     color:#60a5fa;
 }
 
-.summary-card.active .summary-icon{
-    background:rgba(34,197,94,.12);
+.active .stat-icon{
+    background:rgba(34,197,94,.13);
     color:#4ade80;
 }
 
-.summary-card.inactive .summary-icon{
-    background:rgba(239,68,68,.12);
+.inactive .stat-icon{
+    background:rgba(239,68,68,.13);
     color:#f87171;
 }
 
-.summary-label{
-    color:#64748b;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    text-align:right;
-}
-
-.summary-number{
-    font-size:25px;
-
-    font-weight:800;
-
-    line-height:1;
-
-    margin-top:13px;
-}
-
-.summary-description{
-    color:#64748b;
-
+.stat-label{
     font-size:9px;
+    font-weight:700;
+    color:#64748b;
+    text-transform:uppercase;
+}
 
-    margin-top:6px;
+.stat-number{
+    font-size:25px;
+    line-height:1;
+    font-weight:800;
+    margin-top:12px;
+}
+
+.stat-description{
+    font-size:8px;
+    color:#64748b;
+    margin-top:5px;
 }
 
 
 /* =========================================================
-   FILTER
+   FILTER + SEARCH
 ========================================================= */
 
-.filter-bar{
+.controls{
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
-    gap:10px;
-
-    margin-bottom:13px;
+    gap:12px;
+    margin-bottom:15px;
 }
 
-.filter-buttons{
+.filters{
     display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
+    gap:7px;
     flex-wrap:wrap;
 }
 
 .filter-btn{
     height:34px;
-
-    padding:0 11px;
-
-    border-radius:8px;
-
+    padding:0 12px;
+    border-radius:9px;
     border:1px solid rgba(255,255,255,.07);
-
-    background:#111827;
-
+    background:rgba(15,23,42,.85);
     color:#94a3b8;
-
-    font-size:9px;
-
+    font-size:10px;
     font-weight:700;
-
     cursor:pointer;
-
-    transition:.2s ease;
+    display:flex;
+    align-items:center;
+    gap:5px;
 }
 
 .filter-btn:hover{
-    color:#fff;
+    border-color:rgba(34,197,94,.25);
 }
 
-.filter-btn.active{
+.filter-btn.active-filter{
     background:rgba(34,197,94,.12);
-
     color:#4ade80;
-
-    border-color:
-        rgba(34,197,94,.25);
+    border-color:rgba(34,197,94,.28);
 }
 
-.filter-btn.inactive-filter.active{
-    background:rgba(239,68,68,.10);
-
-    color:#f87171;
-
-    border-color:
-        rgba(239,68,68,.20);
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.toolbar{
-    width:100%;
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    margin-bottom:18px;
+.filter-btn .count{
+    opacity:.75;
 }
 
 .search-box{
-    width:310px;
-
+    width:300px;
     position:relative;
 }
 
 .search-box i{
     position:absolute;
-
     left:13px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#64748b;
-
     font-size:12px;
 }
 
 .search-box input{
     width:100%;
-    height:42px;
-
-    border-radius:10px;
-
+    height:38px;
+    border-radius:9px;
     border:1px solid rgba(255,255,255,.08);
-
     background:rgba(15,23,42,.80);
-
     color:#fff;
-
     outline:none;
-
     padding:0 13px 0 38px;
-
-    font-size:12px;
+    font-size:11px;
 }
 
 .search-box input:focus{
@@ -715,219 +514,167 @@ body{
 
 .cards{
     display:grid;
-
     grid-template-columns:
         repeat(
             auto-fill,
-            minmax(225px,1fr)
+            minmax(260px,1fr)
         );
-
-    gap:14px;
+    gap:13px;
 }
 
 .card{
     min-width:0;
-
-    padding:15px;
-
-    border-radius:16px;
-
+    padding:14px;
+    border-radius:15px;
     background:
         linear-gradient(
             145deg,
             rgba(20,29,46,.96),
             rgba(9,14,23,.96)
         );
-
     border:1px solid rgba(255,255,255,.07);
-
     transition:.2s ease;
 }
 
 .card:hover{
-    transform:translateY(-3px);
-
-    border-color:
-        rgba(34,197,94,.25);
-
-    box-shadow:
-        0 16px 32px rgba(0,0,0,.25);
+    transform:translateY(-2px);
+    border-color:rgba(34,197,94,.25);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
 }
 
 .card.inactive-card{
-    border-color:
-        rgba(239,68,68,.12);
+    border-color:rgba(239,68,68,.25);
 }
 
 .card-top{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     min-width:0;
 }
 
 .logo{
     width:45px;
     height:45px;
-
     min-width:45px;
-
     border-radius:12px;
-
     overflow:hidden;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     background:#111827;
-
     border:1px solid rgba(255,255,255,.07);
 }
 
 .logo img{
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
 
 .logo-fallback{
-    font-size:17px;
-
+    font-size:16px;
     font-weight:800;
-
     color:#22c55e;
-}
-
-.card.inactive-card .logo-fallback{
-    color:#f87171;
 }
 
 .card-title{
     min-width:0;
-
     flex:1;
+}
+
+.card-title-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:7px;
 }
 
 .card-title h3{
     font-size:13px;
-
     font-weight:700;
-
     white-space:nowrap;
-
     overflow:hidden;
-
     text-overflow:ellipsis;
 }
 
-.status-badge{
-    display:inline-flex;
-
-    margin-top:4px;
-
+.card-status{
+    flex-shrink:0;
     font-size:8px;
+    font-weight:700;
+    padding:4px 7px;
+    border-radius:6px;
+}
 
-    padding:4px 6px;
-
-    border-radius:5px;
-
-    background:rgba(34,197,94,.10);
-
+.card-status.active{
+    background:rgba(34,197,94,.11);
     color:#4ade80;
 }
 
-.status-badge.inactive{
-    background:rgba(239,68,68,.10);
-
+.card-status.inactive{
+    background:rgba(239,68,68,.11);
     color:#f87171;
+}
+
+.type-badge{
+    display:inline-flex;
+    margin-top:5px;
+    font-size:8px;
+    padding:3px 6px;
+    border-radius:5px;
+    background:rgba(34,197,94,.10);
+    color:#4ade80;
 }
 
 .card-description{
     color:#94a3b8;
-
     font-size:10px;
-
     line-height:1.5;
-
     margin-top:11px;
-
     min-height:30px;
-
     display:-webkit-box;
-
     -webkit-line-clamp:2;
-
     -webkit-box-orient:vertical;
-
     overflow:hidden;
 }
 
 .meta{
     display:flex;
-
     gap:5px;
-
     flex-wrap:wrap;
-
     margin-top:9px;
 }
 
 .meta span{
     font-size:8px;
-
     color:#94a3b8;
-
     background:#111827;
-
     border:1px solid rgba(255,255,255,.05);
-
     padding:4px 6px;
-
     border-radius:5px;
-
     white-space:nowrap;
 }
 
 .card-bottom{
     display:flex;
-
     gap:7px;
-
     margin-top:12px;
 }
 
 .open-btn{
     flex:1;
-
     min-width:0;
-
     height:34px;
-
     border-radius:8px;
-
     text-decoration:none;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     gap:5px;
-
     font-size:10px;
-
     font-weight:700;
-
     background:rgba(34,197,94,.10);
-
     border:1px solid rgba(34,197,94,.18);
-
     color:#4ade80;
 }
 
@@ -935,29 +682,14 @@ body{
     transform:scale(.97);
 }
 
-.card.inactive-card .open-btn{
-    background:rgba(239,68,68,.08);
-
-    border-color:
-        rgba(239,68,68,.16);
-
-    color:#f87171;
-}
-
 .edit-btn{
     width:36px;
     min-width:36px;
-
     height:34px;
-
     border-radius:8px;
-
     border:1px solid rgba(255,255,255,.07);
-
     background:#111827;
-
     color:#cbd5e1;
-
     cursor:pointer;
 }
 
@@ -972,11 +704,8 @@ body{
 
 .loading{
     text-align:center;
-
     padding:55px 20px;
-
     color:#64748b;
-
     font-size:12px;
 }
 
@@ -986,19 +715,14 @@ body{
 
 .empty{
     display:none;
-
     text-align:center;
-
     padding:60px 20px;
-
     color:#64748b;
-
     font-size:12px;
 }
 
 .empty i{
     font-size:35px;
-
     margin-bottom:12px;
 }
 
@@ -1009,20 +733,13 @@ body{
 
 .modal{
     display:none;
-
     position:fixed;
-
     inset:0;
-
     z-index:500;
-
     background:rgba(0,0,0,.72);
-
     backdrop-filter:blur(7px);
-
     align-items:center;
     justify-content:center;
-
     padding:15px;
 }
 
@@ -1032,32 +749,21 @@ body{
 
 .modal-box{
     width:100%;
-
     max-width:570px;
-
     max-height:calc(100vh - 30px);
     max-height:calc(100dvh - 30px);
-
     overflow-y:auto;
-
     background:#0f172a;
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:18px;
-
     padding:21px;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.55);
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
 .modal-head{
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
     margin-bottom:18px;
 }
 
@@ -1068,31 +774,22 @@ body{
 .close-btn{
     width:34px;
     height:34px;
-
     border:none;
-
     border-radius:8px;
-
     background:#111827;
-
     color:#94a3b8;
-
     cursor:pointer;
 }
 
 .form-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:12px;
 }
 
 .form-group{
     display:flex;
-
     flex-direction:column;
-
     gap:6px;
 }
 
@@ -1102,9 +799,7 @@ body{
 
 .form-group label{
     font-size:10px;
-
     font-weight:600;
-
     color:#cbd5e1;
 }
 
@@ -1112,21 +807,13 @@ body{
 .form-group textarea,
 .form-group select{
     width:100%;
-
     border:1px solid rgba(255,255,255,.08);
-
     background:#080d16;
-
     color:#fff;
-
     border-radius:8px;
-
     outline:none;
-
     padding:10px;
-
     font-family:inherit;
-
     font-size:11px;
 }
 
@@ -1136,7 +823,6 @@ body{
 
 .form-group textarea{
     min-height:70px;
-
     resize:vertical;
 }
 
@@ -1148,63 +834,42 @@ body{
 
 .modal-actions{
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
     gap:10px;
-
     margin-top:20px;
 }
 
 .left-actions,
 .right-actions{
     display:flex;
-
     gap:7px;
 }
 
 .btn{
     height:37px;
-
     padding:0 14px;
-
     border-radius:8px;
-
     border:1px solid rgba(255,255,255,.08);
-
     cursor:pointer;
-
     font-size:10px;
-
     font-weight:700;
-}
-
-.btn:disabled{
-    opacity:.6;
-
-    cursor:not-allowed;
 }
 
 .cancel-btn{
     background:#111827;
-
     color:#cbd5e1;
 }
 
 .save-btn{
     background:#22c55e;
-
     color:#fff;
-
     border-color:#22c55e;
 }
 
 .delete-btn{
     background:rgba(239,68,68,.10);
-
     color:#f87171;
-
     border-color:rgba(239,68,68,.20);
 }
 
@@ -1215,33 +880,19 @@ body{
 
 .toast{
     position:fixed;
-
     left:50%;
     bottom:20px;
-
     transform:translateX(-50%);
-
     z-index:1000;
-
     width:max-content;
-
     max-width:calc(100% - 30px);
-
     padding:11px 15px;
-
     border-radius:9px;
-
     background:#111827;
-
     border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.35);
-
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
     font-size:11px;
-
     display:none;
-
     text-align:center;
 }
 
@@ -1251,13 +902,11 @@ body{
 
 .toast.success{
     border-color:rgba(34,197,94,.25);
-
     color:#4ade80;
 }
 
 .toast.error{
     border-color:rgba(239,68,68,.25);
-
     color:#f87171;
 }
 
@@ -1266,12 +915,11 @@ body{
    MOBILE
 ========================================================= */
 
-@media(max-width:650px){
+@media(max-width:700px){
 
     .topbar{
         height:62px;
-
-        padding:0 13px;
+        padding:0 12px;
     }
 
     .brand{
@@ -1281,9 +929,7 @@ body{
     .brand-logo{
         width:36px;
         height:36px;
-
         border-radius:10px;
-
         font-size:14px;
     }
 
@@ -1309,13 +955,11 @@ body{
     }
 
     .container{
-        padding:17px 12px 25px;
+        padding:15px 11px 25px;
     }
 
     .page-head{
-        align-items:center;
-
-        margin-bottom:13px;
+        margin-bottom:12px;
     }
 
     .page-title h1{
@@ -1323,19 +967,14 @@ body{
     }
 
     .page-title p{
-        font-size:10px;
-
-        margin-top:3px;
+        font-size:9px;
     }
 
     .add-btn{
         width:40px;
         height:40px;
-
         padding:0;
-
         justify-content:center;
-
         border-radius:10px;
     }
 
@@ -1344,89 +983,68 @@ body{
     }
 
 
-    /* SUMMARY MOBILE */
+    /* SMALL STATS */
 
-    .summary-grid{
-        grid-template-columns:
-            repeat(3,minmax(0,1fr));
-
+    .stats{
+        grid-template-columns:repeat(3,1fr);
         gap:7px;
-
-        margin-bottom:12px;
+        margin-bottom:9px;
     }
 
-    .summary-card{
-        padding:10px 8px;
-
+    .stat-card{
+        height:78px;
+        padding:9px;
         border-radius:11px;
     }
 
-    .summary-top{
-        display:block;
+    .stat-icon{
+        width:26px;
+        height:26px;
+        border-radius:7px;
+        font-size:10px;
     }
 
-    .summary-icon{
-        width:30px;
-        height:30px;
-
-        border-radius:8px;
-
-        font-size:11px;
-    }
-
-    .summary-label{
+    .stat-label{
         font-size:7px;
+    }
 
-        text-align:left;
-
+    .stat-number{
+        font-size:18px;
         margin-top:7px;
     }
 
-    .summary-number{
-        font-size:19px;
-
-        margin-top:8px;
-    }
-
-    .summary-description{
+    .stat-description{
         display:none;
     }
 
 
-    /* FILTER */
+    /* CONTROLS */
 
-    .filter-bar{
-        display:block;
-
-        margin-bottom:10px;
+    .controls{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+        margin-bottom:11px;
     }
 
-    .filter-buttons{
+    .filters{
         width:100%;
-
         display:grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
+        grid-template-columns:repeat(3,1fr);
         gap:5px;
     }
 
     .filter-btn{
-        width:100%;
-
-        height:34px;
-
+        height:32px;
         padding:0 5px;
-
+        justify-content:center;
         font-size:8px;
+        border-radius:8px;
     }
 
-
-    /* SEARCH */
-
-    .toolbar{
-        margin-bottom:13px;
+    .filter-btn i{
+        font-size:8px;
     }
 
     .search-box{
@@ -1434,25 +1052,21 @@ body{
     }
 
     .search-box input{
-        height:40px;
-
-        font-size:11px;
+        height:38px;
+        font-size:10px;
     }
 
 
     /* CARDS */
 
     .cards{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-        gap:9px;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
     }
 
     .card{
-        padding:11px;
-
-        border-radius:13px;
+        padding:10px;
+        border-radius:11px;
     }
 
     .card:hover{
@@ -1460,74 +1074,74 @@ body{
     }
 
     .card-top{
-        gap:8px;
+        gap:7px;
     }
 
     .logo{
-        width:38px;
-        height:38px;
-
-        min-width:38px;
-
-        border-radius:9px;
+        width:36px;
+        height:36px;
+        min-width:36px;
+        border-radius:8px;
     }
 
     .logo-fallback{
-        font-size:14px;
+        font-size:12px;
+    }
+
+    .card-title-row{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:3px;
     }
 
     .card-title h3{
-        font-size:11px;
+        font-size:10px;
+        max-width:100%;
     }
 
-    .status-badge{
-        font-size:7px;
-
+    .card-status{
+        font-size:6.5px;
         padding:3px 5px;
+    }
 
-        margin-top:3px;
+    .type-badge{
+        font-size:6.5px;
+        padding:3px 4px;
+        margin-top:2px;
     }
 
     .card-description{
-        font-size:9px;
-
-        margin-top:8px;
-
-        min-height:27px;
+        font-size:8px;
+        margin-top:7px;
+        min-height:25px;
+        line-height:1.45;
     }
 
     .meta{
-        margin-top:7px;
-
-        gap:4px;
+        margin-top:6px;
+        gap:3px;
     }
 
     .meta span{
-        font-size:7px;
-
-        padding:3px 5px;
+        font-size:6.5px;
+        padding:3px 4px;
     }
 
     .card-bottom{
-        margin-top:9px;
-
-        gap:5px;
+        margin-top:8px;
+        gap:4px;
     }
 
     .open-btn{
-        height:31px;
-
-        font-size:8px;
+        height:29px;
+        font-size:7.5px;
     }
 
     .edit-btn{
-        width:32px;
-
-        min-width:32px;
-
-        height:31px;
-
-        font-size:9px;
+        width:29px;
+        min-width:29px;
+        height:29px;
+        font-size:8px;
     }
 
 
@@ -1535,21 +1149,17 @@ body{
 
     .modal{
         padding:8px;
-
         align-items:flex-end;
     }
 
     .modal-box{
         max-height:calc(100dvh - 16px);
-
         border-radius:17px 17px 0 0;
-
-        padding:18px 15px;
+        padding:17px 14px;
     }
 
     .form-grid{
         grid-template-columns:1fr;
-
         gap:10px;
     }
 
@@ -1563,7 +1173,6 @@ body{
 
     .modal-actions{
         flex-direction:column;
-
         align-items:stretch;
     }
 
@@ -1574,7 +1183,6 @@ body{
 
     .right-actions{
         display:grid;
-
         grid-template-columns:1fr 1fr;
     }
 
@@ -1589,46 +1197,61 @@ body{
 }
 
 
-@media(max-width:370px){
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:360px){
 
     .container{
-        padding-left:9px;
-        padding-right:9px;
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+    .stats{
+        gap:5px;
+    }
+
+    .stat-card{
+        padding:8px;
+    }
+
+    .stat-number{
+        font-size:17px;
     }
 
     .cards{
-        gap:7px;
+        gap:6px;
     }
 
     .card{
-        padding:9px;
+        padding:8px;
     }
 
     .logo{
-        width:34px;
-        height:34px;
-
-        min-width:34px;
+        width:33px;
+        height:33px;
+        min-width:33px;
     }
 
     .card-title h3{
-        font-size:10px;
+        font-size:9px;
     }
 
     .card-description{
-        font-size:8px;
-    }
-
-    .meta span{
-        font-size:6.5px;
+        font-size:7.5px;
     }
 
     .open-btn{
-        font-size:7.5px;
+        font-size:7px;
     }
 
 }
 
+
+/* =========================================================
+   ONE COLUMN VERY SMALL
+========================================================= */
 
 @media(max-width:300px){
 
@@ -1636,8 +1259,16 @@ body{
         grid-template-columns:1fr;
     }
 
+    .stats{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
 }
 
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 ::-webkit-scrollbar{
     width:5px;
@@ -1650,7 +1281,6 @@ body{
 
 ::-webkit-scrollbar-thumb{
     background:#263244;
-
     border-radius:10px;
 }
 
@@ -1671,21 +1301,16 @@ body{
     <div class="login-box">
 
         <div class="login-icon">
-
             <i class="fa-solid fa-lock"></i>
-
         </div>
-
 
         <h1>
             Control Dashboard
         </h1>
 
-
         <p>
             Enter your username to continue
         </p>
-
 
         <div class="input-group">
 
@@ -1693,11 +1318,9 @@ body{
                 Username
             </label>
 
-
             <div class="input-wrap">
 
                 <i class="fa-solid fa-user"></i>
-
 
                 <input
                     type="text"
@@ -1709,7 +1332,6 @@ body{
             </div>
 
         </div>
-
 
         <button
             type="button"
@@ -1725,7 +1347,6 @@ body{
             Login
 
         </button>
-
 
         <div
             class="login-error"
@@ -1750,11 +1371,8 @@ body{
     <div class="brand">
 
         <div class="brand-logo">
-
             <i class="fa-solid fa-layer-group"></i>
-
         </div>
-
 
         <div class="brand-text">
 
@@ -1809,6 +1427,10 @@ body{
 <main class="container">
 
 
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
 <div class="page-head">
 
     <div class="page-title">
@@ -1843,43 +1465,38 @@ body{
 
 
 <!-- =====================================================
-     SUMMARY
+     STATISTICS
 ===================================================== -->
 
-<div class="summary-grid">
+<div class="stats">
 
 
     <div
-        class="summary-card total active-filter"
-        id="totalSummary"
+        class="stat-card total"
         onclick="setFilter('all')"
+        style="cursor:pointer;"
     >
 
-        <div class="summary-top">
+        <div class="stat-top">
 
-            <div class="summary-icon">
-
+            <div class="stat-icon">
                 <i class="fa-solid fa-globe"></i>
-
             </div>
 
-
-            <div class="summary-label">
-                TOTAL
+            <div class="stat-label">
+                Total
             </div>
 
         </div>
 
-
         <div
-            class="summary-number"
+            class="stat-number"
             id="totalCount"
         >
             0
         </div>
 
-
-        <div class="summary-description">
+        <div class="stat-description">
             All websites
         </div>
 
@@ -1888,36 +1505,31 @@ body{
 
 
     <div
-        class="summary-card active"
-        id="activeSummary"
+        class="stat-card active"
         onclick="setFilter('active')"
+        style="cursor:pointer;"
     >
 
-        <div class="summary-top">
+        <div class="stat-top">
 
-            <div class="summary-icon">
-
+            <div class="stat-icon">
                 <i class="fa-solid fa-circle-check"></i>
-
             </div>
 
-
-            <div class="summary-label">
-                ACTIVE
+            <div class="stat-label">
+                Active
             </div>
 
         </div>
 
-
         <div
-            class="summary-number"
+            class="stat-number"
             id="activeCount"
         >
             0
         </div>
 
-
-        <div class="summary-description">
+        <div class="stat-description">
             Running websites
         </div>
 
@@ -1926,36 +1538,31 @@ body{
 
 
     <div
-        class="summary-card inactive"
-        id="inactiveSummary"
+        class="stat-card inactive"
         onclick="setFilter('inactive')"
+        style="cursor:pointer;"
     >
 
-        <div class="summary-top">
+        <div class="stat-top">
 
-            <div class="summary-icon">
-
+            <div class="stat-icon">
                 <i class="fa-solid fa-circle-xmark"></i>
-
             </div>
 
-
-            <div class="summary-label">
-                INACTIVE
+            <div class="stat-label">
+                Inactive
             </div>
 
         </div>
 
-
         <div
-            class="summary-number"
+            class="stat-number"
             id="inactiveCount"
         >
             0
         </div>
 
-
-        <div class="summary-description">
+        <div class="stat-description">
             Disabled websites
         </div>
 
@@ -1967,27 +1574,31 @@ body{
 
 
 <!-- =====================================================
-     FILTER
+     FILTER + SEARCH
 ===================================================== -->
 
-<div class="filter-bar">
+<div class="controls">
 
 
-    <div class="filter-buttons">
-
+    <div class="filters">
 
         <button
             type="button"
-            class="filter-btn active"
+            class="filter-btn active-filter"
             id="filterAll"
             onclick="setFilter('all')"
         >
 
             <i class="fa-solid fa-layer-group"></i>
 
-            &nbsp;
-
             All
+
+            <span
+                class="count"
+                id="allFilterCount"
+            >
+                0
+            </span>
 
         </button>
 
@@ -2001,46 +1612,45 @@ body{
 
             <i class="fa-solid fa-circle-check"></i>
 
-            &nbsp;
-
             Active
+
+            <span
+                class="count"
+                id="activeFilterCount"
+            >
+                0
+            </span>
 
         </button>
 
 
         <button
             type="button"
-            class="filter-btn inactive-filter"
+            class="filter-btn"
             id="filterInactive"
             onclick="setFilter('inactive')"
         >
 
             <i class="fa-solid fa-circle-xmark"></i>
 
-            &nbsp;
-
             Inactive
 
-        </button>
+            <span
+                class="count"
+                id="inactiveFilterCount"
+            >
+                0
+            </span>
 
+        </button>
 
     </div>
 
 
-</div>
-
-
-
-<!-- =====================================================
-     SEARCH
-===================================================== -->
-
-<div class="toolbar">
 
     <div class="search-box">
 
         <i class="fa-solid fa-magnifying-glass"></i>
-
 
         <input
             type="search"
@@ -2051,9 +1661,14 @@ body{
 
     </div>
 
+
 </div>
 
 
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
 
 <div
     class="loading"
@@ -2070,12 +1685,20 @@ body{
 
 
 
+<!-- =====================================================
+     CARDS
+===================================================== -->
+
 <div
     class="cards"
     id="cards"
 ></div>
 
 
+
+<!-- =====================================================
+     EMPTY
+===================================================== -->
 
 <div
     class="empty"
@@ -2115,7 +1738,6 @@ body{
         Add Website
     </h2>
 
-
     <button
         type="button"
         class="close-btn"
@@ -2148,6 +1770,7 @@ body{
 </div>
 
 
+
 <div class="form-group">
 
     <label>
@@ -2174,6 +1797,7 @@ body{
 </div>
 
 
+
 <div class="form-group full">
 
     <label>
@@ -2190,6 +1814,7 @@ body{
 </div>
 
 
+
 <div class="form-group full">
 
     <label>
@@ -2202,6 +1827,7 @@ body{
     ></textarea>
 
 </div>
+
 
 
 <div class="form-group">
@@ -2219,6 +1845,7 @@ body{
 </div>
 
 
+
 <div class="form-group">
 
     <label>
@@ -2232,6 +1859,7 @@ body{
     >
 
 </div>
+
 
 
 <div class="form-group">
@@ -2248,6 +1876,7 @@ body{
     >
 
 </div>
+
 
 
 <div class="form-group">
@@ -2297,6 +1926,7 @@ body{
 </div>
 
 
+
 <div class="right-actions">
 
     <button
@@ -2332,6 +1962,10 @@ body{
 </div>
 
 
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
 
 <div
     class="toast"
@@ -2373,28 +2007,21 @@ const AUTO_LOGOUT_TIME =
 
 function resetInactivityTimer(){
 
-    clearTimeout(
-        inactivityTimer
-    );
-
+    clearTimeout(inactivityTimer);
 
     if(
         localStorage.getItem(
             "websiteControlLoggedIn"
         ) !== "true"
     ){
-
         return;
-
     }
-
 
     inactivityTimer =
         setTimeout(
             autoLogout,
             AUTO_LOGOUT_TIME
         );
-
 }
 
 
@@ -2403,7 +2030,6 @@ function autoLogout(){
     clearTimeout(
         inactivityTimer
     );
-
 
     localStorage.removeItem(
         "websiteControlLoggedIn"
@@ -2417,35 +2043,28 @@ function autoLogout(){
         "websiteControlName"
     );
 
-
     cards = [];
 
     editingId = null;
 
+    currentFilter = "all";
 
     document.getElementById(
         "dashboard"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "loginScreen"
-    ).style.display =
-        "flex";
-
+    ).style.display = "flex";
 
     document.getElementById(
         "usernameInput"
-    ).value =
-        "";
-
+    ).value = "";
 
     const error =
         document.getElementById(
             "loginError"
         );
-
 
     error.textContent =
         "Automatically logged out after 3 minutes of inactivity.";
@@ -2453,13 +2072,11 @@ function autoLogout(){
     error.style.display =
         "block";
 
-
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
-
 }
 
 
@@ -2514,7 +2131,6 @@ document.addEventListener(
 
         checkSession();
 
-
         document
             .getElementById(
                 "usernameInput"
@@ -2554,7 +2170,6 @@ function checkSession(){
             "websiteControlName"
         );
 
-
     if(
         logged === "true" &&
         name
@@ -2585,16 +2200,12 @@ async function login(){
             "loginBtn"
         );
 
-
     const username =
         input.value.trim();
 
-
     document.getElementById(
         "loginError"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     if(!username){
 
@@ -2606,14 +2217,10 @@ async function login(){
 
     }
 
-
-    button.disabled =
-        true;
-
+    button.disabled = true;
 
     button.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
-
 
     try{
 
@@ -2621,9 +2228,7 @@ async function login(){
             await fetch(
                 API_URL +
                 "?action=login&username=" +
-                encodeURIComponent(
-                    username
-                ) +
+                encodeURIComponent(username) +
                 "&ts=" +
                 Date.now(),
                 {
@@ -2632,10 +2237,8 @@ async function login(){
                 }
             );
 
-
         const data =
             await response.json();
-
 
         if(
             data.success
@@ -2646,20 +2249,17 @@ async function login(){
                 "true"
             );
 
-
             localStorage.setItem(
                 "websiteControlUsername",
                 data.username ||
                 username
             );
 
-
             localStorage.setItem(
                 "websiteControlName",
                 data.name ||
                 username
             );
-
 
             showDashboard(
                 data.name ||
@@ -2679,10 +2279,7 @@ async function login(){
     }
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showLoginError(
             "Unable to connect with server."
@@ -2690,10 +2287,7 @@ async function login(){
 
     }
 
-
-    button.disabled =
-        false;
-
+    button.disabled = false;
 
     button.innerHTML =
         '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
@@ -2705,19 +2299,15 @@ async function login(){
    LOGIN ERROR
 ========================================================= */
 
-function showLoginError(
-    message
-){
+function showLoginError(message){
 
     const error =
         document.getElementById(
             "loginError"
         );
 
-
     error.textContent =
         message;
-
 
     error.style.display =
         "block";
@@ -2729,30 +2319,21 @@ function showLoginError(
    SHOW DASHBOARD
 ========================================================= */
 
-function showDashboard(
-    name
-){
+function showDashboard(name){
 
     document.getElementById(
         "loginScreen"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "dashboard"
-    ).style.display =
-        "block";
-
+    ).style.display = "block";
 
     document.getElementById(
         "loggedUserName"
-    ).textContent =
-        name;
-
+    ).textContent = name;
 
     resetInactivityTimer();
-
 
     loadCards();
 
@@ -2769,7 +2350,6 @@ function logout(){
         inactivityTimer
     );
 
-
     localStorage.removeItem(
         "websiteControlLoggedIn"
     );
@@ -2782,37 +2362,27 @@ function logout(){
         "websiteControlName"
     );
 
-
     cards = [];
 
     editingId = null;
 
     currentFilter = "all";
 
-
     document.getElementById(
         "dashboard"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "loginScreen"
-    ).style.display =
-        "flex";
-
+    ).style.display = "flex";
 
     document.getElementById(
         "usernameInput"
-    ).value =
-        "";
-
+    ).value = "";
 
     document.getElementById(
         "loginError"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "cardModal"
@@ -2839,14 +2409,9 @@ async function loadCards(){
             "cards"
         );
 
+    loading.style.display = "block";
 
-    loading.style.display =
-        "block";
-
-
-    box.innerHTML =
-        "";
-
+    box.innerHTML = "";
 
     try{
 
@@ -2861,10 +2426,8 @@ async function loadCards(){
                 }
             );
 
-
         const data =
             await response.json();
-
 
         if(
             !data.success
@@ -2877,7 +2440,6 @@ async function loadCards(){
 
         }
 
-
         cards =
             Array.isArray(
                 data.cards
@@ -2887,18 +2449,20 @@ async function loadCards(){
             :
             [];
 
+        /*
+         IMPORTANT:
+         Statistics are calculated from ALL cards.
+         No filter is applied here.
+        */
 
-        updateSummary();
+        updateStatistics();
 
         renderCards();
 
     }
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showToast(
             error.message ||
@@ -2908,71 +2472,112 @@ async function loadCards(){
 
     }
 
-
-    loading.style.display =
-        "none";
+    loading.style.display = "none";
 
 }
 
 
 /* =========================================================
-   UPDATE SUMMARY
+   STATUS NORMALIZER
 ========================================================= */
 
-function updateSummary(){
+function getCardStatus(card){
+
+    const raw =
+        String(
+            card.status ?? ""
+        )
+        .trim()
+        .toLowerCase();
+
+    if(
+        raw === "inactive" ||
+        raw === "in-active" ||
+        raw === "disabled" ||
+        raw === "off" ||
+        raw === "false" ||
+        raw === "0"
+    ){
+
+        return "inactive";
+
+    }
+
+    return "active";
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+function updateStatistics(){
 
     const total =
         cards.length;
 
+    let active = 0;
 
-    const active =
-        cards.filter(
-            function(card){
-
-                return String(
-                    card.status ||
-                    "Active"
-                )
-                .trim()
-                .toLowerCase()
-                ===
-                "active";
-
-            }
-        ).length;
+    let inactive = 0;
 
 
-    const inactive =
-        cards.filter(
-            function(card){
+    cards.forEach(
+        function(card){
 
-                return String(
-                    card.status ||
-                    "Active"
-                )
-                .trim()
-                .toLowerCase()
-                ===
-                "inactive";
+            const status =
+                getCardStatus(card);
+
+            if(
+                status === "inactive"
+            ){
+
+                inactive++;
 
             }
-        ).length;
+            else{
 
+                active++;
+
+            }
+
+        }
+    );
+
+
+    /*
+     These values ALWAYS come from
+     the complete cards array.
+    */
 
     document.getElementById(
         "totalCount"
     ).textContent =
         total;
 
-
     document.getElementById(
         "activeCount"
     ).textContent =
         active;
 
-
     document.getElementById(
         "inactiveCount"
+    ).textContent =
+        inactive;
+
+
+    document.getElementById(
+        "allFilterCount"
+    ).textContent =
+        total;
+
+    document.getElementById(
+        "activeFilterCount"
+    ).textContent =
+        active;
+
+    document.getElementById(
+        "inactiveFilterCount"
     ).textContent =
         inactive;
 
@@ -2980,78 +2585,64 @@ function updateSummary(){
 
 
 /* =========================================================
-   SET FILTER
+   FILTER
 ========================================================= */
 
-function setFilter(
-    filter
-){
+function setFilter(filter){
 
     resetInactivityTimer();
-
 
     currentFilter =
         filter;
 
+    document.querySelectorAll(
+        ".filter-btn"
+    ).forEach(
+        function(button){
 
-    document
-        .getElementById(
+            button.classList.remove(
+                "active-filter"
+            );
+
+        }
+    );
+
+
+    if(
+        filter === "all"
+    ){
+
+        document.getElementById(
             "filterAll"
-        )
-        .classList.toggle(
-            "active",
-            filter === "all"
+        ).classList.add(
+            "active-filter"
         );
 
+    }
 
-    document
-        .getElementById(
+    else if(
+        filter === "active"
+    ){
+
+        document.getElementById(
             "filterActive"
-        )
-        .classList.toggle(
-            "active",
-            filter === "active"
+        ).classList.add(
+            "active-filter"
         );
 
+    }
 
-    document
-        .getElementById(
+    else if(
+        filter === "inactive"
+    ){
+
+        document.getElementById(
             "filterInactive"
-        )
-        .classList.toggle(
-            "active",
-            filter === "inactive"
+        ).classList.add(
+            "active-filter"
         );
 
-
-    document
-        .getElementById(
-            "totalSummary"
-        )
-        .classList.toggle(
-            "active-filter",
-            filter === "all"
-        );
-
-
-    document
-        .getElementById(
-            "activeSummary"
-        )
-        .classList.toggle(
-            "active-filter",
-            filter === "active"
-        );
-
-
-    document
-        .getElementById(
-            "inactiveSummary"
-        )
-        .classList.toggle(
-            "active-filter",
-            filter === "inactive"
-        );
+    }
 
 
     renderCards();
@@ -3060,7 +2651,7 @@ function setFilter(
 
 
 /* =========================================================
-   RENDER
+   RENDER CARDS
 ========================================================= */
 
 function renderCards(){
@@ -3080,7 +2671,6 @@ function renderCards(){
             "emptyText"
         );
 
-
     const search =
         document.getElementById(
             "searchInput"
@@ -3090,24 +2680,23 @@ function renderCards(){
         .toLowerCase();
 
 
-    box.innerHTML =
-        "";
+    box.innerHTML = "";
 
 
-    const filtered =
+    /*
+     Start with ALL cards.
+     This is the important fix.
+    */
+
+    let filtered =
         cards.filter(
             function(card){
 
                 const status =
-                    String(
-                        card.status ||
-                        "Active"
-                    )
-                    .trim()
-                    .toLowerCase();
+                    getCardStatus(card);
 
 
-                /* FILTER */
+                /* STATUS FILTER */
 
                 if(
                     currentFilter === "active" &&
@@ -3129,33 +2718,41 @@ function renderCards(){
                 }
 
 
-                /* SEARCH */
+                /* SEARCH FILTER */
 
-                if(!search){
+                if(
+                    search
+                ){
 
-                    return true;
+                    const text = (
+
+                        String(card.name || "") +
+                        " " +
+                        String(card.description || "") +
+                        " " +
+                        String(card.source || "") +
+                        " " +
+                        String(card.type || "") +
+                        " " +
+                        String(card.link || "") +
+                        " " +
+                        status
+
+                    ).toLowerCase();
+
+
+                    if(
+                        !text.includes(search)
+                    ){
+
+                        return false;
+
+                    }
 
                 }
 
 
-                const text = (
-
-                    String(card.name || "") +
-                    " " +
-                    String(card.description || "") +
-                    " " +
-                    String(card.source || "") +
-                    " " +
-                    String(card.type || "") +
-                    " " +
-                    String(card.status || "")
-
-                ).toLowerCase();
-
-
-                return text.includes(
-                    search
-                );
+                return true;
 
             }
         );
@@ -3170,6 +2767,14 @@ function renderCards(){
 
 
         if(
+            currentFilter === "inactive"
+        ){
+
+            emptyText.textContent =
+                "No inactive websites found.";
+
+        }
+        else if(
             currentFilter === "active"
         ){
 
@@ -3178,11 +2783,11 @@ function renderCards(){
 
         }
         else if(
-            currentFilter === "inactive"
+            search
         ){
 
             emptyText.textContent =
-                "No inactive websites found.";
+                "No websites match your search.";
 
         }
         else{
@@ -3202,13 +2807,30 @@ function renderCards(){
         "none";
 
 
+    /*
+     Position sorting
+    */
+
+    filtered.sort(
+        function(a,b){
+
+            const pa =
+                Number(a.position || 999999);
+
+            const pb =
+                Number(b.position || 999999);
+
+            return pa - pb;
+
+        }
+    );
+
+
     filtered.forEach(
         function(card){
 
             box.appendChild(
-                createCard(
-                    card
-                )
+                createCard(card)
             );
 
         }
@@ -3221,36 +2843,23 @@ function renderCards(){
    CREATE CARD
 ========================================================= */
 
-function createCard(
-    card
-){
+function createCard(card){
 
     const article =
         document.createElement(
             "article"
         );
 
-
     article.className =
         "card";
 
 
     const status =
-        String(
-            card.status ||
-            "Active"
-        )
-        .trim();
-
-
-    const isInactive =
-        status.toLowerCase()
-        ===
-        "inactive";
+        getCardStatus(card);
 
 
     if(
-        isInactive
+        status === "inactive"
     ){
 
         article.classList.add(
@@ -3266,78 +2875,90 @@ function createCard(
         );
 
 
-    const logo =
-        card.logo
-        ?
-        `
-        <img
-            src="${escapeAttribute(card.logo)}"
-            alt=""
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
+    let logo = "";
 
-        <div
-            class="logo-fallback"
-            style="display:none;"
-        >
-            ${escapeHTML(initials)}
-        </div>
-        `
-        :
-        `
-        <div class="logo-fallback">
-            ${escapeHTML(initials)}
-        </div>
+
+    if(
+        card.logo
+    ){
+
+        logo = `
+            <img
+                src="${escapeAttribute(card.logo)}"
+                alt=""
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="logo-fallback"
+                style="display:none;"
+            >
+                ${escapeHTML(initials)}
+            </div>
         `;
 
+    }
+    else{
 
-    const statusClass =
-        isInactive
-        ?
-        "inactive"
-        :
-        "";
+        logo = `
+            <div class="logo-fallback">
+                ${escapeHTML(initials)}
+            </div>
+        `;
+
+    }
+
+
+    const statusText =
+        status === "inactive"
+        ? "Inactive"
+        : "Active";
+
+
+    const statusIcon =
+        status === "inactive"
+        ? "fa-circle-xmark"
+        : "fa-circle-check";
 
 
     article.innerHTML = `
 
         <div class="card-top">
 
-
             <div class="logo">
-
                 ${logo}
-
             </div>
 
 
             <div class="card-title">
 
-                <h3>
+                <div class="card-title-row">
+
+                    <h3>
+                        ${escapeHTML(
+                            card.name ||
+                            "Unnamed Website"
+                        )}
+                    </h3>
+
+                    <span
+                        class="card-status ${status}"
+                    >
+
+                        <i class="fa-solid ${statusIcon}"></i>
+
+                        ${statusText}
+
+                    </span>
+
+                </div>
+
+
+                <span class="type-badge">
 
                     ${escapeHTML(
-                        card.name ||
-                        "Unnamed Website"
-                    )}
-
-                </h3>
-
-
-                <span class="status-badge ${statusClass}">
-
-                    <i class="fa-solid ${
-                        isInactive
-                        ?
-                        "fa-circle-xmark"
-                        :
-                        "fa-circle-check"
-                    }"></i>
-
-                    &nbsp;
-
-                    ${escapeHTML(
-                        status ||
-                        "Active"
+                        card.type ||
+                        "Website"
                     )}
 
                 </span>
@@ -3359,17 +2980,13 @@ function createCard(
 
         <div class="meta">
 
-
             ${
                 card.source
                 ?
                 `
                 <span>
-
                     <i class="fa-solid fa-server"></i>
-
                     ${escapeHTML(card.source)}
-
                 </span>
                 `
                 :
@@ -3382,23 +2999,18 @@ function createCard(
                 ?
                 `
                 <span>
-
                     <i class="fa-solid fa-tag"></i>
-
                     ${escapeHTML(card.type)}
-
                 </span>
                 `
                 :
                 ""
             }
 
-
         </div>
 
 
         <div class="card-bottom">
-
 
             <a
                 class="open-btn"
@@ -3421,14 +3033,15 @@ function createCard(
             <button
                 type="button"
                 class="edit-btn"
-                onclick="openEditModal('${escapeAttribute(card.id)}')"
+                onclick="openEditModal('${escapeAttribute(
+                    card.id
+                )}')"
                 title="Edit"
             >
 
                 <i class="fa-solid fa-pen"></i>
 
             </button>
-
 
         </div>
 
@@ -3461,25 +3074,19 @@ function openAddModal(){
 
     resetInactivityTimer();
 
-
-    editingId =
-        null;
-
+    editingId = null;
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Add Website";
 
-
     document.getElementById(
         "deleteBtn"
     ).style.display =
         "none";
 
-
     clearForm();
-
 
     document.getElementById(
         "cardModal"
@@ -3494,9 +3101,7 @@ function openAddModal(){
    EDIT
 ========================================================= */
 
-function openEditModal(
-    id
-){
+function openEditModal(id){
 
     resetInactivityTimer();
 
@@ -3507,9 +3112,7 @@ function openEditModal(
 
                 return String(
                     item.id
-                )
-                ===
-                String(id);
+                ) === String(id);
 
             }
         );
@@ -3546,57 +3149,56 @@ function openEditModal(
     document.getElementById(
         "formName"
     ).value =
-        card.name ||
-        "";
+        card.name || "";
 
 
     document.getElementById(
         "formLink"
     ).value =
-        card.link ||
-        "";
+        card.link || "";
 
 
     document.getElementById(
         "formLogo"
     ).value =
-        card.logo ||
-        "";
+        card.logo || "";
 
 
     document.getElementById(
         "formDescription"
     ).value =
-        card.description ||
-        "";
+        card.description || "";
 
 
     document.getElementById(
         "formSource"
     ).value =
-        card.source ||
-        "";
+        card.source || "";
 
 
     document.getElementById(
         "formType"
     ).value =
-        card.type ||
-        "";
+        card.type || "";
 
 
     document.getElementById(
         "formPosition"
     ).value =
-        card.position ||
-        "";
+        card.position || "";
 
+
+    /*
+     Important:
+     Always convert status to correct select value.
+    */
 
     document.getElementById(
         "formStatus"
     ).value =
-        card.status ||
-        "Active";
+        getCardStatus(card) === "inactive"
+        ? "Inactive"
+        : "Active";
 
 
     document.getElementById(
@@ -3628,8 +3230,7 @@ function clearForm(){
 
             document.getElementById(
                 id
-            ).value =
-                "";
+            ).value = "";
 
         }
     );
@@ -3651,16 +3252,13 @@ function closeModal(){
 
     resetInactivityTimer();
 
-
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
 
-
-    editingId =
-        null;
+    editingId = null;
 
 }
 
@@ -3669,9 +3267,7 @@ function closeModal(){
    URL NORMALIZER
 ========================================================= */
 
-function normalizeWebsiteURL(
-    value
-){
+function normalizeWebsiteURL(value){
 
     let url =
         String(
@@ -3688,9 +3284,7 @@ function normalizeWebsiteURL(
 
 
     if(
-        /^https?:\/\//i.test(
-            url
-        )
+        /^https?:\/\//i.test(url)
     ){
 
         return url;
@@ -3699,9 +3293,7 @@ function normalizeWebsiteURL(
 
 
     if(
-        url.startsWith(
-            "//"
-        )
+        url.startsWith("//")
     ){
 
         return "https:" + url;
@@ -3714,9 +3306,7 @@ function normalizeWebsiteURL(
 
 
     if(
-        ipPattern.test(
-            url
-        )
+        ipPattern.test(url)
     ){
 
         return "http://" + url;
@@ -3759,51 +3349,42 @@ async function saveCard(){
             :
             "addCard",
 
-
         id:
             editingId ||
             "",
-
 
         name:
             document.getElementById(
                 "formName"
             ).value.trim(),
 
-
         link:
             normalizedLink,
-
 
         logo:
             document.getElementById(
                 "formLogo"
             ).value.trim(),
 
-
         description:
             document.getElementById(
                 "formDescription"
             ).value.trim(),
-
 
         source:
             document.getElementById(
                 "formSource"
             ).value.trim(),
 
-
         type:
             document.getElementById(
                 "formType"
             ).value.trim(),
 
-
         position:
             document.getElementById(
                 "formPosition"
             ).value,
-
 
         status:
             document.getElementById(
@@ -3853,9 +3434,7 @@ async function saveCard(){
         );
 
 
-    saveBtn.disabled =
-        true;
-
+    saveBtn.disabled = true;
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
@@ -3913,10 +3492,7 @@ async function saveCard(){
     }
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showToast(
             error.message ||
@@ -3927,9 +3503,7 @@ async function saveCard(){
     }
 
 
-    saveBtn.disabled =
-        false;
-
+    saveBtn.disabled = false;
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-check"></i> Save';
@@ -4024,10 +3598,7 @@ async function deleteCurrentCard(){
     }
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showToast(
             error.message ||
@@ -4044,9 +3615,7 @@ async function deleteCurrentCard(){
    ESCAPE HTML
 ========================================================= */
 
-function escapeHTML(
-    value
-){
+function escapeHTML(value){
 
     return String(
         value || ""
@@ -4075,9 +3644,7 @@ function escapeHTML(
 }
 
 
-function escapeAttribute(
-    value
-){
+function escapeAttribute(value){
 
     return escapeHTML(
         value
@@ -4090,9 +3657,7 @@ function escapeAttribute(
    INITIALS
 ========================================================= */
 
-function getInitials(
-    name
-){
+function getInitials(name){
 
     const words =
         String(
