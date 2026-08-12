@@ -279,27 +279,22 @@ body{
 
 
 /* =========================================================
-   CONTAINER
+   CONTENT
 ========================================================= */
 
 .container{
     width:100%;
     max-width:1450px;
     margin:auto;
-    padding:24px 27px 35px;
+    padding:27px;
 }
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
 
 .page-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:15px;
-    margin-bottom:17px;
+    margin-bottom:18px;
 }
 
 .page-title h1{
@@ -336,26 +331,26 @@ body{
 
 
 /* =========================================================
-   STATISTICS
+   STATS
 ========================================================= */
 
 .stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
-    margin-bottom:15px;
+    margin-bottom:16px;
 }
 
 .stat-card{
     min-width:0;
-    min-height:108px;
-    padding:15px;
+    min-height:105px;
+    padding:16px;
     border-radius:15px;
     background:
         linear-gradient(
             145deg,
-            rgba(18,27,43,.97),
-            rgba(9,14,23,.97)
+            rgba(20,29,46,.96),
+            rgba(9,14,23,.96)
         );
     border:1px solid rgba(255,255,255,.07);
     position:relative;
@@ -366,24 +361,16 @@ body{
     border-color:rgba(34,197,94,.35);
 }
 
-.stat-card.active{
-    border-color:rgba(34,197,94,.15);
-}
-
-.stat-card.inactive{
-    border-color:rgba(248,113,113,.15);
-}
-
 .stat-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:8px;
+    gap:10px;
 }
 
 .stat-icon{
-    width:39px;
-    height:39px;
+    width:38px;
+    height:38px;
     border-radius:10px;
     display:flex;
     align-items:center;
@@ -392,7 +379,7 @@ body{
 }
 
 .stat-card.total .stat-icon{
-    background:rgba(59,130,246,.15);
+    background:rgba(59,130,246,.14);
     color:#60a5fa;
 }
 
@@ -402,13 +389,13 @@ body{
 }
 
 .stat-card.inactive .stat-icon{
-    background:rgba(248,113,113,.14);
+    background:rgba(239,68,68,.14);
     color:#f87171;
 }
 
 .stat-label{
-    color:#64748b;
     font-size:9px;
+    color:#64748b;
     font-weight:700;
     text-transform:uppercase;
 }
@@ -416,11 +403,11 @@ body{
 .stat-number{
     font-size:27px;
     font-weight:800;
+    margin-top:8px;
     line-height:1;
-    margin-top:12px;
 }
 
-.stat-bottom{
+.stat-sub{
     color:#64748b;
     font-size:8px;
     margin-top:6px;
@@ -428,28 +415,28 @@ body{
 
 
 /* =========================================================
-   FILTER TABS
+   FILTERS
 ========================================================= */
 
-.filter-tabs{
+.filter-row{
     display:flex;
     align-items:center;
     gap:7px;
-    margin-bottom:15px;
+    margin-bottom:13px;
     overflow-x:auto;
     scrollbar-width:none;
 }
 
-.filter-tabs::-webkit-scrollbar{
+.filter-row::-webkit-scrollbar{
     display:none;
 }
 
 .filter-btn{
     height:34px;
     padding:0 12px;
-    border-radius:9px;
-    border:1px solid rgba(255,255,255,.07);
-    background:#0d1522;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#0f172a;
     color:#94a3b8;
     font-size:9px;
     font-weight:700;
@@ -460,20 +447,10 @@ body{
     white-space:nowrap;
 }
 
-.filter-btn i{
-    font-size:8px;
-}
-
 .filter-btn.active{
-    background:rgba(34,197,94,.10);
+    background:rgba(34,197,94,.12);
     border-color:rgba(34,197,94,.30);
     color:#4ade80;
-}
-
-.filter-btn.inactive.active{
-    background:rgba(248,113,113,.10);
-    border-color:rgba(248,113,113,.30);
-    color:#f87171;
 }
 
 
@@ -485,7 +462,7 @@ body{
     width:100%;
     display:flex;
     justify-content:flex-end;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .search-box{
@@ -504,14 +481,14 @@ body{
 
 .search-box input{
     width:100%;
-    height:40px;
+    height:42px;
     border-radius:10px;
     border:1px solid rgba(255,255,255,.08);
     background:rgba(15,23,42,.80);
     color:#fff;
     outline:none;
     padding:0 13px 0 38px;
-    font-size:11px;
+    font-size:12px;
 }
 
 .search-box input:focus{
@@ -525,11 +502,7 @@ body{
 
 .cards{
     display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fill,
-            minmax(225px,1fr)
-        );
+    grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
     gap:14px;
 }
 
@@ -548,7 +521,7 @@ body{
 }
 
 .card.inactive-card{
-    border-color:rgba(248,113,113,.18);
+    border-color:rgba(239,68,68,.18);
 }
 
 .card:hover{
@@ -558,7 +531,7 @@ body{
 }
 
 .card.inactive-card:hover{
-    border-color:rgba(248,113,113,.35);
+    border-color:rgba(239,68,68,.30);
 }
 
 .card-top{
@@ -612,8 +585,6 @@ body{
 
 .status-badge{
     display:inline-flex;
-    align-items:center;
-    gap:4px;
     margin-top:4px;
     font-size:8px;
     padding:4px 6px;
@@ -623,7 +594,7 @@ body{
 }
 
 .status-badge.inactive{
-    background:rgba(248,113,113,.10);
+    background:rgba(239,68,68,.10);
     color:#f87171;
 }
 
@@ -680,9 +651,9 @@ body{
 }
 
 .inactive-card .open-btn{
-    background:rgba(248,113,113,.08);
-    border-color:rgba(248,113,113,.18);
-    color:#f87171;
+    background:rgba(100,116,139,.08);
+    border-color:rgba(100,116,139,.15);
+    color:#94a3b8;
 }
 
 .open-btn:active{
@@ -966,11 +937,12 @@ body{
     }
 
     .page-head{
+        align-items:center;
         margin-bottom:12px;
     }
 
     .page-title h1{
-        font-size:19px;
+        font-size:20px;
     }
 
     .page-title p{
@@ -979,11 +951,11 @@ body{
     }
 
     .add-btn{
-        width:39px;
-        height:39px;
+        width:40px;
+        height:40px;
         padding:0;
         justify-content:center;
-        border-radius:9px;
+        border-radius:10px;
     }
 
     .add-btn span{
@@ -991,9 +963,10 @@ body{
     }
 
 
-    /* SMALL MOBILE STATS */
+    /* MOBILE STATS */
 
     .stats{
+        grid-template-columns:repeat(3,1fr);
         gap:7px;
         margin-bottom:10px;
     }
@@ -1004,6 +977,10 @@ body{
         border-radius:11px;
     }
 
+    .stat-top{
+        gap:4px;
+    }
+
     .stat-icon{
         width:27px;
         height:27px;
@@ -1012,39 +989,41 @@ body{
     }
 
     .stat-label{
-        font-size:6px;
+        font-size:7px;
     }
 
     .stat-number{
-        font-size:19px;
-        margin-top:7px;
+        font-size:20px;
+        margin-top:6px;
     }
 
-    .stat-bottom{
+    .stat-sub{
         font-size:6px;
-        margin-top:3px;
+        margin-top:4px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
     }
 
 
     /* FILTER */
 
-    .filter-tabs{
-        gap:5px;
+    .filter-row{
         margin-bottom:10px;
+        gap:5px;
     }
 
     .filter-btn{
         height:30px;
         padding:0 9px;
         font-size:8px;
-        border-radius:7px;
     }
 
 
     /* SEARCH */
 
     .toolbar{
-        margin-bottom:10px;
+        margin-bottom:11px;
     }
 
     .search-box{
@@ -1052,7 +1031,7 @@ body{
     }
 
     .search-box input{
-        height:38px;
+        height:39px;
         font-size:10px;
     }
 
@@ -1060,17 +1039,13 @@ body{
     /* CARDS */
 
     .cards{
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0,1fr)
-            );
-        gap:7px;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
     }
 
     .card{
-        padding:9px;
-        border-radius:11px;
+        padding:10px;
+        border-radius:12px;
     }
 
     .card:hover{
@@ -1082,9 +1057,9 @@ body{
     }
 
     .logo{
-        width:34px;
-        height:34px;
-        min-width:34px;
+        width:36px;
+        height:36px;
+        min-width:36px;
         border-radius:8px;
     }
 
@@ -1097,16 +1072,15 @@ body{
     }
 
     .status-badge{
-        font-size:6px;
+        font-size:6.5px;
         padding:3px 4px;
-        margin-top:3px;
+        margin-top:2px;
     }
 
     .card-description{
         font-size:8px;
         margin-top:7px;
         min-height:24px;
-        line-height:1.4;
     }
 
     .meta{
@@ -1115,12 +1089,12 @@ body{
     }
 
     .meta span{
-        font-size:6px;
+        font-size:6.5px;
         padding:3px 4px;
     }
 
     .card-bottom{
-        margin-top:7px;
+        margin-top:8px;
         gap:4px;
     }
 
@@ -1130,8 +1104,8 @@ body{
     }
 
     .edit-btn{
-        width:29px;
-        min-width:29px;
+        width:30px;
+        min-width:30px;
         height:29px;
         font-size:8px;
     }
@@ -1140,14 +1114,14 @@ body{
     /* MODAL */
 
     .modal{
-        padding:7px;
+        padding:8px;
         align-items:flex-end;
     }
 
     .modal-box{
-        max-height:calc(100dvh - 14px);
-        border-radius:16px 16px 0 0;
-        padding:17px 14px;
+        max-height:calc(100dvh - 16px);
+        border-radius:17px 17px 0 0;
+        padding:18px 15px;
     }
 
     .form-grid{
@@ -1196,12 +1170,8 @@ body{
         padding-right:8px;
     }
 
-    .cards{
-        gap:6px;
-    }
-
-    .card{
-        padding:8px;
+    .stats{
+        gap:5px;
     }
 
     .stat-card{
@@ -1209,29 +1179,15 @@ body{
     }
 
     .stat-number{
-        font-size:17px;
+        font-size:18px;
     }
 
-    .logo{
-        width:31px;
-        height:31px;
-        min-width:31px;
+    .cards{
+        gap:6px;
     }
 
-    .card-title h3{
-        font-size:9px;
-    }
-
-    .card-description{
-        font-size:7px;
-    }
-
-    .meta span{
-        font-size:5.5px;
-    }
-
-    .open-btn{
-        font-size:6.5px;
+    .card{
+        padding:8px;
     }
 
 }
@@ -1245,8 +1201,6 @@ body{
 
 }
 
-
-/* SCROLLBAR */
 
 ::-webkit-scrollbar{
     width:5px;
@@ -1282,19 +1236,13 @@ body{
             <i class="fa-solid fa-lock"></i>
         </div>
 
-        <h1>
-            Control Dashboard
-        </h1>
+        <h1>Control Dashboard</h1>
 
-        <p>
-            Enter your username to continue
-        </p>
+        <p>Enter your username to continue</p>
 
         <div class="input-group">
 
-            <label>
-                Username
-            </label>
+            <label>Username</label>
 
             <div class="input-wrap">
 
@@ -1317,11 +1265,9 @@ body{
             id="loginBtn"
             onclick="login()"
         >
-
             <i class="fa-solid fa-right-to-bracket"></i>
             &nbsp;
             Login
-
         </button>
 
         <div
@@ -1352,13 +1298,9 @@ body{
 
         <div class="brand-text">
 
-            <h2>
-                Website Control
-            </h2>
+            <h2>Website Control</h2>
 
-            <span>
-                Management Dashboard
-            </span>
+            <span>Management Dashboard</span>
 
         </div>
 
@@ -1382,16 +1324,13 @@ body{
 
         </div>
 
-
         <button
             type="button"
             class="logout-btn"
             onclick="logout()"
             title="Logout"
         >
-
             <i class="fa-solid fa-right-from-bracket"></i>
-
         </button>
 
     </div>
@@ -1403,21 +1342,13 @@ body{
 <main class="container">
 
 
-<!-- =====================================================
-     PAGE HEADER
-===================================================== -->
-
 <div class="page-head">
 
     <div class="page-title">
 
-        <h1>
-            Website Control
-        </h1>
+        <h1>Website Control</h1>
 
-        <p>
-            Manage your website cards
-        </p>
+        <p>Manage your website cards</p>
 
     </div>
 
@@ -1430,9 +1361,7 @@ body{
 
         <i class="fa-solid fa-plus"></i>
 
-        <span>
-            Add Website
-        </span>
+        <span>Add Website</span>
 
     </button>
 
@@ -1441,12 +1370,11 @@ body{
 
 
 <!-- =====================================================
-     STATISTICS
+     STATS
 ===================================================== -->
 
 <div class="stats">
 
-    <!-- TOTAL -->
 
     <div class="stat-card total">
 
@@ -1469,21 +1397,20 @@ body{
             0
         </div>
 
-        <div class="stat-bottom">
+        <div class="stat-sub">
             All websites
         </div>
 
     </div>
 
 
-    <!-- ACTIVE -->
 
     <div class="stat-card active">
 
         <div class="stat-top">
 
             <div class="stat-icon">
-                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-check"></i>
             </div>
 
             <div class="stat-label">
@@ -1499,21 +1426,20 @@ body{
             0
         </div>
 
-        <div class="stat-bottom">
+        <div class="stat-sub">
             Running websites
         </div>
 
     </div>
 
 
-    <!-- INACTIVE -->
 
     <div class="stat-card inactive">
 
         <div class="stat-top">
 
             <div class="stat-icon">
-                <i class="fa-solid fa-circle-xmark"></i>
+                <i class="fa-solid fa-xmark"></i>
             </div>
 
             <div class="stat-label">
@@ -1529,11 +1455,12 @@ body{
             0
         </div>
 
-        <div class="stat-bottom">
+        <div class="stat-sub">
             Disabled websites
         </div>
 
     </div>
+
 
 </div>
 
@@ -1543,47 +1470,38 @@ body{
      FILTER
 ===================================================== -->
 
-<div class="filter-tabs">
+<div class="filter-row">
 
     <button
         type="button"
         class="filter-btn active"
-        id="filterAll"
+        data-filter="all"
         onclick="setFilter('all')"
     >
-
         <i class="fa-solid fa-layer-group"></i>
-
         All
-
     </button>
 
 
     <button
         type="button"
         class="filter-btn"
-        id="filterActive"
+        data-filter="active"
         onclick="setFilter('active')"
     >
-
         <i class="fa-solid fa-circle-check"></i>
-
         Active
-
     </button>
 
 
     <button
         type="button"
-        class="filter-btn inactive"
-        id="filterInactive"
+        class="filter-btn"
+        data-filter="inactive"
         onclick="setFilter('inactive')"
     >
-
         <i class="fa-solid fa-circle-xmark"></i>
-
         Inactive
-
     </button>
 
 </div>
@@ -1613,10 +1531,6 @@ body{
 
 
 
-<!-- =====================================================
-     LOADING
-===================================================== -->
-
 <div
     class="loading"
     id="loading"
@@ -1632,20 +1546,12 @@ body{
 
 
 
-<!-- =====================================================
-     CARDS
-===================================================== -->
-
 <div
     class="cards"
     id="cards"
 ></div>
 
 
-
-<!-- =====================================================
-     EMPTY
-===================================================== -->
 
 <div
     class="empty"
@@ -1690,9 +1596,7 @@ body{
         class="close-btn"
         onclick="closeModal()"
     >
-
         <i class="fa-solid fa-xmark"></i>
-
     </button>
 
 </div>
@@ -1704,9 +1608,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Website Name
-    </label>
+    <label>Website Name</label>
 
     <input
         type="text"
@@ -1719,9 +1621,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Website Link
-    </label>
+    <label>Website Link</label>
 
     <input
         type="text"
@@ -1745,9 +1645,7 @@ body{
 
 <div class="form-group full">
 
-    <label>
-        Logo URL
-    </label>
+    <label>Logo URL</label>
 
     <input
         type="text"
@@ -1761,9 +1659,7 @@ body{
 
 <div class="form-group full">
 
-    <label>
-        Description
-    </label>
+    <label>Description</label>
 
     <textarea
         id="formDescription"
@@ -1775,9 +1671,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Source
-    </label>
+    <label>Source</label>
 
     <input
         type="text"
@@ -1790,9 +1684,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Type
-    </label>
+    <label>Type</label>
 
     <input
         type="text"
@@ -1805,9 +1697,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Position
-    </label>
+    <label>Position</label>
 
     <input
         type="number"
@@ -1821,9 +1711,7 @@ body{
 
 <div class="form-group">
 
-    <label>
-        Status
-    </label>
+    <label>Status</label>
 
     <select id="formStatus">
 
@@ -1902,8 +1790,6 @@ body{
 
 
 
-<!-- TOAST -->
-
 <div
     class="toast"
     id="toast"
@@ -1938,8 +1824,7 @@ let currentFilter = "all";
    AUTO LOGOUT
 ========================================================= */
 
-const AUTO_LOGOUT_TIME =
-    3 * 60 * 1000;
+const AUTO_LOGOUT_TIME = 3 * 60 * 1000;
 
 
 function resetInactivityTimer(){
@@ -1954,19 +1839,17 @@ function resetInactivityTimer(){
         return;
     }
 
-    inactivityTimer =
-        setTimeout(
-            autoLogout,
-            AUTO_LOGOUT_TIME
-        );
+    inactivityTimer = setTimeout(
+        autoLogout,
+        AUTO_LOGOUT_TIME
+    );
+
 }
 
 
 function autoLogout(){
 
-    clearTimeout(
-        inactivityTimer
-    );
+    clearTimeout(inactivityTimer);
 
     localStorage.removeItem(
         "websiteControlLoggedIn"
@@ -1997,12 +1880,18 @@ function autoLogout(){
     ).value = "";
 
     document.getElementById(
+        "loginError"
+    ).textContent =
+        "Automatically logged out after 3 minutes of inactivity.";
+
+    document.getElementById(
+        "loginError"
+    ).style.display = "block";
+
+    document.getElementById(
         "cardModal"
     ).classList.remove("show");
 
-    showLoginError(
-        "Automatically logged out after 3 minutes of inactivity."
-    );
 }
 
 
@@ -2032,9 +1921,7 @@ function autoLogout(){
                         "websiteControlLoggedIn"
                     ) === "true"
                 ){
-
                     resetInactivityTimer();
-
                 }
 
             },
@@ -2058,19 +1945,13 @@ document.addEventListener(
         checkSession();
 
         document
-            .getElementById(
-                "usernameInput"
-            )
+            .getElementById("usernameInput")
             .addEventListener(
                 "keydown",
                 function(e){
 
-                    if(
-                        e.key === "Enter"
-                    ){
-
+                    if(e.key === "Enter"){
                         login();
-
                     }
 
                 }
@@ -2100,9 +1981,7 @@ function checkSession(){
         logged === "true" &&
         name
     ){
-
         showDashboard(name);
-
     }
 
 }
@@ -2263,9 +2142,7 @@ function showDashboard(name){
 
 function logout(){
 
-    clearTimeout(
-        inactivityTimer
-    );
+    clearTimeout(inactivityTimer);
 
     localStorage.removeItem(
         "websiteControlLoggedIn"
@@ -2302,6 +2179,33 @@ function logout(){
     document.getElementById(
         "cardModal"
     ).classList.remove("show");
+
+}
+
+
+/* =========================================================
+   STATUS NORMALIZER
+   IMPORTANT
+========================================================= */
+
+function normalizeStatus(status){
+
+    const value =
+        String(status || "")
+        .trim()
+        .toLowerCase();
+
+    if(
+        value === "inactive" ||
+        value === "off" ||
+        value === "disabled" ||
+        value === "false" ||
+        value === "0"
+    ){
+        return "Inactive";
+    }
+
+    return "Active";
 
 }
 
@@ -2353,17 +2257,21 @@ async function loadCards(){
 
         cards =
             Array.isArray(data.cards)
-            ? data.cards
+            ? data.cards.map(
+                function(card){
+
+                    return {
+                        ...card,
+                        status:normalizeStatus(
+                            card.status
+                        )
+                    };
+
+                }
+            )
             : [];
 
-        /*
-         * IMPORTANT:
-         *
-         * এখানে আর Inactive card বাদ দেওয়া হচ্ছে না।
-         * Sheet থেকে যতগুলো card আসবে সব cards array-তে থাকবে।
-         */
-
-        updateStatistics();
+        updateStats();
 
         renderCards();
 
@@ -2386,45 +2294,11 @@ async function loadCards(){
 
 
 /* =========================================================
-   NORMALIZE STATUS
+   UPDATE STATS
+   ALL DATA FROM SHEET
 ========================================================= */
 
-function getCardStatus(card){
-
-    const value =
-        String(
-            card.status || "Active"
-        )
-        .trim()
-        .toLowerCase();
-
-    if(
-        value === "inactive" ||
-        value === "disabled" ||
-        value === "off" ||
-        value === "false" ||
-        value === "0"
-    ){
-
-        return "inactive";
-
-    }
-
-    return "active";
-
-}
-
-
-/* =========================================================
-   UPDATE STATISTICS
-========================================================= */
-
-function updateStatistics(){
-
-    /*
-     * Statistics সরাসরি cards array থেকে calculate হচ্ছে।
-     * তাই Sheet-এ Inactive থাকলে অবশ্যই এখানে count হবে।
-     */
+function updateStats(){
 
     const total =
         cards.length;
@@ -2433,7 +2307,9 @@ function updateStatistics(){
         cards.filter(
             function(card){
 
-                return getCardStatus(card) === "active";
+                return normalizeStatus(
+                    card.status
+                ) === "Active";
 
             }
         ).length;
@@ -2442,21 +2318,20 @@ function updateStatistics(){
         cards.filter(
             function(card){
 
-                return getCardStatus(card) === "inactive";
+                return normalizeStatus(
+                    card.status
+                ) === "Inactive";
 
             }
         ).length;
-
 
     document.getElementById(
         "totalCount"
     ).textContent = total;
 
-
     document.getElementById(
         "activeCount"
     ).textContent = active;
-
 
     document.getElementById(
         "inactiveCount"
@@ -2474,58 +2349,17 @@ function setFilter(filter){
     currentFilter = filter;
 
     document
-        .querySelectorAll(
-            ".filter-btn"
-        )
+        .querySelectorAll(".filter-btn")
         .forEach(
             function(button){
 
-                button.classList.remove(
-                    "active"
+                button.classList.toggle(
+                    "active",
+                    button.dataset.filter === filter
                 );
 
             }
         );
-
-
-    if(filter === "all"){
-
-        document
-            .getElementById(
-                "filterAll"
-            )
-            .classList.add(
-                "active"
-            );
-
-    }
-
-    else if(filter === "active"){
-
-        document
-            .getElementById(
-                "filterActive"
-            )
-            .classList.add(
-                "active"
-            );
-
-    }
-
-    else if(filter === "inactive"){
-
-        document
-            .getElementById(
-                "filterInactive"
-            )
-            .classList.add(
-                "active"
-            );
-
-    }
-
-
-    resetInactivityTimer();
 
     renderCards();
 
@@ -2533,7 +2367,8 @@ function setFilter(filter){
 
 
 /* =========================================================
-   RENDER CARDS
+   RENDER
+   INACTIVE WILL NOT BE HIDDEN
 ========================================================= */
 
 function renderCards(){
@@ -2570,92 +2405,79 @@ function renderCards(){
             function(card){
 
                 const status =
-                    getCardStatus(card);
+                    normalizeStatus(
+                        card.status
+                    );
 
 
-                /*
-                 * FILTER
-                 */
+                /* STATUS FILTER */
 
                 if(
                     currentFilter === "active" &&
-                    status !== "active"
+                    status !== "Active"
                 ){
-
                     return false;
-
                 }
 
 
                 if(
                     currentFilter === "inactive" &&
-                    status !== "inactive"
+                    status !== "Inactive"
                 ){
-
                     return false;
-
                 }
 
 
-                /*
-                 * SEARCH
-                 */
+                /* SEARCH */
 
                 if(!search){
-
                     return true;
-
                 }
 
 
-                const text = [
+                const text =
+                    String(
+                        card.name || ""
+                    ) +
+                    " " +
+                    String(
+                        card.description || ""
+                    ) +
+                    " " +
+                    String(
+                        card.source || ""
+                    ) +
+                    " " +
+                    String(
+                        card.type || ""
+                    ) +
+                    " " +
+                    status;
 
-                    card.name,
-                    card.description,
-                    card.source,
-                    card.type,
-                    card.link,
-                    card.status
 
-                ]
-                .join(" ")
-                .toLowerCase();
-
-
-                return text.includes(search);
+                return text
+                    .toLowerCase()
+                    .includes(search);
 
             }
         );
 
 
-    if(
-        filtered.length === 0
-    ){
+    if(filtered.length === 0){
 
         empty.style.display = "block";
 
-
-        if(
-            currentFilter === "inactive"
-        ){
-
+        if(currentFilter === "inactive"){
             emptyText.textContent =
                 "No inactive websites found.";
-
         }
-        else if(
-            currentFilter === "active"
-        ){
-
+        else if(currentFilter === "active"){
             emptyText.textContent =
                 "No active websites found.";
-
         }
         else{
-
             emptyText.textContent =
                 "No websites found.";
-
         }
 
         return;
@@ -2664,25 +2486,6 @@ function renderCards(){
 
 
     empty.style.display = "none";
-
-
-    /*
-     * Position থাকলে সেটার ভিত্তিতে sort
-     */
-
-    filtered.sort(
-        function(a,b){
-
-            const pa =
-                Number(a.position || 999999);
-
-            const pb =
-                Number(b.position || 999999);
-
-            return pa - pb;
-
-        }
-    );
 
 
     filtered.forEach(
@@ -2713,25 +2516,20 @@ function createCard(card){
 
 
     const status =
-        getCardStatus(card);
+        normalizeStatus(
+            card.status
+        );
 
-    const isInactive =
-        status === "inactive";
 
-
-    if(isInactive){
-
+    if(status === "Inactive"){
         article.classList.add(
             "inactive-card"
         );
-
     }
 
 
     const initials =
-        getInitials(
-            card.name
-        );
+        getInitials(card.name);
 
 
     const logo =
@@ -2759,22 +2557,10 @@ function createCard(card){
         `;
 
 
-    const statusBadge =
-        isInactive
-        ?
-        `
-        <span class="status-badge inactive">
-            <i class="fa-solid fa-circle-xmark"></i>
-            Inactive
-        </span>
-        `
-        :
-        `
-        <span class="status-badge">
-            <i class="fa-solid fa-circle-check"></i>
-            Active
-        </span>
-        `;
+    const statusClass =
+        status === "Inactive"
+        ? "inactive"
+        : "";
 
 
     article.innerHTML = `
@@ -2782,11 +2568,8 @@ function createCard(card){
         <div class="card-top">
 
             <div class="logo">
-
                 ${logo}
-
             </div>
-
 
             <div class="card-title">
 
@@ -2797,7 +2580,19 @@ function createCard(card){
                     )}
                 </h3>
 
-                ${statusBadge}
+                <span class="status-badge ${statusClass}">
+
+                    <i class="fa-solid ${
+                        status === "Active"
+                        ? "fa-circle-check"
+                        : "fa-circle-xmark"
+                    }"></i>
+
+                    &nbsp;
+
+                    ${escapeHTML(status)}
+
+                </span>
 
             </div>
 
@@ -2829,7 +2624,6 @@ function createCard(card){
                 ""
             }
 
-
             ${
                 card.type
                 ?
@@ -2837,20 +2631,6 @@ function createCard(card){
                 <span>
                     <i class="fa-solid fa-tag"></i>
                     ${escapeHTML(card.type)}
-                </span>
-                `
-                :
-                ""
-            }
-
-
-            ${
-                card.position
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-sort"></i>
-                    #${escapeHTML(card.position)}
                 </span>
                 `
                 :
@@ -2913,7 +2693,7 @@ function filterCards(){
 
 
 /* =========================================================
-   ADD MODAL
+   ADD
 ========================================================= */
 
 function openAddModal(){
@@ -2924,27 +2704,23 @@ function openAddModal(){
 
     document.getElementById(
         "modalTitle"
-    ).textContent =
-        "Add Website";
+    ).textContent = "Add Website";
 
     document.getElementById(
         "deleteBtn"
-    ).style.display =
-        "none";
+    ).style.display = "none";
 
     clearForm();
 
     document.getElementById(
         "cardModal"
-    ).classList.add(
-        "show"
-    );
+    ).classList.add("show");
 
 }
 
 
 /* =========================================================
-   EDIT MODAL
+   EDIT
 ========================================================= */
 
 function openEditModal(id){
@@ -2955,9 +2731,7 @@ function openEditModal(id){
         cards.find(
             function(item){
 
-                return String(
-                    item.id
-                ) === String(id);
+                return String(item.id) === String(id);
 
             }
         );
@@ -2975,20 +2749,17 @@ function openEditModal(id){
     }
 
 
-    editingId =
-        card.id;
+    editingId = card.id;
 
 
     document.getElementById(
         "modalTitle"
-    ).textContent =
-        "Edit Website";
+    ).textContent = "Edit Website";
 
 
     document.getElementById(
         "deleteBtn"
-    ).style.display =
-        "block";
+    ).style.display = "block";
 
 
     document.getElementById(
@@ -3036,16 +2807,12 @@ function openEditModal(id){
     document.getElementById(
         "formStatus"
     ).value =
-        getCardStatus(card) === "inactive"
-        ? "Inactive"
-        : "Active";
+        normalizeStatus(card.status);
 
 
     document.getElementById(
         "cardModal"
-    ).classList.add(
-        "show"
-    );
+    ).classList.add("show");
 
 }
 
@@ -3064,8 +2831,7 @@ function clearForm(){
         "formSource",
         "formType",
         "formPosition"
-    ]
-    .forEach(
+    ].forEach(
         function(id){
 
             document.getElementById(
@@ -3078,8 +2844,7 @@ function clearForm(){
 
     document.getElementById(
         "formStatus"
-    ).value =
-        "Active";
+    ).value = "Active";
 
 }
 
@@ -3094,9 +2859,7 @@ function closeModal(){
 
     document.getElementById(
         "cardModal"
-    ).classList.remove(
-        "show"
-    );
+    ).classList.remove("show");
 
     editingId = null;
 
@@ -3110,34 +2873,26 @@ function closeModal(){
 function normalizeWebsiteURL(value){
 
     let url =
-        String(
-            value || ""
-        )
+        String(value || "")
         .trim();
 
 
     if(!url){
-
         return "";
-
     }
 
 
     if(
         /^https?:\/\//i.test(url)
     ){
-
         return url;
-
     }
 
 
     if(
         url.startsWith("//")
     ){
-
         return "https:" + url;
-
     }
 
 
@@ -3148,9 +2903,7 @@ function normalizeWebsiteURL(value){
     if(
         ipPattern.test(url)
     ){
-
         return "http://" + url;
-
     }
 
 
@@ -3171,9 +2924,7 @@ async function saveCard(){
     const rawLink =
         document.getElementById(
             "formLink"
-        )
-        .value
-        .trim();
+        ).value.trim();
 
 
     const normalizedLink =
@@ -3186,21 +2937,16 @@ async function saveCard(){
 
         action:
             editingId
-            ?
-            "updateCard"
-            :
-            "addCard",
+            ? "updateCard"
+            : "addCard",
 
         id:
-            editingId ||
-            "",
+            editingId || "",
 
         name:
             document.getElementById(
                 "formName"
-            )
-            .value
-            .trim(),
+            ).value.trim(),
 
         link:
             normalizedLink,
@@ -3208,42 +2954,34 @@ async function saveCard(){
         logo:
             document.getElementById(
                 "formLogo"
-            )
-            .value
-            .trim(),
+            ).value.trim(),
 
         description:
             document.getElementById(
                 "formDescription"
-            )
-            .value
-            .trim(),
+            ).value.trim(),
 
         source:
             document.getElementById(
                 "formSource"
-            )
-            .value
-            .trim(),
+            ).value.trim(),
 
         type:
             document.getElementById(
                 "formType"
-            )
-            .value
-            .trim(),
+            ).value.trim(),
 
         position:
             document.getElementById(
                 "formPosition"
-            )
-            .value,
+            ).value,
 
         status:
-            document.getElementById(
-                "formStatus"
+            normalizeStatus(
+                document.getElementById(
+                    "formStatus"
+                ).value
             )
-            .value
 
     };
 
@@ -3327,7 +3065,6 @@ async function saveCard(){
 
         closeModal();
 
-
         showToast(
             data.message ||
             "Saved successfully.",
@@ -3369,9 +3106,7 @@ async function deleteCurrentCard(){
 
 
     if(!editingId){
-
         return;
-
     }
 
 
@@ -3380,9 +3115,7 @@ async function deleteCurrentCard(){
             "Are you sure you want to delete this website?"
         )
     ){
-
         return;
-
     }
 
 
@@ -3429,7 +3162,6 @@ async function deleteCurrentCard(){
 
         closeModal();
 
-
         showToast(
             data.message ||
             "Website deleted.",
@@ -3441,8 +3173,6 @@ async function deleteCurrentCard(){
 
     }
     catch(error){
-
-        console.error(error);
 
         showToast(
             error.message ||
@@ -3461,29 +3191,12 @@ async function deleteCurrentCard(){
 
 function escapeHTML(value){
 
-    return String(
-        value || ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
@@ -3509,9 +3222,7 @@ function getInitials(name){
         .split(/\s+/);
 
 
-    if(
-        words.length === 1
-    ){
+    if(words.length === 1){
 
         return words[0]
             .substring(0,2)
@@ -3535,10 +3246,7 @@ function getInitials(name){
 let toastTimer;
 
 
-function showToast(
-    message,
-    type
-){
+function showToast(message,type){
 
     const toast =
         document.getElementById(
@@ -3546,24 +3254,19 @@ function showToast(
         );
 
 
-    toast.textContent =
-        message;
+    toast.textContent = message;
 
 
     toast.className =
         "toast show " +
         (
             type === "error"
-            ?
-            "error"
-            :
-            "success"
+            ? "error"
+            : "success"
         );
 
 
-    clearTimeout(
-        toastTimer
-    );
+    clearTimeout(toastTimer);
 
 
     toastTimer =
@@ -3592,9 +3295,7 @@ document.getElementById(
     "click",
     function(e){
 
-        if(
-            e.target === this
-        ){
+        if(e.target === this){
 
             closeModal();
 
@@ -3612,9 +3313,7 @@ document.addEventListener(
     "keydown",
     function(e){
 
-        if(
-            e.key === "Escape"
-        ){
+        if(e.key === "Escape"){
 
             closeModal();
 
