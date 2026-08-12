@@ -13,7 +13,12 @@
 <title>Website Control Dashboard</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -338,7 +343,7 @@ body{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
-    margin-bottom:16px;
+    margin-bottom:12px;
 }
 
 .stat-card{
@@ -415,16 +420,19 @@ body{
 
 
 /* =========================================================
-   FILTERS
+   COMPACT FILTERS
 ========================================================= */
 
 .filter-row{
     display:flex;
     align-items:center;
-    gap:7px;
+    justify-content:flex-start;
+    gap:5px;
     margin-bottom:13px;
     overflow-x:auto;
     scrollbar-width:none;
+    width:max-content;
+    max-width:100%;
 }
 
 .filter-row::-webkit-scrollbar{
@@ -432,25 +440,35 @@ body{
 }
 
 .filter-btn{
-    height:34px;
-    padding:0 12px;
-    border-radius:8px;
+    height:30px;
+    padding:0 9px;
+    border-radius:7px;
     border:1px solid rgba(255,255,255,.08);
     background:#0f172a;
     color:#94a3b8;
-    font-size:9px;
+    font-size:8px;
     font-weight:700;
     cursor:pointer;
     display:flex;
     align-items:center;
-    gap:6px;
+    justify-content:center;
+    gap:5px;
     white-space:nowrap;
+    flex:0 0 auto;
+}
+
+.filter-btn i{
+    font-size:8px;
 }
 
 .filter-btn.active{
     background:rgba(34,197,94,.12);
     border-color:rgba(34,197,94,.30);
     color:#4ade80;
+}
+
+.filter-btn:active{
+    transform:scale(.96);
 }
 
 
@@ -963,12 +981,14 @@ body{
     }
 
 
-    /* MOBILE STATS */
+    /* =====================================================
+       MOBILE STATS
+    ===================================================== */
 
     .stats{
         grid-template-columns:repeat(3,1fr);
         gap:7px;
-        margin-bottom:10px;
+        margin-bottom:9px;
     }
 
     .stat-card{
@@ -1006,21 +1026,43 @@ body{
     }
 
 
-    /* FILTER */
+    /* =====================================================
+       MOBILE COMPACT FILTER
+    ===================================================== */
 
     .filter-row{
-        margin-bottom:10px;
-        gap:5px;
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        gap:4px;
+        margin-bottom:9px;
+        overflow-x:auto;
+        scrollbar-width:none;
+        width:max-content;
+        max-width:100%;
+    }
+
+    .filter-row::-webkit-scrollbar{
+        display:none;
     }
 
     .filter-btn{
-        height:30px;
-        padding:0 9px;
-        font-size:8px;
+        height:27px;
+        padding:0 8px;
+        border-radius:6px;
+        font-size:7px;
+        gap:4px;
+        flex:0 0 auto;
+    }
+
+    .filter-btn i{
+        font-size:7px;
     }
 
 
-    /* SEARCH */
+    /* =====================================================
+       SEARCH
+    ===================================================== */
 
     .toolbar{
         margin-bottom:11px;
@@ -1036,7 +1078,9 @@ body{
     }
 
 
-    /* CARDS */
+    /* =====================================================
+       CARDS
+    ===================================================== */
 
     .cards{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1111,7 +1155,9 @@ body{
     }
 
 
-    /* MODAL */
+    /* =====================================================
+       MODAL
+    ===================================================== */
 
     .modal{
         padding:8px;
@@ -1201,6 +1247,10 @@ body{
 
 }
 
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 ::-webkit-scrollbar{
     width:5px;
@@ -1467,7 +1517,7 @@ body{
 
 
 <!-- =====================================================
-     FILTER
+     COMPACT FILTER
 ===================================================== -->
 
 <div class="filter-row">
@@ -2185,7 +2235,6 @@ function logout(){
 
 /* =========================================================
    STATUS NORMALIZER
-   IMPORTANT
 ========================================================= */
 
 function normalizeStatus(status){
@@ -2295,7 +2344,6 @@ async function loadCards(){
 
 /* =========================================================
    UPDATE STATS
-   ALL DATA FROM SHEET
 ========================================================= */
 
 function updateStats(){
@@ -2346,6 +2394,8 @@ function updateStats(){
 
 function setFilter(filter){
 
+    resetInactivityTimer();
+
     currentFilter = filter;
 
     document
@@ -2368,7 +2418,6 @@ function setFilter(filter){
 
 /* =========================================================
    RENDER
-   INACTIVE WILL NOT BE HIDDEN
 ========================================================= */
 
 function renderCards(){
@@ -2410,8 +2459,6 @@ function renderCards(){
                     );
 
 
-                /* STATUS FILTER */
-
                 if(
                     currentFilter === "active" &&
                     status !== "Active"
@@ -2427,8 +2474,6 @@ function renderCards(){
                     return false;
                 }
 
-
-                /* SEARCH */
 
                 if(!search){
                     return true;
@@ -2468,16 +2513,22 @@ function renderCards(){
         empty.style.display = "block";
 
         if(currentFilter === "inactive"){
+
             emptyText.textContent =
                 "No inactive websites found.";
+
         }
         else if(currentFilter === "active"){
+
             emptyText.textContent =
                 "No active websites found.";
+
         }
         else{
+
             emptyText.textContent =
                 "No websites found.";
+
         }
 
         return;
@@ -2522,9 +2573,11 @@ function createCard(card){
 
 
     if(status === "Inactive"){
+
         article.classList.add(
             "inactive-card"
         );
+
     }
 
 
