@@ -12,13 +12,27 @@
 
 <title>Website Control Dashboard</title>
 
-<!-- Website Icon -->
-<link rel="icon" type="image/png" href="./icon.png">
-<link rel="shortcut icon" type="image/png" href="./icon.png">
-<link rel="apple-touch-icon" href="./icon.png">
+<!-- =====================================================
+     EMBEDDED WEBSITE ICON
+     No icon.png file is required.
+===================================================== -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2322c55e'/%3E%3Cstop offset='100%25' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230f172a'/%3E%3Crect x='15' y='15' width='70' height='70' rx='17' fill='url(%23g)'/%3E%3Cpath d='M30 35h40M30 50h40M30 65h25' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -969,8 +983,6 @@ MOBILE
         display:none;
     }
 
-    /* COMPACT MOBILE STATS */
-
     .dashboard-tools{
         display:block;
         margin-bottom:9px;
@@ -1010,8 +1022,6 @@ MOBILE
         margin-top:3px;
     }
 
-    /* FILTER */
-
     .filter-row{
         margin-bottom:9px;
         gap:4px;
@@ -1022,8 +1032,6 @@ MOBILE
         padding:0 8px;
         font-size:7.5px;
     }
-
-    /* SEARCH */
 
     .toolbar{
         margin-bottom:10px;
@@ -1037,8 +1045,6 @@ MOBILE
         height:38px;
         font-size:10px;
     }
-
-    /* CARDS */
 
     .cards{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1111,8 +1117,6 @@ MOBILE
         height:29px;
         font-size:8px;
     }
-
-    /* MODAL */
 
     .modal{
         padding:8px;
@@ -1236,52 +1240,52 @@ LOGIN
 
 <section id="loginScreen">
 
-<div class="login-box">
+    <div class="login-box">
 
-    <div class="login-icon">
-        <i class="fa-solid fa-lock"></i>
-    </div>
+        <div class="login-icon">
+            <i class="fa-solid fa-lock"></i>
+        </div>
 
-    <h1>Control Dashboard</h1>
+        <h1>Control Dashboard</h1>
 
-    <p>Enter your username to continue</p>
+        <p>Enter your username to continue</p>
 
-    <div class="input-group">
+        <div class="input-group">
 
-        <label>Username</label>
+            <label>Username</label>
 
-        <div class="input-wrap">
+            <div class="input-wrap">
 
-            <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
 
-            <input
-                type="text"
-                id="usernameInput"
-                placeholder="Enter username"
-                autocomplete="username"
-            >
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                >
+
+            </div>
 
         </div>
 
+        <button
+            type="button"
+            class="login-btn"
+            id="loginBtn"
+            onclick="login()"
+        >
+            <i class="fa-solid fa-right-to-bracket"></i>
+            &nbsp;
+            Login
+        </button>
+
+        <div
+            class="login-error"
+            id="loginError"
+        ></div>
+
     </div>
-
-    <button
-        type="button"
-        class="login-btn"
-        id="loginBtn"
-        onclick="login()"
-    >
-        <i class="fa-solid fa-right-to-bracket"></i>
-        &nbsp;
-        Login
-    </button>
-
-    <div
-        class="login-error"
-        id="loginError"
-    ></div>
-
-</div>
 
 </section>
 
@@ -1294,107 +1298,157 @@ DASHBOARD
 
 <header class="topbar">
 
-<div class="brand">
+    <div class="brand">
 
-    <div class="brand-logo">
-        <i class="fa-solid fa-layer-group"></i>
+        <div class="brand-logo">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <div class="brand-text">
+
+            <h2>Website Control</h2>
+
+            <span>Management Dashboard</span>
+
+        </div>
+
     </div>
 
-    <div class="brand-text">
+    <div class="user-area">
 
-        <h2>Website Control</h2>
+        <div class="user-info">
 
-        <span>Management Dashboard</span>
+            <div
+                class="user-name"
+                id="loggedUserName"
+            >
+                User
+            </div>
 
-    </div>
+            <div class="user-label">
+                Logged in
+            </div>
 
-</div>
+        </div>
 
-
-<div class="user-area">
-
-    <div class="user-info">
-
-        <div
-            class="user-name"
-            id="loggedUserName"
+        <button
+            type="button"
+            class="logout-btn"
+            onclick="logout()"
+            title="Logout"
         >
-            User
-        </div>
-
-        <div class="user-label">
-            Logged in
-        </div>
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
 
     </div>
-
-    <button
-        type="button"
-        class="logout-btn"
-        onclick="logout()"
-        title="Logout"
-    >
-        <i class="fa-solid fa-right-from-bracket"></i>
-    </button>
-
-</div>
 
 </header>
 
 
 <main class="container">
 
-<div class="page-head">
+    <div class="page-head">
 
-<div class="page-title">
+        <div class="page-title">
 
-    <h1>Website Control</h1>
+            <h1>Website Control</h1>
 
-    <p>Manage your website cards</p>
+            <p>Manage your website cards</p>
 
-</div>
-
-
-<button
-    type="button"
-    class="add-btn"
-    onclick="openAddModal()"
->
-
-    <i class="fa-solid fa-plus"></i>
-
-    <span>Add Website</span>
-
-</button>
-
-</div>
-
-
-<!-- =====================================================
-COMPACT STATS
-===================================================== -->
-
-<div class="dashboard-tools">
-
-<div class="stats">
-
-    <div class="stat-card total">
-
-        <div class="stat-icon">
-            <i class="fa-solid fa-globe"></i>
         </div>
 
-        <div class="stat-content">
+        <button
+            type="button"
+            class="add-btn"
+            onclick="openAddModal()"
+        >
 
-            <div class="stat-label">
-                Total
+            <i class="fa-solid fa-plus"></i>
+
+            <span>Add Website</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+    COMPACT STATS
+    ===================================================== -->
+
+    <div class="dashboard-tools">
+
+        <div class="stats">
+
+            <div class="stat-card total">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <div class="stat-label">
+                        Total
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="totalCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
             </div>
 
-            <div
-                class="stat-number"
-                id="totalCount"
-            >
-                0
+
+            <div class="stat-card active">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <div class="stat-label">
+                        Active
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="activeCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card inactive">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <div class="stat-label">
+                        Inactive
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="inactiveCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
@@ -1402,153 +1456,99 @@ COMPACT STATS
     </div>
 
 
-    <div class="stat-card active">
+    <!-- =====================================================
+    FILTER
+    ===================================================== -->
 
-        <div class="stat-icon">
-            <i class="fa-solid fa-check"></i>
-        </div>
+    <div class="filter-row">
 
-        <div class="stat-content">
+        <button
+            type="button"
+            class="filter-btn active"
+            data-filter="all"
+            onclick="setFilter('all')"
+        >
+            <i class="fa-solid fa-layer-group"></i>
+            All
+        </button>
 
-            <div class="stat-label">
-                Active
-            </div>
+        <button
+            type="button"
+            class="filter-btn"
+            data-filter="active"
+            onclick="setFilter('active')"
+        >
+            <i class="fa-solid fa-circle-check"></i>
+            Active
+        </button>
 
-            <div
-                class="stat-number"
-                id="activeCount"
+        <button
+            type="button"
+            class="filter-btn"
+            data-filter="inactive"
+            onclick="setFilter('inactive')"
+        >
+            <i class="fa-solid fa-circle-xmark"></i>
+            Inactive
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+    SEARCH
+    ===================================================== -->
+
+    <div class="toolbar">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search website..."
+                oninput="filterCards()"
             >
-                0
-            </div>
 
         </div>
 
     </div>
 
 
-    <div class="stat-card inactive">
-
-        <div class="stat-icon">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <div class="stat-content">
-
-            <div class="stat-label">
-                Inactive
-            </div>
-
-            <div
-                class="stat-number"
-                id="inactiveCount"
-            >
-                0
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-FILTER
-===================================================== -->
-
-<div class="filter-row">
-
-<button
-    type="button"
-    class="filter-btn active"
-    data-filter="all"
-    onclick="setFilter('all')"
->
-    <i class="fa-solid fa-layer-group"></i>
-    All
-</button>
-
-
-<button
-    type="button"
-    class="filter-btn"
-    data-filter="active"
-    onclick="setFilter('active')"
->
-    <i class="fa-solid fa-circle-check"></i>
-    Active
-</button>
-
-
-<button
-    type="button"
-    class="filter-btn"
-    data-filter="inactive"
-    onclick="setFilter('inactive')"
->
-    <i class="fa-solid fa-circle-xmark"></i>
-    Inactive
-</button>
-
-</div>
-
-
-<!-- =====================================================
-SEARCH
-===================================================== -->
-
-<div class="toolbar">
-
-<div class="search-box">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search website..."
-        oninput="filterCards()"
+    <div
+        class="loading"
+        id="loading"
     >
 
-</div>
+        <i class="fa-solid fa-spinner fa-spin"></i>
 
-</div>
+        <div style="margin-top:8px;">
+            Loading websites...
+        </div>
 
-
-<div
-    class="loading"
-    id="loading"
->
-
-    <i class="fa-solid fa-spinner fa-spin"></i>
-
-    <div style="margin-top:8px;">
-        Loading websites...
     </div>
 
-</div>
+
+    <div
+        class="cards"
+        id="cards"
+    ></div>
 
 
-<div
-    class="cards"
-    id="cards"
-></div>
+    <div
+        class="empty"
+        id="empty"
+    >
 
+        <i class="fa-regular fa-folder-open"></i>
 
-<div
-    class="empty"
-    id="empty"
->
+        <div id="emptyText">
+            No websites found.
+        </div>
 
-    <i class="fa-regular fa-folder-open"></i>
-
-    <div id="emptyText">
-        No websites found.
     </div>
-
-</div>
 
 </main>
 
@@ -1564,201 +1564,201 @@ MODAL
     id="cardModal"
 >
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<div class="modal-head">
+        <div class="modal-head">
 
-<h2 id="modalTitle">
-    Add Website
-</h2>
+            <h2 id="modalTitle">
+                Add Website
+            </h2>
 
-<button
-    type="button"
-    class="close-btn"
-    onclick="closeModal()"
->
-    <i class="fa-solid fa-xmark"></i>
-</button>
+            <button
+                type="button"
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
-</div>
+        </div>
 
 
-<div class="form-grid">
+        <div class="form-grid">
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Website Name</label>
+                <label>Website Name</label>
 
-<input
-    type="text"
-    id="formName"
-    placeholder="Movie World"
->
+                <input
+                    type="text"
+                    id="formName"
+                    placeholder="Movie World"
+                >
 
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Website Link</label>
+                <label>Website Link</label>
 
-<input
-    type="text"
-    id="formLink"
-    placeholder="10.20.30.40 or example.com"
-    autocomplete="off"
->
+                <input
+                    type="text"
+                    id="formLink"
+                    placeholder="10.20.30.40 or example.com"
+                    autocomplete="off"
+                >
 
-<small
-    style="
-        color:#64748b;
-        font-size:9px;
-        margin-top:-2px;
-    "
->
-    http:// or https:// is optional
-</small>
+                <small
+                    style="
+                        color:#64748b;
+                        font-size:9px;
+                        margin-top:-2px;
+                    "
+                >
+                    http:// or https:// is optional
+                </small>
 
-</div>
+            </div>
 
 
-<div class="form-group full">
+            <div class="form-group full">
 
-<label>Logo URL</label>
+                <label>Logo URL</label>
 
-<input
-    type="text"
-    id="formLogo"
-    placeholder="example.com/logo.png"
-    autocomplete="off"
->
+                <input
+                    type="text"
+                    id="formLogo"
+                    placeholder="example.com/logo.png"
+                    autocomplete="off"
+                >
 
-</div>
+            </div>
 
 
-<div class="form-group full">
+            <div class="form-group full">
 
-<label>Description</label>
+                <label>Description</label>
 
-<textarea
-    id="formDescription"
-    placeholder="Access Movie World website"
-></textarea>
+                <textarea
+                    id="formDescription"
+                    placeholder="Access Movie World website"
+                ></textarea>
 
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Source</label>
+                <label>Source</label>
 
-<input
-    type="text"
-    id="formSource"
-    placeholder="Local Server"
->
+                <input
+                    type="text"
+                    id="formSource"
+                    placeholder="Local Server"
+                >
 
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Type</label>
+                <label>Type</label>
 
-<input
-    type="text"
-    id="formType"
-    placeholder="Movie"
->
+                <input
+                    type="text"
+                    id="formType"
+                    placeholder="Movie"
+                >
 
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Position</label>
+                <label>Position</label>
 
-<input
-    type="number"
-    id="formPosition"
-    min="1"
-    placeholder="1"
->
+                <input
+                    type="number"
+                    id="formPosition"
+                    min="1"
+                    placeholder="1"
+                >
 
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-group">
 
-<label>Status</label>
+                <label>Status</label>
 
-<select id="formStatus">
+                <select id="formStatus">
 
-    <option value="Active">
-        Active
-    </option>
+                    <option value="Active">
+                        Active
+                    </option>
 
-    <option value="Inactive">
-        Inactive
-    </option>
+                    <option value="Inactive">
+                        Inactive
+                    </option>
 
-</select>
+                </select>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<div class="modal-actions">
+        <div class="modal-actions">
 
-<div class="left-actions">
+            <div class="left-actions">
 
-<button
-    type="button"
-    class="btn delete-btn"
-    id="deleteBtn"
-    onclick="deleteCurrentCard()"
-    style="display:none;"
->
+                <button
+                    type="button"
+                    class="btn delete-btn"
+                    id="deleteBtn"
+                    onclick="deleteCurrentCard()"
+                    style="display:none;"
+                >
 
-    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-trash"></i>
 
-    Delete
+                    Delete
 
-</button>
+                </button>
 
-</div>
+            </div>
 
 
-<div class="right-actions">
+            <div class="right-actions">
 
-<button
-    type="button"
-    class="btn cancel-btn"
-    onclick="closeModal()"
->
-    Cancel
-</button>
+                <button
+                    type="button"
+                    class="btn cancel-btn"
+                    onclick="closeModal()"
+                >
+                    Cancel
+                </button>
 
 
-<button
-    type="button"
-    class="btn save-btn"
-    id="saveBtn"
-    onclick="saveCard()"
->
+                <button
+                    type="button"
+                    class="btn save-btn"
+                    id="saveBtn"
+                    onclick="saveCard()"
+                >
 
-    <i class="fa-solid fa-check"></i>
+                    <i class="fa-solid fa-check"></i>
 
-    Save
+                    Save
 
-</button>
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </div>
 
