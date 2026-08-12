@@ -12,10 +12,7 @@
 
 <title>Website Control Dashboard</title>
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
     rel="preconnect"
@@ -53,6 +50,7 @@ html{
 
 body{
     font-family:"Inter",sans-serif;
+
     background:
         radial-gradient(
             circle at top left,
@@ -60,8 +58,11 @@ body{
             #0b1019 42%,
             #06090e 100%
         );
+
     color:#f8fafc;
+
     min-height:100vh;
+
     overflow-x:hidden;
 }
 
@@ -73,48 +74,75 @@ body{
 #loginScreen{
     min-height:100vh;
     min-height:100dvh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding:18px;
 }
 
 .login-box{
     width:100%;
     max-width:390px;
+
     background:rgba(15,23,42,.94);
+
     border:1px solid rgba(255,255,255,.08);
+
     border-radius:22px;
+
     padding:28px 22px;
+
     box-shadow:0 25px 70px rgba(0,0,0,.45);
+
     backdrop-filter:blur(18px);
 }
 
 .login-icon{
     width:64px;
     height:64px;
+
     border-radius:18px;
+
     margin:0 auto 18px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:25px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
     color:#fff;
-    box-shadow:0 12px 30px rgba(34,197,94,.20);
+
+    box-shadow:
+        0 12px 30px rgba(34,197,94,.20);
 }
 
 .login-box h1{
     text-align:center;
+
     font-size:23px;
+
     font-weight:800;
 }
 
 .login-box p{
     text-align:center;
+
     color:#94a3b8;
+
     font-size:12px;
+
     margin-top:7px;
+
     margin-bottom:25px;
 }
 
@@ -124,9 +152,13 @@ body{
 
 .input-group label{
     display:block;
+
     font-size:12px;
+
     font-weight:600;
+
     color:#cbd5e1;
+
     margin-bottom:7px;
 }
 
@@ -136,38 +168,65 @@ body{
 
 .input-wrap i{
     position:absolute;
+
     left:14px;
+
     top:50%;
+
     transform:translateY(-50%);
+
     color:#64748b;
 }
 
 .input-wrap input{
     width:100%;
+
     height:50px;
+
     border-radius:12px;
+
     border:1px solid rgba(255,255,255,.08);
+
     background:#080e17;
+
     color:#fff;
+
     outline:none;
+
     padding:0 14px 0 42px;
+
     font-size:14px;
 }
 
 .input-wrap input:focus{
     border-color:#22c55e;
-    box-shadow:0 0 0 3px rgba(34,197,94,.08);
+
+    box-shadow:
+        0 0 0 3px rgba(34,197,94,.08);
 }
 
 .login-btn{
     width:100%;
+
     height:50px;
+
     border:none;
+
     border-radius:12px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
     color:#fff;
+
     font-size:14px;
+
     font-weight:700;
+
     cursor:pointer;
 }
 
@@ -177,17 +236,27 @@ body{
 
 .login-btn:disabled{
     opacity:.6;
+
+    cursor:not-allowed;
 }
 
 .login-error{
     display:none;
+
     margin-top:13px;
+
     padding:11px;
+
     border-radius:10px;
+
     background:rgba(239,68,68,.10);
+
     border:1px solid rgba(239,68,68,.20);
+
     color:#fca5a5;
+
     font-size:12px;
+
     text-align:center;
 }
 
@@ -198,7 +267,9 @@ body{
 
 #dashboard{
     display:none;
+
     min-height:100vh;
+
     min-height:100dvh;
 }
 
@@ -209,50 +280,79 @@ body{
 
 .topbar{
     height:68px;
+
     position:sticky;
+
     top:0;
+
     z-index:100;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     padding:0 24px;
+
     background:rgba(7,10,16,.88);
+
     border-bottom:1px solid rgba(255,255,255,.07);
+
     backdrop-filter:blur(18px);
 }
 
 .brand{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
 
 .brand-logo{
     width:39px;
     height:39px;
+
     border-radius:11px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
     font-size:16px;
 }
 
 .brand-text h2{
     font-size:15px;
+
     font-weight:800;
 }
 
 .brand-text span{
     display:block;
+
     font-size:10px;
+
     color:#64748b;
+
     margin-top:2px;
 }
 
 .user-area{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
 
@@ -262,22 +362,30 @@ body{
 
 .user-name{
     font-size:12px;
+
     font-weight:700;
 }
 
 .user-label{
     font-size:9px;
+
     color:#64748b;
+
     margin-top:2px;
 }
 
 .logout-btn{
     width:38px;
     height:38px;
+
     border-radius:10px;
+
     border:1px solid rgba(255,255,255,.08);
+
     background:#111827;
+
     color:#f87171;
+
     cursor:pointer;
 }
 
@@ -292,44 +400,72 @@ body{
 
 .container{
     width:100%;
+
     max-width:1450px;
+
     margin:auto;
+
     padding:27px;
 }
 
 .page-head{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:15px;
+
     margin-bottom:20px;
 }
 
 .page-title h1{
     font-size:26px;
+
     font-weight:800;
+
     letter-spacing:-.5px;
 }
 
 .page-title p{
     color:#64748b;
+
     font-size:12px;
+
     margin-top:5px;
 }
 
 .add-btn{
     height:42px;
+
     padding:0 16px;
+
     border:none;
+
     border-radius:10px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
     color:#fff;
+
     font-size:12px;
+
     font-weight:700;
+
     cursor:pointer;
+
     display:flex;
+
     align-items:center;
+
     gap:7px;
+
     white-space:nowrap;
 }
 
@@ -344,34 +480,51 @@ body{
 
 .toolbar{
     width:100%;
+
     display:flex;
+
     justify-content:flex-end;
+
     margin-bottom:18px;
 }
 
 .search-box{
     width:310px;
+
     position:relative;
 }
 
 .search-box i{
     position:absolute;
+
     left:13px;
+
     top:50%;
+
     transform:translateY(-50%);
+
     color:#64748b;
+
     font-size:12px;
 }
 
 .search-box input{
     width:100%;
+
     height:42px;
+
     border-radius:10px;
+
     border:1px solid rgba(255,255,255,.08);
+
     background:rgba(15,23,42,.80);
+
     color:#fff;
+
     outline:none;
+
     padding:0 13px 0 38px;
+
     font-size:12px;
 }
 
@@ -386,138 +539,206 @@ body{
 
 .cards{
     display:grid;
+
     grid-template-columns:
         repeat(
             auto-fill,
             minmax(225px,1fr)
         );
+
     gap:14px;
 }
 
 .card{
     min-width:0;
+
     padding:15px;
+
     border-radius:16px;
+
     background:
         linear-gradient(
             145deg,
             rgba(20,29,46,.96),
             rgba(9,14,23,.96)
         );
+
     border:1px solid rgba(255,255,255,.07);
+
     transition:.2s ease;
 }
 
 .card:hover{
     transform:translateY(-3px);
-    border-color:rgba(34,197,94,.25);
-    box-shadow:0 16px 32px rgba(0,0,0,.25);
+
+    border-color:
+        rgba(34,197,94,.25);
+
+    box-shadow:
+        0 16px 32px rgba(0,0,0,.25);
 }
 
 .card-top{
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     min-width:0;
 }
 
 .logo{
     width:45px;
     height:45px;
+
     min-width:45px;
+
     border-radius:12px;
+
     overflow:hidden;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     background:#111827;
+
     border:1px solid rgba(255,255,255,.07);
 }
 
 .logo img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
 .logo-fallback{
     font-size:17px;
+
     font-weight:800;
+
     color:#22c55e;
 }
 
 .card-title{
     min-width:0;
+
     flex:1;
 }
 
 .card-title h3{
     font-size:13px;
+
     font-weight:700;
+
     white-space:nowrap;
+
     overflow:hidden;
+
     text-overflow:ellipsis;
 }
 
 .card-title span{
     display:inline-flex;
+
     margin-top:4px;
+
     font-size:8px;
+
     padding:4px 6px;
+
     border-radius:5px;
+
     background:rgba(34,197,94,.10);
+
     color:#4ade80;
 }
 
 .card-description{
     color:#94a3b8;
+
     font-size:10px;
+
     line-height:1.5;
+
     margin-top:11px;
+
     min-height:30px;
+
     display:-webkit-box;
+
     -webkit-line-clamp:2;
+
     -webkit-box-orient:vertical;
+
     overflow:hidden;
 }
 
 .meta{
     display:flex;
+
     gap:5px;
+
     flex-wrap:wrap;
+
     margin-top:9px;
 }
 
 .meta span{
     font-size:8px;
+
     color:#94a3b8;
+
     background:#111827;
+
     border:1px solid rgba(255,255,255,.05);
+
     padding:4px 6px;
+
     border-radius:5px;
+
     white-space:nowrap;
 }
 
 .card-bottom{
     display:flex;
+
     gap:7px;
+
     margin-top:12px;
 }
 
 .open-btn{
     flex:1;
+
     min-width:0;
+
     height:34px;
+
     border-radius:8px;
+
     text-decoration:none;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:5px;
+
     font-size:10px;
+
     font-weight:700;
+
     background:rgba(34,197,94,.10);
+
     border:1px solid rgba(34,197,94,.18);
+
     color:#4ade80;
 }
 
@@ -527,12 +748,19 @@ body{
 
 .edit-btn{
     width:36px;
+
     min-width:36px;
+
     height:34px;
+
     border-radius:8px;
+
     border:1px solid rgba(255,255,255,.07);
+
     background:#111827;
+
     color:#cbd5e1;
+
     cursor:pointer;
 }
 
@@ -547,8 +775,11 @@ body{
 
 .loading{
     text-align:center;
+
     padding:55px 20px;
+
     color:#64748b;
+
     font-size:12px;
 }
 
@@ -558,14 +789,19 @@ body{
 
 .empty{
     display:none;
+
     text-align:center;
+
     padding:60px 20px;
+
     color:#64748b;
+
     font-size:12px;
 }
 
 .empty i{
     font-size:35px;
+
     margin-bottom:12px;
 }
 
@@ -576,13 +812,21 @@ body{
 
 .modal{
     display:none;
+
     position:fixed;
+
     inset:0;
+
     z-index:500;
+
     background:rgba(0,0,0,.72);
+
     backdrop-filter:blur(7px);
+
     align-items:center;
+
     justify-content:center;
+
     padding:15px;
 }
 
@@ -592,21 +836,33 @@ body{
 
 .modal-box{
     width:100%;
+
     max-width:570px;
+
     max-height:calc(100vh - 30px);
+
     max-height:calc(100dvh - 30px);
+
     overflow-y:auto;
+
     background:#0f172a;
+
     border:1px solid rgba(255,255,255,.08);
+
     border-radius:18px;
+
     padding:21px;
+
     box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
 .modal-head{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:18px;
 }
 
@@ -617,22 +873,31 @@ body{
 .close-btn{
     width:34px;
     height:34px;
+
     border:none;
+
     border-radius:8px;
+
     background:#111827;
+
     color:#94a3b8;
+
     cursor:pointer;
 }
 
 .form-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:12px;
 }
 
 .form-group{
     display:flex;
+
     flex-direction:column;
+
     gap:6px;
 }
 
@@ -642,7 +907,9 @@ body{
 
 .form-group label{
     font-size:10px;
+
     font-weight:600;
+
     color:#cbd5e1;
 }
 
@@ -650,13 +917,21 @@ body{
 .form-group textarea,
 .form-group select{
     width:100%;
+
     border:1px solid rgba(255,255,255,.08);
+
     background:#080d16;
+
     color:#fff;
+
     border-radius:8px;
+
     outline:none;
+
     padding:10px;
+
     font-family:inherit;
+
     font-size:11px;
 }
 
@@ -666,6 +941,7 @@ body{
 
 .form-group textarea{
     min-height:70px;
+
     resize:vertical;
 }
 
@@ -677,43 +953,65 @@ body{
 
 .modal-actions{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:10px;
+
     margin-top:20px;
 }
 
 .left-actions,
 .right-actions{
     display:flex;
+
     gap:7px;
 }
 
 .btn{
     height:37px;
+
     padding:0 14px;
+
     border-radius:8px;
+
     border:1px solid rgba(255,255,255,.08);
+
     cursor:pointer;
+
     font-size:10px;
+
     font-weight:700;
 }
 
 .cancel-btn{
     background:#111827;
+
     color:#cbd5e1;
 }
 
 .save-btn{
     background:#22c55e;
+
     color:#fff;
+
     border-color:#22c55e;
 }
 
 .delete-btn{
     background:rgba(239,68,68,.10);
+
     color:#f87171;
+
     border-color:rgba(239,68,68,.20);
+}
+
+.btn:disabled{
+    opacity:.6;
+
+    cursor:not-allowed;
 }
 
 
@@ -723,19 +1021,33 @@ body{
 
 .toast{
     position:fixed;
+
     left:50%;
+
     bottom:20px;
+
     transform:translateX(-50%);
+
     z-index:1000;
+
     width:max-content;
+
     max-width:calc(100% - 30px);
+
     padding:11px 15px;
+
     border-radius:9px;
+
     background:#111827;
+
     border:1px solid rgba(255,255,255,.08);
+
     box-shadow:0 15px 35px rgba(0,0,0,.35);
+
     font-size:11px;
+
     display:none;
+
     text-align:center;
 }
 
@@ -745,11 +1057,13 @@ body{
 
 .toast.success{
     border-color:rgba(34,197,94,.25);
+
     color:#4ade80;
 }
 
 .toast.error{
     border-color:rgba(239,68,68,.25);
+
     color:#f87171;
 }
 
@@ -762,6 +1076,7 @@ body{
 
     .topbar{
         height:62px;
+
         padding:0 13px;
     }
 
@@ -772,7 +1087,9 @@ body{
     .brand-logo{
         width:36px;
         height:36px;
+
         border-radius:10px;
+
         font-size:14px;
     }
 
@@ -803,6 +1120,7 @@ body{
 
     .page-head{
         align-items:center;
+
         margin-bottom:15px;
     }
 
@@ -812,14 +1130,18 @@ body{
 
     .page-title p{
         font-size:10px;
+
         margin-top:3px;
     }
 
     .add-btn{
         width:40px;
         height:40px;
+
         padding:0;
+
         justify-content:center;
+
         border-radius:10px;
     }
 
@@ -837,6 +1159,7 @@ body{
 
     .search-box input{
         height:40px;
+
         font-size:11px;
     }
 
@@ -846,11 +1169,13 @@ body{
                 2,
                 minmax(0,1fr)
             );
+
         gap:9px;
     }
 
     .card{
         padding:11px;
+
         border-radius:13px;
     }
 
@@ -865,7 +1190,9 @@ body{
     .logo{
         width:38px;
         height:38px;
+
         min-width:38px;
+
         border-radius:9px;
     }
 
@@ -879,56 +1206,71 @@ body{
 
     .card-title span{
         font-size:7px;
+
         padding:3px 5px;
+
         margin-top:3px;
     }
 
     .card-description{
         font-size:9px;
+
         margin-top:8px;
+
         min-height:27px;
     }
 
     .meta{
         margin-top:7px;
+
         gap:4px;
     }
 
     .meta span{
         font-size:7px;
+
         padding:3px 5px;
     }
 
     .card-bottom{
         margin-top:9px;
+
         gap:5px;
     }
 
     .open-btn{
         height:31px;
+
         font-size:8px;
     }
 
     .edit-btn{
         width:32px;
+
         min-width:32px;
+
         height:31px;
+
         font-size:9px;
     }
 
     .modal{
         padding:8px;
+
         align-items:flex-end;
     }
 
     .modal-box{
         max-height:calc(100dvh - 16px);
+
         border-radius:17px 17px 0 0;
+
         padding:18px 15px;
     }
 
     .form-grid{
         grid-template-columns:1fr;
+
         gap:10px;
     }
 
@@ -942,6 +1284,7 @@ body{
 
     .modal-actions{
         flex-direction:column;
+
         align-items:stretch;
     }
 
@@ -952,6 +1295,7 @@ body{
 
     .right-actions{
         display:grid;
+
         grid-template-columns:1fr 1fr;
     }
 
@@ -970,6 +1314,7 @@ body{
 
     .container{
         padding-left:9px;
+
         padding-right:9px;
     }
 
@@ -984,6 +1329,7 @@ body{
     .logo{
         width:34px;
         height:34px;
+
         min-width:34px;
     }
 
@@ -1017,6 +1363,7 @@ body{
 
 ::-webkit-scrollbar{
     width:5px;
+
     height:5px;
 }
 
@@ -1026,6 +1373,7 @@ body{
 
 ::-webkit-scrollbar-thumb{
     background:#263244;
+
     border-radius:10px;
 }
 
@@ -1078,6 +1426,7 @@ body{
 
         </div>
 
+
         <button
             type="button"
             class="login-btn"
@@ -1092,6 +1441,7 @@ body{
             Login
 
         </button>
+
 
         <div
             class="login-error"
@@ -1528,6 +1878,8 @@ let editingId = null;
 
 let inactivityTimer = null;
 
+let toastTimer = null;
+
 
 /* =========================================================
    3 MINUTE AUTO LOGOUT
@@ -1543,24 +1895,19 @@ function resetInactivityTimer(){
         inactivityTimer
     );
 
-
     if(
         localStorage.getItem(
             "websiteControlLoggedIn"
         ) !== "true"
     ){
-
         return;
-
     }
-
 
     inactivityTimer =
         setTimeout(
             autoLogout,
             AUTO_LOGOUT_TIME
         );
-
 }
 
 
@@ -1569,7 +1916,6 @@ function autoLogout(){
     clearTimeout(
         inactivityTimer
     );
-
 
     localStorage.removeItem(
         "websiteControlLoggedIn"
@@ -1583,35 +1929,29 @@ function autoLogout(){
         "websiteControlName"
     );
 
-
     cards = [];
 
     editingId = null;
-
 
     document.getElementById(
         "dashboard"
     ).style.display =
         "none";
 
-
     document.getElementById(
         "loginScreen"
     ).style.display =
         "flex";
-
 
     document.getElementById(
         "usernameInput"
     ).value =
         "";
 
-
     const error =
         document.getElementById(
             "loginError"
         );
-
 
     error.textContent =
         "Automatically logged out after 3 minutes of inactivity.";
@@ -1619,13 +1959,11 @@ function autoLogout(){
     error.style.display =
         "block";
 
-
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
-
 }
 
 
@@ -1655,9 +1993,7 @@ function autoLogout(){
                         "websiteControlLoggedIn"
                     ) === "true"
                 ){
-
                     resetInactivityTimer();
-
                 }
 
             },
@@ -1680,7 +2016,6 @@ document.addEventListener(
 
         checkSession();
 
-
         document
             .getElementById(
                 "usernameInput"
@@ -1692,9 +2027,7 @@ document.addEventListener(
                     if(
                         e.key === "Enter"
                     ){
-
                         login();
-
                     }
 
                 }
@@ -1719,7 +2052,6 @@ function checkSession(){
         localStorage.getItem(
             "websiteControlName"
         );
-
 
     if(
         logged === "true" &&
@@ -1751,16 +2083,13 @@ async function login(){
             "loginBtn"
         );
 
-
     const username =
         input.value.trim();
-
 
     document.getElementById(
         "loginError"
     ).style.display =
         "none";
-
 
     if(!username){
 
@@ -1769,17 +2098,12 @@ async function login(){
         );
 
         return;
-
     }
 
-
-    button.disabled =
-        true;
-
+    button.disabled = true;
 
     button.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
-
+        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
 
     try{
 
@@ -1798,10 +2122,15 @@ async function login(){
                 }
             );
 
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned an error."
+            );
+        }
 
         const data =
             await response.json();
-
 
         if(
             data.success
@@ -1812,20 +2141,17 @@ async function login(){
                 "true"
             );
 
-
             localStorage.setItem(
                 "websiteControlUsername",
                 data.username ||
                 username
             );
 
-
             localStorage.setItem(
                 "websiteControlName",
                 data.name ||
                 username
             );
-
 
             showDashboard(
                 data.name ||
@@ -1846,9 +2172,9 @@ async function login(){
     catch(error){
 
         console.error(
+            "Login Error:",
             error
         );
-
 
         showLoginError(
             "Unable to connect with server."
@@ -1856,10 +2182,7 @@ async function login(){
 
     }
 
-
-    button.disabled =
-        false;
-
+    button.disabled = false;
 
     button.innerHTML =
         '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
@@ -1880,14 +2203,11 @@ function showLoginError(
             "loginError"
         );
 
-
     error.textContent =
         message;
 
-
     error.style.display =
         "block";
-
 }
 
 
@@ -1904,24 +2224,19 @@ function showDashboard(
     ).style.display =
         "none";
 
-
     document.getElementById(
         "dashboard"
     ).style.display =
         "block";
-
 
     document.getElementById(
         "loggedUserName"
     ).textContent =
         name;
 
-
     resetInactivityTimer();
 
-
     loadCards();
-
 }
 
 
@@ -1935,7 +2250,6 @@ function logout(){
         inactivityTimer
     );
 
-
     localStorage.removeItem(
         "websiteControlLoggedIn"
     );
@@ -1948,42 +2262,35 @@ function logout(){
         "websiteControlName"
     );
 
-
     cards = [];
 
     editingId = null;
-
 
     document.getElementById(
         "dashboard"
     ).style.display =
         "none";
 
-
     document.getElementById(
         "loginScreen"
     ).style.display =
         "flex";
-
 
     document.getElementById(
         "usernameInput"
     ).value =
         "";
 
-
     document.getElementById(
         "loginError"
     ).style.display =
         "none";
-
 
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
-
 }
 
 
@@ -2003,14 +2310,19 @@ async function loadCards(){
             "cards"
         );
 
+    const empty =
+        document.getElementById(
+            "empty"
+        );
 
     loading.style.display =
         "block";
 
+    empty.style.display =
+        "none";
 
     box.innerHTML =
         "";
-
 
     try{
 
@@ -2025,10 +2337,15 @@ async function loadCards(){
                 }
             );
 
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned an error."
+            );
+        }
 
         const data =
             await response.json();
-
 
         if(
             !data.success
@@ -2038,9 +2355,7 @@ async function loadCards(){
                 data.message ||
                 "Failed to load websites."
             );
-
         }
-
 
         cards =
             Array.isArray(
@@ -2051,6 +2366,27 @@ async function loadCards(){
             :
             [];
 
+        /*
+         * Sort by position when available.
+         */
+
+        cards.sort(
+            function(a,b){
+
+                const posA =
+                    Number(
+                        a.position || 999999
+                    );
+
+                const posB =
+                    Number(
+                        b.position || 999999
+                    );
+
+                return posA - posB;
+
+            }
+        );
 
         renderCards();
 
@@ -2058,9 +2394,9 @@ async function loadCards(){
     catch(error){
 
         console.error(
+            "Load Cards Error:",
             error
         );
-
 
         showToast(
             error.message ||
@@ -2070,10 +2406,8 @@ async function loadCards(){
 
     }
 
-
     loading.style.display =
         "none";
-
 }
 
 
@@ -2093,57 +2427,68 @@ function renderCards(){
             "empty"
         );
 
-    const search =
+    const searchInput =
         document.getElementById(
             "searchInput"
-        )
-        .value
-        .trim()
-        .toLowerCase();
+        );
 
+    const search =
+        searchInput
+        ?
+        searchInput.value
+            .trim()
+            .toLowerCase()
+        :
+        "";
 
     box.innerHTML =
         "";
-
 
     const filtered =
         cards.filter(
             function(card){
 
-                if(
+                /*
+                 * Only active websites
+                 * are shown on dashboard.
+                 */
+
+                const status =
                     String(
                         card.status ||
                         "Active"
                     )
-                    .toLowerCase()
-                    ===
-                    "inactive"
+                    .trim()
+                    .toLowerCase();
+
+                if(
+                    status === "inactive"
                 ){
-
                     return false;
-
                 }
-
 
                 if(!search){
-
                     return true;
-
                 }
 
+                const text = [
 
-                const text = (
+                    card.name,
+                    card.description,
+                    card.source,
+                    card.type,
+                    card.link
 
-                    card.name +
-                    " " +
-                    card.description +
-                    " " +
-                    card.source +
-                    " " +
-                    card.type
-
-                ).toLowerCase();
-
+                ]
+                .map(
+                    function(value){
+                        return String(
+                            value || ""
+                        );
+                    }
+                )
+                .join(" ")
+                .toLowerCase();
 
                 return text.includes(
                     search
@@ -2151,7 +2496,6 @@ function renderCards(){
 
             }
         );
-
 
     if(
         filtered.length === 0
@@ -2161,13 +2505,10 @@ function renderCards(){
             "block";
 
         return;
-
     }
-
 
     empty.style.display =
         "none";
-
 
     filtered.forEach(
         function(card){
@@ -2180,7 +2521,6 @@ function renderCards(){
 
         }
     );
-
 }
 
 
@@ -2197,40 +2537,77 @@ function createCard(
             "article"
         );
 
-
     article.className =
         "card";
-
 
     const initials =
         getInitials(
             card.name
         );
 
+    let logoHTML = "";
 
-    const logo =
-        card.logo
+    if(card.logo){
+
+        logoHTML = `
+            <img
+                src="${escapeAttribute(card.logo)}"
+                alt=""
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="logo-fallback"
+                style="display:none;"
+            >
+                ${escapeHTML(initials)}
+            </div>
+        `;
+
+    }
+    else{
+
+        logoHTML = `
+            <div class="logo-fallback">
+                ${escapeHTML(initials)}
+            </div>
+        `;
+
+    }
+
+
+    const sourceHTML =
+        card.source
         ?
         `
-        <img
-            src="${escapeAttribute(card.logo)}"
-            alt=""
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
-
-        <div
-            class="logo-fallback"
-            style="display:none;"
-        >
-            ${escapeHTML(initials)}
-        </div>
+            <span>
+                <i class="fa-solid fa-server"></i>
+                ${escapeHTML(card.source)}
+            </span>
         `
         :
+        "";
+
+
+    const typeMetaHTML =
+        card.type
+        ?
         `
-        <div class="logo-fallback">
-            ${escapeHTML(initials)}
-        </div>
-        `;
+            <span>
+                <i class="fa-solid fa-tag"></i>
+                ${escapeHTML(card.type)}
+            </span>
+        `
+        :
+        "";
+
+
+    const safeId =
+        encodeURIComponent(
+            String(
+                card.id || ""
+            )
+        );
 
 
     article.innerHTML = `
@@ -2238,11 +2615,8 @@ function createCard(
         <div class="card-top">
 
             <div class="logo">
-
-                ${logo}
-
+                ${logoHTML}
             </div>
-
 
             <div class="card-title">
 
@@ -2277,31 +2651,9 @@ function createCard(
 
         <div class="meta">
 
-            ${
-                card.source
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-server"></i>
-                    ${escapeHTML(card.source)}
-                </span>
-                `
-                :
-                ""
-            }
+            ${sourceHTML}
 
-            ${
-                card.type
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-tag"></i>
-                    ${escapeHTML(card.type)}
-                </span>
-                `
-                :
-                ""
-            }
+            ${typeMetaHTML}
 
         </div>
 
@@ -2310,7 +2662,11 @@ function createCard(
 
             <a
                 class="open-btn"
-                href="${escapeAttribute(normalizeWebsiteURL(card.link))}"
+                href="${escapeAttribute(
+                    normalizeWebsiteURL(
+                        card.link
+                    )
+                )}"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -2325,7 +2681,8 @@ function createCard(
             <button
                 type="button"
                 class="edit-btn"
-                onclick="openEditModal('${escapeAttribute(card.id)}')"
+                onclick="openEditModal(decodeURIComponent('${safeId}'))"
+                title="Edit"
             >
 
                 <i class="fa-solid fa-pen"></i>
@@ -2336,9 +2693,7 @@ function createCard(
 
     `;
 
-
     return article;
-
 }
 
 
@@ -2351,7 +2706,6 @@ function filterCards(){
     resetInactivityTimer();
 
     renderCards();
-
 }
 
 
@@ -2363,25 +2717,20 @@ function openAddModal(){
 
     resetInactivityTimer();
 
-
     editingId =
         null;
-
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Add Website";
 
-
     document.getElementById(
         "deleteBtn"
     ).style.display =
         "none";
 
-
     clearForm();
-
 
     document.getElementById(
         "cardModal"
@@ -2389,6 +2738,16 @@ function openAddModal(){
         "show"
     );
 
+    setTimeout(
+        function(){
+
+            document.getElementById(
+                "formName"
+            ).focus();
+
+        },
+        50
+    );
 }
 
 
@@ -2402,20 +2761,16 @@ function openEditModal(
 
     resetInactivityTimer();
 
-
     const card =
         cards.find(
             function(item){
 
                 return String(
                     item.id
-                )
-                ===
-                String(id);
+                ) === String(id);
 
             }
         );
-
 
     if(!card){
 
@@ -2425,19 +2780,15 @@ function openEditModal(
         );
 
         return;
-
     }
-
 
     editingId =
         card.id;
-
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Edit Website";
-
 
     document.getElementById(
         "deleteBtn"
@@ -2506,7 +2857,6 @@ function openEditModal(
     ).classList.add(
         "show"
     );
-
 }
 
 
@@ -2536,12 +2886,10 @@ function clearForm(){
         }
     );
 
-
     document.getElementById(
         "formStatus"
     ).value =
         "Active";
-
 }
 
 
@@ -2553,23 +2901,19 @@ function closeModal(){
 
     resetInactivityTimer();
 
-
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
 
-
     editingId =
         null;
-
 }
 
 
 /* =========================================================
    URL NORMALIZER
-   IMPORTANT PART
 ========================================================= */
 
 function normalizeWebsiteURL(
@@ -2582,48 +2926,38 @@ function normalizeWebsiteURL(
         )
         .trim();
 
-
     if(!url){
-
         return "";
-
     }
 
 
     /*
-       Already has protocol
-    */
+     * Already has HTTP/HTTPS
+     */
 
     if(
         /^https?:\/\//i.test(
             url
         )
     ){
-
         return url;
-
     }
 
 
     /*
-       Protocol-relative URL
-    */
+     * Protocol-relative URL
+     */
 
     if(
-        url.startsWith(
-            "//"
-        )
+        url.startsWith("//")
     ){
-
         return "https:" + url;
-
     }
 
 
     /*
-       Local IP addresses
-       use HTTP automatically
-    */
+     * Local IP addresses
+     */
 
     const ipPattern =
         /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
@@ -2634,19 +2968,15 @@ function normalizeWebsiteURL(
             url
         )
     ){
-
         return "http://" + url;
-
     }
 
 
     /*
-       Domain name
-       use HTTPS automatically
-    */
+     * Domain name
+     */
 
     return "https://" + url;
-
 }
 
 
@@ -2658,16 +2988,38 @@ async function saveCard(){
 
     resetInactivityTimer();
 
+    const name =
+        document.getElementById(
+            "formName"
+        ).value.trim();
 
-    let rawLink =
+    const rawLink =
         document.getElementById(
             "formLink"
         ).value.trim();
 
 
-    /*
-       Automatically add protocol
-    */
+    if(!name){
+
+        showToast(
+            "Website name is required.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(!rawLink){
+
+        showToast(
+            "Website link is required.",
+            "error"
+        );
+
+        return;
+    }
+
 
     const normalizedLink =
         normalizeWebsiteURL(
@@ -2689,9 +3041,7 @@ async function saveCard(){
             "",
 
         name:
-            document.getElementById(
-                "formName"
-            ).value.trim(),
+            name,
 
         link:
             normalizedLink,
@@ -2729,37 +3079,9 @@ async function saveCard(){
     };
 
 
-    if(
-        !payload.name
-    ){
-
-        showToast(
-            "Website name is required.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    if(
-        !payload.link
-    ){
-
-        showToast(
-            "Website link is required.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
     /*
-       Show normalized URL in field
-    */
+     * Show normalized URL
+     */
 
     document.getElementById(
         "formLink"
@@ -2776,9 +3098,8 @@ async function saveCard(){
     saveBtn.disabled =
         true;
 
-
     saveBtn.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Saving...';
 
 
     try{
@@ -2802,6 +3123,14 @@ async function saveCard(){
             );
 
 
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned an error."
+            );
+        }
+
+
         const data =
             await response.json();
 
@@ -2814,7 +3143,6 @@ async function saveCard(){
                 data.message ||
                 "Save failed."
             );
-
         }
 
 
@@ -2834,6 +3162,7 @@ async function saveCard(){
     catch(error){
 
         console.error(
+            "Save Error:",
             error
         );
 
@@ -2849,7 +3178,6 @@ async function saveCard(){
 
     saveBtn.disabled =
         false;
-
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-check"></i> Save';
@@ -2869,21 +3197,32 @@ async function deleteCurrentCard(){
     if(
         !editingId
     ){
-
         return;
-
     }
 
 
-    if(
-        !confirm(
+    const confirmed =
+        window.confirm(
             "Are you sure you want to delete this website?"
-        )
-    ){
+        );
 
+
+    if(!confirmed){
         return;
-
     }
+
+
+    const deleteBtn =
+        document.getElementById(
+            "deleteBtn"
+        );
+
+
+    deleteBtn.disabled =
+        true;
+
+    deleteBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Deleting...';
 
 
     try{
@@ -2913,6 +3252,14 @@ async function deleteCurrentCard(){
             );
 
 
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned an error."
+            );
+        }
+
+
         const data =
             await response.json();
 
@@ -2925,7 +3272,6 @@ async function deleteCurrentCard(){
                 data.message ||
                 "Delete failed."
             );
-
         }
 
 
@@ -2944,6 +3290,12 @@ async function deleteCurrentCard(){
     }
     catch(error){
 
+        console.error(
+            "Delete Error:",
+            error
+        );
+
+
         showToast(
             error.message ||
             "Delete failed.",
@@ -2951,6 +3303,13 @@ async function deleteCurrentCard(){
         );
 
     }
+
+
+    deleteBtn.disabled =
+        false;
+
+    deleteBtn.innerHTML =
+        '<i class="fa-solid fa-trash"></i> Delete';
 
 }
 
@@ -2964,7 +3323,7 @@ function escapeHTML(
 ){
 
     return String(
-        value || ""
+        value ?? ""
     )
     .replace(
         /&/g,
@@ -3017,7 +3376,15 @@ function getInitials(
         .trim()
         .split(
             /\s+/
-        );
+        )
+        .filter(Boolean);
+
+
+    if(
+        words.length === 0
+    ){
+        return "W";
+    }
 
 
     if(
@@ -3045,9 +3412,6 @@ function getInitials(
 /* =========================================================
    TOAST
 ========================================================= */
-
-let toastTimer;
-
 
 function showToast(
     message,
@@ -3099,27 +3463,28 @@ function showToast(
    MODAL CLICK
 ========================================================= */
 
-document.getElementById(
-    "cardModal"
-)
-.addEventListener(
-    "click",
-    function(e){
+document
+    .getElementById(
+        "cardModal"
+    )
+    .addEventListener(
+        "click",
+        function(e){
 
-        if(
-            e.target === this
-        ){
+            if(
+                e.target === this
+            ){
 
-            closeModal();
+                closeModal();
+
+            }
 
         }
-
-    }
-);
+    );
 
 
 /* =========================================================
-   ESC
+   ESC KEY
 ========================================================= */
 
 document.addEventListener(
@@ -3130,7 +3495,20 @@ document.addEventListener(
             e.key === "Escape"
         ){
 
-            closeModal();
+            const modal =
+                document.getElementById(
+                    "cardModal"
+                );
+
+            if(
+                modal.classList.contains(
+                    "show"
+                )
+            ){
+
+                closeModal();
+
+            }
 
         }
 
