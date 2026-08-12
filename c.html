@@ -6,26 +6,28 @@
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <title>Website Control Dashboard</title>
 
 <!-- Website Icon -->
 <link rel="icon" type="image/png" href="./icon.png">
+<link rel="shortcut icon" type="image/png" href="./icon.png">
+<link rel="apple-touch-icon" href="./icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
 >
 
 <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
 <style>
@@ -35,28 +37,28 @@ RESET
 ========================================================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
--webkit-tap-highlight-color:transparent;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:"Inter",sans-serif;
-background:
-radial-gradient(
-circle at top left,
-#172033 0%,
-#0b1019 42%,
-#06090e 100%
-);
-color:#f8fafc;
-min-height:100vh;
-overflow-x:hidden;
+    font-family:"Inter",sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            #172033 0%,
+            #0b1019 42%,
+            #06090e 100%
+        );
+    color:#f8fafc;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 /* =========================================================
@@ -64,124 +66,124 @@ LOGIN
 ========================================================= */
 
 #loginScreen{
-min-height:100vh;
-min-height:100dvh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:18px;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
 }
 
 .login-box{
-width:100%;
-max-width:390px;
-background:rgba(15,23,42,.94);
-border:1px solid rgba(255,255,255,.08);
-border-radius:22px;
-padding:28px 22px;
-box-shadow:0 25px 70px rgba(0,0,0,.45);
-backdrop-filter:blur(18px);
+    width:100%;
+    max-width:390px;
+    background:rgba(15,23,42,.94);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:28px 22px;
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+    backdrop-filter:blur(18px);
 }
 
 .login-icon{
-width:64px;
-height:64px;
-border-radius:18px;
-margin:0 auto 18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:25px;
-background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;
-box-shadow:0 12px 30px rgba(34,197,94,.20);
+    width:64px;
+    height:64px;
+    border-radius:18px;
+    margin:0 auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    box-shadow:0 12px 30px rgba(34,197,94,.20);
 }
 
 .login-box h1{
-text-align:center;
-font-size:23px;
-font-weight:800;
+    text-align:center;
+    font-size:23px;
+    font-weight:800;
 }
 
 .login-box p{
-text-align:center;
-color:#94a3b8;
-font-size:12px;
-margin-top:7px;
-margin-bottom:25px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:12px;
+    margin-top:7px;
+    margin-bottom:25px;
 }
 
 .input-group{
-margin-bottom:16px;
+    margin-bottom:16px;
 }
 
 .input-group label{
-display:block;
-font-size:12px;
-font-weight:600;
-color:#cbd5e1;
-margin-bottom:7px;
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    color:#cbd5e1;
+    margin-bottom:7px;
 }
 
 .input-wrap{
-position:relative;
+    position:relative;
 }
 
 .input-wrap i{
-position:absolute;
-left:14px;
-top:50%;
-transform:translateY(-50%);
-color:#64748b;
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#64748b;
 }
 
 .input-wrap input{
-width:100%;
-height:50px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,.08);
-background:#080e17;
-color:#fff;
-outline:none;
-padding:0 14px 0 42px;
-font-size:14px;
+    width:100%;
+    height:50px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#080e17;
+    color:#fff;
+    outline:none;
+    padding:0 14px 0 42px;
+    font-size:14px;
 }
 
 .input-wrap input:focus{
-border-color:#22c55e;
-box-shadow:0 0 0 3px rgba(34,197,94,.08);
+    border-color:#22c55e;
+    box-shadow:0 0 0 3px rgba(34,197,94,.08);
 }
 
 .login-btn{
-width:100%;
-height:50px;
-border:none;
-border-radius:12px;
-background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;
-font-size:14px;
-font-weight:700;
-cursor:pointer;
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
 }
 
 .login-btn:active{
-transform:scale(.98);
+    transform:scale(.98);
 }
 
 .login-btn:disabled{
-opacity:.6;
+    opacity:.6;
 }
 
 .login-error{
-display:none;
-margin-top:13px;
-padding:11px;
-border-radius:10px;
-background:rgba(239,68,68,.10);
-border:1px solid rgba(239,68,68,.20);
-color:#fca5a5;
-font-size:12px;
-text-align:center;
+    display:none;
+    margin-top:13px;
+    padding:11px;
+    border-radius:10px;
+    background:rgba(239,68,68,.10);
+    border:1px solid rgba(239,68,68,.20);
+    color:#fca5a5;
+    font-size:12px;
+    text-align:center;
 }
 
 /* =========================================================
@@ -189,9 +191,9 @@ DASHBOARD
 ========================================================= */
 
 #dashboard{
-display:none;
-min-height:100vh;
-min-height:100dvh;
+    display:none;
+    min-height:100vh;
+    min-height:100dvh;
 }
 
 /* =========================================================
@@ -199,81 +201,81 @@ TOPBAR
 ========================================================= */
 
 .topbar{
-height:68px;
-position:sticky;
-top:0;
-z-index:100;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 24px;
-background:rgba(7,10,16,.88);
-border-bottom:1px solid rgba(255,255,255,.07);
-backdrop-filter:blur(18px);
+    height:68px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 24px;
+    background:rgba(7,10,16,.88);
+    border-bottom:1px solid rgba(255,255,255,.07);
+    backdrop-filter:blur(18px);
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .brand-logo{
-width:39px;
-height:39px;
-border-radius:11px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#22c55e,#16a34a);
-font-size:16px;
+    width:39px;
+    height:39px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    font-size:16px;
 }
 
 .brand-text h2{
-font-size:15px;
-font-weight:800;
+    font-size:15px;
+    font-weight:800;
 }
 
 .brand-text span{
-display:block;
-font-size:10px;
-color:#64748b;
-margin-top:2px;
+    display:block;
+    font-size:10px;
+    color:#64748b;
+    margin-top:2px;
 }
 
 .user-area{
-display:flex;
-align-items:center;
-gap:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .user-info{
-text-align:right;
+    text-align:right;
 }
 
 .user-name{
-font-size:12px;
-font-weight:700;
+    font-size:12px;
+    font-weight:700;
 }
 
 .user-label{
-font-size:9px;
-color:#64748b;
-margin-top:2px;
+    font-size:9px;
+    color:#64748b;
+    margin-top:2px;
 }
 
 .logout-btn{
-width:38px;
-height:38px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,.08);
-background:#111827;
-color:#f87171;
-cursor:pointer;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#111827;
+    color:#f87171;
+    cursor:pointer;
 }
 
 .logout-btn:active{
-transform:scale(.94);
+    transform:scale(.94);
 }
 
 /* =========================================================
@@ -281,50 +283,50 @@ CONTENT
 ========================================================= */
 
 .container{
-width:100%;
-max-width:1450px;
-margin:auto;
-padding:27px;
+    width:100%;
+    max-width:1450px;
+    margin:auto;
+    padding:27px;
 }
 
 .page-head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:16px;
 }
 
 .page-title h1{
-font-size:26px;
-font-weight:800;
-letter-spacing:-.5px;
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-.5px;
 }
 
 .page-title p{
-color:#64748b;
-font-size:12px;
-margin-top:5px;
+    color:#64748b;
+    font-size:12px;
+    margin-top:5px;
 }
 
 .add-btn{
-height:42px;
-padding:0 16px;
-border:none;
-border-radius:10px;
-background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;
-font-size:12px;
-font-weight:700;
-cursor:pointer;
-display:flex;
-align-items:center;
-gap:7px;
-white-space:nowrap;
+    height:42px;
+    padding:0 16px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    white-space:nowrap;
 }
 
 .add-btn:active{
-transform:scale(.96);
+    transform:scale(.96);
 }
 
 /* =========================================================
@@ -332,97 +334,97 @@ COMPACT STATS
 ========================================================= */
 
 .dashboard-tools{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:12px;
-margin-bottom:13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:13px;
 }
 
 .stats{
-display:flex;
-align-items:center;
-gap:7px;
-flex-wrap:nowrap;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    flex-wrap:nowrap;
 }
 
 .stat-card{
-width:105px;
-min-width:105px;
-height:64px;
-padding:8px 9px;
-border-radius:11px;
-background:
-linear-gradient(
-145deg,
-rgba(20,29,46,.96),
-rgba(9,14,23,.96)
-);
-border:1px solid rgba(255,255,255,.07);
-display:flex;
-align-items:center;
-gap:8px;
+    width:105px;
+    min-width:105px;
+    height:64px;
+    padding:8px 9px;
+    border-radius:11px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,29,46,.96),
+            rgba(9,14,23,.96)
+        );
+    border:1px solid rgba(255,255,255,.07);
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 .stat-card.total{
-border-color:rgba(59,130,246,.25);
+    border-color:rgba(59,130,246,.25);
 }
 
 .stat-card.active{
-border-color:rgba(34,197,94,.25);
+    border-color:rgba(34,197,94,.25);
 }
 
 .stat-card.inactive{
-border-color:rgba(239,68,68,.25);
+    border-color:rgba(239,68,68,.25);
 }
 
 .stat-icon{
-width:29px;
-height:29px;
-min-width:29px;
-border-radius:7px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:10px;
+    width:29px;
+    height:29px;
+    min-width:29px;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
 }
 
 .stat-card.total .stat-icon{
-background:rgba(59,130,246,.14);
-color:#60a5fa;
+    background:rgba(59,130,246,.14);
+    color:#60a5fa;
 }
 
 .stat-card.active .stat-icon{
-background:rgba(34,197,94,.14);
-color:#4ade80;
+    background:rgba(34,197,94,.14);
+    color:#4ade80;
 }
 
 .stat-card.inactive .stat-icon{
-background:rgba(239,68,68,.14);
-color:#f87171;
+    background:rgba(239,68,68,.14);
+    color:#f87171;
 }
 
 .stat-content{
-min-width:0;
+    min-width:0;
 }
 
 .stat-label{
-font-size:7px;
-color:#64748b;
-font-weight:700;
-text-transform:uppercase;
-line-height:1;
+    font-size:7px;
+    color:#64748b;
+    font-weight:700;
+    text-transform:uppercase;
+    line-height:1;
 }
 
 .stat-number{
-font-size:18px;
-font-weight:800;
-margin-top:5px;
-line-height:1;
+    font-size:18px;
+    font-weight:800;
+    margin-top:5px;
+    line-height:1;
 }
 
 .stat-sub{
-display:none;
+    display:none;
 }
 
 /* =========================================================
@@ -430,38 +432,38 @@ FILTER
 ========================================================= */
 
 .filter-row{
-display:flex;
-align-items:center;
-gap:5px;
-margin-bottom:13px;
-overflow-x:auto;
-scrollbar-width:none;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin-bottom:13px;
+    overflow-x:auto;
+    scrollbar-width:none;
 }
 
 .filter-row::-webkit-scrollbar{
-display:none;
+    display:none;
 }
 
 .filter-btn{
-height:31px;
-padding:0 10px;
-border-radius:8px;
-border:1px solid rgba(255,255,255,.08);
-background:#0f172a;
-color:#94a3b8;
-font-size:8px;
-font-weight:700;
-cursor:pointer;
-display:flex;
-align-items:center;
-gap:5px;
-white-space:nowrap;
+    height:31px;
+    padding:0 10px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#0f172a;
+    color:#94a3b8;
+    font-size:8px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    white-space:nowrap;
 }
 
 .filter-btn.active{
-background:rgba(34,197,94,.12);
-border-color:rgba(34,197,94,.30);
-color:#4ade80;
+    background:rgba(34,197,94,.12);
+    border-color:rgba(34,197,94,.30);
+    color:#4ade80;
 }
 
 /* =========================================================
@@ -469,40 +471,40 @@ SEARCH
 ========================================================= */
 
 .toolbar{
-width:100%;
-display:flex;
-justify-content:flex-end;
-margin-bottom:15px;
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:15px;
 }
 
 .search-box{
-width:310px;
-position:relative;
+    width:310px;
+    position:relative;
 }
 
 .search-box i{
-position:absolute;
-left:13px;
-top:50%;
-transform:translateY(-50%);
-color:#64748b;
-font-size:12px;
+    position:absolute;
+    left:13px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#64748b;
+    font-size:12px;
 }
 
 .search-box input{
-width:100%;
-height:40px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(15,23,42,.80);
-color:#fff;
-outline:none;
-padding:0 13px 0 38px;
-font-size:11px;
+    width:100%;
+    height:40px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(15,23,42,.80);
+    color:#fff;
+    outline:none;
+    padding:0 13px 0 38px;
+    font-size:11px;
 }
 
 .search-box input:focus{
-border-color:#22c55e;
+    border-color:#22c55e;
 }
 
 /* =========================================================
@@ -510,178 +512,178 @@ CARDS
 ========================================================= */
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
-gap:14px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
+    gap:14px;
 }
 
 .card{
-min-width:0;
-padding:15px;
-border-radius:16px;
-background:
-linear-gradient(
-145deg,
-rgba(20,29,46,.96),
-rgba(9,14,23,.96)
-);
-border:1px solid rgba(255,255,255,.07);
-transition:.18s ease;
+    min-width:0;
+    padding:15px;
+    border-radius:16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,29,46,.96),
+            rgba(9,14,23,.96)
+        );
+    border:1px solid rgba(255,255,255,.07);
+    transition:.18s ease;
 }
 
 .card.inactive-card{
-border-color:rgba(239,68,68,.18);
+    border-color:rgba(239,68,68,.18);
 }
 
 .card:hover{
-transform:translateY(-2px);
-border-color:rgba(34,197,94,.25);
-box-shadow:0 12px 28px rgba(0,0,0,.22);
+    transform:translateY(-2px);
+    border-color:rgba(34,197,94,.25);
+    box-shadow:0 12px 28px rgba(0,0,0,.22);
 }
 
 .card.inactive-card:hover{
-border-color:rgba(239,68,68,.30);
+    border-color:rgba(239,68,68,.30);
 }
 
 .card-top{
-display:flex;
-align-items:center;
-gap:10px;
-min-width:0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
 }
 
 .logo{
-width:45px;
-height:45px;
-min-width:45px;
-border-radius:12px;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#111827;
-border:1px solid rgba(255,255,255,.07);
+    width:45px;
+    height:45px;
+    min-width:45px;
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.07);
 }
 
 .logo img{
-width:100%;
-height:100%;
-object-fit:cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .logo-fallback{
-font-size:17px;
-font-weight:800;
-color:#22c55e;
+    font-size:17px;
+    font-weight:800;
+    color:#22c55e;
 }
 
 .card.inactive-card .logo-fallback{
-color:#f87171;
+    color:#f87171;
 }
 
 .card-title{
-min-width:0;
-flex:1;
+    min-width:0;
+    flex:1;
 }
 
 .card-title h3{
-font-size:13px;
-font-weight:700;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .status-badge{
-display:inline-flex;
-margin-top:4px;
-font-size:8px;
-padding:4px 6px;
-border-radius:5px;
-background:rgba(34,197,94,.10);
-color:#4ade80;
+    display:inline-flex;
+    margin-top:4px;
+    font-size:8px;
+    padding:4px 6px;
+    border-radius:5px;
+    background:rgba(34,197,94,.10);
+    color:#4ade80;
 }
 
 .status-badge.inactive{
-background:rgba(239,68,68,.10);
-color:#f87171;
+    background:rgba(239,68,68,.10);
+    color:#f87171;
 }
 
 .card-description{
-color:#94a3b8;
-font-size:10px;
-line-height:1.5;
-margin-top:11px;
-min-height:30px;
-display:-webkit-box;
--webkit-line-clamp:2;
--webkit-box-orient:vertical;
-overflow:hidden;
+    color:#94a3b8;
+    font-size:10px;
+    line-height:1.5;
+    margin-top:11px;
+    min-height:30px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .meta{
-display:flex;
-gap:5px;
-flex-wrap:wrap;
-margin-top:9px;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    margin-top:9px;
 }
 
 .meta span{
-font-size:8px;
-color:#94a3b8;
-background:#111827;
-border:1px solid rgba(255,255,255,.05);
-padding:4px 6px;
-border-radius:5px;
-white-space:nowrap;
+    font-size:8px;
+    color:#94a3b8;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.05);
+    padding:4px 6px;
+    border-radius:5px;
+    white-space:nowrap;
 }
 
 .card-bottom{
-display:flex;
-gap:7px;
-margin-top:12px;
+    display:flex;
+    gap:7px;
+    margin-top:12px;
 }
 
 .open-btn{
-flex:1;
-min-width:0;
-height:34px;
-border-radius:8px;
-text-decoration:none;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:5px;
-font-size:10px;
-font-weight:700;
-background:rgba(34,197,94,.10);
-border:1px solid rgba(34,197,94,.18);
-color:#4ade80;
+    flex:1;
+    min-width:0;
+    height:34px;
+    border-radius:8px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    font-size:10px;
+    font-weight:700;
+    background:rgba(34,197,94,.10);
+    border:1px solid rgba(34,197,94,.18);
+    color:#4ade80;
 }
 
 .inactive-card .open-btn{
-background:rgba(100,116,139,.08);
-border-color:rgba(100,116,139,.15);
-color:#94a3b8;
+    background:rgba(100,116,139,.08);
+    border-color:rgba(100,116,139,.15);
+    color:#94a3b8;
 }
 
 .open-btn:active{
-transform:scale(.97);
+    transform:scale(.97);
 }
 
 .edit-btn{
-width:36px;
-min-width:36px;
-height:34px;
-border-radius:8px;
-border:1px solid rgba(255,255,255,.07);
-background:#111827;
-color:#cbd5e1;
-cursor:pointer;
+    width:36px;
+    min-width:36px;
+    height:34px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.07);
+    background:#111827;
+    color:#cbd5e1;
+    cursor:pointer;
 }
 
 .edit-btn:active{
-transform:scale(.94);
+    transform:scale(.94);
 }
 
 /* =========================================================
@@ -689,27 +691,27 @@ LOADING / EMPTY
 ========================================================= */
 
 .loading{
-text-align:center;
-padding:40px 20px;
-color:#64748b;
-font-size:11px;
+    text-align:center;
+    padding:40px 20px;
+    color:#64748b;
+    font-size:11px;
 }
 
 .loading i{
-font-size:19px;
+    font-size:19px;
 }
 
 .empty{
-display:none;
-text-align:center;
-padding:60px 20px;
-color:#64748b;
-font-size:12px;
+    display:none;
+    text-align:center;
+    padding:60px 20px;
+    color:#64748b;
+    font-size:12px;
 }
 
 .empty i{
-font-size:35px;
-margin-bottom:12px;
+    font-size:35px;
+    margin-bottom:12px;
 }
 
 /* =========================================================
@@ -717,145 +719,145 @@ MODAL
 ========================================================= */
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-z-index:500;
-background:rgba(0,0,0,.72);
-backdrop-filter:blur(7px);
-align-items:center;
-justify-content:center;
-padding:15px;
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:500;
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(7px);
+    align-items:center;
+    justify-content:center;
+    padding:15px;
 }
 
 .modal.show{
-display:flex;
+    display:flex;
 }
 
 .modal-box{
-width:100%;
-max-width:570px;
-max-height:calc(100vh - 30px);
-max-height:calc(100dvh - 30px);
-overflow-y:auto;
-background:#0f172a;
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:21px;
-box-shadow:0 30px 80px rgba(0,0,0,.55);
+    width:100%;
+    max-width:570px;
+    max-height:calc(100vh - 30px);
+    max-height:calc(100dvh - 30px);
+    overflow-y:auto;
+    background:#0f172a;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:21px;
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
 .modal-head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
 }
 
 .modal-head h2{
-font-size:18px;
+    font-size:18px;
 }
 
 .close-btn{
-width:34px;
-height:34px;
-border:none;
-border-radius:8px;
-background:#111827;
-color:#94a3b8;
-cursor:pointer;
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:8px;
+    background:#111827;
+    color:#94a3b8;
+    cursor:pointer;
 }
 
 .form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
 .form-group{
-display:flex;
-flex-direction:column;
-gap:6px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
 
 .form-group.full{
-grid-column:1/-1;
+    grid-column:1/-1;
 }
 
 .form-group label{
-font-size:10px;
-font-weight:600;
-color:#cbd5e1;
+    font-size:10px;
+    font-weight:600;
+    color:#cbd5e1;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
-width:100%;
-border:1px solid rgba(255,255,255,.08);
-background:#080d16;
-color:#fff;
-border-radius:8px;
-outline:none;
-padding:10px;
-font-family:inherit;
-font-size:11px;
+    width:100%;
+    border:1px solid rgba(255,255,255,.08);
+    background:#080d16;
+    color:#fff;
+    border-radius:8px;
+    outline:none;
+    padding:10px;
+    font-family:inherit;
+    font-size:11px;
 }
 
 .form-group input{
-height:39px;
+    height:39px;
 }
 
 .form-group textarea{
-min-height:70px;
-resize:vertical;
+    min-height:70px;
+    resize:vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
-border-color:#22c55e;
+    border-color:#22c55e;
 }
 
 .modal-actions{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
-margin-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:20px;
 }
 
 .left-actions,
 .right-actions{
-display:flex;
-gap:7px;
+    display:flex;
+    gap:7px;
 }
 
 .btn{
-height:37px;
-padding:0 14px;
-border-radius:8px;
-border:1px solid rgba(255,255,255,.08);
-cursor:pointer;
-font-size:10px;
-font-weight:700;
+    height:37px;
+    padding:0 14px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,.08);
+    cursor:pointer;
+    font-size:10px;
+    font-weight:700;
 }
 
 .cancel-btn{
-background:#111827;
-color:#cbd5e1;
+    background:#111827;
+    color:#cbd5e1;
 }
 
 .save-btn{
-background:#22c55e;
-color:#fff;
-border-color:#22c55e;
+    background:#22c55e;
+    color:#fff;
+    border-color:#22c55e;
 }
 
 .delete-btn{
-background:rgba(239,68,68,.10);
-color:#f87171;
-border-color:rgba(239,68,68,.20);
+    background:rgba(239,68,68,.10);
+    color:#f87171;
+    border-color:rgba(239,68,68,.20);
 }
 
 /* =========================================================
@@ -863,35 +865,35 @@ TOAST
 ========================================================= */
 
 .toast{
-position:fixed;
-left:50%;
-bottom:20px;
-transform:translateX(-50%);
-z-index:1000;
-width:max-content;
-max-width:calc(100% - 30px);
-padding:11px 15px;
-border-radius:9px;
-background:#111827;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 15px 35px rgba(0,0,0,.35);
-font-size:11px;
-display:none;
-text-align:center;
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    z-index:1000;
+    width:max-content;
+    max-width:calc(100% - 30px);
+    padding:11px 15px;
+    border-radius:9px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    font-size:11px;
+    display:none;
+    text-align:center;
 }
 
 .toast.show{
-display:block;
+    display:block;
 }
 
 .toast.success{
-border-color:rgba(34,197,94,.25);
-color:#4ade80;
+    border-color:rgba(34,197,94,.25);
+    color:#4ade80;
 }
 
 .toast.error{
-border-color:rgba(239,68,68,.25);
-color:#f87171;
+    border-color:rgba(239,68,68,.25);
+    color:#f87171;
 }
 
 /* =========================================================
@@ -900,307 +902,307 @@ MOBILE
 
 @media(max-width:650px){
 
-.topbar{
-    height:62px;
-    padding:0 13px;
-}
+    .topbar{
+        height:62px;
+        padding:0 13px;
+    }
 
-.brand{
-    gap:8px;
-}
+    .brand{
+        gap:8px;
+    }
 
-.brand-logo{
-    width:36px;
-    height:36px;
-    border-radius:10px;
-    font-size:14px;
-}
+    .brand-logo{
+        width:36px;
+        height:36px;
+        border-radius:10px;
+        font-size:14px;
+    }
 
-.brand-text h2{
-    font-size:13px;
-}
+    .brand-text h2{
+        font-size:13px;
+    }
 
-.brand-text span{
-    display:none;
-}
+    .brand-text span{
+        display:none;
+    }
 
-.user-area{
-    gap:7px;
-}
+    .user-area{
+        gap:7px;
+    }
 
-.user-info{
-    display:none;
-}
+    .user-info{
+        display:none;
+    }
 
-.logout-btn{
-    width:36px;
-    height:36px;
-}
+    .logout-btn{
+        width:36px;
+        height:36px;
+    }
 
-.container{
-    padding:13px 10px 25px;
-}
+    .container{
+        padding:13px 10px 25px;
+    }
 
-.page-head{
-    align-items:center;
-    margin-bottom:10px;
-}
+    .page-head{
+        align-items:center;
+        margin-bottom:10px;
+    }
 
-.page-title h1{
-    font-size:20px;
-}
+    .page-title h1{
+        font-size:20px;
+    }
 
-.page-title p{
-    font-size:9px;
-    margin-top:3px;
-}
+    .page-title p{
+        font-size:9px;
+        margin-top:3px;
+    }
 
-.add-btn{
-    width:40px;
-    height:40px;
-    padding:0;
-    justify-content:center;
-    border-radius:10px;
-}
+    .add-btn{
+        width:40px;
+        height:40px;
+        padding:0;
+        justify-content:center;
+        border-radius:10px;
+    }
 
-.add-btn span{
-    display:none;
-}
+    .add-btn span{
+        display:none;
+    }
 
-/* COMPACT MOBILE STATS */
+    /* COMPACT MOBILE STATS */
 
-.dashboard-tools{
-    display:block;
-    margin-bottom:9px;
-}
+    .dashboard-tools{
+        display:block;
+        margin-bottom:9px;
+    }
 
-.stats{
-    width:100%;
-    display:flex;
-    gap:5px;
-    margin-bottom:8px;
-}
+    .stats{
+        width:100%;
+        display:flex;
+        gap:5px;
+        margin-bottom:8px;
+    }
 
-.stat-card{
-    flex:1;
-    width:auto;
-    min-width:0;
-    height:52px;
-    padding:7px;
-    border-radius:9px;
-    gap:6px;
-}
+    .stat-card{
+        flex:1;
+        width:auto;
+        min-width:0;
+        height:52px;
+        padding:7px;
+        border-radius:9px;
+        gap:6px;
+    }
 
-.stat-icon{
-    width:24px;
-    height:24px;
-    min-width:24px;
-    border-radius:6px;
-    font-size:8px;
-}
+    .stat-icon{
+        width:24px;
+        height:24px;
+        min-width:24px;
+        border-radius:6px;
+        font-size:8px;
+    }
 
-.stat-label{
-    font-size:6px;
-}
+    .stat-label{
+        font-size:6px;
+    }
 
-.stat-number{
-    font-size:16px;
-    margin-top:3px;
-}
+    .stat-number{
+        font-size:16px;
+        margin-top:3px;
+    }
 
-/* FILTER */
+    /* FILTER */
 
-.filter-row{
-    margin-bottom:9px;
-    gap:4px;
-}
+    .filter-row{
+        margin-bottom:9px;
+        gap:4px;
+    }
 
-.filter-btn{
-    height:29px;
-    padding:0 8px;
-    font-size:7.5px;
-}
+    .filter-btn{
+        height:29px;
+        padding:0 8px;
+        font-size:7.5px;
+    }
 
-/* SEARCH */
+    /* SEARCH */
 
-.toolbar{
-    margin-bottom:10px;
-}
+    .toolbar{
+        margin-bottom:10px;
+    }
 
-.search-box{
-    width:100%;
-}
+    .search-box{
+        width:100%;
+    }
 
-.search-box input{
-    height:38px;
-    font-size:10px;
-}
+    .search-box input{
+        height:38px;
+        font-size:10px;
+    }
 
-/* CARDS */
+    /* CARDS */
 
-.cards{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px;
-}
+    .cards{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+    }
 
-.card{
-    padding:10px;
-    border-radius:12px;
-}
+    .card{
+        padding:10px;
+        border-radius:12px;
+    }
 
-.card:hover{
-    transform:none;
-}
+    .card:hover{
+        transform:none;
+    }
 
-.card-top{
-    gap:7px;
-}
+    .card-top{
+        gap:7px;
+    }
 
-.logo{
-    width:36px;
-    height:36px;
-    min-width:36px;
-    border-radius:8px;
-}
+    .logo{
+        width:36px;
+        height:36px;
+        min-width:36px;
+        border-radius:8px;
+    }
 
-.logo-fallback{
-    font-size:12px;
-}
+    .logo-fallback{
+        font-size:12px;
+    }
 
-.card-title h3{
-    font-size:10px;
-}
+    .card-title h3{
+        font-size:10px;
+    }
 
-.status-badge{
-    font-size:6.5px;
-    padding:3px 4px;
-    margin-top:2px;
-}
+    .status-badge{
+        font-size:6.5px;
+        padding:3px 4px;
+        margin-top:2px;
+    }
 
-.card-description{
-    font-size:8px;
-    margin-top:7px;
-    min-height:24px;
-}
+    .card-description{
+        font-size:8px;
+        margin-top:7px;
+        min-height:24px;
+    }
 
-.meta{
-    margin-top:6px;
-    gap:3px;
-}
+    .meta{
+        margin-top:6px;
+        gap:3px;
+    }
 
-.meta span{
-    font-size:6.5px;
-    padding:3px 4px;
-}
+    .meta span{
+        font-size:6.5px;
+        padding:3px 4px;
+    }
 
-.card-bottom{
-    margin-top:8px;
-    gap:4px;
-}
+    .card-bottom{
+        margin-top:8px;
+        gap:4px;
+    }
 
-.open-btn{
-    height:29px;
-    font-size:7px;
-}
+    .open-btn{
+        height:29px;
+        font-size:7px;
+    }
 
-.edit-btn{
-    width:30px;
-    min-width:30px;
-    height:29px;
-    font-size:8px;
-}
+    .edit-btn{
+        width:30px;
+        min-width:30px;
+        height:29px;
+        font-size:8px;
+    }
 
-/* MODAL */
+    /* MODAL */
 
-.modal{
-    padding:8px;
-    align-items:flex-end;
-}
+    .modal{
+        padding:8px;
+        align-items:flex-end;
+    }
 
-.modal-box{
-    max-height:calc(100dvh - 16px);
-    border-radius:17px 17px 0 0;
-    padding:18px 15px;
-}
+    .modal-box{
+        max-height:calc(100dvh - 16px);
+        border-radius:17px 17px 0 0;
+        padding:18px 15px;
+    }
 
-.form-grid{
-    grid-template-columns:1fr;
-    gap:10px;
-}
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
 
-.form-group.full{
-    grid-column:auto;
-}
+    .form-group.full{
+        grid-column:auto;
+    }
 
-.form-group input{
-    height:42px;
-}
+    .form-group input{
+        height:42px;
+    }
 
-.modal-actions{
-    flex-direction:column;
-    align-items:stretch;
-}
+    .modal-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
 
-.left-actions,
-.right-actions{
-    width:100%;
-}
+    .left-actions,
+    .right-actions{
+        width:100%;
+    }
 
-.right-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-}
+    .right-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
 
-.left-actions .btn{
-    width:100%;
-}
+    .left-actions .btn{
+        width:100%;
+    }
 
-.btn{
-    height:40px;
-}
+    .btn{
+        height:40px;
+    }
 
 }
 
 @media(max-width:370px){
 
-.container{
-    padding-left:8px;
-    padding-right:8px;
-}
+    .container{
+        padding-left:8px;
+        padding-right:8px;
+    }
 
-.stats{
-    gap:4px;
-}
+    .stats{
+        gap:4px;
+    }
 
-.stat-card{
-    padding:6px;
-}
+    .stat-card{
+        padding:6px;
+    }
 
-.stat-icon{
-    width:22px;
-    height:22px;
-    min-width:22px;
-}
+    .stat-icon{
+        width:22px;
+        height:22px;
+        min-width:22px;
+    }
 
-.stat-number{
-    font-size:15px;
-}
+    .stat-number{
+        font-size:15px;
+    }
 
-.cards{
-    gap:6px;
-}
+    .cards{
+        gap:6px;
+    }
 
-.card{
-    padding:8px;
-}
+    .card{
+        padding:8px;
+    }
 
 }
 
 @media(max-width:300px){
 
-.cards{
-    grid-template-columns:1fr;
-}
+    .cards{
+        grid-template-columns:1fr;
+    }
 
 }
 
@@ -1209,17 +1211,17 @@ SCROLLBAR
 ========================================================= */
 
 ::-webkit-scrollbar{
-width:5px;
-height:5px;
+    width:5px;
+    height:5px;
 }
 
 ::-webkit-scrollbar-track{
-background:#080d16;
+    background:#080d16;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#263244;
-border-radius:10px;
+    background:#263244;
+    border-radius:10px;
 }
 
 </style>
@@ -1376,7 +1378,6 @@ COMPACT STATS
 
 <div class="stats">
 
-
     <div class="stat-card total">
 
         <div class="stat-icon">
@@ -1399,7 +1400,6 @@ COMPACT STATS
         </div>
 
     </div>
-
 
 
     <div class="stat-card active">
@@ -1426,7 +1426,6 @@ COMPACT STATS
     </div>
 
 
-
     <div class="stat-card inactive">
 
         <div class="stat-icon">
@@ -1449,7 +1448,6 @@ COMPACT STATS
         </div>
 
     </div>
-
 
 </div>
 
@@ -1520,35 +1518,35 @@ SEARCH
 
 
 <div
-class="loading"
-id="loading"
+    class="loading"
+    id="loading"
 >
 
-<i class="fa-solid fa-spinner fa-spin"></i>
+    <i class="fa-solid fa-spinner fa-spin"></i>
 
-<div style="margin-top:8px;">
-    Loading websites...
-</div>
+    <div style="margin-top:8px;">
+        Loading websites...
+    </div>
 
 </div>
 
 
 <div
-class="cards"
-id="cards"
+    class="cards"
+    id="cards"
 ></div>
 
 
 <div
-class="empty"
-id="empty"
+    class="empty"
+    id="empty"
 >
 
-<i class="fa-regular fa-folder-open"></i>
+    <i class="fa-regular fa-folder-open"></i>
 
-<div id="emptyText">
-    No websites found.
-</div>
+    <div id="emptyText">
+        No websites found.
+    </div>
 
 </div>
 
@@ -1562,8 +1560,8 @@ MODAL
 ===================================================== -->
 
 <div
-class="modal"
-id="cardModal"
+    class="modal"
+    id="cardModal"
 >
 
 <div class="modal-box">
@@ -1766,8 +1764,8 @@ id="cardModal"
 
 
 <div
-class="toast"
-id="toast"
+    class="toast"
+    id="toast"
 ></div>
 
 
@@ -1804,67 +1802,67 @@ const AUTO_LOGOUT_TIME = 3 * 60 * 1000;
 
 function resetInactivityTimer(){
 
-clearTimeout(inactivityTimer);
+    clearTimeout(inactivityTimer);
 
-if(
-    localStorage.getItem(
-        "websiteControlLoggedIn"
-    ) !== "true"
-){
-    return;
-}
+    if(
+        localStorage.getItem(
+            "websiteControlLoggedIn"
+        ) !== "true"
+    ){
+        return;
+    }
 
-inactivityTimer = setTimeout(
-    autoLogout,
-    AUTO_LOGOUT_TIME
-);
+    inactivityTimer = setTimeout(
+        autoLogout,
+        AUTO_LOGOUT_TIME
+    );
 
 }
 
 function autoLogout(){
 
-clearTimeout(inactivityTimer);
+    clearTimeout(inactivityTimer);
 
-localStorage.removeItem(
-    "websiteControlLoggedIn"
-);
+    localStorage.removeItem(
+        "websiteControlLoggedIn"
+    );
 
-localStorage.removeItem(
-    "websiteControlUsername"
-);
+    localStorage.removeItem(
+        "websiteControlUsername"
+    );
 
-localStorage.removeItem(
-    "websiteControlName"
-);
+    localStorage.removeItem(
+        "websiteControlName"
+    );
 
-cards = [];
+    cards = [];
 
-editingId = null;
+    editingId = null;
 
-document.getElementById(
-    "dashboard"
-).style.display = "none";
+    document.getElementById(
+        "dashboard"
+    ).style.display = "none";
 
-document.getElementById(
-    "loginScreen"
-).style.display = "flex";
+    document.getElementById(
+        "loginScreen"
+    ).style.display = "flex";
 
-document.getElementById(
-    "usernameInput"
-).value = "";
+    document.getElementById(
+        "usernameInput"
+    ).value = "";
 
-document.getElementById(
-    "loginError"
-).textContent =
-    "Automatically logged out after 3 minutes of inactivity.";
+    document.getElementById(
+        "loginError"
+    ).textContent =
+        "Automatically logged out after 3 minutes of inactivity.";
 
-document.getElementById(
-    "loginError"
-).style.display = "block";
+    document.getElementById(
+        "loginError"
+    ).style.display = "block";
 
-document.getElementById(
-    "cardModal"
-).classList.remove("show");
+    document.getElementById(
+        "cardModal"
+    ).classList.remove("show");
 
 }
 
@@ -1874,34 +1872,34 @@ ACTIVITY
 ========================================================= */
 
 [
-"click",
-"mousedown",
-"keydown",
-"scroll",
-"touchstart",
-"pointerdown"
+    "click",
+    "mousedown",
+    "keydown",
+    "scroll",
+    "touchstart",
+    "pointerdown"
 ].forEach(
-function(eventName){
+    function(eventName){
 
-    document.addEventListener(
-        eventName,
-        function(){
+        document.addEventListener(
+            eventName,
+            function(){
 
-            if(
-                localStorage.getItem(
-                    "websiteControlLoggedIn"
-                ) === "true"
-            ){
-                resetInactivityTimer();
+                if(
+                    localStorage.getItem(
+                        "websiteControlLoggedIn"
+                    ) === "true"
+                ){
+                    resetInactivityTimer();
+                }
+
+            },
+            {
+                passive:true
             }
+        );
 
-        },
-        {
-            passive:true
-        }
-    );
-
-}
+    }
 );
 
 
@@ -1910,25 +1908,25 @@ PAGE LOAD
 ========================================================= */
 
 document.addEventListener(
-"DOMContentLoaded",
-function(){
+    "DOMContentLoaded",
+    function(){
 
-    checkSession();
+        checkSession();
 
-    document
-        .getElementById("usernameInput")
-        .addEventListener(
-            "keydown",
-            function(e){
+        document
+            .getElementById("usernameInput")
+            .addEventListener(
+                "keydown",
+                function(e){
 
-                if(e.key === "Enter"){
-                    login();
+                    if(e.key === "Enter"){
+                        login();
+                    }
+
                 }
+            );
 
-            }
-        );
-
-}
+    }
 );
 
 
@@ -1938,22 +1936,22 @@ SESSION
 
 function checkSession(){
 
-const logged =
-    localStorage.getItem(
-        "websiteControlLoggedIn"
-    );
+    const logged =
+        localStorage.getItem(
+            "websiteControlLoggedIn"
+        );
 
-const name =
-    localStorage.getItem(
-        "websiteControlName"
-    );
+    const name =
+        localStorage.getItem(
+            "websiteControlName"
+        );
 
-if(
-    logged === "true" &&
-    name
-){
-    showDashboard(name);
-}
+    if(
+        logged === "true" &&
+        name
+    ){
+        showDashboard(name);
+    }
 
 }
 
@@ -1964,102 +1962,102 @@ LOGIN
 
 async function login(){
 
-const input =
+    const input =
+        document.getElementById(
+            "usernameInput"
+        );
+
+    const button =
+        document.getElementById(
+            "loginBtn"
+        );
+
+    const username =
+        input.value.trim();
+
     document.getElementById(
-        "usernameInput"
-    );
+        "loginError"
+    ).style.display = "none";
 
-const button =
-    document.getElementById(
-        "loginBtn"
-    );
-
-const username =
-    input.value.trim();
-
-document.getElementById(
-    "loginError"
-).style.display = "none";
-
-if(!username){
-
-    showLoginError(
-        "Please enter your username."
-    );
-
-    return;
-
-}
-
-button.disabled = true;
-
-button.innerHTML =
-    '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
-
-try{
-
-    const response =
-        await fetch(
-            API_URL +
-            "?action=login&username=" +
-            encodeURIComponent(username) +
-            "&ts=" +
-            Date.now(),
-            {
-                method:"GET",
-                cache:"no-store"
-            }
-        );
-
-    const data =
-        await response.json();
-
-    if(data.success){
-
-        localStorage.setItem(
-            "websiteControlLoggedIn",
-            "true"
-        );
-
-        localStorage.setItem(
-            "websiteControlUsername",
-            data.username || username
-        );
-
-        localStorage.setItem(
-            "websiteControlName",
-            data.name || username
-        );
-
-        showDashboard(
-            data.name || username
-        );
-
-    }
-    else{
+    if(!username){
 
         showLoginError(
-            data.message ||
-            "Username not found."
+            "Please enter your username."
+        );
+
+        return;
+
+    }
+
+    button.disabled = true;
+
+    button.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL +
+                "?action=login&username=" +
+                encodeURIComponent(username) +
+                "&ts=" +
+                Date.now(),
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if(data.success){
+
+            localStorage.setItem(
+                "websiteControlLoggedIn",
+                "true"
+            );
+
+            localStorage.setItem(
+                "websiteControlUsername",
+                data.username || username
+            );
+
+            localStorage.setItem(
+                "websiteControlName",
+                data.name || username
+            );
+
+            showDashboard(
+                data.name || username
+            );
+
+        }
+        else{
+
+            showLoginError(
+                data.message ||
+                "Username not found."
+            );
+
+        }
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        showLoginError(
+            "Unable to connect with server."
         );
 
     }
 
-}
-catch(error){
+    button.disabled = false;
 
-    console.error(error);
-
-    showLoginError(
-        "Unable to connect with server."
-    );
-
-}
-
-button.disabled = false;
-
-button.innerHTML =
-    '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
+    button.innerHTML =
+        '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
 
 }
 
@@ -2070,14 +2068,14 @@ LOGIN ERROR
 
 function showLoginError(message){
 
-const error =
-    document.getElementById(
-        "loginError"
-    );
+    const error =
+        document.getElementById(
+            "loginError"
+        );
 
-error.textContent = message;
+    error.textContent = message;
 
-error.style.display = "block";
+    error.style.display = "block";
 
 }
 
@@ -2088,27 +2086,27 @@ SHOW DASHBOARD
 
 function showDashboard(name){
 
-document.getElementById(
-    "loginScreen"
-).style.display = "none";
+    document.getElementById(
+        "loginScreen"
+    ).style.display = "none";
 
-document.getElementById(
-    "dashboard"
-).style.display = "block";
+    document.getElementById(
+        "dashboard"
+    ).style.display = "block";
 
-document.getElementById(
-    "loggedUserName"
-).textContent = name;
+    document.getElementById(
+        "loggedUserName"
+    ).textContent = name;
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-requestAnimationFrame(
-    function(){
+    requestAnimationFrame(
+        function(){
 
-        loadCards();
+            loadCards();
 
-    }
-);
+        }
+    );
 
 }
 
@@ -2119,43 +2117,43 @@ LOGOUT
 
 function logout(){
 
-clearTimeout(inactivityTimer);
+    clearTimeout(inactivityTimer);
 
-localStorage.removeItem(
-    "websiteControlLoggedIn"
-);
+    localStorage.removeItem(
+        "websiteControlLoggedIn"
+    );
 
-localStorage.removeItem(
-    "websiteControlUsername"
-);
+    localStorage.removeItem(
+        "websiteControlUsername"
+    );
 
-localStorage.removeItem(
-    "websiteControlName"
-);
+    localStorage.removeItem(
+        "websiteControlName"
+    );
 
-cards = [];
+    cards = [];
 
-editingId = null;
+    editingId = null;
 
-document.getElementById(
-    "dashboard"
-).style.display = "none";
+    document.getElementById(
+        "dashboard"
+    ).style.display = "none";
 
-document.getElementById(
-    "loginScreen"
-).style.display = "flex";
+    document.getElementById(
+        "loginScreen"
+    ).style.display = "flex";
 
-document.getElementById(
-    "usernameInput"
-).value = "";
+    document.getElementById(
+        "usernameInput"
+    ).value = "";
 
-document.getElementById(
-    "loginError"
-).style.display = "none";
+    document.getElementById(
+        "loginError"
+    ).style.display = "none";
 
-document.getElementById(
-    "cardModal"
-).classList.remove("show");
+    document.getElementById(
+        "cardModal"
+    ).classList.remove("show");
 
 }
 
@@ -2166,22 +2164,22 @@ STATUS NORMALIZER
 
 function normalizeStatus(status){
 
-const value =
-    String(status || "")
-    .trim()
-    .toLowerCase();
+    const value =
+        String(status || "")
+        .trim()
+        .toLowerCase();
 
-if(
-    value === "inactive" ||
-    value === "off" ||
-    value === "disabled" ||
-    value === "false" ||
-    value === "0"
-){
-    return "Inactive";
-}
+    if(
+        value === "inactive" ||
+        value === "off" ||
+        value === "disabled" ||
+        value === "false" ||
+        value === "0"
+    ){
+        return "Inactive";
+    }
 
-return "Active";
+    return "Active";
 
 }
 
@@ -2192,97 +2190,97 @@ LOAD CARDS
 
 async function loadCards(){
 
-if(loadingCards){
-    return;
-}
-
-loadingCards = true;
-
-const loading =
-    document.getElementById(
-        "loading"
-    );
-
-if(cards.length === 0){
-    loading.style.display = "block";
-}
-
-try{
-
-    const response =
-        await fetch(
-            API_URL +
-            "?action=getCards&ts=" +
-            Date.now(),
-            {
-                method:"GET",
-                cache:"no-store"
-            }
-        );
-
-    if(!response.ok){
-
-        throw new Error(
-            "Server returned an error."
-        );
-
+    if(loadingCards){
+        return;
     }
 
-    const data =
-        await response.json();
+    loadingCards = true;
 
-    if(!data.success){
-
-        throw new Error(
-            data.message ||
-            "Failed to load websites."
+    const loading =
+        document.getElementById(
+            "loading"
         );
-
-    }
-
-    cards =
-        Array.isArray(data.cards)
-        ? data.cards.map(
-            function(card){
-
-                return {
-                    ...card,
-                    status:normalizeStatus(
-                        card.status
-                    )
-                };
-
-            }
-        )
-        : [];
-
-    updateStats();
-
-    renderCards();
-
-}
-catch(error){
-
-    console.error(error);
 
     if(cards.length === 0){
-
-        showToast(
-            error.message ||
-            "Failed to load websites.",
-            "error"
-        );
-
+        loading.style.display = "block";
     }
 
-}
-finally{
+    try{
 
-    loadingCards = false;
+        const response =
+            await fetch(
+                API_URL +
+                "?action=getCards&ts=" +
+                Date.now(),
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
 
-    loading.style.display = "none";
+        if(!response.ok){
 
-}
+            throw new Error(
+                "Server returned an error."
+            );
+
+        }
+
+        const data =
+            await response.json();
+
+        if(!data.success){
+
+            throw new Error(
+                data.message ||
+                "Failed to load websites."
+            );
+
+        }
+
+        cards =
+            Array.isArray(data.cards)
+            ? data.cards.map(
+                function(card){
+
+                    return {
+                        ...card,
+                        status:normalizeStatus(
+                            card.status
+                        )
+                    };
+
+                }
+            )
+            : [];
+
+        updateStats();
+
+        renderCards();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        if(cards.length === 0){
+
+            showToast(
+                error.message ||
+                "Failed to load websites.",
+                "error"
+            );
+
+        }
+
+    }
+    finally{
+
+        loadingCards = false;
+
+        loading.style.display = "none";
+
+    }
 
 }
 
@@ -2293,42 +2291,42 @@ UPDATE STATS
 
 function updateStats(){
 
-let total = cards.length;
+    let total = cards.length;
 
-let active = 0;
+    let active = 0;
 
-let inactive = 0;
+    let inactive = 0;
 
-for(
-    let i = 0;
-    i < cards.length;
-    i++
-){
-
-    if(
-        normalizeStatus(
-            cards[i].status
-        ) === "Active"
+    for(
+        let i = 0;
+        i < cards.length;
+        i++
     ){
-        active++;
+
+        if(
+            normalizeStatus(
+                cards[i].status
+            ) === "Active"
+        ){
+            active++;
+        }
+        else{
+            inactive++;
+        }
+
     }
-    else{
-        inactive++;
-    }
 
-}
+    document.getElementById(
+        "totalCount"
+    ).textContent = total;
 
-document.getElementById(
-    "totalCount"
-).textContent = total;
+    document.getElementById(
+        "activeCount"
+    ).textContent = active;
 
-document.getElementById(
-    "activeCount"
-).textContent = active;
-
-document.getElementById(
-    "inactiveCount"
-).textContent = inactive;
+    document.getElementById(
+        "inactiveCount"
+    ).textContent = inactive;
 
 }
 
@@ -2339,24 +2337,24 @@ FILTER
 
 function setFilter(filter){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-currentFilter = filter;
+    currentFilter = filter;
 
-document
-    .querySelectorAll(".filter-btn")
-    .forEach(
-        function(button){
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(
+            function(button){
 
-            button.classList.toggle(
-                "active",
-                button.dataset.filter === filter
-            );
+                button.classList.toggle(
+                    "active",
+                    button.dataset.filter === filter
+                );
 
-        }
-    );
+            }
+        );
 
-renderCards();
+    renderCards();
 
 }
 
@@ -2367,139 +2365,139 @@ RENDER
 
 function renderCards(){
 
-const box =
-    document.getElementById(
-        "cards"
-    );
-
-const empty =
-    document.getElementById(
-        "empty"
-    );
-
-const emptyText =
-    document.getElementById(
-        "emptyText"
-    );
-
-const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
-
-const search =
-    searchInput
-    ? searchInput.value.trim().toLowerCase()
-    : "";
-
-const filtered = [];
-
-for(
-    let i = 0;
-    i < cards.length;
-    i++
-){
-
-    const card = cards[i];
-
-    const status =
-        normalizeStatus(
-            card.status
+    const box =
+        document.getElementById(
+            "cards"
         );
 
-    if(
-        currentFilter === "active" &&
-        status !== "Active"
+    const empty =
+        document.getElementById(
+            "empty"
+        );
+
+    const emptyText =
+        document.getElementById(
+            "emptyText"
+        );
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+    const search =
+        searchInput
+        ? searchInput.value.trim().toLowerCase()
+        : "";
+
+    const filtered = [];
+
+    for(
+        let i = 0;
+        i < cards.length;
+        i++
     ){
-        continue;
-    }
 
-    if(
-        currentFilter === "inactive" &&
-        status !== "Inactive"
-    ){
-        continue;
-    }
+        const card = cards[i];
 
-    if(search){
-
-        const text =
-            (
-                String(card.name || "") +
-                " " +
-                String(card.description || "") +
-                " " +
-                String(card.source || "") +
-                " " +
-                String(card.type || "") +
-                " " +
-                status
-            )
-            .toLowerCase();
+        const status =
+            normalizeStatus(
+                card.status
+            );
 
         if(
-            !text.includes(search)
+            currentFilter === "active" &&
+            status !== "Active"
         ){
             continue;
         }
 
+        if(
+            currentFilter === "inactive" &&
+            status !== "Inactive"
+        ){
+            continue;
+        }
+
+        if(search){
+
+            const text =
+                (
+                    String(card.name || "") +
+                    " " +
+                    String(card.description || "") +
+                    " " +
+                    String(card.source || "") +
+                    " " +
+                    String(card.type || "") +
+                    " " +
+                    status
+                )
+                .toLowerCase();
+
+            if(
+                !text.includes(search)
+            ){
+                continue;
+            }
+
+        }
+
+        filtered.push(card);
+
     }
 
-    filtered.push(card);
+    if(filtered.length === 0){
 
-}
+        box.innerHTML = "";
 
-if(filtered.length === 0){
+        empty.style.display = "block";
+
+        if(currentFilter === "inactive"){
+
+            emptyText.textContent =
+                "No inactive websites found.";
+
+        }
+        else if(currentFilter === "active"){
+
+            emptyText.textContent =
+                "No active websites found.";
+
+        }
+        else{
+
+            emptyText.textContent =
+                "No websites found.";
+
+        }
+
+        return;
+
+    }
+
+    empty.style.display = "none";
+
+    const fragment =
+        document.createDocumentFragment();
+
+    for(
+        let i = 0;
+        i < filtered.length;
+        i++
+    ){
+
+        fragment.appendChild(
+            createCard(
+                filtered[i]
+            )
+        );
+
+    }
 
     box.innerHTML = "";
 
-    empty.style.display = "block";
-
-    if(currentFilter === "inactive"){
-
-        emptyText.textContent =
-            "No inactive websites found.";
-
-    }
-    else if(currentFilter === "active"){
-
-        emptyText.textContent =
-            "No active websites found.";
-
-    }
-    else{
-
-        emptyText.textContent =
-            "No websites found.";
-
-    }
-
-    return;
-
-}
-
-empty.style.display = "none";
-
-const fragment =
-    document.createDocumentFragment();
-
-for(
-    let i = 0;
-    i < filtered.length;
-    i++
-){
-
-    fragment.appendChild(
-        createCard(
-            filtered[i]
-        )
-    );
-
-}
-
-box.innerHTML = "";
-
-box.appendChild(fragment);
+    box.appendChild(fragment);
 
 }
 
@@ -2510,205 +2508,205 @@ CREATE CARD
 
 function createCard(card){
 
-const article =
-    document.createElement(
-        "article"
-    );
+    const article =
+        document.createElement(
+            "article"
+        );
 
-article.className = "card";
+    article.className = "card";
 
-const status =
-    normalizeStatus(
-        card.status
-    );
+    const status =
+        normalizeStatus(
+            card.status
+        );
 
-if(status === "Inactive"){
+    if(status === "Inactive"){
 
-    article.classList.add(
-        "inactive-card"
-    );
+        article.classList.add(
+            "inactive-card"
+        );
 
-}
+    }
 
-const initials =
-    getInitials(
-        card.name
-    );
+    const initials =
+        getInitials(
+            card.name
+        );
 
-let logoHTML = "";
+    let logoHTML = "";
 
-if(card.logo){
+    if(card.logo){
 
-    logoHTML = `
-        <img
-            src="${escapeAttribute(card.logo)}"
-            alt=""
-            loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
-
-        <div
-            class="logo-fallback"
-            style="display:none;"
-        >
-            ${escapeHTML(initials)}
-        </div>
-    `;
-
-}
-else{
-
-    logoHTML = `
-        <div class="logo-fallback">
-            ${escapeHTML(initials)}
-        </div>
-    `;
-
-}
-
-const statusClass =
-    status === "Inactive"
-    ? "inactive"
-    : "";
-
-const safeLink =
-    normalizeWebsiteURL(
-        card.link
-    );
-
-const sourceHTML =
-    card.source
-    ?
-    `
-    <span>
-        <i class="fa-solid fa-server"></i>
-        ${escapeHTML(card.source)}
-    </span>
-    `
-    :
-    "";
-
-const typeHTML =
-    card.type
-    ?
-    `
-    <span>
-        <i class="fa-solid fa-tag"></i>
-        ${escapeHTML(card.type)}
-    </span>
-    `
-    :
-    "";
-
-article.innerHTML = `
-
-    <div class="card-top">
-
-        <div class="logo">
-            ${logoHTML}
-        </div>
-
-        <div class="card-title">
-
-            <h3>
-                ${escapeHTML(
-                    card.name ||
-                    "Unnamed Website"
-                )}
-            </h3>
-
-            <span
-                class="status-badge ${statusClass}"
+        logoHTML = `
+            <img
+                src="${escapeAttribute(card.logo)}"
+                alt=""
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
             >
 
-                <i class="fa-solid ${
-                    status === "Active"
-                    ? "fa-circle-check"
-                    : "fa-circle-xmark"
-                }"></i>
+            <div
+                class="logo-fallback"
+                style="display:none;"
+            >
+                ${escapeHTML(initials)}
+            </div>
+        `;
 
-                &nbsp;
+    }
+    else{
 
-                ${escapeHTML(status)}
+        logoHTML = `
+            <div class="logo-fallback">
+                ${escapeHTML(initials)}
+            </div>
+        `;
 
-            </span>
+    }
+
+    const statusClass =
+        status === "Inactive"
+        ? "inactive"
+        : "";
+
+    const safeLink =
+        normalizeWebsiteURL(
+            card.link
+        );
+
+    const sourceHTML =
+        card.source
+        ?
+        `
+        <span>
+            <i class="fa-solid fa-server"></i>
+            ${escapeHTML(card.source)}
+        </span>
+        `
+        :
+        "";
+
+    const typeHTML =
+        card.type
+        ?
+        `
+        <span>
+            <i class="fa-solid fa-tag"></i>
+            ${escapeHTML(card.type)}
+        </span>
+        `
+        :
+        "";
+
+    article.innerHTML = `
+
+        <div class="card-top">
+
+            <div class="logo">
+                ${logoHTML}
+            </div>
+
+            <div class="card-title">
+
+                <h3>
+                    ${escapeHTML(
+                        card.name ||
+                        "Unnamed Website"
+                    )}
+                </h3>
+
+                <span
+                    class="status-badge ${statusClass}"
+                >
+
+                    <i class="fa-solid ${
+                        status === "Active"
+                        ? "fa-circle-check"
+                        : "fa-circle-xmark"
+                    }"></i>
+
+                    &nbsp;
+
+                    ${escapeHTML(status)}
+
+                </span>
+
+            </div>
 
         </div>
 
-    </div>
+
+        <div class="card-description">
+
+            ${escapeHTML(
+                card.description ||
+                "Access website"
+            )}
+
+        </div>
 
 
-    <div class="card-description">
+        <div class="meta">
 
-        ${escapeHTML(
-            card.description ||
-            "Access website"
-        )}
+            ${sourceHTML}
 
-    </div>
+            ${typeHTML}
 
-
-    <div class="meta">
-
-        ${sourceHTML}
-
-        ${typeHTML}
-
-    </div>
+        </div>
 
 
-    <div class="card-bottom">
+        <div class="card-bottom">
 
-        <a
-            class="open-btn"
-            href="${escapeAttribute(safeLink)}"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+            <a
+                class="open-btn"
+                href="${escapeAttribute(safeLink)}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
 
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
-            Open
+                Open
 
-        </a>
+            </a>
 
 
-        <button
-            type="button"
-            class="edit-btn"
-            data-edit-id="${escapeAttribute(card.id)}"
-            title="Edit"
-        >
+            <button
+                type="button"
+                class="edit-btn"
+                data-edit-id="${escapeAttribute(card.id)}"
+                title="Edit"
+            >
 
-            <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-pen"></i>
 
-        </button>
+            </button>
 
-    </div>
+        </div>
 
-`;
+    `;
 
-const editButton =
-    article.querySelector(
-        ".edit-btn"
-    );
+    const editButton =
+        article.querySelector(
+            ".edit-btn"
+        );
 
-if(editButton){
+    if(editButton){
 
-    editButton.addEventListener(
-        "click",
-        function(){
+        editButton.addEventListener(
+            "click",
+            function(){
 
-            openEditModal(
-                this.dataset.editId
-            );
+                openEditModal(
+                    this.dataset.editId
+                );
 
-        }
-    );
+            }
+        );
 
-}
+    }
 
-return article;
+    return article;
 
 }
 
@@ -2719,9 +2717,9 @@ SEARCH
 
 function filterCards(){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-renderCards();
+    renderCards();
 
 }
 
@@ -2732,23 +2730,23 @@ ADD
 
 function openAddModal(){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-editingId = null;
+    editingId = null;
 
-document.getElementById(
-    "modalTitle"
-).textContent = "Add Website";
+    document.getElementById(
+        "modalTitle"
+    ).textContent = "Add Website";
 
-document.getElementById(
-    "deleteBtn"
-).style.display = "none";
+    document.getElementById(
+        "deleteBtn"
+    ).style.display = "none";
 
-clearForm();
+    clearForm();
 
-document.getElementById(
-    "cardModal"
-).classList.add("show");
+    document.getElementById(
+        "cardModal"
+    ).classList.add("show");
 
 }
 
@@ -2759,83 +2757,83 @@ EDIT
 
 function openEditModal(id){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-const card =
-    cards.find(
-        function(item){
+    const card =
+        cards.find(
+            function(item){
 
-            return String(item.id) === String(id);
+                return String(item.id) === String(id);
 
-        }
-    );
+            }
+        );
 
-if(!card){
+    if(!card){
 
-    showToast(
-        "Website not found.",
-        "error"
-    );
+        showToast(
+            "Website not found.",
+            "error"
+        );
 
-    return;
+        return;
 
-}
+    }
 
-editingId = card.id;
+    editingId = card.id;
 
-document.getElementById(
-    "modalTitle"
-).textContent = "Edit Website";
+    document.getElementById(
+        "modalTitle"
+    ).textContent = "Edit Website";
 
-document.getElementById(
-    "deleteBtn"
-).style.display = "block";
+    document.getElementById(
+        "deleteBtn"
+    ).style.display = "block";
 
-document.getElementById(
-    "formName"
-).value =
-    card.name || "";
+    document.getElementById(
+        "formName"
+    ).value =
+        card.name || "";
 
-document.getElementById(
-    "formLink"
-).value =
-    card.link || "";
+    document.getElementById(
+        "formLink"
+    ).value =
+        card.link || "";
 
-document.getElementById(
-    "formLogo"
-).value =
-    card.logo || "";
+    document.getElementById(
+        "formLogo"
+    ).value =
+        card.logo || "";
 
-document.getElementById(
-    "formDescription"
-).value =
-    card.description || "";
+    document.getElementById(
+        "formDescription"
+    ).value =
+        card.description || "";
 
-document.getElementById(
-    "formSource"
-).value =
-    card.source || "";
+    document.getElementById(
+        "formSource"
+    ).value =
+        card.source || "";
 
-document.getElementById(
-    "formType"
-).value =
-    card.type || "";
+    document.getElementById(
+        "formType"
+    ).value =
+        card.type || "";
 
-document.getElementById(
-    "formPosition"
-).value =
-    card.position || "";
+    document.getElementById(
+        "formPosition"
+    ).value =
+        card.position || "";
 
-document.getElementById(
-    "formStatus"
-).value =
-    normalizeStatus(
-        card.status
-    );
+    document.getElementById(
+        "formStatus"
+    ).value =
+        normalizeStatus(
+            card.status
+        );
 
-document.getElementById(
-    "cardModal"
-).classList.add("show");
+    document.getElementById(
+        "cardModal"
+    ).classList.add("show");
 
 }
 
@@ -2846,27 +2844,27 @@ CLEAR FORM
 
 function clearForm(){
 
-[
-    "formName",
-    "formLink",
-    "formLogo",
-    "formDescription",
-    "formSource",
-    "formType",
-    "formPosition"
-].forEach(
-    function(id){
+    [
+        "formName",
+        "formLink",
+        "formLogo",
+        "formDescription",
+        "formSource",
+        "formType",
+        "formPosition"
+    ].forEach(
+        function(id){
 
-        document.getElementById(
-            id
-        ).value = "";
+            document.getElementById(
+                id
+            ).value = "";
 
-    }
-);
+        }
+    );
 
-document.getElementById(
-    "formStatus"
-).value = "Active";
+    document.getElementById(
+        "formStatus"
+    ).value = "Active";
 
 }
 
@@ -2877,13 +2875,13 @@ CLOSE MODAL
 
 function closeModal(){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-document.getElementById(
-    "cardModal"
-).classList.remove("show");
+    document.getElementById(
+        "cardModal"
+    ).classList.remove("show");
 
-editingId = null;
+    editingId = null;
 
 }
 
@@ -2894,36 +2892,36 @@ URL NORMALIZER
 
 function normalizeWebsiteURL(value){
 
-let url =
-    String(value || "")
-    .trim();
+    let url =
+        String(value || "")
+        .trim();
 
-if(!url){
-    return "";
-}
+    if(!url){
+        return "";
+    }
 
-if(
-    /^https?:\/\//i.test(url)
-){
-    return url;
-}
+    if(
+        /^https?:\/\//i.test(url)
+    ){
+        return url;
+    }
 
-if(
-    url.startsWith("//")
-){
-    return "https:" + url;
-}
+    if(
+        url.startsWith("//")
+    ){
+        return "https:" + url;
+    }
 
-const ipPattern =
-    /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
+    const ipPattern =
+        /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
 
-if(
-    ipPattern.test(url)
-){
-    return "http://" + url;
-}
+    if(
+        ipPattern.test(url)
+    ){
+        return "http://" + url;
+    }
 
-return "https://" + url;
+    return "https://" + url;
 
 }
 
@@ -2934,166 +2932,166 @@ SAVE
 
 async function saveCard(){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-const rawLink =
-    document.getElementById(
-        "formLink"
-    ).value.trim();
-
-const normalizedLink =
-    normalizeWebsiteURL(
-        rawLink
-    );
-
-const payload = {
-
-    action:
-        editingId
-        ? "updateCard"
-        : "addCard",
-
-    id:
-        editingId || "",
-
-    name:
+    const rawLink =
         document.getElementById(
-            "formName"
-        ).value.trim(),
+            "formLink"
+        ).value.trim();
 
-    link:
-        normalizedLink,
-
-    logo:
-        document.getElementById(
-            "formLogo"
-        ).value.trim(),
-
-    description:
-        document.getElementById(
-            "formDescription"
-        ).value.trim(),
-
-    source:
-        document.getElementById(
-            "formSource"
-        ).value.trim(),
-
-    type:
-        document.getElementById(
-            "formType"
-        ).value.trim(),
-
-    position:
-        document.getElementById(
-            "formPosition"
-        ).value,
-
-    status:
-        normalizeStatus(
-            document.getElementById(
-                "formStatus"
-            ).value
-        )
-
-};
-
-if(!payload.name){
-
-    showToast(
-        "Website name is required.",
-        "error"
-    );
-
-    return;
-
-}
-
-if(!payload.link){
-
-    showToast(
-        "Website link is required.",
-        "error"
-    );
-
-    return;
-
-}
-
-document.getElementById(
-    "formLink"
-).value =
-    normalizedLink;
-
-const saveBtn =
-    document.getElementById(
-        "saveBtn"
-    );
-
-saveBtn.disabled = true;
-
-saveBtn.innerHTML =
-    '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-try{
-
-    const response =
-        await fetch(
-            API_URL,
-            {
-                method:"POST",
-
-                headers:{
-                    "Content-Type":
-                        "text/plain;charset=utf-8"
-                },
-
-                body:
-                    JSON.stringify(
-                        payload
-                    )
-            }
+    const normalizedLink =
+        normalizeWebsiteURL(
+            rawLink
         );
 
-    const data =
-        await response.json();
+    const payload = {
 
-    if(!data.success){
+        action:
+            editingId
+            ? "updateCard"
+            : "addCard",
 
-        throw new Error(
+        id:
+            editingId || "",
+
+        name:
+            document.getElementById(
+                "formName"
+            ).value.trim(),
+
+        link:
+            normalizedLink,
+
+        logo:
+            document.getElementById(
+                "formLogo"
+            ).value.trim(),
+
+        description:
+            document.getElementById(
+                "formDescription"
+            ).value.trim(),
+
+        source:
+            document.getElementById(
+                "formSource"
+            ).value.trim(),
+
+        type:
+            document.getElementById(
+                "formType"
+            ).value.trim(),
+
+        position:
+            document.getElementById(
+                "formPosition"
+            ).value,
+
+        status:
+            normalizeStatus(
+                document.getElementById(
+                    "formStatus"
+                ).value
+            )
+
+    };
+
+    if(!payload.name){
+
+        showToast(
+            "Website name is required.",
+            "error"
+        );
+
+        return;
+
+    }
+
+    if(!payload.link){
+
+        showToast(
+            "Website link is required.",
+            "error"
+        );
+
+        return;
+
+    }
+
+    document.getElementById(
+        "formLink"
+    ).value =
+        normalizedLink;
+
+    const saveBtn =
+        document.getElementById(
+            "saveBtn"
+        );
+
+    saveBtn.disabled = true;
+
+    saveBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            payload
+                        )
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if(!data.success){
+
+            throw new Error(
+                data.message ||
+                "Save failed."
+            );
+
+        }
+
+        closeModal();
+
+        showToast(
             data.message ||
-            "Save failed."
+            "Saved successfully.",
+            "success"
+        );
+
+        await loadCards();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        showToast(
+            error.message ||
+            "Save failed.",
+            "error"
         );
 
     }
 
-    closeModal();
+    saveBtn.disabled = false;
 
-    showToast(
-        data.message ||
-        "Saved successfully.",
-        "success"
-    );
-
-    await loadCards();
-
-}
-catch(error){
-
-    console.error(error);
-
-    showToast(
-        error.message ||
-        "Save failed.",
-        "error"
-    );
-
-}
-
-saveBtn.disabled = false;
-
-saveBtn.innerHTML =
-    '<i class="fa-solid fa-check"></i> Save';
+    saveBtn.innerHTML =
+        '<i class="fa-solid fa-check"></i> Save';
 
 }
 
@@ -3104,78 +3102,78 @@ DELETE
 
 async function deleteCurrentCard(){
 
-resetInactivityTimer();
+    resetInactivityTimer();
 
-if(!editingId){
-    return;
-}
+    if(!editingId){
+        return;
+    }
 
-if(
-    !confirm(
-        "Are you sure you want to delete this website?"
-    )
-){
-    return;
-}
+    if(
+        !confirm(
+            "Are you sure you want to delete this website?"
+        )
+    ){
+        return;
+    }
 
-try{
+    try{
 
-    const response =
-        await fetch(
-            API_URL,
-            {
-                method:"POST",
+        const response =
+            await fetch(
+                API_URL,
+                {
+                    method:"POST",
 
-                headers:{
-                    "Content-Type":
-                        "text/plain;charset=utf-8"
-                },
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
 
-                body:
-                    JSON.stringify({
+                    body:
+                        JSON.stringify({
 
-                        action:
-                            "deleteCard",
+                            action:
+                                "deleteCard",
 
-                        id:
-                            editingId
+                            id:
+                                editingId
 
-                    })
-            }
+                        })
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if(!data.success){
+
+            throw new Error(
+                data.message ||
+                "Delete failed."
+            );
+
+        }
+
+        closeModal();
+
+        showToast(
+            data.message ||
+            "Website deleted.",
+            "success"
         );
 
-    const data =
-        await response.json();
+        await loadCards();
 
-    if(!data.success){
+    }
+    catch(error){
 
-        throw new Error(
-            data.message ||
-            "Delete failed."
+        showToast(
+            error.message ||
+            "Delete failed.",
+            "error"
         );
 
     }
-
-    closeModal();
-
-    showToast(
-        data.message ||
-        "Website deleted.",
-        "success"
-    );
-
-    await loadCards();
-
-}
-catch(error){
-
-    showToast(
-        error.message ||
-        "Delete failed.",
-        "error"
-    );
-
-}
 
 }
 
@@ -3186,18 +3184,18 @@ ESCAPE HTML
 
 function escapeHTML(value){
 
-return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 function escapeAttribute(value){
 
-return escapeHTML(value);
+    return escapeHTML(value);
 
 }
 
@@ -3208,25 +3206,25 @@ INITIALS
 
 function getInitials(name){
 
-const words =
-    String(
-        name || "W"
-    )
-    .trim()
-    .split(/\s+/);
+    const words =
+        String(
+            name || "W"
+        )
+        .trim()
+        .split(/\s+/);
 
-if(words.length === 1){
+    if(words.length === 1){
 
-    return words[0]
-        .substring(0,2)
-        .toUpperCase();
+        return words[0]
+            .substring(0,2)
+            .toUpperCase();
 
-}
+    }
 
-return (
-    words[0][0] +
-    words[1][0]
-).toUpperCase();
+    return (
+        words[0][0] +
+        words[1][0]
+    ).toUpperCase();
 
 }
 
@@ -3239,34 +3237,34 @@ let toastTimer;
 
 function showToast(message,type){
 
-const toast =
-    document.getElementById(
-        "toast"
-    );
+    const toast =
+        document.getElementById(
+            "toast"
+        );
 
-toast.textContent = message;
+    toast.textContent = message;
 
-toast.className =
-    "toast show " +
-    (
-        type === "error"
-        ? "error"
-        : "success"
-    );
+    toast.className =
+        "toast show " +
+        (
+            type === "error"
+            ? "error"
+            : "success"
+        );
 
-clearTimeout(toastTimer);
+    clearTimeout(toastTimer);
 
-toastTimer =
-    setTimeout(
-        function(){
+    toastTimer =
+        setTimeout(
+            function(){
 
-            toast.classList.remove(
-                "show"
-            );
+                toast.classList.remove(
+                    "show"
+                );
 
-        },
-        3000
-    );
+            },
+            3000
+        );
 
 }
 
@@ -3276,19 +3274,19 @@ MODAL CLICK
 ========================================================= */
 
 document.getElementById(
-"cardModal"
+    "cardModal"
 )
 .addEventListener(
-"click",
-function(e){
+    "click",
+    function(e){
 
-    if(e.target === this){
+        if(e.target === this){
 
-        closeModal();
+            closeModal();
+
+        }
 
     }
-
-}
 );
 
 
@@ -3297,16 +3295,16 @@ ESC
 ========================================================= */
 
 document.addEventListener(
-"keydown",
-function(e){
+    "keydown",
+    function(e){
 
-    if(e.key === "Escape"){
+        if(e.key === "Escape"){
 
-        closeModal();
+            closeModal();
+
+        }
 
     }
-
-}
 );
 
 </script>
