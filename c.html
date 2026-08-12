@@ -1,45 +1,48 @@
-\<!DOCTYPE html>
-\<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-\<head>
+<head>
 
-\<meta charset="UTF-8">
+<meta charset="UTF-8">
 
-\<meta
+<meta
 name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-\>
+>
 
-\<title>Website Control Dashboard\</title>
+<title>Website Control Dashboard</title>
 
-\<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-\<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+<!-- Website Icon -->
+<link rel="icon" type="image/png" href="./icon.png">
 
-\<link
-href="[https://fonts.googleapis.com/css2?family=Inter\:wght@400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Inter\:wght@400;500;600;700;800\&display=swap)"
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"
-\>
+>
 
-\<link
+<link
 rel="stylesheet"
-href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css)"
-\>
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
-\<style>
+<style>
 
-/\* =========================================================
+/* =========================================================
 RESET
-\========================================================= \*/
+========================================================= */
 
-\*{
+*{
 margin:0;
 padding:0;
-box-sizing\:border-box;
--webkit-tap-highlight-color\:transparent;
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
 }
 
 html{
-scroll-behavior\:smooth;
+scroll-behavior:smooth;
 }
 
 body{
@@ -47,37 +50,37 @@ font-family:"Inter",sans-serif;
 background:
 radial-gradient(
 circle at top left,
-\#172033 0%,
-\#0b1019 42%,
-\#06090e 100%
+#172033 0%,
+#0b1019 42%,
+#06090e 100%
 );
 color:#f8fafc;
 min-height:100vh;
-overflow-x\:hidden;
+overflow-x:hidden;
 }
 
-/\* =========================================================
+/* =========================================================
 LOGIN
-\========================================================= \*/
+========================================================= */
 
-\#loginScreen{
+#loginScreen{
 min-height:100vh;
 min-height:100dvh;
-display\:flex;
-align-items\:center;
-justify-content\:center;
+display:flex;
+align-items:center;
+justify-content:center;
 padding:18px;
 }
 
 .login-box{
 width:100%;
 max-width:390px;
-background\:rgba(15,23,42,.94);
+background:rgba(15,23,42,.94);
 border:1px solid rgba(255,255,255,.08);
 border-radius:22px;
 padding:28px 22px;
 box-shadow:0 25px 70px rgba(0,0,0,.45);
-backdrop-filter\:blur(18px);
+backdrop-filter:blur(18px);
 }
 
 .login-icon{
@@ -85,23 +88,23 @@ width:64px;
 height:64px;
 border-radius:18px;
 margin:0 auto 18px;
-display\:flex;
-align-items\:center;
-justify-content\:center;
+display:flex;
+align-items:center;
+justify-content:center;
 font-size:25px;
-background\:linear-gradient(135deg,#22c55e,#16a34a);
+background:linear-gradient(135deg,#22c55e,#16a34a);
 color:#fff;
 box-shadow:0 12px 30px rgba(34,197,94,.20);
 }
 
 .login-box h1{
-text-align\:center;
+text-align:center;
 font-size:23px;
 font-weight:800;
 }
 
 .login-box p{
-text-align\:center;
+text-align:center;
 color:#94a3b8;
 font-size:12px;
 margin-top:7px;
@@ -113,7 +116,7 @@ margin-bottom:16px;
 }
 
 .input-group label{
-display\:block;
+display:block;
 font-size:12px;
 font-weight:600;
 color:#cbd5e1;
@@ -121,14 +124,14 @@ margin-bottom:7px;
 }
 
 .input-wrap{
-position\:relative;
+position:relative;
 }
 
 .input-wrap i{
-position\:absolute;
+position:absolute;
 left:14px;
 top:50%;
-transform\:translateY(-50%);
+transform:translateY(-50%);
 color:#64748b;
 }
 
@@ -139,12 +142,12 @@ border-radius:12px;
 border:1px solid rgba(255,255,255,.08);
 background:#080e17;
 color:#fff;
-outline\:none;
+outline:none;
 padding:0 14px 0 42px;
 font-size:14px;
 }
 
-.input-wrap input\:focus{
+.input-wrap input:focus{
 border-color:#22c55e;
 box-shadow:0 0 0 3px rgba(34,197,94,.08);
 }
@@ -152,66 +155,66 @@ box-shadow:0 0 0 3px rgba(34,197,94,.08);
 .login-btn{
 width:100%;
 height:50px;
-border\:none;
+border:none;
 border-radius:12px;
-background\:linear-gradient(135deg,#22c55e,#16a34a);
+background:linear-gradient(135deg,#22c55e,#16a34a);
 color:#fff;
 font-size:14px;
 font-weight:700;
-cursor\:pointer;
+cursor:pointer;
 }
 
-.login-btn\:active{
-transform\:scale(.98);
+.login-btn:active{
+transform:scale(.98);
 }
 
-.login-btn\:disabled{
+.login-btn:disabled{
 opacity:.6;
 }
 
 .login-error{
-display\:none;
+display:none;
 margin-top:13px;
 padding:11px;
 border-radius:10px;
-background\:rgba(239,68,68,.10);
+background:rgba(239,68,68,.10);
 border:1px solid rgba(239,68,68,.20);
 color:#fca5a5;
 font-size:12px;
-text-align\:center;
+text-align:center;
 }
 
-/\* =========================================================
+/* =========================================================
 DASHBOARD
-\========================================================= \*/
+========================================================= */
 
-\#dashboard{
-display\:none;
+#dashboard{
+display:none;
 min-height:100vh;
 min-height:100dvh;
 }
 
-/\* =========================================================
+/* =========================================================
 TOPBAR
-\========================================================= \*/
+========================================================= */
 
 .topbar{
 height:68px;
-position\:sticky;
+position:sticky;
 top:0;
 z-index:100;
-display\:flex;
-align-items\:center;
-justify-content\:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 padding:0 24px;
-background\:rgba(7,10,16,.88);
+background:rgba(7,10,16,.88);
 border-bottom:1px solid rgba(255,255,255,.07);
-backdrop-filter\:blur(18px);
+backdrop-filter:blur(18px);
 }
 
 .brand{
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:10px;
 }
 
@@ -219,10 +222,10 @@ gap:10px;
 width:39px;
 height:39px;
 border-radius:11px;
-display\:flex;
-align-items\:center;
-justify-content\:center;
-background\:linear-gradient(135deg,#22c55e,#16a34a);
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#22c55e,#16a34a);
 font-size:16px;
 }
 
@@ -232,20 +235,20 @@ font-weight:800;
 }
 
 .brand-text span{
-display\:block;
+display:block;
 font-size:10px;
 color:#64748b;
 margin-top:2px;
 }
 
 .user-area{
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:10px;
 }
 
 .user-info{
-text-align\:right;
+text-align:right;
 }
 
 .user-name{
@@ -266,28 +269,28 @@ border-radius:10px;
 border:1px solid rgba(255,255,255,.08);
 background:#111827;
 color:#f87171;
-cursor\:pointer;
+cursor:pointer;
 }
 
-.logout-btn\:active{
-transform\:scale(.94);
+.logout-btn:active{
+transform:scale(.94);
 }
 
-/\* =========================================================
+/* =========================================================
 CONTENT
-\========================================================= \*/
+========================================================= */
 
 .container{
 width:100%;
 max-width:1450px;
-margin\:auto;
+margin:auto;
 padding:27px;
 }
 
 .page-head{
-display\:flex;
-align-items\:center;
-justify-content\:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 gap:15px;
 margin-bottom:16px;
 }
@@ -307,40 +310,40 @@ margin-top:5px;
 .add-btn{
 height:42px;
 padding:0 16px;
-border\:none;
+border:none;
 border-radius:10px;
-background\:linear-gradient(135deg,#22c55e,#16a34a);
+background:linear-gradient(135deg,#22c55e,#16a34a);
 color:#fff;
 font-size:12px;
 font-weight:700;
-cursor\:pointer;
-display\:flex;
-align-items\:center;
+cursor:pointer;
+display:flex;
+align-items:center;
 gap:7px;
-white-space\:nowrap;
+white-space:nowrap;
 }
 
-.add-btn\:active{
-transform\:scale(.96);
+.add-btn:active{
+transform:scale(.96);
 }
 
-/\* =========================================================
+/* =========================================================
 COMPACT STATS
-\========================================================= \*/
+========================================================= */
 
 .dashboard-tools{
-display\:flex;
-align-items\:center;
-justify-content\:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 gap:12px;
 margin-bottom:13px;
 }
 
 .stats{
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:7px;
-flex-wrap\:nowrap;
+flex-wrap:nowrap;
 }
 
 .stat-card{
@@ -356,21 +359,21 @@ rgba(20,29,46,.96),
 rgba(9,14,23,.96)
 );
 border:1px solid rgba(255,255,255,.07);
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:8px;
 }
 
 .stat-card.total{
-border-color\:rgba(59,130,246,.25);
+border-color:rgba(59,130,246,.25);
 }
 
 .stat-card.active{
-border-color\:rgba(34,197,94,.25);
+border-color:rgba(34,197,94,.25);
 }
 
 .stat-card.inactive{
-border-color\:rgba(239,68,68,.25);
+border-color:rgba(239,68,68,.25);
 }
 
 .stat-icon{
@@ -378,24 +381,24 @@ width:29px;
 height:29px;
 min-width:29px;
 border-radius:7px;
-display\:flex;
-align-items\:center;
-justify-content\:center;
+display:flex;
+align-items:center;
+justify-content:center;
 font-size:10px;
 }
 
 .stat-card.total .stat-icon{
-background\:rgba(59,130,246,.14);
+background:rgba(59,130,246,.14);
 color:#60a5fa;
 }
 
 .stat-card.active .stat-icon{
-background\:rgba(34,197,94,.14);
+background:rgba(34,197,94,.14);
 color:#4ade80;
 }
 
 .stat-card.inactive .stat-icon{
-background\:rgba(239,68,68,.14);
+background:rgba(239,68,68,.14);
 color:#f87171;
 }
 
@@ -407,7 +410,7 @@ min-width:0;
 font-size:7px;
 color:#64748b;
 font-weight:700;
-text-transform\:uppercase;
+text-transform:uppercase;
 line-height:1;
 }
 
@@ -419,24 +422,24 @@ line-height:1;
 }
 
 .stat-sub{
-display\:none;
+display:none;
 }
 
-/\* =========================================================
+/* =========================================================
 FILTER
-\========================================================= \*/
+========================================================= */
 
 .filter-row{
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:5px;
 margin-bottom:13px;
-overflow-x\:auto;
-scrollbar-width\:none;
+overflow-x:auto;
+scrollbar-width:none;
 }
 
 .filter-row::-webkit-scrollbar{
-display\:none;
+display:none;
 }
 
 .filter-btn{
@@ -448,40 +451,40 @@ background:#0f172a;
 color:#94a3b8;
 font-size:8px;
 font-weight:700;
-cursor\:pointer;
-display\:flex;
-align-items\:center;
+cursor:pointer;
+display:flex;
+align-items:center;
 gap:5px;
-white-space\:nowrap;
+white-space:nowrap;
 }
 
 .filter-btn.active{
-background\:rgba(34,197,94,.12);
-border-color\:rgba(34,197,94,.30);
+background:rgba(34,197,94,.12);
+border-color:rgba(34,197,94,.30);
 color:#4ade80;
 }
 
-/\* =========================================================
+/* =========================================================
 SEARCH
-\========================================================= \*/
+========================================================= */
 
 .toolbar{
 width:100%;
-display\:flex;
-justify-content\:flex-end;
+display:flex;
+justify-content:flex-end;
 margin-bottom:15px;
 }
 
 .search-box{
 width:310px;
-position\:relative;
+position:relative;
 }
 
 .search-box i{
-position\:absolute;
+position:absolute;
 left:13px;
 top:50%;
-transform\:translateY(-50%);
+transform:translateY(-50%);
 color:#64748b;
 font-size:12px;
 }
@@ -491,24 +494,24 @@ width:100%;
 height:40px;
 border-radius:10px;
 border:1px solid rgba(255,255,255,.08);
-background\:rgba(15,23,42,.80);
+background:rgba(15,23,42,.80);
 color:#fff;
-outline\:none;
+outline:none;
 padding:0 13px 0 38px;
 font-size:11px;
 }
 
-.search-box input\:focus{
+.search-box input:focus{
 border-color:#22c55e;
 }
 
-/\* =========================================================
+/* =========================================================
 CARDS
-\========================================================= \*/
+========================================================= */
 
 .cards{
-display\:grid;
-grid-template-columns\:repeat(auto-fill,minmax(225px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
 gap:14px;
 }
 
@@ -527,22 +530,22 @@ transition:.18s ease;
 }
 
 .card.inactive-card{
-border-color\:rgba(239,68,68,.18);
+border-color:rgba(239,68,68,.18);
 }
 
-.card\:hover{
-transform\:translateY(-2px);
-border-color\:rgba(34,197,94,.25);
+.card:hover{
+transform:translateY(-2px);
+border-color:rgba(34,197,94,.25);
 box-shadow:0 12px 28px rgba(0,0,0,.22);
 }
 
-.card.inactive-card\:hover{
-border-color\:rgba(239,68,68,.30);
+.card.inactive-card:hover{
+border-color:rgba(239,68,68,.30);
 }
 
 .card-top{
-display\:flex;
-align-items\:center;
+display:flex;
+align-items:center;
 gap:10px;
 min-width:0;
 }
@@ -552,10 +555,10 @@ width:45px;
 height:45px;
 min-width:45px;
 border-radius:12px;
-overflow\:hidden;
-display\:flex;
-align-items\:center;
-justify-content\:center;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
 background:#111827;
 border:1px solid rgba(255,255,255,.07);
 }
@@ -563,7 +566,7 @@ border:1px solid rgba(255,255,255,.07);
 .logo img{
 width:100%;
 height:100%;
-object-fit\:cover;
+object-fit:cover;
 }
 
 .logo-fallback{
@@ -584,23 +587,23 @@ flex:1;
 .card-title h3{
 font-size:13px;
 font-weight:700;
-white-space\:nowrap;
-overflow\:hidden;
-text-overflow\:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
 }
 
 .status-badge{
-display\:inline-flex;
+display:inline-flex;
 margin-top:4px;
 font-size:8px;
 padding:4px 6px;
 border-radius:5px;
-background\:rgba(34,197,94,.10);
+background:rgba(34,197,94,.10);
 color:#4ade80;
 }
 
 .status-badge.inactive{
-background\:rgba(239,68,68,.10);
+background:rgba(239,68,68,.10);
 color:#f87171;
 }
 
@@ -612,14 +615,14 @@ margin-top:11px;
 min-height:30px;
 display:-webkit-box;
 -webkit-line-clamp:2;
--webkit-box-orient\:vertical;
-overflow\:hidden;
+-webkit-box-orient:vertical;
+overflow:hidden;
 }
 
 .meta{
-display\:flex;
+display:flex;
 gap:5px;
-flex-wrap\:wrap;
+flex-wrap:wrap;
 margin-top:9px;
 }
 
@@ -630,11 +633,11 @@ background:#111827;
 border:1px solid rgba(255,255,255,.05);
 padding:4px 6px;
 border-radius:5px;
-white-space\:nowrap;
+white-space:nowrap;
 }
 
 .card-bottom{
-display\:flex;
+display:flex;
 gap:7px;
 margin-top:12px;
 }
@@ -644,26 +647,26 @@ flex:1;
 min-width:0;
 height:34px;
 border-radius:8px;
-text-decoration\:none;
-display\:flex;
-align-items\:center;
-justify-content\:center;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
 gap:5px;
 font-size:10px;
 font-weight:700;
-background\:rgba(34,197,94,.10);
+background:rgba(34,197,94,.10);
 border:1px solid rgba(34,197,94,.18);
 color:#4ade80;
 }
 
 .inactive-card .open-btn{
-background\:rgba(100,116,139,.08);
-border-color\:rgba(100,116,139,.15);
+background:rgba(100,116,139,.08);
+border-color:rgba(100,116,139,.15);
 color:#94a3b8;
 }
 
-.open-btn\:active{
-transform\:scale(.97);
+.open-btn:active{
+transform:scale(.97);
 }
 
 .edit-btn{
@@ -674,19 +677,19 @@ border-radius:8px;
 border:1px solid rgba(255,255,255,.07);
 background:#111827;
 color:#cbd5e1;
-cursor\:pointer;
+cursor:pointer;
 }
 
-.edit-btn\:active{
-transform\:scale(.94);
+.edit-btn:active{
+transform:scale(.94);
 }
 
-/\* =========================================================
+/* =========================================================
 LOADING / EMPTY
-\========================================================= \*/
+========================================================= */
 
 .loading{
-text-align\:center;
+text-align:center;
 padding:40px 20px;
 color:#64748b;
 font-size:11px;
@@ -697,8 +700,8 @@ font-size:19px;
 }
 
 .empty{
-display\:none;
-text-align\:center;
+display:none;
+text-align:center;
 padding:60px 20px;
 color:#64748b;
 font-size:12px;
@@ -709,32 +712,32 @@ font-size:35px;
 margin-bottom:12px;
 }
 
-/\* =========================================================
+/* =========================================================
 MODAL
-\========================================================= \*/
+========================================================= */
 
 .modal{
-display\:none;
-position\:fixed;
+display:none;
+position:fixed;
 inset:0;
 z-index:500;
-background\:rgba(0,0,0,.72);
-backdrop-filter\:blur(7px);
-align-items\:center;
-justify-content\:center;
+background:rgba(0,0,0,.72);
+backdrop-filter:blur(7px);
+align-items:center;
+justify-content:center;
 padding:15px;
 }
 
 .modal.show{
-display\:flex;
+display:flex;
 }
 
 .modal-box{
 width:100%;
 max-width:570px;
-max-height\:calc(100vh - 30px);
-max-height\:calc(100dvh - 30px);
-overflow-y\:auto;
+max-height:calc(100vh - 30px);
+max-height:calc(100dvh - 30px);
+overflow-y:auto;
 background:#0f172a;
 border:1px solid rgba(255,255,255,.08);
 border-radius:18px;
@@ -743,9 +746,9 @@ box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
 .modal-head{
-display\:flex;
-align-items\:center;
-justify-content\:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 margin-bottom:18px;
 }
 
@@ -756,22 +759,22 @@ font-size:18px;
 .close-btn{
 width:34px;
 height:34px;
-border\:none;
+border:none;
 border-radius:8px;
 background:#111827;
 color:#94a3b8;
-cursor\:pointer;
+cursor:pointer;
 }
 
 .form-grid{
-display\:grid;
+display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
 .form-group{
-display\:flex;
-flex-direction\:column;
+display:flex;
+flex-direction:column;
 gap:6px;
 }
 
@@ -793,9 +796,9 @@ border:1px solid rgba(255,255,255,.08);
 background:#080d16;
 color:#fff;
 border-radius:8px;
-outline\:none;
+outline:none;
 padding:10px;
-font-family\:inherit;
+font-family:inherit;
 font-size:11px;
 }
 
@@ -805,26 +808,26 @@ height:39px;
 
 .form-group textarea{
 min-height:70px;
-resize\:vertical;
+resize:vertical;
 }
 
-.form-group input\:focus,
-.form-group textarea\:focus,
-.form-group select\:focus{
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
 border-color:#22c55e;
 }
 
 .modal-actions{
-display\:flex;
-align-items\:center;
-justify-content\:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 gap:10px;
 margin-top:20px;
 }
 
 .left-actions,
 .right-actions{
-display\:flex;
+display:flex;
 gap:7px;
 }
 
@@ -833,7 +836,7 @@ height:37px;
 padding:0 14px;
 border-radius:8px;
 border:1px solid rgba(255,255,255,.08);
-cursor\:pointer;
+cursor:pointer;
 font-size:10px;
 font-weight:700;
 }
@@ -850,54 +853,53 @@ border-color:#22c55e;
 }
 
 .delete-btn{
-background\:rgba(239,68,68,.10);
+background:rgba(239,68,68,.10);
 color:#f87171;
-border-color\:rgba(239,68,68,.20);
+border-color:rgba(239,68,68,.20);
 }
 
-/\* =========================================================
+/* =========================================================
 TOAST
-\========================================================= \*/
+========================================================= */
 
 .toast{
-position\:fixed;
+position:fixed;
 left:50%;
 bottom:20px;
-transform\:translateX(-50%);
+transform:translateX(-50%);
 z-index:1000;
-width\:max-content;
-max-width\:calc(100% - 30px);
+width:max-content;
+max-width:calc(100% - 30px);
 padding:11px 15px;
 border-radius:9px;
 background:#111827;
 border:1px solid rgba(255,255,255,.08);
 box-shadow:0 15px 35px rgba(0,0,0,.35);
 font-size:11px;
-display\:none;
-text-align\:center;
+display:none;
+text-align:center;
 }
 
 .toast.show{
-display\:block;
+display:block;
 }
 
 .toast.success{
-border-color\:rgba(34,197,94,.25);
+border-color:rgba(34,197,94,.25);
 color:#4ade80;
 }
 
 .toast.error{
-border-color\:rgba(239,68,68,.25);
+border-color:rgba(239,68,68,.25);
 color:#f87171;
 }
 
-/\* =========================================================
+/* =========================================================
 MOBILE
-\========================================================= \*/
+========================================================= */
 
 @media(max-width:650px){
 
-```
 .topbar{
     height:62px;
     padding:0 13px;
@@ -919,7 +921,7 @@ MOBILE
 }
 
 .brand-text span{
-    display\:none;
+    display:none;
 }
 
 .user-area{
@@ -927,7 +929,7 @@ MOBILE
 }
 
 .user-info{
-    display\:none;
+    display:none;
 }
 
 .logout-btn{
@@ -940,7 +942,7 @@ MOBILE
 }
 
 .page-head{
-    align-items\:center;
+    align-items:center;
     margin-bottom:10px;
 }
 
@@ -957,32 +959,31 @@ MOBILE
     width:40px;
     height:40px;
     padding:0;
-    justify-content\:center;
+    justify-content:center;
     border-radius:10px;
 }
 
 .add-btn span{
-    display\:none;
+    display:none;
 }
 
-
-/\* COMPACT MOBILE STATS \*/
+/* COMPACT MOBILE STATS */
 
 .dashboard-tools{
-    display\:block;
+    display:block;
     margin-bottom:9px;
 }
 
 .stats{
     width:100%;
-    display\:flex;
+    display:flex;
     gap:5px;
     margin-bottom:8px;
 }
 
 .stat-card{
     flex:1;
-    width\:auto;
+    width:auto;
     min-width:0;
     height:52px;
     padding:7px;
@@ -1007,8 +1008,7 @@ MOBILE
     margin-top:3px;
 }
 
-
-/\* FILTER \*/
+/* FILTER */
 
 .filter-row{
     margin-bottom:9px;
@@ -1021,8 +1021,7 @@ MOBILE
     font-size:7.5px;
 }
 
-
-/\* SEARCH \*/
+/* SEARCH */
 
 .toolbar{
     margin-bottom:10px;
@@ -1037,11 +1036,10 @@ MOBILE
     font-size:10px;
 }
 
-
-/\* CARDS \*/
+/* CARDS */
 
 .cards{
-    grid-template-columns\:repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:8px;
 }
 
@@ -1050,8 +1048,8 @@ MOBILE
     border-radius:12px;
 }
 
-.card\:hover{
-    transform\:none;
+.card:hover{
+    transform:none;
 }
 
 .card-top{
@@ -1112,16 +1110,15 @@ MOBILE
     font-size:8px;
 }
 
-
-/\* MODAL \*/
+/* MODAL */
 
 .modal{
     padding:8px;
-    align-items\:flex-end;
+    align-items:flex-end;
 }
 
 .modal-box{
-    max-height\:calc(100dvh - 16px);
+    max-height:calc(100dvh - 16px);
     border-radius:17px 17px 0 0;
     padding:18px 15px;
 }
@@ -1132,7 +1129,7 @@ MOBILE
 }
 
 .form-group.full{
-    grid-column\:auto;
+    grid-column:auto;
 }
 
 .form-group input{
@@ -1140,8 +1137,8 @@ MOBILE
 }
 
 .modal-actions{
-    flex-direction\:column;
-    align-items\:stretch;
+    flex-direction:column;
+    align-items:stretch;
 }
 
 .left-actions,
@@ -1150,7 +1147,7 @@ MOBILE
 }
 
 .right-actions{
-    display\:grid;
+    display:grid;
     grid-template-columns:1fr 1fr;
 }
 
@@ -1161,13 +1158,11 @@ MOBILE
 .btn{
     height:40px;
 }
-```
 
 }
 
 @media(max-width:370px){
 
-```
 .container{
     padding-left:8px;
     padding-right:8px;
@@ -1198,642 +1193,597 @@ MOBILE
 .card{
     padding:8px;
 }
-```
 
 }
 
 @media(max-width:300px){
 
-```
 .cards{
     grid-template-columns:1fr;
 }
-```
 
 }
 
-/\* =========================================================
+/* =========================================================
 SCROLLBAR
-\========================================================= \*/
+========================================================= */
 
-\::-webkit-scrollbar{
+::-webkit-scrollbar{
 width:5px;
 height:5px;
 }
 
-\::-webkit-scrollbar-track{
+::-webkit-scrollbar-track{
 background:#080d16;
 }
 
-\::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
 background:#263244;
 border-radius:10px;
 }
 
-\</style>
+</style>
 
-\</head>
+</head>
 
-\<body>
+<body>
 
-\<!-- =====================================================
+<!-- =====================================================
 LOGIN
-\===================================================== -->
+===================================================== -->
 
-\<section id="loginScreen">
+<section id="loginScreen">
 
-```
-\<div class="login-box">
+<div class="login-box">
 
-    \<div class="login-icon">
-        \<i class="fa-solid fa-lock">\</i>
-    \</div>
+    <div class="login-icon">
+        <i class="fa-solid fa-lock"></i>
+    </div>
 
-    \<h1>Control Dashboard\</h1>
+    <h1>Control Dashboard</h1>
 
-    \<p>Enter your username to continue\</p>
+    <p>Enter your username to continue</p>
 
-    \<div class="input-group">
+    <div class="input-group">
 
-        \<label>Username\</label>
+        <label>Username</label>
 
-        \<div class="input-wrap">
+        <div class="input-wrap">
 
-            \<i class="fa-solid fa-user">\</i>
+            <i class="fa-solid fa-user"></i>
 
-            \<input
+            <input
                 type="text"
                 id="usernameInput"
                 placeholder="Enter username"
                 autocomplete="username"
-            \>
+            >
 
-        \</div>
+        </div>
 
-    \</div>
+    </div>
 
-    \<button
+    <button
         type="button"
         class="login-btn"
         id="loginBtn"
         onclick="login()"
-    \>
-        \<i class="fa-solid fa-right-to-bracket">\</i>
+    >
+        <i class="fa-solid fa-right-to-bracket"></i>
         &nbsp;
         Login
-    \</button>
+    </button>
 
-    \<div
+    <div
         class="login-error"
         id="loginError"
-    \>\</div>
+    ></div>
 
-\</div>
-```
+</div>
 
-\</section>
-
+</section>
 
 
-\<!-- =====================================================
+<!-- =====================================================
 DASHBOARD
-\===================================================== -->
+===================================================== -->
 
-\<section id="dashboard">
+<section id="dashboard">
 
-\<header class="topbar">
+<header class="topbar">
 
-```
-\<div class="brand">
+<div class="brand">
 
-    \<div class="brand-logo">
-        \<i class="fa-solid fa-layer-group">\</i>
-    \</div>
+    <div class="brand-logo">
+        <i class="fa-solid fa-layer-group"></i>
+    </div>
 
-    \<div class="brand-text">
+    <div class="brand-text">
 
-        \<h2>Website Control\</h2>
+        <h2>Website Control</h2>
 
-        \<span>Management Dashboard\</span>
+        <span>Management Dashboard</span>
 
-    \</div>
+    </div>
 
-\</div>
+</div>
 
 
-\<div class="user-area">
+<div class="user-area">
 
-    \<div class="user-info">
+    <div class="user-info">
 
-        \<div
+        <div
             class="user-name"
             id="loggedUserName"
-        \>
+        >
             User
-        \</div>
+        </div>
 
-        \<div class="user-label">
+        <div class="user-label">
             Logged in
-        \</div>
+        </div>
 
-    \</div>
+    </div>
 
-    \<button
+    <button
         type="button"
         class="logout-btn"
         onclick="logout()"
         title="Logout"
-    \>
-        \<i class="fa-solid fa-right-from-bracket">\</i>
-    \</button>
+    >
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
 
-\</div>
-```
+</div>
 
-\</header>
-
+</header>
 
 
-\<main class="container">
+<main class="container">
 
-\<div class="page-head">
+<div class="page-head">
 
-```
-\<div class="page-title">
+<div class="page-title">
 
-    \<h1>Website Control\</h1>
+    <h1>Website Control</h1>
 
-    \<p>Manage your website cards\</p>
+    <p>Manage your website cards</p>
 
-\</div>
+</div>
 
 
-\<button
+<button
     type="button"
     class="add-btn"
     onclick="openAddModal()"
-\>
+>
 
-    \<i class="fa-solid fa-plus">\</i>
+    <i class="fa-solid fa-plus"></i>
 
-    \<span>Add Website\</span>
+    <span>Add Website</span>
 
-\</button>
-```
+</button>
 
-\</div>
-
+</div>
 
 
-\<!-- =====================================================
+<!-- =====================================================
 COMPACT STATS
-\===================================================== -->
+===================================================== -->
 
-\<div class="dashboard-tools">
+<div class="dashboard-tools">
 
-```
-\<div class="stats">
+<div class="stats">
 
 
-    \<div class="stat-card total">
+    <div class="stat-card total">
 
-        \<div class="stat-icon">
-            \<i class="fa-solid fa-globe">\</i>
-        \</div>
+        <div class="stat-icon">
+            <i class="fa-solid fa-globe"></i>
+        </div>
 
-        \<div class="stat-content">
+        <div class="stat-content">
 
-            \<div class="stat-label">
+            <div class="stat-label">
                 Total
-            \</div>
+            </div>
 
-            \<div
+            <div
                 class="stat-number"
                 id="totalCount"
-            \>
+            >
                 0
-            \</div>
+            </div>
 
-        \</div>
+        </div>
 
-    \</div>
+    </div>
 
 
 
-    \<div class="stat-card active">
+    <div class="stat-card active">
 
-        \<div class="stat-icon">
-            \<i class="fa-solid fa-check">\</i>
-        \</div>
+        <div class="stat-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
 
-        \<div class="stat-content">
+        <div class="stat-content">
 
-            \<div class="stat-label">
+            <div class="stat-label">
                 Active
-            \</div>
+            </div>
 
-            \<div
+            <div
                 class="stat-number"
                 id="activeCount"
-            \>
+            >
                 0
-            \</div>
+            </div>
 
-        \</div>
+        </div>
 
-    \</div>
+    </div>
 
 
 
-    \<div class="stat-card inactive">
+    <div class="stat-card inactive">
 
-        \<div class="stat-icon">
-            \<i class="fa-solid fa-xmark">\</i>
-        \</div>
+        <div class="stat-icon">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
 
-        \<div class="stat-content">
+        <div class="stat-content">
 
-            \<div class="stat-label">
+            <div class="stat-label">
                 Inactive
-            \</div>
+            </div>
 
-            \<div
+            <div
                 class="stat-number"
                 id="inactiveCount"
-            \>
+            >
                 0
-            \</div>
+            </div>
 
-        \</div>
+        </div>
 
-    \</div>
-
-
-\</div>
-```
-
-\</div>
+    </div>
 
 
+</div>
 
-\<!-- =====================================================
+</div>
+
+
+<!-- =====================================================
 FILTER
-\===================================================== -->
+===================================================== -->
 
-\<div class="filter-row">
+<div class="filter-row">
 
-```
-\<button
+<button
     type="button"
     class="filter-btn active"
     data-filter="all"
     onclick="setFilter('all')"
-\>
-    \<i class="fa-solid fa-layer-group">\</i>
+>
+    <i class="fa-solid fa-layer-group"></i>
     All
-\</button>
+</button>
 
 
-\<button
+<button
     type="button"
     class="filter-btn"
     data-filter="active"
     onclick="setFilter('active')"
-\>
-    \<i class="fa-solid fa-circle-check">\</i>
+>
+    <i class="fa-solid fa-circle-check"></i>
     Active
-\</button>
+</button>
 
 
-\<button
+<button
     type="button"
     class="filter-btn"
     data-filter="inactive"
     onclick="setFilter('inactive')"
-\>
-    \<i class="fa-solid fa-circle-xmark">\</i>
+>
+    <i class="fa-solid fa-circle-xmark"></i>
     Inactive
-\</button>
-```
+</button>
 
-\</div>
-
+</div>
 
 
-\<!-- =====================================================
+<!-- =====================================================
 SEARCH
-\===================================================== -->
+===================================================== -->
 
-\<div class="toolbar">
+<div class="toolbar">
 
-```
-\<div class="search-box">
+<div class="search-box">
 
-    \<i class="fa-solid fa-magnifying-glass">\</i>
+    <i class="fa-solid fa-magnifying-glass"></i>
 
-    \<input
+    <input
         type="search"
         id="searchInput"
         placeholder="Search website..."
         oninput="filterCards()"
-    \>
+    >
 
-\</div>
-```
+</div>
 
-\</div>
-
+</div>
 
 
-\<div
+<div
 class="loading"
 id="loading"
-\>
+>
 
-```
-\<i class="fa-solid fa-spinner fa-spin">\</i>
+<i class="fa-solid fa-spinner fa-spin"></i>
 
-\<div style="margin-top:8px;">
+<div style="margin-top:8px;">
     Loading websites...
-\</div>
-```
+</div>
 
-\</div>
-
+</div>
 
 
-\<div
+<div
 class="cards"
 id="cards"
-\>\</div>
+></div>
 
 
-
-\<div
+<div
 class="empty"
 id="empty"
-\>
+>
 
-```
-\<i class="fa-regular fa-folder-open">\</i>
+<i class="fa-regular fa-folder-open"></i>
 
-\<div id="emptyText">
+<div id="emptyText">
     No websites found.
-\</div>
-```
+</div>
 
-\</div>
+</div>
 
-\</main>
+</main>
 
-\</section>
-
+</section>
 
 
-\<!-- =====================================================
+<!-- =====================================================
 MODAL
-\===================================================== -->
+===================================================== -->
 
-\<div
+<div
 class="modal"
 id="cardModal"
-\>
+>
 
-\<div class="modal-box">
+<div class="modal-box">
 
-\<div class="modal-head">
+<div class="modal-head">
 
-```
-\<h2 id="modalTitle">
+<h2 id="modalTitle">
     Add Website
-\</h2>
+</h2>
 
-\<button
+<button
     type="button"
     class="close-btn"
     onclick="closeModal()"
-\>
-    \<i class="fa-solid fa-xmark">\</i>
-\</button>
-```
+>
+    <i class="fa-solid fa-xmark"></i>
+</button>
 
-\</div>
-
+</div>
 
 
-\<div class="form-grid">
+<div class="form-grid">
 
-\<div class="form-group">
+<div class="form-group">
 
-```
-\<label>Website Name\</label>
+<label>Website Name</label>
 
-\<input
+<input
     type="text"
     id="formName"
     placeholder="Movie World"
-\>
-```
+>
 
-\</div>
+</div>
 
-\<div class="form-group">
 
-```
-\<label>Website Link\</label>
+<div class="form-group">
 
-\<input
+<label>Website Link</label>
+
+<input
     type="text"
     id="formLink"
     placeholder="10.20.30.40 or example.com"
     autocomplete="off"
-\>
+>
 
-\<small
+<small
     style="
         color:#64748b;
         font-size:9px;
         margin-top:-2px;
     "
-\>
-    http\:// or https\:// is optional
-\</small>
-```
+>
+    http:// or https:// is optional
+</small>
 
-\</div>
+</div>
 
-\<div class="form-group full">
 
-```
-\<label>Logo URL\</label>
+<div class="form-group full">
 
-\<input
+<label>Logo URL</label>
+
+<input
     type="text"
     id="formLogo"
     placeholder="example.com/logo.png"
     autocomplete="off"
-\>
-```
+>
 
-\</div>
+</div>
 
-\<div class="form-group full">
 
-```
-\<label>Description\</label>
+<div class="form-group full">
 
-\<textarea
+<label>Description</label>
+
+<textarea
     id="formDescription"
     placeholder="Access Movie World website"
-\>\</textarea>
-```
+></textarea>
 
-\</div>
+</div>
 
-\<div class="form-group">
 
-```
-\<label>Source\</label>
+<div class="form-group">
 
-\<input
+<label>Source</label>
+
+<input
     type="text"
     id="formSource"
     placeholder="Local Server"
-\>
-```
+>
 
-\</div>
+</div>
 
-\<div class="form-group">
 
-```
-\<label>Type\</label>
+<div class="form-group">
 
-\<input
+<label>Type</label>
+
+<input
     type="text"
     id="formType"
     placeholder="Movie"
-\>
-```
+>
 
-\</div>
+</div>
 
-\<div class="form-group">
 
-```
-\<label>Position\</label>
+<div class="form-group">
 
-\<input
+<label>Position</label>
+
+<input
     type="number"
     id="formPosition"
     min="1"
     placeholder="1"
-\>
-```
+>
 
-\</div>
+</div>
 
-\<div class="form-group">
 
-```
-\<label>Status\</label>
+<div class="form-group">
 
-\<select id="formStatus">
+<label>Status</label>
 
-    \<option value="Active">
+<select id="formStatus">
+
+    <option value="Active">
         Active
-    \</option>
+    </option>
 
-    \<option value="Inactive">
+    <option value="Inactive">
         Inactive
-    \</option>
+    </option>
 
-\</select>
-```
+</select>
 
-\</div>
+</div>
 
-\</div>
-
+</div>
 
 
-\<div class="modal-actions">
+<div class="modal-actions">
 
-\<div class="left-actions">
+<div class="left-actions">
 
-```
-\<button
+<button
     type="button"
     class="btn delete-btn"
     id="deleteBtn"
     onclick="deleteCurrentCard()"
-    style="display\:none;"
-\>
+    style="display:none;"
+>
 
-    \<i class="fa-solid fa-trash">\</i>
+    <i class="fa-solid fa-trash"></i>
 
     Delete
 
-\</button>
-```
+</button>
 
-\</div>
+</div>
 
-\<div class="right-actions">
 
-```
-\<button
+<div class="right-actions">
+
+<button
     type="button"
     class="btn cancel-btn"
     onclick="closeModal()"
-\>
+>
     Cancel
-\</button>
+</button>
 
 
-\<button
+<button
     type="button"
     class="btn save-btn"
     id="saveBtn"
     onclick="saveCard()"
-\>
+>
 
-    \<i class="fa-solid fa-check">\</i>
+    <i class="fa-solid fa-check"></i>
 
     Save
 
-\</button>
-```
+</button>
 
-\</div>
+</div>
 
-\</div>
+</div>
 
-\</div>
+</div>
 
-\</div>
-
+</div>
 
 
-\<div
+<div
 class="toast"
 id="toast"
-\>\</div>
+></div>
 
 
+<script>
 
-\<script>
-
-/\* =========================================================
+/* =========================================================
 API
-\========================================================= \*/
+========================================================= */
 
-const API\_URL =
-"[https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec](https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec)";
+const API_URL =
+"https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
 
-/\* =========================================================
+
+/* =========================================================
 GLOBAL
-\========================================================= \*/
+========================================================= */
 
 let cards = [];
 
@@ -1845,15 +1795,15 @@ let currentFilter = "all";
 
 let loadingCards = false;
 
-/\* =========================================================
-AUTO LOGOUT
-\========================================================= \*/
 
-const AUTO\_LOGOUT\_TIME = 3 \* 60 \* 1000;
+/* =========================================================
+AUTO LOGOUT
+========================================================= */
+
+const AUTO_LOGOUT_TIME = 3 * 60 * 1000;
 
 function resetInactivityTimer(){
 
-```
 clearTimeout(inactivityTimer);
 
 if(
@@ -1866,15 +1816,13 @@ if(
 
 inactivityTimer = setTimeout(
     autoLogout,
-    AUTO\_LOGOUT\_TIME
+    AUTO_LOGOUT_TIME
 );
-```
 
 }
 
 function autoLogout(){
 
-```
 clearTimeout(inactivityTimer);
 
 localStorage.removeItem(
@@ -1917,13 +1865,13 @@ document.getElementById(
 document.getElementById(
     "cardModal"
 ).classList.remove("show");
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 ACTIVITY
-\========================================================= \*/
+========================================================= */
 
 [
 "click",
@@ -1935,7 +1883,6 @@ ACTIVITY
 ].forEach(
 function(eventName){
 
-```
     document.addEventListener(
         eventName,
         function(){
@@ -1950,24 +1897,22 @@ function(eventName){
 
         },
         {
-            passive\:true
+            passive:true
         }
     );
 
 }
-```
-
 );
 
-/\* =========================================================
+
+/* =========================================================
 PAGE LOAD
-\========================================================= \*/
+========================================================= */
 
 document.addEventListener(
 "DOMContentLoaded",
 function(){
 
-```
     checkSession();
 
     document
@@ -1984,17 +1929,15 @@ function(){
         );
 
 }
-```
-
 );
 
-/\* =========================================================
+
+/* =========================================================
 SESSION
-\========================================================= \*/
+========================================================= */
 
 function checkSession(){
 
-```
 const logged =
     localStorage.getItem(
         "websiteControlLoggedIn"
@@ -2011,17 +1954,16 @@ if(
 ){
     showDashboard(name);
 }
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 LOGIN
-\========================================================= \*/
+========================================================= */
 
 async function login(){
 
-```
 const input =
     document.getElementById(
         "usernameInput"
@@ -2052,13 +1994,13 @@ if(!username){
 button.disabled = true;
 
 button.innerHTML =
-    '\<i class="fa-solid fa-spinner fa-spin">\</i>&nbsp; Checking...';
+    '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
 
 try{
 
     const response =
         await fetch(
-            API\_URL +
+            API_URL +
             "?action=login&username=" +
             encodeURIComponent(username) +
             "&ts=" +
@@ -2117,18 +2059,17 @@ catch(error){
 button.disabled = false;
 
 button.innerHTML =
-    '\<i class="fa-solid fa-right-to-bracket">\</i>&nbsp; Login';
-```
+    '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 LOGIN ERROR
-\========================================================= \*/
+========================================================= */
 
 function showLoginError(message){
 
-```
 const error =
     document.getElementById(
         "loginError"
@@ -2137,17 +2078,16 @@ const error =
 error.textContent = message;
 
 error.style.display = "block";
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 SHOW DASHBOARD
-\========================================================= \*/
+========================================================= */
 
 function showDashboard(name){
 
-```
 document.getElementById(
     "loginScreen"
 ).style.display = "none";
@@ -2162,11 +2102,6 @@ document.getElementById(
 
 resetInactivityTimer();
 
-/\*
-   Dashboard first show হবে।
-   API পরে load হবে।
-\*/
-
 requestAnimationFrame(
     function(){
 
@@ -2174,17 +2109,16 @@ requestAnimationFrame(
 
     }
 );
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 LOGOUT
-\========================================================= \*/
+========================================================= */
 
 function logout(){
 
-```
 clearTimeout(inactivityTimer);
 
 localStorage.removeItem(
@@ -2222,17 +2156,16 @@ document.getElementById(
 document.getElementById(
     "cardModal"
 ).classList.remove("show");
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 STATUS NORMALIZER
-\========================================================= \*/
+========================================================= */
 
 function normalizeStatus(status){
 
-```
 const value =
     String(status || "")
     .trim()
@@ -2249,17 +2182,16 @@ if(
 }
 
 return "Active";
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 LOAD CARDS
-\========================================================= \*/
+========================================================= */
 
 async function loadCards(){
 
-```
 if(loadingCards){
     return;
 }
@@ -2271,16 +2203,6 @@ const loading =
         "loading"
     );
 
-const box =
-    document.getElementById(
-        "cards"
-    );
-
-/\*
-   Existing cards থাকলে আগে clear না করে
-   background-এ update হবে।
-\*/
-
 if(cards.length === 0){
     loading.style.display = "block";
 }
@@ -2289,7 +2211,7 @@ try{
 
     const response =
         await fetch(
-            API\_URL +
+            API_URL +
             "?action=getCards&ts=" +
             Date.now(),
             {
@@ -2325,7 +2247,7 @@ try{
 
                 return {
                     ...card,
-                    status\:normalizeStatus(
+                    status:normalizeStatus(
                         card.status
                     )
                 };
@@ -2361,17 +2283,16 @@ finally{
     loading.style.display = "none";
 
 }
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 UPDATE STATS
-\========================================================= \*/
+========================================================= */
 
 function updateStats(){
 
-```
 let total = cards.length;
 
 let active = 0;
@@ -2408,17 +2329,16 @@ document.getElementById(
 document.getElementById(
     "inactiveCount"
 ).textContent = inactive;
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 FILTER
-\========================================================= \*/
+========================================================= */
 
 function setFilter(filter){
 
-```
 resetInactivityTimer();
 
 currentFilter = filter;
@@ -2437,17 +2357,16 @@ document
     );
 
 renderCards();
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 RENDER
-\========================================================= \*/
+========================================================= */
 
 function renderCards(){
 
-```
 const box =
     document.getElementById(
         "cards"
@@ -2473,7 +2392,6 @@ const search =
     ? searchInput.value.trim().toLowerCase()
     : "";
 
-
 const filtered = [];
 
 for(
@@ -2489,7 +2407,6 @@ for(
             card.status
         );
 
-
     if(
         currentFilter === "active" &&
         status !== "Active"
@@ -2497,14 +2414,12 @@ for(
         continue;
     }
 
-
     if(
         currentFilter === "inactive" &&
         status !== "Inactive"
     ){
         continue;
     }
-
 
     if(search){
 
@@ -2530,11 +2445,9 @@ for(
 
     }
 
-
     filtered.push(card);
 
 }
-
 
 if(filtered.length === 0){
 
@@ -2565,14 +2478,7 @@ if(filtered.length === 0){
 
 }
 
-
 empty.style.display = "none";
-
-
-/\*
-   One DOM operation instead of appendChild
-   for every single card.
-\*/
 
 const fragment =
     document.createDocumentFragment();
@@ -2594,17 +2500,16 @@ for(
 box.innerHTML = "";
 
 box.appendChild(fragment);
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 CREATE CARD
-\========================================================= \*/
+========================================================= */
 
 function createCard(card){
 
-```
 const article =
     document.createElement(
         "article"
@@ -2612,12 +2517,10 @@ const article =
 
 article.className = "card";
 
-
 const status =
     normalizeStatus(
         card.status
     );
-
 
 if(status === "Inactive"){
 
@@ -2627,178 +2530,168 @@ if(status === "Inactive"){
 
 }
 
-
 const initials =
     getInitials(
         card.name
     );
 
-
 let logoHTML = "";
-
 
 if(card.logo){
 
-    logoHTML = \`
-        \<img
+    logoHTML = `
+        <img
             src="${escapeAttribute(card.logo)}"
             alt=""
             loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        \>
+        >
 
-        \<div
+        <div
             class="logo-fallback"
-            style="display\:none;"
-        \>
+            style="display:none;"
+        >
             ${escapeHTML(initials)}
-        \</div>
-    \`;
+        </div>
+    `;
 
 }
 else{
 
-    logoHTML = \`
-        \<div class="logo-fallback">
+    logoHTML = `
+        <div class="logo-fallback">
             ${escapeHTML(initials)}
-        \</div>
-    \`;
+        </div>
+    `;
 
 }
-
 
 const statusClass =
     status === "Inactive"
     ? "inactive"
     : "";
 
-
 const safeLink =
     normalizeWebsiteURL(
         card.link
     );
 
-
 const sourceHTML =
     card.source
     ?
-    \`
-    \<span>
-        \<i class="fa-solid fa-server">\</i>
+    `
+    <span>
+        <i class="fa-solid fa-server"></i>
         ${escapeHTML(card.source)}
-    \</span>
-    \`
+    </span>
+    `
     :
     "";
-
 
 const typeHTML =
     card.type
     ?
-    \`
-    \<span>
-        \<i class="fa-solid fa-tag">\</i>
+    `
+    <span>
+        <i class="fa-solid fa-tag"></i>
         ${escapeHTML(card.type)}
-    \</span>
-    \`
+    </span>
+    `
     :
     "";
 
+article.innerHTML = `
 
-article.innerHTML = \`
+    <div class="card-top">
 
-    \<div class="card-top">
-
-        \<div class="logo">
+        <div class="logo">
             ${logoHTML}
-        \</div>
+        </div>
 
-        \<div class="card-title">
+        <div class="card-title">
 
-            \<h3>
+            <h3>
                 ${escapeHTML(
                     card.name ||
                     "Unnamed Website"
                 )}
-            \</h3>
+            </h3>
 
-            \<span
+            <span
                 class="status-badge ${statusClass}"
-            \>
+            >
 
-                \<i class="fa-solid ${
+                <i class="fa-solid ${
                     status === "Active"
                     ? "fa-circle-check"
                     : "fa-circle-xmark"
-                }">\</i>
+                }"></i>
 
                 &nbsp;
 
                 ${escapeHTML(status)}
 
-            \</span>
+            </span>
 
-        \</div>
+        </div>
 
-    \</div>
+    </div>
 
 
-    \<div class="card-description">
+    <div class="card-description">
 
         ${escapeHTML(
             card.description ||
             "Access website"
         )}
 
-    \</div>
+    </div>
 
 
-    \<div class="meta">
+    <div class="meta">
 
         ${sourceHTML}
 
         ${typeHTML}
 
-    \</div>
+    </div>
 
 
-    \<div class="card-bottom">
+    <div class="card-bottom">
 
-        \<a
+        <a
             class="open-btn"
             href="${escapeAttribute(safeLink)}"
-            target="\_blank"
+            target="_blank"
             rel="noopener noreferrer"
-        \>
+        >
 
-            \<i class="fa-solid fa-arrow-up-right-from-square">\</i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
             Open
 
-        \</a>
+        </a>
 
 
-        \<button
+        <button
             type="button"
             class="edit-btn"
             data-edit-id="${escapeAttribute(card.id)}"
             title="Edit"
-        \>
+        >
 
-            \<i class="fa-solid fa-pen">\</i>
+            <i class="fa-solid fa-pen"></i>
 
-        \</button>
+        </button>
 
-    \</div>
+    </div>
 
-\`;
-
+`;
 
 const editButton =
     article.querySelector(
         ".edit-btn"
     );
-
 
 if(editButton){
 
@@ -2815,33 +2708,30 @@ if(editButton){
 
 }
 
-
 return article;
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 SEARCH
-\========================================================= \*/
+========================================================= */
 
 function filterCards(){
 
-```
 resetInactivityTimer();
 
 renderCards();
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 ADD
-\========================================================= \*/
+========================================================= */
 
 function openAddModal(){
 
-```
 resetInactivityTimer();
 
 editingId = null;
@@ -2859,17 +2749,16 @@ clearForm();
 document.getElementById(
     "cardModal"
 ).classList.add("show");
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 EDIT
-\========================================================= \*/
+========================================================= */
 
 function openEditModal(id){
 
-```
 resetInactivityTimer();
 
 const card =
@@ -2880,7 +2769,6 @@ const card =
 
         }
     );
-
 
 if(!card){
 
@@ -2893,61 +2781,50 @@ if(!card){
 
 }
 
-
 editingId = card.id;
-
 
 document.getElementById(
     "modalTitle"
 ).textContent = "Edit Website";
 
-
 document.getElementById(
     "deleteBtn"
 ).style.display = "block";
-
 
 document.getElementById(
     "formName"
 ).value =
     card.name || "";
 
-
 document.getElementById(
     "formLink"
 ).value =
     card.link || "";
-
 
 document.getElementById(
     "formLogo"
 ).value =
     card.logo || "";
 
-
 document.getElementById(
     "formDescription"
 ).value =
     card.description || "";
-
 
 document.getElementById(
     "formSource"
 ).value =
     card.source || "";
 
-
 document.getElementById(
     "formType"
 ).value =
     card.type || "";
 
-
 document.getElementById(
     "formPosition"
 ).value =
     card.position || "";
-
 
 document.getElementById(
     "formStatus"
@@ -2956,21 +2833,19 @@ document.getElementById(
         card.status
     );
 
-
 document.getElementById(
     "cardModal"
 ).classList.add("show");
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 CLEAR FORM
-\========================================================= \*/
+========================================================= */
 
 function clearForm(){
 
-```
 [
     "formName",
     "formLink",
@@ -2989,21 +2864,19 @@ function clearForm(){
     }
 );
 
-
 document.getElementById(
     "formStatus"
 ).value = "Active";
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 CLOSE MODAL
-\========================================================= \*/
+========================================================= */
 
 function closeModal(){
 
-```
 resetInactivityTimer();
 
 document.getElementById(
@@ -3011,33 +2884,29 @@ document.getElementById(
 ).classList.remove("show");
 
 editingId = null;
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 URL NORMALIZER
-\========================================================= \*/
+========================================================= */
 
 function normalizeWebsiteURL(value){
 
-```
 let url =
     String(value || "")
     .trim();
-
 
 if(!url){
     return "";
 }
 
-
 if(
-    /^https?:\\/\\//i.test(url)
+    /^https?:\/\//i.test(url)
 ){
     return url;
 }
-
 
 if(
     url.startsWith("//")
@@ -3045,44 +2914,37 @@ if(
     return "https:" + url;
 }
 
-
 const ipPattern =
-    /^(localhost|127(?:\\.\d{1,3}){3}|10(?:\\.\d{1,3}){3}|172\\.(?:1[6-9]|2\d|3[0-1])(?:\\.\d{1,3}){2}|192\\.168(?:\\.\d{1,3}){2})(?::\d+)?(?:\\/.\*)?$/i;
-
+    /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
 
 if(
     ipPattern.test(url)
 ){
-    return "http\://" + url;
+    return "http://" + url;
+}
+
+return "https://" + url;
+
 }
 
 
-return "https\://" + url;
-```
-
-}
-
-/\* =========================================================
+/* =========================================================
 SAVE
-\========================================================= \*/
+========================================================= */
 
 async function saveCard(){
 
-```
 resetInactivityTimer();
-
 
 const rawLink =
     document.getElementById(
         "formLink"
     ).value.trim();
 
-
 const normalizedLink =
     normalizeWebsiteURL(
         rawLink
     );
-
 
 const payload = {
 
@@ -3136,7 +2998,6 @@ const payload = {
 
 };
 
-
 if(!payload.name){
 
     showToast(
@@ -3147,7 +3008,6 @@ if(!payload.name){
     return;
 
 }
-
 
 if(!payload.link){
 
@@ -3160,30 +3020,26 @@ if(!payload.link){
 
 }
 
-
 document.getElementById(
     "formLink"
 ).value =
     normalizedLink;
-
 
 const saveBtn =
     document.getElementById(
         "saveBtn"
     );
 
-
 saveBtn.disabled = true;
 
 saveBtn.innerHTML =
-    '\<i class="fa-solid fa-spinner fa-spin">\</i> Saving...';
-
+    '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
 
 try{
 
     const response =
         await fetch(
-            API\_URL,
+            API_URL,
             {
                 method:"POST",
 
@@ -3199,10 +3055,8 @@ try{
             }
         );
 
-
     const data =
         await response.json();
-
 
     if(!data.success){
 
@@ -3213,7 +3067,6 @@ try{
 
     }
 
-
     closeModal();
 
     showToast(
@@ -3221,7 +3074,6 @@ try{
         "Saved successfully.",
         "success"
     );
-
 
     await loadCards();
 
@@ -3238,29 +3090,25 @@ catch(error){
 
 }
 
-
 saveBtn.disabled = false;
 
 saveBtn.innerHTML =
-    '\<i class="fa-solid fa-check">\</i> Save';
-```
+    '<i class="fa-solid fa-check"></i> Save';
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 DELETE
-\========================================================= \*/
+========================================================= */
 
 async function deleteCurrentCard(){
 
-```
 resetInactivityTimer();
-
 
 if(!editingId){
     return;
 }
-
 
 if(
     !confirm(
@@ -3270,12 +3118,11 @@ if(
     return;
 }
 
-
 try{
 
     const response =
         await fetch(
-            API\_URL,
+            API_URL,
             {
                 method:"POST",
 
@@ -3297,10 +3144,8 @@ try{
             }
         );
 
-
     const data =
         await response.json();
-
 
     if(!data.success){
 
@@ -3311,7 +3156,6 @@ try{
 
     }
 
-
     closeModal();
 
     showToast(
@@ -3319,7 +3163,6 @@ try{
         "Website deleted.",
         "success"
     );
-
 
     await loadCards();
 
@@ -3333,49 +3176,44 @@ catch(error){
     );
 
 }
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 ESCAPE HTML
-\========================================================= \*/
+========================================================= */
 
 function escapeHTML(value){
 
-```
 return String(value || "")
     .replace(/&/g,"&amp;")
-    .replace(/\</g,"&lt;")
+    .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
-```
 
 }
 
 function escapeAttribute(value){
 
-```
 return escapeHTML(value);
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 INITIALS
-\========================================================= \*/
+========================================================= */
 
 function getInitials(name){
 
-```
 const words =
     String(
         name || "W"
     )
     .trim()
     .split(/\s+/);
-
 
 if(words.length === 1){
 
@@ -3385,32 +3223,28 @@ if(words.length === 1){
 
 }
 
-
 return (
     words[0][0] +
     words[1][0]
 ).toUpperCase();
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 TOAST
-\========================================================= \*/
+========================================================= */
 
 let toastTimer;
 
 function showToast(message,type){
 
-```
 const toast =
     document.getElementById(
         "toast"
     );
 
-
 toast.textContent = message;
-
 
 toast.className =
     "toast show " +
@@ -3420,9 +3254,7 @@ toast.className =
         : "success"
     );
 
-
 clearTimeout(toastTimer);
-
 
 toastTimer =
     setTimeout(
@@ -3435,13 +3267,13 @@ toastTimer =
         },
         3000
     );
-```
 
 }
 
-/\* =========================================================
+
+/* =========================================================
 MODAL CLICK
-\========================================================= \*/
+========================================================= */
 
 document.getElementById(
 "cardModal"
@@ -3450,7 +3282,6 @@ document.getElementById(
 "click",
 function(e){
 
-```
     if(e.target === this){
 
         closeModal();
@@ -3458,19 +3289,17 @@ function(e){
     }
 
 }
-```
-
 );
 
-/\* =========================================================
+
+/* =========================================================
 ESC
-\========================================================= \*/
+========================================================= */
 
 document.addEventListener(
 "keydown",
 function(e){
 
-```
     if(e.key === "Escape"){
 
         closeModal();
@@ -3478,12 +3307,10 @@ function(e){
     }
 
 }
-```
-
 );
 
-\</script>
+</script>
 
-\</body>
+</body>
 
-\</html>
+</html>
