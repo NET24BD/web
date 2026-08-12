@@ -62,7 +62,6 @@ body{
     color:#f8fafc;
 
     min-height:100vh;
-
     overflow-x:hidden;
 }
 
@@ -94,7 +93,8 @@ body{
 
     padding:28px 22px;
 
-    box-shadow:0 25px 70px rgba(0,0,0,.45);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
 
     backdrop-filter:blur(18px);
 }
@@ -128,9 +128,7 @@ body{
 
 .login-box h1{
     text-align:center;
-
     font-size:23px;
-
     font-weight:800;
 }
 
@@ -142,7 +140,6 @@ body{
     font-size:12px;
 
     margin-top:7px;
-
     margin-bottom:25px;
 }
 
@@ -154,7 +151,6 @@ body{
     display:block;
 
     font-size:12px;
-
     font-weight:600;
 
     color:#cbd5e1;
@@ -170,7 +166,6 @@ body{
     position:absolute;
 
     left:14px;
-
     top:50%;
 
     transform:translateY(-50%);
@@ -180,7 +175,6 @@ body{
 
 .input-wrap input{
     width:100%;
-
     height:50px;
 
     border-radius:12px;
@@ -207,11 +201,9 @@ body{
 
 .login-btn{
     width:100%;
-
     height:50px;
 
     border:none;
-
     border-radius:12px;
 
     background:
@@ -224,7 +216,6 @@ body{
     color:#fff;
 
     font-size:14px;
-
     font-weight:700;
 
     cursor:pointer;
@@ -236,8 +227,6 @@ body{
 
 .login-btn:disabled{
     opacity:.6;
-
-    cursor:not-allowed;
 }
 
 .login-error{
@@ -269,7 +258,6 @@ body{
     display:none;
 
     min-height:100vh;
-
     min-height:100dvh;
 }
 
@@ -282,15 +270,12 @@ body{
     height:68px;
 
     position:sticky;
-
     top:0;
 
     z-index:100;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:0 24px;
@@ -304,7 +289,6 @@ body{
 
 .brand{
     display:flex;
-
     align-items:center;
 
     gap:10px;
@@ -317,9 +301,7 @@ body{
     border-radius:11px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:
@@ -334,7 +316,6 @@ body{
 
 .brand-text h2{
     font-size:15px;
-
     font-weight:800;
 }
 
@@ -350,7 +331,6 @@ body{
 
 .user-area{
     display:flex;
-
     align-items:center;
 
     gap:10px;
@@ -362,7 +342,6 @@ body{
 
 .user-name{
     font-size:12px;
-
     font-weight:700;
 }
 
@@ -410,14 +389,12 @@ body{
 
 .page-head{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     gap:15px;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .page-title h1{
@@ -461,7 +438,6 @@ body{
     cursor:pointer;
 
     display:flex;
-
     align-items:center;
 
     gap:7px;
@@ -471,6 +447,208 @@ body{
 
 .add-btn:active{
     transform:scale(.96);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:13px;
+
+    margin-bottom:18px;
+}
+
+.summary-card{
+    position:relative;
+
+    overflow:hidden;
+
+    min-width:0;
+
+    padding:17px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,29,46,.96),
+            rgba(9,14,23,.96)
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+
+    transition:.2s ease;
+
+    cursor:pointer;
+}
+
+.summary-card:hover{
+    transform:translateY(-2px);
+
+    border-color:
+        rgba(255,255,255,.14);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.25);
+}
+
+.summary-card.active-filter{
+    border-color:
+        rgba(34,197,94,.45);
+
+    box-shadow:
+        0 0 0 1px rgba(34,197,94,.12),
+        0 14px 30px rgba(0,0,0,.20);
+}
+
+.summary-top{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+}
+
+.summary-icon{
+    width:39px;
+    height:39px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.06);
+
+    color:#cbd5e1;
+
+    font-size:15px;
+}
+
+.summary-card.total .summary-icon{
+    background:rgba(59,130,246,.12);
+    color:#60a5fa;
+}
+
+.summary-card.active .summary-icon{
+    background:rgba(34,197,94,.12);
+    color:#4ade80;
+}
+
+.summary-card.inactive .summary-icon{
+    background:rgba(239,68,68,.12);
+    color:#f87171;
+}
+
+.summary-label{
+    color:#64748b;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    text-align:right;
+}
+
+.summary-number{
+    font-size:25px;
+
+    font-weight:800;
+
+    line-height:1;
+
+    margin-top:13px;
+}
+
+.summary-description{
+    color:#64748b;
+
+    font-size:9px;
+
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.filter-bar{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:13px;
+}
+
+.filter-buttons{
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+}
+
+.filter-btn{
+    height:34px;
+
+    padding:0 11px;
+
+    border-radius:8px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:#111827;
+
+    color:#94a3b8;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.filter-btn:hover{
+    color:#fff;
+}
+
+.filter-btn.active{
+    background:rgba(34,197,94,.12);
+
+    color:#4ade80;
+
+    border-color:
+        rgba(34,197,94,.25);
+}
+
+.filter-btn.inactive-filter.active{
+    background:rgba(239,68,68,.10);
+
+    color:#f87171;
+
+    border-color:
+        rgba(239,68,68,.20);
 }
 
 
@@ -498,7 +676,6 @@ body{
     position:absolute;
 
     left:13px;
-
     top:50%;
 
     transform:translateY(-50%);
@@ -510,7 +687,6 @@ body{
 
 .search-box input{
     width:100%;
-
     height:42px;
 
     border-radius:10px;
@@ -578,6 +754,11 @@ body{
         0 16px 32px rgba(0,0,0,.25);
 }
 
+.card.inactive-card{
+    border-color:
+        rgba(239,68,68,.12);
+}
+
 .card-top{
     display:flex;
 
@@ -601,7 +782,6 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     background:#111827;
@@ -624,6 +804,10 @@ body{
     color:#22c55e;
 }
 
+.card.inactive-card .logo-fallback{
+    color:#f87171;
+}
+
 .card-title{
     min-width:0;
 
@@ -642,7 +826,7 @@ body{
     text-overflow:ellipsis;
 }
 
-.card-title span{
+.status-badge{
     display:inline-flex;
 
     margin-top:4px;
@@ -656,6 +840,12 @@ body{
     background:rgba(34,197,94,.10);
 
     color:#4ade80;
+}
+
+.status-badge.inactive{
+    background:rgba(239,68,68,.10);
+
+    color:#f87171;
 }
 
 .card-description{
@@ -726,7 +916,6 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:5px;
@@ -746,9 +935,17 @@ body{
     transform:scale(.97);
 }
 
+.card.inactive-card .open-btn{
+    background:rgba(239,68,68,.08);
+
+    border-color:
+        rgba(239,68,68,.16);
+
+    color:#f87171;
+}
+
 .edit-btn{
     width:36px;
-
     min-width:36px;
 
     height:34px;
@@ -824,7 +1021,6 @@ body{
     backdrop-filter:blur(7px);
 
     align-items:center;
-
     justify-content:center;
 
     padding:15px;
@@ -840,7 +1036,6 @@ body{
     max-width:570px;
 
     max-height:calc(100vh - 30px);
-
     max-height:calc(100dvh - 30px);
 
     overflow-y:auto;
@@ -853,14 +1048,14 @@ body{
 
     padding:21px;
 
-    box-shadow:0 30px 80px rgba(0,0,0,.55);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
 }
 
 .modal-head{
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     margin-bottom:18px;
@@ -955,7 +1150,6 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:10px;
@@ -986,6 +1180,12 @@ body{
     font-weight:700;
 }
 
+.btn:disabled{
+    opacity:.6;
+
+    cursor:not-allowed;
+}
+
 .cancel-btn{
     background:#111827;
 
@@ -1008,12 +1208,6 @@ body{
     border-color:rgba(239,68,68,.20);
 }
 
-.btn:disabled{
-    opacity:.6;
-
-    cursor:not-allowed;
-}
-
 
 /* =========================================================
    TOAST
@@ -1023,7 +1217,6 @@ body{
     position:fixed;
 
     left:50%;
-
     bottom:20px;
 
     transform:translateX(-50%);
@@ -1042,7 +1235,8 @@ body{
 
     border:1px solid rgba(255,255,255,.08);
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
 
     font-size:11px;
 
@@ -1121,7 +1315,7 @@ body{
     .page-head{
         align-items:center;
 
-        margin-bottom:15px;
+        margin-bottom:13px;
     }
 
     .page-title h1{
@@ -1149,6 +1343,88 @@ body{
         display:none;
     }
 
+
+    /* SUMMARY MOBILE */
+
+    .summary-grid{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap:7px;
+
+        margin-bottom:12px;
+    }
+
+    .summary-card{
+        padding:10px 8px;
+
+        border-radius:11px;
+    }
+
+    .summary-top{
+        display:block;
+    }
+
+    .summary-icon{
+        width:30px;
+        height:30px;
+
+        border-radius:8px;
+
+        font-size:11px;
+    }
+
+    .summary-label{
+        font-size:7px;
+
+        text-align:left;
+
+        margin-top:7px;
+    }
+
+    .summary-number{
+        font-size:19px;
+
+        margin-top:8px;
+    }
+
+    .summary-description{
+        display:none;
+    }
+
+
+    /* FILTER */
+
+    .filter-bar{
+        display:block;
+
+        margin-bottom:10px;
+    }
+
+    .filter-buttons{
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:5px;
+    }
+
+    .filter-btn{
+        width:100%;
+
+        height:34px;
+
+        padding:0 5px;
+
+        font-size:8px;
+    }
+
+
+    /* SEARCH */
+
     .toolbar{
         margin-bottom:13px;
     }
@@ -1163,12 +1439,12 @@ body{
         font-size:11px;
     }
 
+
+    /* CARDS */
+
     .cards{
         grid-template-columns:
-            repeat(
-                2,
-                minmax(0,1fr)
-            );
+            repeat(2,minmax(0,1fr));
 
         gap:9px;
     }
@@ -1204,7 +1480,7 @@ body{
         font-size:11px;
     }
 
-    .card-title span{
+    .status-badge{
         font-size:7px;
 
         padding:3px 5px;
@@ -1253,6 +1529,9 @@ body{
 
         font-size:9px;
     }
+
+
+    /* MODAL */
 
     .modal{
         padding:8px;
@@ -1314,7 +1593,6 @@ body{
 
     .container{
         padding-left:9px;
-
         padding-right:9px;
     }
 
@@ -1363,7 +1641,6 @@ body{
 
 ::-webkit-scrollbar{
     width:5px;
-
     height:5px;
 }
 
@@ -1394,16 +1671,21 @@ body{
     <div class="login-box">
 
         <div class="login-icon">
+
             <i class="fa-solid fa-lock"></i>
+
         </div>
+
 
         <h1>
             Control Dashboard
         </h1>
 
+
         <p>
             Enter your username to continue
         </p>
+
 
         <div class="input-group">
 
@@ -1411,9 +1693,11 @@ body{
                 Username
             </label>
 
+
             <div class="input-wrap">
 
                 <i class="fa-solid fa-user"></i>
+
 
                 <input
                     type="text"
@@ -1466,8 +1750,11 @@ body{
     <div class="brand">
 
         <div class="brand-logo">
+
             <i class="fa-solid fa-layer-group"></i>
+
         </div>
+
 
         <div class="brand-text">
 
@@ -1555,11 +1842,205 @@ body{
 
 
 
+<!-- =====================================================
+     SUMMARY
+===================================================== -->
+
+<div class="summary-grid">
+
+
+    <div
+        class="summary-card total active-filter"
+        id="totalSummary"
+        onclick="setFilter('all')"
+    >
+
+        <div class="summary-top">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-globe"></i>
+
+            </div>
+
+
+            <div class="summary-label">
+                TOTAL
+            </div>
+
+        </div>
+
+
+        <div
+            class="summary-number"
+            id="totalCount"
+        >
+            0
+        </div>
+
+
+        <div class="summary-description">
+            All websites
+        </div>
+
+    </div>
+
+
+
+    <div
+        class="summary-card active"
+        id="activeSummary"
+        onclick="setFilter('active')"
+    >
+
+        <div class="summary-top">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div class="summary-label">
+                ACTIVE
+            </div>
+
+        </div>
+
+
+        <div
+            class="summary-number"
+            id="activeCount"
+        >
+            0
+        </div>
+
+
+        <div class="summary-description">
+            Running websites
+        </div>
+
+    </div>
+
+
+
+    <div
+        class="summary-card inactive"
+        id="inactiveSummary"
+        onclick="setFilter('inactive')"
+    >
+
+        <div class="summary-top">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+            </div>
+
+
+            <div class="summary-label">
+                INACTIVE
+            </div>
+
+        </div>
+
+
+        <div
+            class="summary-number"
+            id="inactiveCount"
+        >
+            0
+        </div>
+
+
+        <div class="summary-description">
+            Disabled websites
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FILTER
+===================================================== -->
+
+<div class="filter-bar">
+
+
+    <div class="filter-buttons">
+
+
+        <button
+            type="button"
+            class="filter-btn active"
+            id="filterAll"
+            onclick="setFilter('all')"
+        >
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            &nbsp;
+
+            All
+
+        </button>
+
+
+        <button
+            type="button"
+            class="filter-btn"
+            id="filterActive"
+            onclick="setFilter('active')"
+        >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            &nbsp;
+
+            Active
+
+        </button>
+
+
+        <button
+            type="button"
+            class="filter-btn inactive-filter"
+            id="filterInactive"
+            onclick="setFilter('inactive')"
+        >
+
+            <i class="fa-solid fa-circle-xmark"></i>
+
+            &nbsp;
+
+            Inactive
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
 <div class="toolbar">
 
     <div class="search-box">
 
         <i class="fa-solid fa-magnifying-glass"></i>
+
 
         <input
             type="search"
@@ -1603,7 +2084,7 @@ body{
 
     <i class="fa-regular fa-folder-open"></i>
 
-    <div>
+    <div id="emptyText">
         No websites found.
     </div>
 
@@ -1633,6 +2114,7 @@ body{
     <h2 id="modalTitle">
         Add Website
     </h2>
+
 
     <button
         type="button"
@@ -1878,11 +2360,11 @@ let editingId = null;
 
 let inactivityTimer = null;
 
-let toastTimer = null;
+let currentFilter = "all";
 
 
 /* =========================================================
-   3 MINUTE AUTO LOGOUT
+   AUTO LOGOUT
 ========================================================= */
 
 const AUTO_LOGOUT_TIME =
@@ -1895,19 +2377,24 @@ function resetInactivityTimer(){
         inactivityTimer
     );
 
+
     if(
         localStorage.getItem(
             "websiteControlLoggedIn"
         ) !== "true"
     ){
+
         return;
+
     }
+
 
     inactivityTimer =
         setTimeout(
             autoLogout,
             AUTO_LOGOUT_TIME
         );
+
 }
 
 
@@ -1916,6 +2403,7 @@ function autoLogout(){
     clearTimeout(
         inactivityTimer
     );
+
 
     localStorage.removeItem(
         "websiteControlLoggedIn"
@@ -1929,29 +2417,35 @@ function autoLogout(){
         "websiteControlName"
     );
 
+
     cards = [];
 
     editingId = null;
+
 
     document.getElementById(
         "dashboard"
     ).style.display =
         "none";
 
+
     document.getElementById(
         "loginScreen"
     ).style.display =
         "flex";
+
 
     document.getElementById(
         "usernameInput"
     ).value =
         "";
 
+
     const error =
         document.getElementById(
             "loginError"
         );
+
 
     error.textContent =
         "Automatically logged out after 3 minutes of inactivity.";
@@ -1959,11 +2453,13 @@ function autoLogout(){
     error.style.display =
         "block";
 
+
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
+
 }
 
 
@@ -1993,7 +2489,9 @@ function autoLogout(){
                         "websiteControlLoggedIn"
                     ) === "true"
                 ){
+
                     resetInactivityTimer();
+
                 }
 
             },
@@ -2016,6 +2514,7 @@ document.addEventListener(
 
         checkSession();
 
+
         document
             .getElementById(
                 "usernameInput"
@@ -2027,7 +2526,9 @@ document.addEventListener(
                     if(
                         e.key === "Enter"
                     ){
+
                         login();
+
                     }
 
                 }
@@ -2052,6 +2553,7 @@ function checkSession(){
         localStorage.getItem(
             "websiteControlName"
         );
+
 
     if(
         logged === "true" &&
@@ -2083,13 +2585,16 @@ async function login(){
             "loginBtn"
         );
 
+
     const username =
         input.value.trim();
+
 
     document.getElementById(
         "loginError"
     ).style.display =
         "none";
+
 
     if(!username){
 
@@ -2098,12 +2603,17 @@ async function login(){
         );
 
         return;
+
     }
 
-    button.disabled = true;
+
+    button.disabled =
+        true;
+
 
     button.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
+        '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
+
 
     try{
 
@@ -2122,15 +2632,10 @@ async function login(){
                 }
             );
 
-        if(!response.ok){
-
-            throw new Error(
-                "Server returned an error."
-            );
-        }
 
         const data =
             await response.json();
+
 
         if(
             data.success
@@ -2141,17 +2646,20 @@ async function login(){
                 "true"
             );
 
+
             localStorage.setItem(
                 "websiteControlUsername",
                 data.username ||
                 username
             );
 
+
             localStorage.setItem(
                 "websiteControlName",
                 data.name ||
                 username
             );
+
 
             showDashboard(
                 data.name ||
@@ -2172,9 +2680,9 @@ async function login(){
     catch(error){
 
         console.error(
-            "Login Error:",
             error
         );
+
 
         showLoginError(
             "Unable to connect with server."
@@ -2182,7 +2690,10 @@ async function login(){
 
     }
 
-    button.disabled = false;
+
+    button.disabled =
+        false;
+
 
     button.innerHTML =
         '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
@@ -2203,11 +2714,14 @@ function showLoginError(
             "loginError"
         );
 
+
     error.textContent =
         message;
 
+
     error.style.display =
         "block";
+
 }
 
 
@@ -2224,19 +2738,24 @@ function showDashboard(
     ).style.display =
         "none";
 
+
     document.getElementById(
         "dashboard"
     ).style.display =
         "block";
+
 
     document.getElementById(
         "loggedUserName"
     ).textContent =
         name;
 
+
     resetInactivityTimer();
 
+
     loadCards();
+
 }
 
 
@@ -2250,6 +2769,7 @@ function logout(){
         inactivityTimer
     );
 
+
     localStorage.removeItem(
         "websiteControlLoggedIn"
     );
@@ -2262,35 +2782,44 @@ function logout(){
         "websiteControlName"
     );
 
+
     cards = [];
 
     editingId = null;
+
+    currentFilter = "all";
+
 
     document.getElementById(
         "dashboard"
     ).style.display =
         "none";
 
+
     document.getElementById(
         "loginScreen"
     ).style.display =
         "flex";
+
 
     document.getElementById(
         "usernameInput"
     ).value =
         "";
 
+
     document.getElementById(
         "loginError"
     ).style.display =
         "none";
+
 
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
+
 }
 
 
@@ -2310,19 +2839,14 @@ async function loadCards(){
             "cards"
         );
 
-    const empty =
-        document.getElementById(
-            "empty"
-        );
 
     loading.style.display =
         "block";
 
-    empty.style.display =
-        "none";
 
     box.innerHTML =
         "";
+
 
     try{
 
@@ -2337,15 +2861,10 @@ async function loadCards(){
                 }
             );
 
-        if(!response.ok){
-
-            throw new Error(
-                "Server returned an error."
-            );
-        }
 
         const data =
             await response.json();
+
 
         if(
             !data.success
@@ -2355,7 +2874,9 @@ async function loadCards(){
                 data.message ||
                 "Failed to load websites."
             );
+
         }
+
 
         cards =
             Array.isArray(
@@ -2366,27 +2887,8 @@ async function loadCards(){
             :
             [];
 
-        /*
-         * Sort by position when available.
-         */
 
-        cards.sort(
-            function(a,b){
-
-                const posA =
-                    Number(
-                        a.position || 999999
-                    );
-
-                const posB =
-                    Number(
-                        b.position || 999999
-                    );
-
-                return posA - posB;
-
-            }
-        );
+        updateSummary();
 
         renderCards();
 
@@ -2394,9 +2896,9 @@ async function loadCards(){
     catch(error){
 
         console.error(
-            "Load Cards Error:",
             error
         );
+
 
         showToast(
             error.message ||
@@ -2406,8 +2908,154 @@ async function loadCards(){
 
     }
 
+
     loading.style.display =
         "none";
+
+}
+
+
+/* =========================================================
+   UPDATE SUMMARY
+========================================================= */
+
+function updateSummary(){
+
+    const total =
+        cards.length;
+
+
+    const active =
+        cards.filter(
+            function(card){
+
+                return String(
+                    card.status ||
+                    "Active"
+                )
+                .trim()
+                .toLowerCase()
+                ===
+                "active";
+
+            }
+        ).length;
+
+
+    const inactive =
+        cards.filter(
+            function(card){
+
+                return String(
+                    card.status ||
+                    "Active"
+                )
+                .trim()
+                .toLowerCase()
+                ===
+                "inactive";
+
+            }
+        ).length;
+
+
+    document.getElementById(
+        "totalCount"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "activeCount"
+    ).textContent =
+        active;
+
+
+    document.getElementById(
+        "inactiveCount"
+    ).textContent =
+        inactive;
+
+}
+
+
+/* =========================================================
+   SET FILTER
+========================================================= */
+
+function setFilter(
+    filter
+){
+
+    resetInactivityTimer();
+
+
+    currentFilter =
+        filter;
+
+
+    document
+        .getElementById(
+            "filterAll"
+        )
+        .classList.toggle(
+            "active",
+            filter === "all"
+        );
+
+
+    document
+        .getElementById(
+            "filterActive"
+        )
+        .classList.toggle(
+            "active",
+            filter === "active"
+        );
+
+
+    document
+        .getElementById(
+            "filterInactive"
+        )
+        .classList.toggle(
+            "active",
+            filter === "inactive"
+        );
+
+
+    document
+        .getElementById(
+            "totalSummary"
+        )
+        .classList.toggle(
+            "active-filter",
+            filter === "all"
+        );
+
+
+    document
+        .getElementById(
+            "activeSummary"
+        )
+        .classList.toggle(
+            "active-filter",
+            filter === "active"
+        );
+
+
+    document
+        .getElementById(
+            "inactiveSummary"
+        )
+        .classList.toggle(
+            "active-filter",
+            filter === "inactive"
+        );
+
+
+    renderCards();
+
 }
 
 
@@ -2427,31 +3075,28 @@ function renderCards(){
             "empty"
         );
 
-    const searchInput =
+    const emptyText =
         document.getElementById(
-            "searchInput"
+            "emptyText"
         );
 
+
     const search =
-        searchInput
-        ?
-        searchInput.value
-            .trim()
-            .toLowerCase()
-        :
-        "";
+        document.getElementById(
+            "searchInput"
+        )
+        .value
+        .trim()
+        .toLowerCase();
+
 
     box.innerHTML =
         "";
 
+
     const filtered =
         cards.filter(
             function(card){
-
-                /*
-                 * Only active websites
-                 * are shown on dashboard.
-                 */
 
                 const status =
                     String(
@@ -2461,34 +3106,52 @@ function renderCards(){
                     .trim()
                     .toLowerCase();
 
+
+                /* FILTER */
+
                 if(
-                    status === "inactive"
+                    currentFilter === "active" &&
+                    status !== "active"
                 ){
+
                     return false;
+
                 }
+
+
+                if(
+                    currentFilter === "inactive" &&
+                    status !== "inactive"
+                ){
+
+                    return false;
+
+                }
+
+
+                /* SEARCH */
 
                 if(!search){
+
                     return true;
+
                 }
 
-                const text = [
 
-                    card.name,
-                    card.description,
-                    card.source,
-                    card.type,
-                    card.link
+                const text = (
 
-                ]
-                .map(
-                    function(value){
-                        return String(
-                            value || ""
-                        );
-                    }
-                )
-                .join(" ")
-                .toLowerCase();
+                    String(card.name || "") +
+                    " " +
+                    String(card.description || "") +
+                    " " +
+                    String(card.source || "") +
+                    " " +
+                    String(card.type || "") +
+                    " " +
+                    String(card.status || "")
+
+                ).toLowerCase();
+
 
                 return text.includes(
                     search
@@ -2497,6 +3160,7 @@ function renderCards(){
             }
         );
 
+
     if(
         filtered.length === 0
     ){
@@ -2504,11 +3168,39 @@ function renderCards(){
         empty.style.display =
             "block";
 
+
+        if(
+            currentFilter === "active"
+        ){
+
+            emptyText.textContent =
+                "No active websites found.";
+
+        }
+        else if(
+            currentFilter === "inactive"
+        ){
+
+            emptyText.textContent =
+                "No inactive websites found.";
+
+        }
+        else{
+
+            emptyText.textContent =
+                "No websites found.";
+
+        }
+
+
         return;
+
     }
+
 
     empty.style.display =
         "none";
+
 
     filtered.forEach(
         function(card){
@@ -2521,6 +3213,7 @@ function renderCards(){
 
         }
     );
+
 }
 
 
@@ -2537,101 +3230,116 @@ function createCard(
             "article"
         );
 
+
     article.className =
         "card";
+
+
+    const status =
+        String(
+            card.status ||
+            "Active"
+        )
+        .trim();
+
+
+    const isInactive =
+        status.toLowerCase()
+        ===
+        "inactive";
+
+
+    if(
+        isInactive
+    ){
+
+        article.classList.add(
+            "inactive-card"
+        );
+
+    }
+
 
     const initials =
         getInitials(
             card.name
         );
 
-    let logoHTML = "";
 
-    if(card.logo){
-
-        logoHTML = `
-            <img
-                src="${escapeAttribute(card.logo)}"
-                alt=""
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            >
-
-            <div
-                class="logo-fallback"
-                style="display:none;"
-            >
-                ${escapeHTML(initials)}
-            </div>
-        `;
-
-    }
-    else{
-
-        logoHTML = `
-            <div class="logo-fallback">
-                ${escapeHTML(initials)}
-            </div>
-        `;
-
-    }
-
-
-    const sourceHTML =
-        card.source
+    const logo =
+        card.logo
         ?
         `
-            <span>
-                <i class="fa-solid fa-server"></i>
-                ${escapeHTML(card.source)}
-            </span>
+        <img
+            src="${escapeAttribute(card.logo)}"
+            alt=""
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div
+            class="logo-fallback"
+            style="display:none;"
+        >
+            ${escapeHTML(initials)}
+        </div>
         `
         :
-        "";
+        `
+        <div class="logo-fallback">
+            ${escapeHTML(initials)}
+        </div>
+        `;
 
 
-    const typeMetaHTML =
-        card.type
+    const statusClass =
+        isInactive
         ?
-        `
-            <span>
-                <i class="fa-solid fa-tag"></i>
-                ${escapeHTML(card.type)}
-            </span>
-        `
+        "inactive"
         :
         "";
-
-
-    const safeId =
-        encodeURIComponent(
-            String(
-                card.id || ""
-            )
-        );
 
 
     article.innerHTML = `
 
         <div class="card-top">
 
+
             <div class="logo">
-                ${logoHTML}
+
+                ${logo}
+
             </div>
+
 
             <div class="card-title">
 
                 <h3>
+
                     ${escapeHTML(
                         card.name ||
                         "Unnamed Website"
                     )}
+
                 </h3>
 
-                <span>
+
+                <span class="status-badge ${statusClass}">
+
+                    <i class="fa-solid ${
+                        isInactive
+                        ?
+                        "fa-circle-xmark"
+                        :
+                        "fa-circle-check"
+                    }"></i>
+
+                    &nbsp;
+
                     ${escapeHTML(
-                        card.type ||
-                        "Website"
+                        status ||
+                        "Active"
                     )}
+
                 </span>
 
             </div>
@@ -2651,14 +3359,46 @@ function createCard(
 
         <div class="meta">
 
-            ${sourceHTML}
 
-            ${typeMetaHTML}
+            ${
+                card.source
+                ?
+                `
+                <span>
+
+                    <i class="fa-solid fa-server"></i>
+
+                    ${escapeHTML(card.source)}
+
+                </span>
+                `
+                :
+                ""
+            }
+
+
+            ${
+                card.type
+                ?
+                `
+                <span>
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    ${escapeHTML(card.type)}
+
+                </span>
+                `
+                :
+                ""
+            }
+
 
         </div>
 
 
         <div class="card-bottom">
+
 
             <a
                 class="open-btn"
@@ -2681,7 +3421,7 @@ function createCard(
             <button
                 type="button"
                 class="edit-btn"
-                onclick="openEditModal(decodeURIComponent('${safeId}'))"
+                onclick="openEditModal('${escapeAttribute(card.id)}')"
                 title="Edit"
             >
 
@@ -2689,11 +3429,14 @@ function createCard(
 
             </button>
 
+
         </div>
 
     `;
 
+
     return article;
+
 }
 
 
@@ -2706,6 +3449,7 @@ function filterCards(){
     resetInactivityTimer();
 
     renderCards();
+
 }
 
 
@@ -2717,20 +3461,25 @@ function openAddModal(){
 
     resetInactivityTimer();
 
+
     editingId =
         null;
+
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Add Website";
 
+
     document.getElementById(
         "deleteBtn"
     ).style.display =
         "none";
 
+
     clearForm();
+
 
     document.getElementById(
         "cardModal"
@@ -2738,16 +3487,6 @@ function openAddModal(){
         "show"
     );
 
-    setTimeout(
-        function(){
-
-            document.getElementById(
-                "formName"
-            ).focus();
-
-        },
-        50
-    );
 }
 
 
@@ -2761,16 +3500,20 @@ function openEditModal(
 
     resetInactivityTimer();
 
+
     const card =
         cards.find(
             function(item){
 
                 return String(
                     item.id
-                ) === String(id);
+                )
+                ===
+                String(id);
 
             }
         );
+
 
     if(!card){
 
@@ -2780,15 +3523,19 @@ function openEditModal(
         );
 
         return;
+
     }
+
 
     editingId =
         card.id;
+
 
     document.getElementById(
         "modalTitle"
     ).textContent =
         "Edit Website";
+
 
     document.getElementById(
         "deleteBtn"
@@ -2857,6 +3604,7 @@ function openEditModal(
     ).classList.add(
         "show"
     );
+
 }
 
 
@@ -2886,10 +3634,12 @@ function clearForm(){
         }
     );
 
+
     document.getElementById(
         "formStatus"
     ).value =
         "Active";
+
 }
 
 
@@ -2901,14 +3651,17 @@ function closeModal(){
 
     resetInactivityTimer();
 
+
     document.getElementById(
         "cardModal"
     ).classList.remove(
         "show"
     );
 
+
     editingId =
         null;
+
 }
 
 
@@ -2926,38 +3679,35 @@ function normalizeWebsiteURL(
         )
         .trim();
 
+
     if(!url){
+
         return "";
+
     }
 
-
-    /*
-     * Already has HTTP/HTTPS
-     */
 
     if(
         /^https?:\/\//i.test(
             url
         )
     ){
+
         return url;
+
     }
 
-
-    /*
-     * Protocol-relative URL
-     */
 
     if(
-        url.startsWith("//")
+        url.startsWith(
+            "//"
+        )
     ){
+
         return "https:" + url;
+
     }
 
-
-    /*
-     * Local IP addresses
-     */
 
     const ipPattern =
         /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
@@ -2968,15 +3718,14 @@ function normalizeWebsiteURL(
             url
         )
     ){
+
         return "http://" + url;
+
     }
 
 
-    /*
-     * Domain name
-     */
-
     return "https://" + url;
+
 }
 
 
@@ -2988,37 +3737,11 @@ async function saveCard(){
 
     resetInactivityTimer();
 
-    const name =
-        document.getElementById(
-            "formName"
-        ).value.trim();
 
-    const rawLink =
+    let rawLink =
         document.getElementById(
             "formLink"
         ).value.trim();
-
-
-    if(!name){
-
-        showToast(
-            "Website name is required.",
-            "error"
-        );
-
-        return;
-    }
-
-
-    if(!rawLink){
-
-        showToast(
-            "Website link is required.",
-            "error"
-        );
-
-        return;
-    }
 
 
     const normalizedLink =
@@ -3036,40 +3759,51 @@ async function saveCard(){
             :
             "addCard",
 
+
         id:
             editingId ||
             "",
 
+
         name:
-            name,
+            document.getElementById(
+                "formName"
+            ).value.trim(),
+
 
         link:
             normalizedLink,
+
 
         logo:
             document.getElementById(
                 "formLogo"
             ).value.trim(),
 
+
         description:
             document.getElementById(
                 "formDescription"
             ).value.trim(),
+
 
         source:
             document.getElementById(
                 "formSource"
             ).value.trim(),
 
+
         type:
             document.getElementById(
                 "formType"
             ).value.trim(),
 
+
         position:
             document.getElementById(
                 "formPosition"
             ).value,
+
 
         status:
             document.getElementById(
@@ -3079,9 +3813,33 @@ async function saveCard(){
     };
 
 
-    /*
-     * Show normalized URL
-     */
+    if(
+        !payload.name
+    ){
+
+        showToast(
+            "Website name is required.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !payload.link
+    ){
+
+        showToast(
+            "Website link is required.",
+            "error"
+        );
+
+        return;
+
+    }
+
 
     document.getElementById(
         "formLink"
@@ -3098,8 +3856,9 @@ async function saveCard(){
     saveBtn.disabled =
         true;
 
+
     saveBtn.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Saving...';
+        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
 
 
     try{
@@ -3123,14 +3882,6 @@ async function saveCard(){
             );
 
 
-        if(!response.ok){
-
-            throw new Error(
-                "Server returned an error."
-            );
-        }
-
-
         const data =
             await response.json();
 
@@ -3143,6 +3894,7 @@ async function saveCard(){
                 data.message ||
                 "Save failed."
             );
+
         }
 
 
@@ -3162,7 +3914,6 @@ async function saveCard(){
     catch(error){
 
         console.error(
-            "Save Error:",
             error
         );
 
@@ -3178,6 +3929,7 @@ async function saveCard(){
 
     saveBtn.disabled =
         false;
+
 
     saveBtn.innerHTML =
         '<i class="fa-solid fa-check"></i> Save';
@@ -3197,32 +3949,21 @@ async function deleteCurrentCard(){
     if(
         !editingId
     ){
+
         return;
+
     }
 
 
-    const confirmed =
-        window.confirm(
+    if(
+        !confirm(
             "Are you sure you want to delete this website?"
-        );
+        )
+    ){
 
-
-    if(!confirmed){
         return;
+
     }
-
-
-    const deleteBtn =
-        document.getElementById(
-            "deleteBtn"
-        );
-
-
-    deleteBtn.disabled =
-        true;
-
-    deleteBtn.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Deleting...';
 
 
     try{
@@ -3252,14 +3993,6 @@ async function deleteCurrentCard(){
             );
 
 
-        if(!response.ok){
-
-            throw new Error(
-                "Server returned an error."
-            );
-        }
-
-
         const data =
             await response.json();
 
@@ -3272,6 +4005,7 @@ async function deleteCurrentCard(){
                 data.message ||
                 "Delete failed."
             );
+
         }
 
 
@@ -3291,7 +4025,6 @@ async function deleteCurrentCard(){
     catch(error){
 
         console.error(
-            "Delete Error:",
             error
         );
 
@@ -3303,13 +4036,6 @@ async function deleteCurrentCard(){
         );
 
     }
-
-
-    deleteBtn.disabled =
-        false;
-
-    deleteBtn.innerHTML =
-        '<i class="fa-solid fa-trash"></i> Delete';
 
 }
 
@@ -3323,7 +4049,7 @@ function escapeHTML(
 ){
 
     return String(
-        value ?? ""
+        value || ""
     )
     .replace(
         /&/g,
@@ -3376,15 +4102,7 @@ function getInitials(
         .trim()
         .split(
             /\s+/
-        )
-        .filter(Boolean);
-
-
-    if(
-        words.length === 0
-    ){
-        return "W";
-    }
+        );
 
 
     if(
@@ -3412,6 +4130,9 @@ function getInitials(
 /* =========================================================
    TOAST
 ========================================================= */
+
+let toastTimer;
+
 
 function showToast(
     message,
@@ -3463,28 +4184,27 @@ function showToast(
    MODAL CLICK
 ========================================================= */
 
-document
-    .getElementById(
-        "cardModal"
-    )
-    .addEventListener(
-        "click",
-        function(e){
+document.getElementById(
+    "cardModal"
+)
+.addEventListener(
+    "click",
+    function(e){
 
-            if(
-                e.target === this
-            ){
+        if(
+            e.target === this
+        ){
 
-                closeModal();
-
-            }
+            closeModal();
 
         }
-    );
+
+    }
+);
 
 
 /* =========================================================
-   ESC KEY
+   ESC
 ========================================================= */
 
 document.addEventListener(
@@ -3495,20 +4215,7 @@ document.addEventListener(
             e.key === "Escape"
         ){
 
-            const modal =
-                document.getElementById(
-                    "cardModal"
-                );
-
-            if(
-                modal.classList.contains(
-                    "show"
-                )
-            ){
-
-                closeModal();
-
-            }
+            closeModal();
 
         }
 
