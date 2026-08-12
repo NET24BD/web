@@ -13,12 +13,7 @@
 <title>Website Control Dashboard</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -29,7 +24,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
-
 
 <style>
 
@@ -299,7 +293,7 @@ body{
     align-items:center;
     justify-content:space-between;
     gap:15px;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .page-title h1{
@@ -336,21 +330,30 @@ body{
 
 
 /* =========================================================
-   STATS
+   COMPACT STATS
 ========================================================= */
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+.dashboard-tools{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
     gap:12px;
-    margin-bottom:12px;
+    margin-bottom:13px;
+}
+
+.stats{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    flex-wrap:nowrap;
 }
 
 .stat-card{
-    min-width:0;
-    min-height:105px;
-    padding:16px;
-    border-radius:15px;
+    width:105px;
+    min-width:105px;
+    height:64px;
+    padding:8px 9px;
+    border-radius:11px;
     background:
         linear-gradient(
             145deg,
@@ -358,29 +361,32 @@ body{
             rgba(9,14,23,.96)
         );
     border:1px solid rgba(255,255,255,.07);
-    position:relative;
-    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 .stat-card.total{
-    border-color:rgba(34,197,94,.35);
+    border-color:rgba(59,130,246,.25);
 }
 
-.stat-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
+.stat-card.active{
+    border-color:rgba(34,197,94,.25);
+}
+
+.stat-card.inactive{
+    border-color:rgba(239,68,68,.25);
 }
 
 .stat-icon{
-    width:38px;
-    height:38px;
-    border-radius:10px;
+    width:29px;
+    height:29px;
+    min-width:29px;
+    border-radius:7px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:14px;
+    font-size:10px;
 }
 
 .stat-card.total .stat-icon{
@@ -398,41 +404,41 @@ body{
     color:#f87171;
 }
 
+.stat-content{
+    min-width:0;
+}
+
 .stat-label{
-    font-size:9px;
+    font-size:7px;
     color:#64748b;
     font-weight:700;
     text-transform:uppercase;
+    line-height:1;
 }
 
 .stat-number{
-    font-size:27px;
+    font-size:18px;
     font-weight:800;
-    margin-top:8px;
+    margin-top:5px;
     line-height:1;
 }
 
 .stat-sub{
-    color:#64748b;
-    font-size:8px;
-    margin-top:6px;
+    display:none;
 }
 
 
 /* =========================================================
-   COMPACT FILTERS
+   FILTER
 ========================================================= */
 
 .filter-row{
     display:flex;
     align-items:center;
-    justify-content:flex-start;
     gap:5px;
     margin-bottom:13px;
     overflow-x:auto;
     scrollbar-width:none;
-    width:max-content;
-    max-width:100%;
 }
 
 .filter-row::-webkit-scrollbar{
@@ -440,9 +446,9 @@ body{
 }
 
 .filter-btn{
-    height:30px;
-    padding:0 9px;
-    border-radius:7px;
+    height:31px;
+    padding:0 10px;
+    border-radius:8px;
     border:1px solid rgba(255,255,255,.08);
     background:#0f172a;
     color:#94a3b8;
@@ -451,24 +457,14 @@ body{
     cursor:pointer;
     display:flex;
     align-items:center;
-    justify-content:center;
     gap:5px;
     white-space:nowrap;
-    flex:0 0 auto;
-}
-
-.filter-btn i{
-    font-size:8px;
 }
 
 .filter-btn.active{
     background:rgba(34,197,94,.12);
     border-color:rgba(34,197,94,.30);
     color:#4ade80;
-}
-
-.filter-btn:active{
-    transform:scale(.96);
 }
 
 
@@ -480,7 +476,7 @@ body{
     width:100%;
     display:flex;
     justify-content:flex-end;
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .search-box{
@@ -499,14 +495,14 @@ body{
 
 .search-box input{
     width:100%;
-    height:42px;
+    height:40px;
     border-radius:10px;
     border:1px solid rgba(255,255,255,.08);
     background:rgba(15,23,42,.80);
     color:#fff;
     outline:none;
     padding:0 13px 0 38px;
-    font-size:12px;
+    font-size:11px;
 }
 
 .search-box input:focus{
@@ -535,7 +531,7 @@ body{
             rgba(9,14,23,.96)
         );
     border:1px solid rgba(255,255,255,.07);
-    transition:.2s ease;
+    transition:.18s ease;
 }
 
 .card.inactive-card{
@@ -543,9 +539,9 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
     border-color:rgba(34,197,94,.25);
-    box-shadow:0 16px 32px rgba(0,0,0,.25);
+    box-shadow:0 12px 28px rgba(0,0,0,.22);
 }
 
 .card.inactive-card:hover{
@@ -700,13 +696,13 @@ body{
 
 .loading{
     text-align:center;
-    padding:55px 20px;
+    padding:40px 20px;
     color:#64748b;
-    font-size:12px;
+    font-size:11px;
 }
 
 .loading i{
-    font-size:22px;
+    font-size:19px;
 }
 
 .empty{
@@ -951,12 +947,12 @@ body{
     }
 
     .container{
-        padding:15px 10px 25px;
+        padding:13px 10px 25px;
     }
 
     .page-head{
         align-items:center;
-        margin-bottom:12px;
+        margin-bottom:10px;
     }
 
     .page-title h1{
@@ -981,91 +977,66 @@ body{
     }
 
 
-    /* =====================================================
-       MOBILE STATS
-    ===================================================== */
+    /* COMPACT MOBILE STATS */
+
+    .dashboard-tools{
+        display:block;
+        margin-bottom:9px;
+    }
 
     .stats{
-        grid-template-columns:repeat(3,1fr);
-        gap:7px;
-        margin-bottom:9px;
+        width:100%;
+        display:flex;
+        gap:5px;
+        margin-bottom:8px;
     }
 
     .stat-card{
-        min-height:78px;
-        padding:9px;
-        border-radius:11px;
-    }
-
-    .stat-top{
-        gap:4px;
+        flex:1;
+        width:auto;
+        min-width:0;
+        height:52px;
+        padding:7px;
+        border-radius:9px;
+        gap:6px;
     }
 
     .stat-icon{
-        width:27px;
-        height:27px;
-        border-radius:7px;
-        font-size:10px;
+        width:24px;
+        height:24px;
+        min-width:24px;
+        border-radius:6px;
+        font-size:8px;
     }
 
     .stat-label{
-        font-size:7px;
+        font-size:6px;
     }
 
     .stat-number{
-        font-size:20px;
-        margin-top:6px;
-    }
-
-    .stat-sub{
-        font-size:6px;
-        margin-top:4px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
+        font-size:16px;
+        margin-top:3px;
     }
 
 
-    /* =====================================================
-       MOBILE COMPACT FILTER
-    ===================================================== */
+    /* FILTER */
 
     .filter-row{
-        display:flex;
-        justify-content:flex-start;
-        align-items:center;
-        gap:4px;
         margin-bottom:9px;
-        overflow-x:auto;
-        scrollbar-width:none;
-        width:max-content;
-        max-width:100%;
-    }
-
-    .filter-row::-webkit-scrollbar{
-        display:none;
+        gap:4px;
     }
 
     .filter-btn{
-        height:27px;
+        height:29px;
         padding:0 8px;
-        border-radius:6px;
-        font-size:7px;
-        gap:4px;
-        flex:0 0 auto;
-    }
-
-    .filter-btn i{
-        font-size:7px;
+        font-size:7.5px;
     }
 
 
-    /* =====================================================
-       SEARCH
-    ===================================================== */
+    /* SEARCH */
 
     .toolbar{
-        margin-bottom:11px;
+        margin-bottom:10px;
     }
 
     .search-box{
@@ -1073,14 +1044,12 @@ body{
     }
 
     .search-box input{
-        height:39px;
+        height:38px;
         font-size:10px;
     }
 
 
-    /* =====================================================
-       CARDS
-    ===================================================== */
+    /* CARDS */
 
     .cards{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1155,9 +1124,7 @@ body{
     }
 
 
-    /* =====================================================
-       MODAL
-    ===================================================== */
+    /* MODAL */
 
     .modal{
         padding:8px;
@@ -1217,15 +1184,21 @@ body{
     }
 
     .stats{
-        gap:5px;
+        gap:4px;
     }
 
     .stat-card{
-        padding:8px;
+        padding:6px;
+    }
+
+    .stat-icon{
+        width:22px;
+        height:22px;
+        min-width:22px;
     }
 
     .stat-number{
-        font-size:18px;
+        font-size:15px;
     }
 
     .cards{
@@ -1420,104 +1393,96 @@ body{
 
 
 <!-- =====================================================
-     STATS
+     COMPACT STATS
 ===================================================== -->
 
-<div class="stats">
+<div class="dashboard-tools">
+
+    <div class="stats">
 
 
-    <div class="stat-card total">
-
-        <div class="stat-top">
+        <div class="stat-card total">
 
             <div class="stat-icon">
                 <i class="fa-solid fa-globe"></i>
             </div>
 
-            <div class="stat-label">
-                Total
+            <div class="stat-content">
+
+                <div class="stat-label">
+                    Total
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="totalCount"
+                >
+                    0
+                </div>
+
             </div>
 
         </div>
 
-        <div
-            class="stat-number"
-            id="totalCount"
-        >
-            0
-        </div>
-
-        <div class="stat-sub">
-            All websites
-        </div>
-
-    </div>
 
 
-
-    <div class="stat-card active">
-
-        <div class="stat-top">
+        <div class="stat-card active">
 
             <div class="stat-icon">
                 <i class="fa-solid fa-check"></i>
             </div>
 
-            <div class="stat-label">
-                Active
+            <div class="stat-content">
+
+                <div class="stat-label">
+                    Active
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="activeCount"
+                >
+                    0
+                </div>
+
             </div>
 
         </div>
 
-        <div
-            class="stat-number"
-            id="activeCount"
-        >
-            0
-        </div>
-
-        <div class="stat-sub">
-            Running websites
-        </div>
-
-    </div>
 
 
-
-    <div class="stat-card inactive">
-
-        <div class="stat-top">
+        <div class="stat-card inactive">
 
             <div class="stat-icon">
                 <i class="fa-solid fa-xmark"></i>
             </div>
 
-            <div class="stat-label">
-                Inactive
+            <div class="stat-content">
+
+                <div class="stat-label">
+                    Inactive
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="inactiveCount"
+                >
+                    0
+                </div>
+
             </div>
 
         </div>
 
-        <div
-            class="stat-number"
-            id="inactiveCount"
-        >
-            0
-        </div>
-
-        <div class="stat-sub">
-            Disabled websites
-        </div>
 
     </div>
-
 
 </div>
 
 
 
 <!-- =====================================================
-     COMPACT FILTER
+     FILTER
 ===================================================== -->
 
 <div class="filter-row">
@@ -1588,7 +1553,7 @@ body{
 
     <i class="fa-solid fa-spinner fa-spin"></i>
 
-    <div style="margin-top:9px;">
+    <div style="margin-top:8px;">
         Loading websites...
     </div>
 
@@ -1869,6 +1834,8 @@ let inactivityTimer = null;
 
 let currentFilter = "all";
 
+let loadingCards = false;
+
 
 /* =========================================================
    AUTO LOGOUT
@@ -1951,14 +1918,11 @@ function autoLogout(){
 
 [
     "click",
-    "mousemove",
     "mousedown",
     "keydown",
     "scroll",
     "touchstart",
-    "touchmove",
-    "pointerdown",
-    "wheel"
+    "pointerdown"
 ].forEach(
     function(eventName){
 
@@ -2073,7 +2037,7 @@ async function login(){
     button.disabled = true;
 
     button.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
+        '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Checking...';
 
     try{
 
@@ -2181,7 +2145,18 @@ function showDashboard(name){
 
     resetInactivityTimer();
 
-    loadCards();
+    /*
+       Dashboard first show হবে।
+       API পরে load হবে।
+    */
+
+    requestAnimationFrame(
+        function(){
+
+            loadCards();
+
+        }
+    );
 
 }
 
@@ -2265,6 +2240,12 @@ function normalizeStatus(status){
 
 async function loadCards(){
 
+    if(loadingCards){
+        return;
+    }
+
+    loadingCards = true;
+
     const loading =
         document.getElementById(
             "loading"
@@ -2275,9 +2256,14 @@ async function loadCards(){
             "cards"
         );
 
-    loading.style.display = "block";
+    /*
+       Existing cards থাকলে আগে clear না করে
+       background-এ update হবে।
+    */
 
-    box.innerHTML = "";
+    if(cards.length === 0){
+        loading.style.display = "block";
+    }
 
     try{
 
@@ -2291,6 +2277,14 @@ async function loadCards(){
                     cache:"no-store"
                 }
             );
+
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned an error."
+            );
+
+        }
 
         const data =
             await response.json();
@@ -2329,15 +2323,24 @@ async function loadCards(){
 
         console.error(error);
 
-        showToast(
-            error.message ||
-            "Failed to load websites.",
-            "error"
-        );
+        if(cards.length === 0){
+
+            showToast(
+                error.message ||
+                "Failed to load websites.",
+                "error"
+            );
+
+        }
 
     }
+    finally{
 
-    loading.style.display = "none";
+        loadingCards = false;
+
+        loading.style.display = "none";
+
+    }
 
 }
 
@@ -2348,30 +2351,30 @@ async function loadCards(){
 
 function updateStats(){
 
-    const total =
-        cards.length;
+    let total = cards.length;
 
-    const active =
-        cards.filter(
-            function(card){
+    let active = 0;
 
-                return normalizeStatus(
-                    card.status
-                ) === "Active";
+    let inactive = 0;
 
-            }
-        ).length;
+    for(
+        let i = 0;
+        i < cards.length;
+        i++
+    ){
 
-    const inactive =
-        cards.filter(
-            function(card){
+        if(
+            normalizeStatus(
+                cards[i].status
+            ) === "Active"
+        ){
+            active++;
+        }
+        else{
+            inactive++;
+        }
 
-                return normalizeStatus(
-                    card.status
-                ) === "Inactive";
-
-            }
-        ).length;
+    }
 
     document.getElementById(
         "totalCount"
@@ -2437,78 +2440,82 @@ function renderCards(){
             "emptyText"
         );
 
-    const search =
+    const searchInput =
         document.getElementById(
             "searchInput"
-        )
-        .value
-        .trim()
-        .toLowerCase();
-
-
-    box.innerHTML = "";
-
-
-    const filtered =
-        cards.filter(
-            function(card){
-
-                const status =
-                    normalizeStatus(
-                        card.status
-                    );
-
-
-                if(
-                    currentFilter === "active" &&
-                    status !== "Active"
-                ){
-                    return false;
-                }
-
-
-                if(
-                    currentFilter === "inactive" &&
-                    status !== "Inactive"
-                ){
-                    return false;
-                }
-
-
-                if(!search){
-                    return true;
-                }
-
-
-                const text =
-                    String(
-                        card.name || ""
-                    ) +
-                    " " +
-                    String(
-                        card.description || ""
-                    ) +
-                    " " +
-                    String(
-                        card.source || ""
-                    ) +
-                    " " +
-                    String(
-                        card.type || ""
-                    ) +
-                    " " +
-                    status;
-
-
-                return text
-                    .toLowerCase()
-                    .includes(search);
-
-            }
         );
+
+    const search =
+        searchInput
+        ? searchInput.value.trim().toLowerCase()
+        : "";
+
+
+    const filtered = [];
+
+    for(
+        let i = 0;
+        i < cards.length;
+        i++
+    ){
+
+        const card = cards[i];
+
+        const status =
+            normalizeStatus(
+                card.status
+            );
+
+
+        if(
+            currentFilter === "active" &&
+            status !== "Active"
+        ){
+            continue;
+        }
+
+
+        if(
+            currentFilter === "inactive" &&
+            status !== "Inactive"
+        ){
+            continue;
+        }
+
+
+        if(search){
+
+            const text =
+                (
+                    String(card.name || "") +
+                    " " +
+                    String(card.description || "") +
+                    " " +
+                    String(card.source || "") +
+                    " " +
+                    String(card.type || "") +
+                    " " +
+                    status
+                )
+                .toLowerCase();
+
+            if(
+                !text.includes(search)
+            ){
+                continue;
+            }
+
+        }
+
+
+        filtered.push(card);
+
+    }
 
 
     if(filtered.length === 0){
+
+        box.innerHTML = "";
 
         empty.style.display = "block";
 
@@ -2539,15 +2546,31 @@ function renderCards(){
     empty.style.display = "none";
 
 
-    filtered.forEach(
-        function(card){
+    /*
+       One DOM operation instead of appendChild
+       for every single card.
+    */
 
-            box.appendChild(
-                createCard(card)
-            );
+    const fragment =
+        document.createDocumentFragment();
 
-        }
-    );
+    for(
+        let i = 0;
+        i < filtered.length;
+        i++
+    ){
+
+        fragment.appendChild(
+            createCard(
+                filtered[i]
+            )
+        );
+
+    }
+
+    box.innerHTML = "";
+
+    box.appendChild(fragment);
 
 }
 
@@ -2582,32 +2605,42 @@ function createCard(card){
 
 
     const initials =
-        getInitials(card.name);
+        getInitials(
+            card.name
+        );
 
 
-    const logo =
-        card.logo
-        ?
-        `
-        <img
-            src="${escapeAttribute(card.logo)}"
-            alt=""
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
+    let logoHTML = "";
 
-        <div
-            class="logo-fallback"
-            style="display:none;"
-        >
-            ${escapeHTML(initials)}
-        </div>
-        `
-        :
-        `
-        <div class="logo-fallback">
-            ${escapeHTML(initials)}
-        </div>
+
+    if(card.logo){
+
+        logoHTML = `
+            <img
+                src="${escapeAttribute(card.logo)}"
+                alt=""
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="logo-fallback"
+                style="display:none;"
+            >
+                ${escapeHTML(initials)}
+            </div>
         `;
+
+    }
+    else{
+
+        logoHTML = `
+            <div class="logo-fallback">
+                ${escapeHTML(initials)}
+            </div>
+        `;
+
+    }
 
 
     const statusClass =
@@ -2616,12 +2649,44 @@ function createCard(card){
         : "";
 
 
+    const safeLink =
+        normalizeWebsiteURL(
+            card.link
+        );
+
+
+    const sourceHTML =
+        card.source
+        ?
+        `
+        <span>
+            <i class="fa-solid fa-server"></i>
+            ${escapeHTML(card.source)}
+        </span>
+        `
+        :
+        "";
+
+
+    const typeHTML =
+        card.type
+        ?
+        `
+        <span>
+            <i class="fa-solid fa-tag"></i>
+            ${escapeHTML(card.type)}
+        </span>
+        `
+        :
+        "";
+
+
     article.innerHTML = `
 
         <div class="card-top">
 
             <div class="logo">
-                ${logo}
+                ${logoHTML}
             </div>
 
             <div class="card-title">
@@ -2633,7 +2698,9 @@ function createCard(card){
                     )}
                 </h3>
 
-                <span class="status-badge ${statusClass}">
+                <span
+                    class="status-badge ${statusClass}"
+                >
 
                     <i class="fa-solid ${
                         status === "Active"
@@ -2664,31 +2731,9 @@ function createCard(card){
 
         <div class="meta">
 
-            ${
-                card.source
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-server"></i>
-                    ${escapeHTML(card.source)}
-                </span>
-                `
-                :
-                ""
-            }
+            ${sourceHTML}
 
-            ${
-                card.type
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-tag"></i>
-                    ${escapeHTML(card.type)}
-                </span>
-                `
-                :
-                ""
-            }
+            ${typeHTML}
 
         </div>
 
@@ -2697,9 +2742,7 @@ function createCard(card){
 
             <a
                 class="open-btn"
-                href="${escapeAttribute(
-                    normalizeWebsiteURL(card.link)
-                )}"
+                href="${escapeAttribute(safeLink)}"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -2714,7 +2757,7 @@ function createCard(card){
             <button
                 type="button"
                 class="edit-btn"
-                onclick="openEditModal('${escapeAttribute(card.id)}')"
+                data-edit-id="${escapeAttribute(card.id)}"
                 title="Edit"
             >
 
@@ -2725,6 +2768,28 @@ function createCard(card){
         </div>
 
     `;
+
+
+    const editButton =
+        article.querySelector(
+            ".edit-btn"
+        );
+
+
+    if(editButton){
+
+        editButton.addEventListener(
+            "click",
+            function(){
+
+                openEditModal(
+                    this.dataset.editId
+                );
+
+            }
+        );
+
+    }
 
 
     return article;
@@ -2860,7 +2925,9 @@ function openEditModal(id){
     document.getElementById(
         "formStatus"
     ).value =
-        normalizeStatus(card.status);
+        normalizeStatus(
+            card.status
+        );
 
 
     document.getElementById(
