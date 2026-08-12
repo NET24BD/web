@@ -1,1219 +1,1147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    content="width=device-width, initial-scale=1.0"
 >
 
-<title>Website Control Dashboard</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
+<title>Website Dashboard</title>
 
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
-
 <style>
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
 }
 
-html{
-    scroll-behavior:smooth;
+html,
+body{
+    width:100%;
+    min-height:100%;
 }
 
 body{
-    font-family:"Inter",sans-serif;
-    background:
-        radial-gradient(
-            circle at top left,
-            #172033 0%,
-            #0b1019 42%,
-            #06090e 100%
-        );
-    color:#f8fafc;
-    min-height:100vh;
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#f4f7fb;
+
+    color:#172033;
+
     overflow-x:hidden;
 }
 
 
-/* =========================================================
-   LOGIN
-========================================================= */
-
-#loginScreen{
-    min-height:100vh;
-    min-height:100dvh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-}
-
-.login-box{
-    width:100%;
-    max-width:390px;
-    background:rgba(15,23,42,.94);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
-    padding:28px 22px;
-    box-shadow:0 25px 70px rgba(0,0,0,.45);
-    backdrop-filter:blur(18px);
-}
-
-.login-icon{
-    width:64px;
-    height:64px;
-    border-radius:18px;
-    margin:0 auto 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
-    color:#fff;
-    box-shadow:0 12px 30px rgba(34,197,94,.20);
-}
-
-.login-box h1{
-    text-align:center;
-    font-size:23px;
-    font-weight:800;
-}
-
-.login-box p{
-    text-align:center;
-    color:#94a3b8;
-    font-size:12px;
-    margin-top:7px;
-    margin-bottom:25px;
-}
-
-.input-group{
-    margin-bottom:16px;
-}
-
-.input-group label{
-    display:block;
-    font-size:12px;
-    font-weight:600;
-    color:#cbd5e1;
-    margin-bottom:7px;
-}
-
-.input-wrap{
-    position:relative;
-}
-
-.input-wrap i{
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#64748b;
-}
-
-.input-wrap input{
-    width:100%;
-    height:50px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.08);
-    background:#080e17;
-    color:#fff;
-    outline:none;
-    padding:0 14px 0 42px;
-    font-size:14px;
-}
-
-.input-wrap input:focus{
-    border-color:#22c55e;
-    box-shadow:0 0 0 3px rgba(34,197,94,.08);
-}
-
-.login-btn{
-    width:100%;
-    height:50px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
-    color:#fff;
-    font-size:14px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.login-btn:active{
-    transform:scale(.98);
-}
-
-.login-btn:disabled{
-    opacity:.6;
-}
-
-.login-error{
-    display:none;
-    margin-top:13px;
-    padding:11px;
-    border-radius:10px;
-    background:rgba(239,68,68,.10);
-    border:1px solid rgba(239,68,68,.20);
-    color:#fca5a5;
-    font-size:12px;
-    text-align:center;
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-#dashboard{
-    display:none;
-    min-height:100vh;
-    min-height:100dvh;
-}
-
-
-/* =========================================================
-   TOPBAR
-========================================================= */
-
-.topbar{
-    height:68px;
-    position:sticky;
-    top:0;
-    z-index:100;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 24px;
-    background:rgba(7,10,16,.88);
-    border-bottom:1px solid rgba(255,255,255,.07);
-    backdrop-filter:blur(18px);
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.brand-logo{
-    width:39px;
-    height:39px;
-    border-radius:11px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
-    font-size:16px;
-}
-
-.brand-text h2{
-    font-size:15px;
-    font-weight:800;
-}
-
-.brand-text span{
-    display:block;
-    font-size:10px;
-    color:#64748b;
-    margin-top:2px;
-}
-
-.user-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.user-info{
-    text-align:right;
-}
-
-.user-name{
-    font-size:12px;
-    font-weight:700;
-}
-
-.user-label{
-    font-size:9px;
-    color:#64748b;
-    margin-top:2px;
-}
-
-.logout-btn{
-    width:38px;
-    height:38px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,.08);
-    background:#111827;
-    color:#f87171;
-    cursor:pointer;
-}
-
-.logout-btn:active{
-    transform:scale(.94);
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
 .container{
+
     width:100%;
-    max-width:1450px;
-    margin:auto;
-    padding:27px;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:18px;
+
 }
 
-.page-head{
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header{
+
+    width:100%;
+
+    background:#ffffff;
+
+    border:1px solid #e5eaf1;
+
+    border-radius:16px;
+
+    padding:16px 18px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:15px;
-    margin-bottom:18px;
+
+    box-shadow:
+        0 5px 20px rgba(15,23,42,.05);
+
+    margin-bottom:15px;
+
 }
 
-.page-title h1{
-    font-size:26px;
-    font-weight:800;
-    letter-spacing:-.5px;
-}
+.header-left{
 
-.page-title p{
-    color:#64748b;
-    font-size:12px;
-    margin-top:5px;
-}
-
-.add-btn{
-    height:42px;
-    padding:0 16px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
-    color:#fff;
-    font-size:12px;
-    font-weight:700;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:7px;
-    white-space:nowrap;
-}
-
-.add-btn:active{
-    transform:scale(.96);
-}
-
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-bottom:16px;
-}
-
-.stat-card{
     min-width:0;
-    min-height:105px;
-    padding:16px;
-    border-radius:15px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(20,29,46,.96),
-            rgba(9,14,23,.96)
-        );
-    border:1px solid rgba(255,255,255,.07);
-    position:relative;
-    overflow:hidden;
+
 }
 
-.stat-card.total{
-    border-color:rgba(34,197,94,.35);
-}
+.header-title{
 
-.stat-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-}
+    font-size:22px;
 
-.stat-icon{
-    width:38px;
-    height:38px;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:14px;
-}
-
-.stat-card.total .stat-icon{
-    background:rgba(59,130,246,.14);
-    color:#60a5fa;
-}
-
-.stat-card.active .stat-icon{
-    background:rgba(34,197,94,.14);
-    color:#4ade80;
-}
-
-.stat-card.inactive .stat-icon{
-    background:rgba(239,68,68,.14);
-    color:#f87171;
-}
-
-.stat-label{
-    font-size:9px;
-    color:#64748b;
     font-weight:700;
-    text-transform:uppercase;
-}
 
-.stat-number{
-    font-size:27px;
-    font-weight:800;
-    margin-top:8px;
-    line-height:1;
-}
+    color:#172033;
 
-.stat-sub{
-    color:#64748b;
-    font-size:8px;
-    margin-top:6px;
-}
-
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-.filter-row{
     display:flex;
+
     align-items:center;
-    gap:7px;
-    margin-bottom:13px;
-    overflow-x:auto;
-    scrollbar-width:none;
+
+    gap:10px;
+
 }
 
-.filter-row::-webkit-scrollbar{
-    display:none;
+.header-title i{
+
+    color:#16a34a;
+
+}
+
+.header-subtitle{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#718096;
+
+}
+
+.refresh-btn{
+
+    border:0;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    min-width:42px;
+
+    height:42px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.refresh-btn:hover{
+
+    background:#15803d;
+
+}
+
+.refresh-btn.loading i{
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+.summary-card{
+
+    background:#ffffff;
+
+    border:1px solid #e5eaf1;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+
+    box-shadow:
+        0 4px 16px rgba(15,23,42,.04);
+
+}
+
+.summary-icon{
+
+    width:42px;
+
+    height:42px;
+
+    flex:0 0 42px;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:17px;
+
+}
+
+.total-card .summary-icon{
+
+    background:#e8f1ff;
+
+    color:#2563eb;
+
+}
+
+.active-card .summary-icon{
+
+    background:#e8f8ee;
+
+    color:#16a34a;
+
+}
+
+.inactive-card .summary-icon{
+
+    background:#fff0f0;
+
+    color:#dc2626;
+
+}
+
+.summary-info{
+
+    min-width:0;
+
+}
+
+.summary-label{
+
+    font-size:12px;
+
+    color:#718096;
+
+    font-weight:600;
+
+}
+
+.summary-number{
+
+    margin-top:2px;
+
+    font-size:22px;
+
+    line-height:1.1;
+
+    font-weight:800;
+
+    color:#172033;
+
+}
+
+
+/* =====================================================
+   FILTER + SEARCH
+===================================================== */
+
+.toolbar{
+
+    background:#ffffff;
+
+    border:1px solid #e5eaf1;
+
+    border-radius:14px;
+
+    padding:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 4px 16px rgba(15,23,42,.04);
+
+}
+
+.filters{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
 }
 
 .filter-btn{
-    height:34px;
-    padding:0 12px;
-    border-radius:8px;
-    border:1px solid rgba(255,255,255,.08);
-    background:#0f172a;
-    color:#94a3b8;
-    font-size:9px;
-    font-weight:700;
+
+    border:1px solid #dbe2ea;
+
+    background:#ffffff;
+
+    color:#475569;
+
+    padding:8px 13px;
+
+    border-radius:9px;
+
+    font-size:13px;
+
+    font-weight:600;
+
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    white-space:nowrap;
+
+    transition:.2s;
+
+}
+
+.filter-btn:hover{
+
+    background:#f8fafc;
+
 }
 
 .filter-btn.active{
-    background:rgba(34,197,94,.12);
-    border-color:rgba(34,197,94,.30);
-    color:#4ade80;
-}
 
+    background:#172033;
 
-/* =========================================================
-   SEARCH
-========================================================= */
+    border-color:#172033;
 
-.toolbar{
-    width:100%;
-    display:flex;
-    justify-content:flex-end;
-    margin-bottom:18px;
+    color:#ffffff;
+
 }
 
 .search-box{
-    width:310px;
+
     position:relative;
+
+    width:250px;
+
+    max-width:100%;
+
 }
 
 .search-box i{
+
     position:absolute;
-    left:13px;
+
+    left:12px;
+
     top:50%;
+
     transform:translateY(-50%);
-    color:#64748b;
-    font-size:12px;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
 }
 
 .search-box input{
+
     width:100%;
-    height:42px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(15,23,42,.80);
-    color:#fff;
+
+    height:38px;
+
+    border:1px solid #dbe2ea;
+
+    border-radius:9px;
+
     outline:none;
-    padding:0 13px 0 38px;
-    font-size:12px;
+
+    padding:0 12px 0 35px;
+
+    font-size:13px;
+
+    color:#172033;
+
+    background:#fff;
+
 }
 
 .search-box input:focus{
-    border-color:#22c55e;
+
+    border-color:#16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22,163,74,.08);
+
 }
 
 
-/* =========================================================
-   CARDS
-========================================================= */
+/* =====================================================
+   WEBSITE GRID
+===================================================== */
 
-.cards{
+.website-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
     gap:14px;
+
 }
 
-.card{
-    min-width:0;
+
+/* =====================================================
+   WEBSITE CARD
+===================================================== */
+
+.website-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    border:1px solid #e5eaf1;
+
+    border-radius:14px;
+
     padding:15px;
-    border-radius:16px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(20,29,46,.96),
-            rgba(9,14,23,.96)
-        );
-    border:1px solid rgba(255,255,255,.07);
-    transition:.2s ease;
+
+    min-width:0;
+
+    box-shadow:
+        0 4px 18px rgba(15,23,42,.045);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+
 }
 
-.card.inactive-card{
-    border-color:rgba(239,68,68,.18);
+.website-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(15,23,42,.08);
+
 }
 
-.card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(34,197,94,.25);
-    box-shadow:0 16px 32px rgba(0,0,0,.25);
+.website-card.inactive{
+
+    opacity:.78;
+
+    background:#fafafa;
+
 }
 
-.card.inactive-card:hover{
-    border-color:rgba(239,68,68,.30);
-}
+
+/* =====================================================
+   CARD TOP
+===================================================== */
 
 .card-top{
+
     display:flex;
-    align-items:center;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
     gap:10px;
-    min-width:0;
+
+    margin-bottom:12px;
+
 }
 
-.logo{
-    width:45px;
-    height:45px;
-    min-width:45px;
+.website-logo{
+
+    width:48px;
+
+    height:48px;
+
+    flex:0 0 48px;
+
     border-radius:12px;
-    overflow:hidden;
+
+    background:#f1f5f9;
+
+    border:1px solid #e2e8f0;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    background:#111827;
-    border:1px solid rgba(255,255,255,.07);
-}
 
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.logo-fallback{
-    font-size:17px;
-    font-weight:800;
-    color:#22c55e;
-}
-
-.card.inactive-card .logo-fallback{
-    color:#f87171;
-}
-
-.card-title{
-    min-width:0;
-    flex:1;
-}
-
-.card-title h3{
-    font-size:13px;
-    font-weight:700;
-    white-space:nowrap;
     overflow:hidden;
-    text-overflow:ellipsis;
+
 }
+
+.website-logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.website-logo i{
+
+    font-size:19px;
+
+    color:#64748b;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
 
 .status-badge{
+
     display:inline-flex;
-    margin-top:4px;
-    font-size:8px;
-    padding:4px 6px;
-    border-radius:5px;
-    background:rgba(34,197,94,.10);
-    color:#4ade80;
-}
 
-.status-badge.inactive{
-    background:rgba(239,68,68,.10);
-    color:#f87171;
-}
+    align-items:center;
 
-.card-description{
-    color:#94a3b8;
-    font-size:10px;
-    line-height:1.5;
-    margin-top:11px;
-    min-height:30px;
-    display:-webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
-}
-
-.meta{
-    display:flex;
     gap:5px;
-    flex-wrap:wrap;
-    margin-top:9px;
-}
 
-.meta span{
-    font-size:8px;
-    color:#94a3b8;
-    background:#111827;
-    border:1px solid rgba(255,255,255,.05);
-    padding:4px 6px;
-    border-radius:5px;
+    padding:5px 8px;
+
+    border-radius:999px;
+
+    font-size:10px;
+
+    font-weight:700;
+
     white-space:nowrap;
+
 }
 
-.card-bottom{
-    display:flex;
-    gap:7px;
-    margin-top:12px;
+.status-badge::before{
+
+    content:"";
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
 }
+
+.status-active{
+
+    background:#eaf8ef;
+
+    color:#15803d;
+
+}
+
+.status-active::before{
+
+    background:#16a34a;
+
+}
+
+.status-inactive{
+
+    background:#feecec;
+
+    color:#dc2626;
+
+}
+
+.status-inactive::before{
+
+    background:#dc2626;
+
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.website-name{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#172033;
+
+    margin-bottom:6px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+.website-description{
+
+    font-size:12px;
+
+    color:#718096;
+
+    line-height:1.5;
+
+    min-height:36px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+.website-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-top:10px;
+
+}
+
+.meta-item{
+
+    font-size:10px;
+
+    color:#64748b;
+
+    background:#f8fafc;
+
+    border:1px solid #edf1f5;
+
+    border-radius:7px;
+
+    padding:4px 7px;
+
+}
+
+
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
 
 .open-btn{
-    flex:1;
-    min-width:0;
-    height:34px;
-    border-radius:8px;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:5px;
-    font-size:10px;
-    font-weight:700;
-    background:rgba(34,197,94,.10);
-    border:1px solid rgba(34,197,94,.18);
-    color:#4ade80;
-}
 
-.inactive-card .open-btn{
-    background:rgba(100,116,139,.08);
-    border-color:rgba(100,116,139,.15);
-    color:#94a3b8;
-}
-
-.open-btn:active{
-    transform:scale(.97);
-}
-
-.edit-btn{
-    width:36px;
-    min-width:36px;
-    height:34px;
-    border-radius:8px;
-    border:1px solid rgba(255,255,255,.07);
-    background:#111827;
-    color:#cbd5e1;
-    cursor:pointer;
-}
-
-.edit-btn:active{
-    transform:scale(.94);
-}
-
-
-/* =========================================================
-   LOADING / EMPTY
-========================================================= */
-
-.loading{
-    text-align:center;
-    padding:55px 20px;
-    color:#64748b;
-    font-size:12px;
-}
-
-.loading i{
-    font-size:22px;
-}
-
-.empty{
-    display:none;
-    text-align:center;
-    padding:60px 20px;
-    color:#64748b;
-    font-size:12px;
-}
-
-.empty i{
-    font-size:35px;
-    margin-bottom:12px;
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:500;
-    background:rgba(0,0,0,.72);
-    backdrop-filter:blur(7px);
-    align-items:center;
-    justify-content:center;
-    padding:15px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
     width:100%;
-    max-width:570px;
-    max-height:calc(100vh - 30px);
-    max-height:calc(100dvh - 30px);
-    overflow-y:auto;
-    background:#0f172a;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:21px;
-    box-shadow:0 30px 80px rgba(0,0,0,.55);
-}
 
-.modal-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:18px;
-}
+    margin-top:13px;
 
-.modal-head h2{
-    font-size:18px;
-}
+    height:36px;
 
-.close-btn{
-    width:34px;
-    height:34px;
-    border:none;
-    border-radius:8px;
-    background:#111827;
-    color:#94a3b8;
-    cursor:pointer;
-}
+    border:0;
 
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.form-group{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-.form-group label{
-    font-size:10px;
-    font-weight:600;
-    color:#cbd5e1;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    border:1px solid rgba(255,255,255,.08);
-    background:#080d16;
-    color:#fff;
-    border-radius:8px;
-    outline:none;
-    padding:10px;
-    font-family:inherit;
-    font-size:11px;
-}
-
-.form-group input{
-    height:39px;
-}
-
-.form-group textarea{
-    min-height:70px;
-    resize:vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-    border-color:#22c55e;
-}
-
-.modal-actions{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:20px;
-}
-
-.left-actions,
-.right-actions{
-    display:flex;
-    gap:7px;
-}
-
-.btn{
-    height:37px;
-    padding:0 14px;
-    border-radius:8px;
-    border:1px solid rgba(255,255,255,.08);
-    cursor:pointer;
-    font-size:10px;
-    font-weight:700;
-}
-
-.cancel-btn{
-    background:#111827;
-    color:#cbd5e1;
-}
-
-.save-btn{
-    background:#22c55e;
-    color:#fff;
-    border-color:#22c55e;
-}
-
-.delete-btn{
-    background:rgba(239,68,68,.10);
-    color:#f87171;
-    border-color:rgba(239,68,68,.20);
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:20px;
-    transform:translateX(-50%);
-    z-index:1000;
-    width:max-content;
-    max-width:calc(100% - 30px);
-    padding:11px 15px;
     border-radius:9px;
-    background:#111827;
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-    font-size:11px;
-    display:none;
+
+    background:#16a34a;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    transition:.2s;
+
+}
+
+.open-btn:hover{
+
+    background:#15803d;
+
+}
+
+.website-card.inactive .open-btn{
+
+    background:#94a3b8;
+
+    cursor:not-allowed;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-state{
+
+    grid-column:1 / -1;
+
+    background:#ffffff;
+
+    border:1px dashed #cbd5e1;
+
+    border-radius:14px;
+
+    padding:45px 20px;
+
     text-align:center;
+
+    color:#64748b;
+
 }
 
-.toast.show{
-    display:block;
+.empty-state i{
+
+    font-size:35px;
+
+    margin-bottom:12px;
+
+    color:#94a3b8;
+
 }
 
-.toast.success{
-    border-color:rgba(34,197,94,.25);
-    color:#4ade80;
+.empty-state h3{
+
+    font-size:16px;
+
+    color:#334155;
+
+    margin-bottom:5px;
+
 }
 
-.toast.error{
-    border-color:rgba(239,68,68,.25);
-    color:#f87171;
+.empty-state p{
+
+    font-size:12px;
+
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* =====================================================
+   LOADING
+===================================================== */
 
-@media(max-width:650px){
+.loading-state{
 
-    .topbar{
-        height:62px;
-        padding:0 13px;
+    grid-column:1 / -1;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+}
+
+.loading-state i{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.loading-state p{
+
+    font-size:13px;
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-state{
+
+    grid-column:1 / -1;
+
+    background:#fff;
+
+    border:1px solid #fecaca;
+
+    color:#b91c1c;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.error-state i{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+    .website-grid{
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
     }
 
-    .brand{
-        gap:8px;
+}
+
+@media(max-width:800px){
+
+    .website-grid{
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
     }
 
-    .brand-logo{
-        width:36px;
-        height:36px;
-        border-radius:10px;
-        font-size:14px;
+    .toolbar{
+
+        align-items:stretch;
+
+        flex-direction:column;
+
     }
 
-    .brand-text h2{
-        font-size:13px;
+    .search-box{
+
+        width:100%;
+
     }
 
-    .brand-text span{
-        display:none;
-    }
+}
 
-    .user-area{
-        gap:7px;
-    }
-
-    .user-info{
-        display:none;
-    }
-
-    .logout-btn{
-        width:36px;
-        height:36px;
-    }
+@media(max-width:600px){
 
     .container{
-        padding:15px 10px 25px;
+
+        padding:10px;
+
     }
 
-    .page-head{
-        align-items:center;
-        margin-bottom:12px;
+    .top-header{
+
+        padding:12px;
+
+        border-radius:12px;
+
     }
 
-    .page-title h1{
-        font-size:20px;
+    .header-title{
+
+        font-size:17px;
+
     }
 
-    .page-title p{
-        font-size:9px;
-        margin-top:3px;
+    .header-subtitle{
+
+        font-size:11px;
+
     }
 
-    .add-btn{
-        width:40px;
-        height:40px;
+    .refresh-btn{
+
+        width:38px;
+
+        min-width:38px;
+
+        height:38px;
+
         padding:0;
-        justify-content:center;
-        border-radius:10px;
+
     }
 
-    .add-btn span{
+    .refresh-btn span{
+
         display:none;
+
     }
 
 
-    /* MOBILE STATS */
+    /* SMALL SUMMARY CARDS */
 
-    .stats{
-        grid-template-columns:repeat(3,1fr);
+    .summary-grid{
+
+        grid-template-columns:
+            repeat(3, minmax(0,1fr));
+
         gap:7px;
-        margin-bottom:10px;
+
     }
 
-    .stat-card{
-        min-height:78px;
-        padding:9px;
-        border-radius:11px;
+    .summary-card{
+
+        padding:9px 6px;
+
+        border-radius:10px;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+        gap:5px;
+
     }
 
-    .stat-top{
-        gap:4px;
+    .summary-icon{
+
+        width:30px;
+
+        height:30px;
+
+        flex-basis:30px;
+
+        border-radius:8px;
+
+        font-size:12px;
+
     }
 
-    .stat-icon{
-        width:27px;
-        height:27px;
-        border-radius:7px;
-        font-size:10px;
+    .summary-label{
+
+        font-size:9px;
+
     }
 
-    .stat-label{
-        font-size:7px;
-    }
+    .summary-number{
 
-    .stat-number{
-        font-size:20px;
-        margin-top:6px;
-    }
+        font-size:18px;
 
-    .stat-sub{
-        font-size:6px;
-        margin-top:4px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
     }
 
 
     /* FILTER */
 
-    .filter-row{
-        margin-bottom:10px;
+    .toolbar{
+
+        padding:9px;
+
+        gap:9px;
+
+    }
+
+    .filters{
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
         gap:5px;
+
     }
 
     .filter-btn{
-        height:30px;
-        padding:0 9px;
-        font-size:8px;
-    }
 
+        padding:7px 4px;
 
-    /* SEARCH */
-
-    .toolbar{
-        margin-bottom:11px;
-    }
-
-    .search-box{
-        width:100%;
-    }
-
-    .search-box input{
-        height:39px;
         font-size:10px;
+
+        text-align:center;
+
     }
 
 
-    /* CARDS */
+    /* WEBSITE */
 
-    .cards{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+    .website-grid{
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+
         gap:8px;
+
     }
 
-    .card{
+    .website-card{
+
         padding:10px;
-        border-radius:12px;
+
+        border-radius:11px;
+
     }
 
-    .card:hover{
-        transform:none;
+    .website-logo{
+
+        width:38px;
+
+        height:38px;
+
+        flex-basis:38px;
+
+        border-radius:9px;
+
     }
 
-    .card-top{
-        gap:7px;
-    }
+    .website-logo i{
 
-    .logo{
-        width:36px;
-        height:36px;
-        min-width:36px;
-        border-radius:8px;
-    }
+        font-size:15px;
 
-    .logo-fallback{
-        font-size:12px;
-    }
-
-    .card-title h3{
-        font-size:10px;
     }
 
     .status-badge{
-        font-size:6.5px;
-        padding:3px 4px;
-        margin-top:2px;
-    }
 
-    .card-description{
         font-size:8px;
-        margin-top:7px;
-        min-height:24px;
+
+        padding:4px 6px;
+
     }
 
-    .meta{
-        margin-top:6px;
-        gap:3px;
+    .website-name{
+
+        font-size:13px;
+
+        margin-bottom:4px;
+
     }
 
-    .meta span{
-        font-size:6.5px;
-        padding:3px 4px;
+    .website-description{
+
+        font-size:10px;
+
+        min-height:30px;
+
     }
 
-    .card-bottom{
-        margin-top:8px;
-        gap:4px;
+    .meta-item{
+
+        font-size:8px;
+
+        padding:3px 5px;
+
     }
 
     .open-btn{
-        height:29px;
-        font-size:7px;
+
+        height:32px;
+
+        margin-top:9px;
+
+        font-size:10px;
+
     }
 
-    .edit-btn{
-        width:30px;
-        min-width:30px;
-        height:29px;
-        font-size:8px;
-    }
+}
 
 
-    /* MODAL */
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
 
-    .modal{
-        padding:8px;
-        align-items:flex-end;
-    }
+@media(max-width:360px){
 
-    .modal-box{
-        max-height:calc(100dvh - 16px);
-        border-radius:17px 17px 0 0;
-        padding:18px 15px;
-    }
+    .website-grid{
 
-    .form-grid{
         grid-template-columns:1fr;
-        gap:10px;
+
     }
 
-    .form-group.full{
-        grid-column:auto;
+    .summary-number{
+
+        font-size:17px;
+
     }
 
-    .form-group input{
-        height:42px;
-    }
-
-    .modal-actions{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .left-actions,
-    .right-actions{
-        width:100%;
-    }
-
-    .right-actions{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-    }
-
-    .left-actions .btn{
-        width:100%;
-    }
-
-    .btn{
-        height:40px;
-    }
-
-}
-
-
-@media(max-width:370px){
-
-    .container{
-        padding-left:8px;
-        padding-right:8px;
-    }
-
-    .stats{
-        gap:5px;
-    }
-
-    .stat-card{
-        padding:8px;
-    }
-
-    .stat-number{
-        font-size:18px;
-    }
-
-    .cards{
-        gap:6px;
-    }
-
-    .card{
-        padding:8px;
-    }
-
-}
-
-
-@media(max-width:300px){
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-}
-
-
-::-webkit-scrollbar{
-    width:5px;
-    height:5px;
-}
-
-::-webkit-scrollbar-track{
-    background:#080d16;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#263244;
-    border-radius:10px;
 }
 
 </style>
@@ -1224,2107 +1152,961 @@ body{
 <body>
 
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
-
-<section id="loginScreen">
-
-    <div class="login-box">
-
-        <div class="login-icon">
-            <i class="fa-solid fa-lock"></i>
-        </div>
-
-        <h1>Control Dashboard</h1>
-
-        <p>Enter your username to continue</p>
-
-        <div class="input-group">
-
-            <label>Username</label>
-
-            <div class="input-wrap">
-
-                <i class="fa-solid fa-user"></i>
-
-                <input
-                    type="text"
-                    id="usernameInput"
-                    placeholder="Enter username"
-                    autocomplete="username"
-                >
-
-            </div>
-
-        </div>
-
-        <button
-            type="button"
-            class="login-btn"
-            id="loginBtn"
-            onclick="login()"
-        >
-            <i class="fa-solid fa-right-to-bracket"></i>
-            &nbsp;
-            Login
-        </button>
-
-        <div
-            class="login-error"
-            id="loginError"
-        ></div>
-
-    </div>
-
-</section>
+<div class="container">
 
 
+    <!-- =================================================
+         HEADER
+    ================================================= -->
 
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
+    <div class="top-header">
 
-<section id="dashboard">
+        <div class="header-left">
 
+            <div class="header-title">
 
-<header class="topbar">
-
-    <div class="brand">
-
-        <div class="brand-logo">
-            <i class="fa-solid fa-layer-group"></i>
-        </div>
-
-        <div class="brand-text">
-
-            <h2>Website Control</h2>
-
-            <span>Management Dashboard</span>
-
-        </div>
-
-    </div>
-
-
-    <div class="user-area">
-
-        <div class="user-info">
-
-            <div
-                class="user-name"
-                id="loggedUserName"
-            >
-                User
-            </div>
-
-            <div class="user-label">
-                Logged in
-            </div>
-
-        </div>
-
-        <button
-            type="button"
-            class="logout-btn"
-            onclick="logout()"
-            title="Logout"
-        >
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </button>
-
-    </div>
-
-</header>
-
-
-
-<main class="container">
-
-
-<div class="page-head">
-
-    <div class="page-title">
-
-        <h1>Website Control</h1>
-
-        <p>Manage your website cards</p>
-
-    </div>
-
-
-    <button
-        type="button"
-        class="add-btn"
-        onclick="openAddModal()"
-    >
-
-        <i class="fa-solid fa-plus"></i>
-
-        <span>Add Website</span>
-
-    </button>
-
-</div>
-
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<div class="stats">
-
-
-    <div class="stat-card total">
-
-        <div class="stat-top">
-
-            <div class="stat-icon">
                 <i class="fa-solid fa-globe"></i>
+
+                Websites
+
             </div>
 
-            <div class="stat-label">
-                Total
+            <div class="header-subtitle">
+
+                Manage and access available websites
+
             </div>
 
         </div>
 
-        <div
-            class="stat-number"
-            id="totalCount"
+
+        <button
+            class="refresh-btn"
+            id="refreshBtn"
+            onclick="loadWebsites()"
         >
-            0
-        </div>
 
-        <div class="stat-sub">
-            All websites
-        </div>
+            <i class="fa-solid fa-rotate-right"></i>
+
+            <span>Refresh</span>
+
+        </button>
 
     </div>
 
 
+    <!-- =================================================
+         SUMMARY
+    ================================================= -->
 
-    <div class="stat-card active">
+    <div class="summary-grid">
 
-        <div class="stat-top">
 
-            <div class="stat-icon">
-                <i class="fa-solid fa-check"></i>
+        <div class="summary-card total-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
             </div>
 
-            <div class="stat-label">
+            <div class="summary-info">
+
+                <div class="summary-label">
+                    Total
+                </div>
+
+                <div
+                    class="summary-number"
+                    id="totalCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card active-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div class="summary-info">
+
+                <div class="summary-label">
+                    Active
+                </div>
+
+                <div
+                    class="summary-number"
+                    id="activeCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card inactive-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+            </div>
+
+            <div class="summary-info">
+
+                <div class="summary-label">
+                    Inactive
+                </div>
+
+                <div
+                    class="summary-number"
+                    id="inactiveCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         TOOLBAR
+    ================================================= -->
+
+    <div class="toolbar">
+
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+                onclick="setFilter('all', this)"
+            >
+                All
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="active"
+                onclick="setFilter('active', this)"
+            >
                 Active
-            </div>
-
-        </div>
-
-        <div
-            class="stat-number"
-            id="activeCount"
-        >
-            0
-        </div>
-
-        <div class="stat-sub">
-            Running websites
-        </div>
-
-    </div>
+            </button>
 
 
-
-    <div class="stat-card inactive">
-
-        <div class="stat-top">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-
-            <div class="stat-label">
+            <button
+                class="filter-btn"
+                data-filter="inactive"
+                onclick="setFilter('inactive', this)"
+            >
                 Inactive
-            </div>
+            </button>
 
         </div>
 
-        <div
-            class="stat-number"
-            id="inactiveCount"
-        >
-            0
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search website..."
+                autocomplete="off"
+            >
+
         </div>
 
-        <div class="stat-sub">
-            Disabled websites
+
+    </div>
+
+
+    <!-- =================================================
+         WEBSITE GRID
+    ================================================= -->
+
+    <div
+        class="website-grid"
+        id="websiteGrid"
+    >
+
+        <div class="loading-state">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p>
+                Loading websites...
+            </p>
+
         </div>
 
     </div>
 
 
 </div>
-
-
-
-<!-- =====================================================
-     FILTER
-===================================================== -->
-
-<div class="filter-row">
-
-    <button
-        type="button"
-        class="filter-btn active"
-        data-filter="all"
-        onclick="setFilter('all')"
-    >
-        <i class="fa-solid fa-layer-group"></i>
-        All
-    </button>
-
-
-    <button
-        type="button"
-        class="filter-btn"
-        data-filter="active"
-        onclick="setFilter('active')"
-    >
-        <i class="fa-solid fa-circle-check"></i>
-        Active
-    </button>
-
-
-    <button
-        type="button"
-        class="filter-btn"
-        data-filter="inactive"
-        onclick="setFilter('inactive')"
-    >
-        <i class="fa-solid fa-circle-xmark"></i>
-        Inactive
-    </button>
-
-</div>
-
-
-
-<!-- =====================================================
-     SEARCH
-===================================================== -->
-
-<div class="toolbar">
-
-    <div class="search-box">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="Search website..."
-            oninput="filterCards()"
-        >
-
-    </div>
-
-</div>
-
-
-
-<div
-    class="loading"
-    id="loading"
->
-
-    <i class="fa-solid fa-spinner fa-spin"></i>
-
-    <div style="margin-top:9px;">
-        Loading websites...
-    </div>
-
-</div>
-
-
-
-<div
-    class="cards"
-    id="cards"
-></div>
-
-
-
-<div
-    class="empty"
-    id="empty"
->
-
-    <i class="fa-regular fa-folder-open"></i>
-
-    <div id="emptyText">
-        No websites found.
-    </div>
-
-</div>
-
-
-</main>
-
-</section>
-
-
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-    class="modal"
-    id="cardModal"
->
-
-<div class="modal-box">
-
-
-<div class="modal-head">
-
-    <h2 id="modalTitle">
-        Add Website
-    </h2>
-
-    <button
-        type="button"
-        class="close-btn"
-        onclick="closeModal()"
-    >
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-
-</div>
-
-
-
-<div class="form-grid">
-
-
-<div class="form-group">
-
-    <label>Website Name</label>
-
-    <input
-        type="text"
-        id="formName"
-        placeholder="Movie World"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label>Website Link</label>
-
-    <input
-        type="text"
-        id="formLink"
-        placeholder="10.20.30.40 or example.com"
-        autocomplete="off"
-    >
-
-    <small
-        style="
-            color:#64748b;
-            font-size:9px;
-            margin-top:-2px;
-        "
-    >
-        http:// or https:// is optional
-    </small>
-
-</div>
-
-
-<div class="form-group full">
-
-    <label>Logo URL</label>
-
-    <input
-        type="text"
-        id="formLogo"
-        placeholder="example.com/logo.png"
-        autocomplete="off"
-    >
-
-</div>
-
-
-<div class="form-group full">
-
-    <label>Description</label>
-
-    <textarea
-        id="formDescription"
-        placeholder="Access Movie World website"
-    ></textarea>
-
-</div>
-
-
-<div class="form-group">
-
-    <label>Source</label>
-
-    <input
-        type="text"
-        id="formSource"
-        placeholder="Local Server"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label>Type</label>
-
-    <input
-        type="text"
-        id="formType"
-        placeholder="Movie"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label>Position</label>
-
-    <input
-        type="number"
-        id="formPosition"
-        min="1"
-        placeholder="1"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label>Status</label>
-
-    <select id="formStatus">
-
-        <option value="Active">
-            Active
-        </option>
-
-        <option value="Inactive">
-            Inactive
-        </option>
-
-    </select>
-
-</div>
-
-
-</div>
-
-
-
-<div class="modal-actions">
-
-
-<div class="left-actions">
-
-    <button
-        type="button"
-        class="btn delete-btn"
-        id="deleteBtn"
-        onclick="deleteCurrentCard()"
-        style="display:none;"
-    >
-
-        <i class="fa-solid fa-trash"></i>
-
-        Delete
-
-    </button>
-
-</div>
-
-
-<div class="right-actions">
-
-    <button
-        type="button"
-        class="btn cancel-btn"
-        onclick="closeModal()"
-    >
-        Cancel
-    </button>
-
-
-    <button
-        type="button"
-        class="btn save-btn"
-        id="saveBtn"
-        onclick="saveCard()"
-    >
-
-        <i class="fa-solid fa-check"></i>
-
-        Save
-
-    </button>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<div
-    class="toast"
-    id="toast"
-></div>
-
 
 
 <script>
 
-/* =========================================================
+/* =====================================================
    API
-========================================================= */
+===================================================== */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbzA9gYIhaDKhAIn2XltcoqEUmE6ZP-cGNFOdrnN6xjah7mQd9gbwIyBQWQxqn0JvBoQhQ/exec";
+    "https://script.google.com/macros/s/AKfycbxRQLGuRc-P8bZ2FE-6ua8B1iPH6IQ1tAffS0erigyv15xQSALef2nrNTSqdMOYHt1fqg/exec";
 
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-let cards = [];
-
-let editingId = null;
-
-let inactivityTimer = null;
+let websites = [];
 
 let currentFilter = "all";
 
 
-/* =========================================================
-   AUTO LOGOUT
-========================================================= */
+/* =====================================================
+   DOM
+===================================================== */
 
-const AUTO_LOGOUT_TIME = 3 * 60 * 1000;
-
-
-function resetInactivityTimer(){
-
-    clearTimeout(inactivityTimer);
-
-    if(
-        localStorage.getItem(
-            "websiteControlLoggedIn"
-        ) !== "true"
-    ){
-        return;
-    }
-
-    inactivityTimer = setTimeout(
-        autoLogout,
-        AUTO_LOGOUT_TIME
+const websiteGrid =
+    document.getElementById(
+        "websiteGrid"
     );
 
-}
-
-
-function autoLogout(){
-
-    clearTimeout(inactivityTimer);
-
-    localStorage.removeItem(
-        "websiteControlLoggedIn"
-    );
-
-    localStorage.removeItem(
-        "websiteControlUsername"
-    );
-
-    localStorage.removeItem(
-        "websiteControlName"
-    );
-
-    cards = [];
-
-    editingId = null;
-
-    document.getElementById(
-        "dashboard"
-    ).style.display = "none";
-
-    document.getElementById(
-        "loginScreen"
-    ).style.display = "flex";
-
-    document.getElementById(
-        "usernameInput"
-    ).value = "";
-
-    document.getElementById(
-        "loginError"
-    ).textContent =
-        "Automatically logged out after 3 minutes of inactivity.";
-
-    document.getElementById(
-        "loginError"
-    ).style.display = "block";
-
-    document.getElementById(
-        "cardModal"
-    ).classList.remove("show");
-
-}
-
-
-/* =========================================================
-   ACTIVITY
-========================================================= */
-
-[
-    "click",
-    "mousemove",
-    "mousedown",
-    "keydown",
-    "scroll",
-    "touchstart",
-    "touchmove",
-    "pointerdown",
-    "wheel"
-].forEach(
-    function(eventName){
-
-        document.addEventListener(
-            eventName,
-            function(){
-
-                if(
-                    localStorage.getItem(
-                        "websiteControlLoggedIn"
-                    ) === "true"
-                ){
-                    resetInactivityTimer();
-                }
-
-            },
-            {
-                passive:true
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   PAGE LOAD
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        checkSession();
-
-        document
-            .getElementById("usernameInput")
-            .addEventListener(
-                "keydown",
-                function(e){
-
-                    if(e.key === "Enter"){
-                        login();
-                    }
-
-                }
-            );
-
-    }
-);
-
-
-/* =========================================================
-   SESSION
-========================================================= */
-
-function checkSession(){
-
-    const logged =
-        localStorage.getItem(
-            "websiteControlLoggedIn"
-        );
-
-    const name =
-        localStorage.getItem(
-            "websiteControlName"
-        );
-
-    if(
-        logged === "true" &&
-        name
-    ){
-        showDashboard(name);
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-async function login(){
-
-    const input =
-        document.getElementById(
-            "usernameInput"
-        );
-
-    const button =
-        document.getElementById(
-            "loginBtn"
-        );
-
-    const username =
-        input.value.trim();
-
-    document.getElementById(
-        "loginError"
-    ).style.display = "none";
-
-    if(!username){
-
-        showLoginError(
-            "Please enter your username."
-        );
-
-        return;
-
-    }
-
-    button.disabled = true;
-
-    button.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
-
-    try{
-
-        const response =
-            await fetch(
-                API_URL +
-                "?action=login&username=" +
-                encodeURIComponent(username) +
-                "&ts=" +
-                Date.now(),
-                {
-                    method:"GET",
-                    cache:"no-store"
-                }
-            );
-
-        const data =
-            await response.json();
-
-        if(data.success){
-
-            localStorage.setItem(
-                "websiteControlLoggedIn",
-                "true"
-            );
-
-            localStorage.setItem(
-                "websiteControlUsername",
-                data.username || username
-            );
-
-            localStorage.setItem(
-                "websiteControlName",
-                data.name || username
-            );
-
-            showDashboard(
-                data.name || username
-            );
-
-        }
-        else{
-
-            showLoginError(
-                data.message ||
-                "Username not found."
-            );
-
-        }
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        showLoginError(
-            "Unable to connect with server."
-        );
-
-    }
-
-    button.disabled = false;
-
-    button.innerHTML =
-        '<i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login';
-
-}
-
-
-/* =========================================================
-   LOGIN ERROR
-========================================================= */
-
-function showLoginError(message){
-
-    const error =
-        document.getElementById(
-            "loginError"
-        );
-
-    error.textContent = message;
-
-    error.style.display = "block";
-
-}
-
-
-/* =========================================================
-   SHOW DASHBOARD
-========================================================= */
-
-function showDashboard(name){
-
-    document.getElementById(
-        "loginScreen"
-    ).style.display = "none";
-
-    document.getElementById(
-        "dashboard"
-    ).style.display = "block";
-
-    document.getElementById(
-        "loggedUserName"
-    ).textContent = name;
-
-    resetInactivityTimer();
-
-    loadCards();
-
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-function logout(){
-
-    clearTimeout(inactivityTimer);
-
-    localStorage.removeItem(
-        "websiteControlLoggedIn"
-    );
-
-    localStorage.removeItem(
-        "websiteControlUsername"
-    );
-
-    localStorage.removeItem(
-        "websiteControlName"
-    );
-
-    cards = [];
-
-    editingId = null;
-
-    document.getElementById(
-        "dashboard"
-    ).style.display = "none";
-
-    document.getElementById(
-        "loginScreen"
-    ).style.display = "flex";
-
-    document.getElementById(
-        "usernameInput"
-    ).value = "";
-
-    document.getElementById(
-        "loginError"
-    ).style.display = "none";
-
-    document.getElementById(
-        "cardModal"
-    ).classList.remove("show");
-
-}
-
-
-/* =========================================================
-   STATUS NORMALIZER
-   IMPORTANT
-========================================================= */
-
-function normalizeStatus(status){
-
-    const value =
-        String(status || "")
-        .trim()
-        .toLowerCase();
-
-    if(
-        value === "inactive" ||
-        value === "off" ||
-        value === "disabled" ||
-        value === "false" ||
-        value === "0"
-    ){
-        return "Inactive";
-    }
-
-    return "Active";
-
-}
-
-
-/* =========================================================
-   LOAD CARDS
-========================================================= */
-
-async function loadCards(){
-
-    const loading =
-        document.getElementById(
-            "loading"
-        );
-
-    const box =
-        document.getElementById(
-            "cards"
-        );
-
-    loading.style.display = "block";
-
-    box.innerHTML = "";
-
-    try{
-
-        const response =
-            await fetch(
-                API_URL +
-                "?action=getCards&ts=" +
-                Date.now(),
-                {
-                    method:"GET",
-                    cache:"no-store"
-                }
-            );
-
-        const data =
-            await response.json();
-
-        if(!data.success){
-
-            throw new Error(
-                data.message ||
-                "Failed to load websites."
-            );
-
-        }
-
-        cards =
-            Array.isArray(data.cards)
-            ? data.cards.map(
-                function(card){
-
-                    return {
-                        ...card,
-                        status:normalizeStatus(
-                            card.status
-                        )
-                    };
-
-                }
-            )
-            : [];
-
-        updateStats();
-
-        renderCards();
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        showToast(
-            error.message ||
-            "Failed to load websites.",
-            "error"
-        );
-
-    }
-
-    loading.style.display = "none";
-
-}
-
-
-/* =========================================================
-   UPDATE STATS
-   ALL DATA FROM SHEET
-========================================================= */
-
-function updateStats(){
-
-    const total =
-        cards.length;
-
-    const active =
-        cards.filter(
-            function(card){
-
-                return normalizeStatus(
-                    card.status
-                ) === "Active";
-
-            }
-        ).length;
-
-    const inactive =
-        cards.filter(
-            function(card){
-
-                return normalizeStatus(
-                    card.status
-                ) === "Inactive";
-
-            }
-        ).length;
-
+const totalCount =
     document.getElementById(
         "totalCount"
-    ).textContent = total;
-
-    document.getElementById(
-        "activeCount"
-    ).textContent = active;
-
-    document.getElementById(
-        "inactiveCount"
-    ).textContent = inactive;
-
-}
-
-
-/* =========================================================
-   FILTER
-========================================================= */
-
-function setFilter(filter){
-
-    currentFilter = filter;
-
-    document
-        .querySelectorAll(".filter-btn")
-        .forEach(
-            function(button){
-
-                button.classList.toggle(
-                    "active",
-                    button.dataset.filter === filter
-                );
-
-            }
-        );
-
-    renderCards();
-
-}
-
-
-/* =========================================================
-   RENDER
-   INACTIVE WILL NOT BE HIDDEN
-========================================================= */
-
-function renderCards(){
-
-    const box =
-        document.getElementById(
-            "cards"
-        );
-
-    const empty =
-        document.getElementById(
-            "empty"
-        );
-
-    const emptyText =
-        document.getElementById(
-            "emptyText"
-        );
-
-    const search =
-        document.getElementById(
-            "searchInput"
-        )
-        .value
-        .trim()
-        .toLowerCase();
-
-
-    box.innerHTML = "";
-
-
-    const filtered =
-        cards.filter(
-            function(card){
-
-                const status =
-                    normalizeStatus(
-                        card.status
-                    );
-
-
-                /* STATUS FILTER */
-
-                if(
-                    currentFilter === "active" &&
-                    status !== "Active"
-                ){
-                    return false;
-                }
-
-
-                if(
-                    currentFilter === "inactive" &&
-                    status !== "Inactive"
-                ){
-                    return false;
-                }
-
-
-                /* SEARCH */
-
-                if(!search){
-                    return true;
-                }
-
-
-                const text =
-                    String(
-                        card.name || ""
-                    ) +
-                    " " +
-                    String(
-                        card.description || ""
-                    ) +
-                    " " +
-                    String(
-                        card.source || ""
-                    ) +
-                    " " +
-                    String(
-                        card.type || ""
-                    ) +
-                    " " +
-                    status;
-
-
-                return text
-                    .toLowerCase()
-                    .includes(search);
-
-            }
-        );
-
-
-    if(filtered.length === 0){
-
-        empty.style.display = "block";
-
-        if(currentFilter === "inactive"){
-            emptyText.textContent =
-                "No inactive websites found.";
-        }
-        else if(currentFilter === "active"){
-            emptyText.textContent =
-                "No active websites found.";
-        }
-        else{
-            emptyText.textContent =
-                "No websites found.";
-        }
-
-        return;
-
-    }
-
-
-    empty.style.display = "none";
-
-
-    filtered.forEach(
-        function(card){
-
-            box.appendChild(
-                createCard(card)
-            );
-
-        }
     );
 
-}
+const activeCount =
+    document.getElementById(
+        "activeCount"
+    );
+
+const inactiveCount =
+    document.getElementById(
+        "inactiveCount"
+    );
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const refreshBtn =
+    document.getElementById(
+        "refreshBtn"
+    );
 
 
-/* =========================================================
-   CREATE CARD
-========================================================= */
+/* =====================================================
+   LOAD WEBSITES
+===================================================== */
 
-function createCard(card){
+async function loadWebsites(){
 
-    const article =
-        document.createElement(
-            "article"
-        );
+    refreshBtn.classList.add(
+        "loading"
+    );
 
-    article.className = "card";
+    websiteGrid.innerHTML = `
 
+        <div class="loading-state">
 
-    const status =
-        normalizeStatus(
-            card.status
-        );
+            <i class="fa-solid fa-spinner fa-spin"></i>
 
-
-    if(status === "Inactive"){
-        article.classList.add(
-            "inactive-card"
-        );
-    }
-
-
-    const initials =
-        getInitials(card.name);
-
-
-    const logo =
-        card.logo
-        ?
-        `
-        <img
-            src="${escapeAttribute(card.logo)}"
-            alt=""
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
-
-        <div
-            class="logo-fallback"
-            style="display:none;"
-        >
-            ${escapeHTML(initials)}
-        </div>
-        `
-        :
-        `
-        <div class="logo-fallback">
-            ${escapeHTML(initials)}
-        </div>
-        `;
-
-
-    const statusClass =
-        status === "Inactive"
-        ? "inactive"
-        : "";
-
-
-    article.innerHTML = `
-
-        <div class="card-top">
-
-            <div class="logo">
-                ${logo}
-            </div>
-
-            <div class="card-title">
-
-                <h3>
-                    ${escapeHTML(
-                        card.name ||
-                        "Unnamed Website"
-                    )}
-                </h3>
-
-                <span class="status-badge ${statusClass}">
-
-                    <i class="fa-solid ${
-                        status === "Active"
-                        ? "fa-circle-check"
-                        : "fa-circle-xmark"
-                    }"></i>
-
-                    &nbsp;
-
-                    ${escapeHTML(status)}
-
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="card-description">
-
-            ${escapeHTML(
-                card.description ||
-                "Access website"
-            )}
-
-        </div>
-
-
-        <div class="meta">
-
-            ${
-                card.source
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-server"></i>
-                    ${escapeHTML(card.source)}
-                </span>
-                `
-                :
-                ""
-            }
-
-            ${
-                card.type
-                ?
-                `
-                <span>
-                    <i class="fa-solid fa-tag"></i>
-                    ${escapeHTML(card.type)}
-                </span>
-                `
-                :
-                ""
-            }
-
-        </div>
-
-
-        <div class="card-bottom">
-
-            <a
-                class="open-btn"
-                href="${escapeAttribute(
-                    normalizeWebsiteURL(card.link)
-                )}"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                Open
-
-            </a>
-
-
-            <button
-                type="button"
-                class="edit-btn"
-                onclick="openEditModal('${escapeAttribute(card.id)}')"
-                title="Edit"
-            >
-
-                <i class="fa-solid fa-pen"></i>
-
-            </button>
+            <p>
+                Loading websites...
+            </p>
 
         </div>
 
     `;
 
+    try{
 
-    return article;
+        const url =
+            API_URL +
+            "?action=getCards&_=" +
+            Date.now();
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Server returned " +
+                response.status
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if(!data.success){
+
+            throw new Error(
+                data.message ||
+                "Unable to load websites."
+            );
+
+        }
+
+
+        websites =
+            Array.isArray(data.cards)
+                ? data.cards
+                : [];
+
+
+        updateSummary();
+
+        renderWebsites();
+
+
+    }catch(error){
+
+        console.error(
+            "Website API Error:",
+            error
+        );
+
+
+        websiteGrid.innerHTML = `
+
+            <div class="error-state">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h3>
+                    Failed to load websites
+                </h3>
+
+                <p>
+                    ${escapeHTML(
+                        error.message ||
+                        "Unknown error"
+                    )}
+                </p>
+
+            </div>
+
+        `;
+
+    }finally{
+
+        refreshBtn.classList.remove(
+            "loading"
+        );
+
+    }
 
 }
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
+/* =====================================================
+   SUMMARY
+===================================================== */
 
-function filterCards(){
+function updateSummary(){
 
-    resetInactivityTimer();
+    const total =
+        websites.length;
 
-    renderCards();
+
+    const active =
+        websites.filter(
+            function(site){
+
+                return getStatus(site)
+                    === "active";
+
+            }
+        ).length;
+
+
+    const inactive =
+        websites.filter(
+            function(site){
+
+                return getStatus(site)
+                    === "inactive";
+
+            }
+        ).length;
+
+
+    totalCount.textContent =
+        total;
+
+
+    activeCount.textContent =
+        active;
+
+
+    inactiveCount.textContent =
+        inactive;
 
 }
 
 
-/* =========================================================
-   ADD
-========================================================= */
+/* =====================================================
+   GET STATUS
+===================================================== */
 
-function openAddModal(){
+function getStatus(site){
 
-    resetInactivityTimer();
+    const status =
+        String(
+            site.status ||
+            "Active"
+        )
+        .trim()
+        .toLowerCase();
 
-    editingId = null;
 
-    document.getElementById(
-        "modalTitle"
-    ).textContent = "Add Website";
+    if(
+        status === "inactive" ||
+        status === "off" ||
+        status === "disabled"
+    ){
 
-    document.getElementById(
-        "deleteBtn"
-    ).style.display = "none";
+        return "inactive";
 
-    clearForm();
+    }
 
-    document.getElementById(
-        "cardModal"
-    ).classList.add("show");
+
+    return "active";
 
 }
 
 
-/* =========================================================
-   EDIT
-========================================================= */
+/* =====================================================
+   FILTER
+===================================================== */
 
-function openEditModal(id){
+function setFilter(
+    filter,
+    button
+){
 
-    resetInactivityTimer();
+    currentFilter =
+        filter;
 
-    const card =
-        cards.find(
-            function(item){
 
-                return String(item.id) === String(id);
+    document
+        .querySelectorAll(
+            ".filter-btn"
+        )
+        .forEach(
+            function(btn){
+
+                btn.classList.remove(
+                    "active"
+                );
 
             }
         );
 
 
-    if(!card){
-
-        showToast(
-            "Website not found.",
-            "error"
-        );
-
-        return;
-
-    }
+    button.classList.add(
+        "active"
+    );
 
 
-    editingId = card.id;
-
-
-    document.getElementById(
-        "modalTitle"
-    ).textContent = "Edit Website";
-
-
-    document.getElementById(
-        "deleteBtn"
-    ).style.display = "block";
-
-
-    document.getElementById(
-        "formName"
-    ).value =
-        card.name || "";
-
-
-    document.getElementById(
-        "formLink"
-    ).value =
-        card.link || "";
-
-
-    document.getElementById(
-        "formLogo"
-    ).value =
-        card.logo || "";
-
-
-    document.getElementById(
-        "formDescription"
-    ).value =
-        card.description || "";
-
-
-    document.getElementById(
-        "formSource"
-    ).value =
-        card.source || "";
-
-
-    document.getElementById(
-        "formType"
-    ).value =
-        card.type || "";
-
-
-    document.getElementById(
-        "formPosition"
-    ).value =
-        card.position || "";
-
-
-    document.getElementById(
-        "formStatus"
-    ).value =
-        normalizeStatus(card.status);
-
-
-    document.getElementById(
-        "cardModal"
-    ).classList.add("show");
+    renderWebsites();
 
 }
 
 
-/* =========================================================
-   CLEAR FORM
-========================================================= */
+/* =====================================================
+   SEARCH
+===================================================== */
 
-function clearForm(){
+searchInput.addEventListener(
+    "input",
+    function(){
 
-    [
-        "formName",
-        "formLink",
-        "formLogo",
-        "formDescription",
-        "formSource",
-        "formType",
-        "formPosition"
-    ].forEach(
-        function(id){
+        renderWebsites();
 
-            document.getElementById(
-                id
-            ).value = "";
+    }
+);
+
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+function renderWebsites(){
+
+    const search =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+    let filtered =
+        websites.filter(
+            function(site){
+
+                const status =
+                    getStatus(site);
+
+
+                /* FILTER */
+
+                if(
+                    currentFilter ===
+                    "active" &&
+                    status !== "active"
+                ){
+
+                    return false;
+
+                }
+
+
+                if(
+                    currentFilter ===
+                    "inactive" &&
+                    status !== "inactive"
+                ){
+
+                    return false;
+
+                }
+
+
+                /* SEARCH */
+
+                if(search){
+
+                    const text = (
+
+                        site.name ||
+                        ""
+
+                    ) + " " + (
+
+                        site.description ||
+                        ""
+
+                    ) + " " + (
+
+                        site.type ||
+                        ""
+
+                    ) + " " + (
+
+                        site.source ||
+                        ""
+
+                    ) + " " + (
+
+                        site.link ||
+                        ""
+
+                    );
+
+
+                    if(
+                        !text
+                            .toLowerCase()
+                            .includes(search)
+                    ){
+
+                        return false;
+
+                    }
+
+                }
+
+
+                return true;
+
+            }
+        );
+
+
+    filtered.sort(
+        function(a,b){
+
+            return (
+                Number(
+                    a.position || 0
+                )
+                -
+                Number(
+                    b.position || 0
+                )
+            );
 
         }
     );
 
 
-    document.getElementById(
-        "formStatus"
-    ).value = "Active";
-
-}
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
-
-function closeModal(){
-
-    resetInactivityTimer();
-
-    document.getElementById(
-        "cardModal"
-    ).classList.remove("show");
-
-    editingId = null;
-
-}
-
-
-/* =========================================================
-   URL NORMALIZER
-========================================================= */
-
-function normalizeWebsiteURL(value){
-
-    let url =
-        String(value || "")
-        .trim();
-
-
-    if(!url){
-        return "";
-    }
-
-
     if(
-        /^https?:\/\//i.test(url)
+        filtered.length === 0
     ){
-        return url;
+
+        websiteGrid.innerHTML = `
+
+            <div class="empty-state">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <h3>
+                    No websites found
+                </h3>
+
+                <p>
+                    No website matches the selected filter.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
     }
 
 
-    if(
-        url.startsWith("//")
-    ){
-        return "https:" + url;
-    }
-
-
-    const ipPattern =
-        /^(localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2}|192\.168(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
-
-
-    if(
-        ipPattern.test(url)
-    ){
-        return "http://" + url;
-    }
-
-
-    return "https://" + url;
-
-}
-
-
-/* =========================================================
-   SAVE
-========================================================= */
-
-async function saveCard(){
-
-    resetInactivityTimer();
-
-
-    const rawLink =
-        document.getElementById(
-            "formLink"
-        ).value.trim();
-
-
-    const normalizedLink =
-        normalizeWebsiteURL(
-            rawLink
-        );
-
-
-    const payload = {
-
-        action:
-            editingId
-            ? "updateCard"
-            : "addCard",
-
-        id:
-            editingId || "",
-
-        name:
-            document.getElementById(
-                "formName"
-            ).value.trim(),
-
-        link:
-            normalizedLink,
-
-        logo:
-            document.getElementById(
-                "formLogo"
-            ).value.trim(),
-
-        description:
-            document.getElementById(
-                "formDescription"
-            ).value.trim(),
-
-        source:
-            document.getElementById(
-                "formSource"
-            ).value.trim(),
-
-        type:
-            document.getElementById(
-                "formType"
-            ).value.trim(),
-
-        position:
-            document.getElementById(
-                "formPosition"
-            ).value,
-
-        status:
-            normalizeStatus(
-                document.getElementById(
-                    "formStatus"
-                ).value
+    websiteGrid.innerHTML =
+        filtered
+            .map(
+                createWebsiteCard
             )
-
-    };
-
-
-    if(!payload.name){
-
-        showToast(
-            "Website name is required.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    if(!payload.link){
-
-        showToast(
-            "Website link is required.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    document.getElementById(
-        "formLink"
-    ).value =
-        normalizedLink;
-
-
-    const saveBtn =
-        document.getElementById(
-            "saveBtn"
-        );
-
-
-    saveBtn.disabled = true;
-
-    saveBtn.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-
-    try{
-
-        const response =
-            await fetch(
-                API_URL,
-                {
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
-                    },
-
-                    body:
-                        JSON.stringify(
-                            payload
-                        )
-                }
-            );
-
-
-        const data =
-            await response.json();
-
-
-        if(!data.success){
-
-            throw new Error(
-                data.message ||
-                "Save failed."
-            );
-
-        }
-
-
-        closeModal();
-
-        showToast(
-            data.message ||
-            "Saved successfully.",
-            "success"
-        );
-
-
-        await loadCards();
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        showToast(
-            error.message ||
-            "Save failed.",
-            "error"
-        );
-
-    }
-
-
-    saveBtn.disabled = false;
-
-    saveBtn.innerHTML =
-        '<i class="fa-solid fa-check"></i> Save';
+            .join("");
 
 }
 
 
-/* =========================================================
-   DELETE
-========================================================= */
+/* =====================================================
+   CREATE CARD
+===================================================== */
 
-async function deleteCurrentCard(){
+function createWebsiteCard(
+    site
+){
 
-    resetInactivityTimer();
-
-
-    if(!editingId){
-        return;
-    }
+    const status =
+        getStatus(site);
 
 
-    if(
-        !confirm(
-            "Are you sure you want to delete this website?"
-        )
-    ){
-        return;
-    }
+    const inactive =
+        status === "inactive";
 
 
-    try{
-
-        const response =
-            await fetch(
-                API_URL,
-                {
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
-                    },
-
-                    body:
-                        JSON.stringify({
-
-                            action:
-                                "deleteCard",
-
-                            id:
-                                editingId
-
-                        })
-                }
-            );
+    const statusText =
+        inactive
+            ? "Inactive"
+            : "Active";
 
 
-        const data =
-            await response.json();
-
-
-        if(!data.success){
-
-            throw new Error(
-                data.message ||
-                "Delete failed."
-            );
-
-        }
-
-
-        closeModal();
-
-        showToast(
-            data.message ||
-            "Website deleted.",
-            "success"
-        );
-
-
-        await loadCards();
-
-    }
-    catch(error){
-
-        showToast(
-            error.message ||
-            "Delete failed.",
-            "error"
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHTML(value){
-
-    return String(value || "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeAttribute(value){
-
-    return escapeHTML(value);
-
-}
-
-
-/* =========================================================
-   INITIALS
-========================================================= */
-
-function getInitials(name){
-
-    const words =
+    const logo =
         String(
-            name || "W"
-        )
-        .trim()
-        .split(/\s+/);
+            site.logo || ""
+        ).trim();
 
 
-    if(words.length === 1){
+    const logoHTML =
+        logo
 
-        return words[0]
-            .substring(0,2)
-            .toUpperCase();
+            ? `
 
-    }
+                <img
+                    src="${escapeAttribute(logo)}"
+                    alt=""
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+
+                <i
+                    class="fa-solid fa-globe"
+                    style="display:none"
+                ></i>
+
+            `
+
+            : `
+
+                <i
+                    class="fa-solid fa-globe"
+                ></i>
+
+            `;
 
 
-    return (
-        words[0][0] +
-        words[1][0]
-    ).toUpperCase();
+    const description =
+        site.description ||
+        "Website access";
+
+
+    const type =
+        site.type ||
+        "Website";
+
+
+    const source =
+        site.source ||
+        "Unknown";
+
+
+    return `
+
+        <div
+            class="website-card
+            ${inactive ? "inactive" : ""}"
+        >
+
+
+            <div class="card-top">
+
+
+                <div class="website-logo">
+
+                    ${logoHTML}
+
+                </div>
+
+
+                <span
+                    class="
+                        status-badge
+                        ${
+                            inactive
+                                ? "status-inactive"
+                                : "status-active"
+                        }
+                    "
+                >
+
+                    ${statusText}
+
+                </span>
+
+
+            </div>
+
+
+            <div class="website-name">
+
+                ${escapeHTML(
+                    site.name ||
+                    "Unnamed Website"
+                )}
+
+            </div>
+
+
+            <div class="website-description">
+
+                ${escapeHTML(
+                    description
+                )}
+
+            </div>
+
+
+            <div class="website-meta">
+
+                <span class="meta-item">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    ${escapeHTML(type)}
+
+                </span>
+
+
+                <span class="meta-item">
+
+                    <i class="fa-solid fa-server"></i>
+
+                    ${escapeHTML(source)}
+
+                </span>
+
+            </div>
+
+
+            <button
+                class="open-btn"
+                ${
+                    inactive
+                        ? "disabled"
+                        : ""
+                }
+                onclick="
+                    openWebsite(
+                        '${escapeAttribute(site.link || "")}',
+                        ${inactive}
+                    )
+                "
+            >
+
+                <i
+                    class="
+                        fa-solid
+                        ${
+                            inactive
+                                ? "fa-lock"
+                                : "fa-arrow-up-right-from-square"
+                        }
+                    "
+                ></i>
+
+                ${
+                    inactive
+                        ? "Inactive"
+                        : "Open Website"
+                }
+
+            </button>
+
+
+        </div>
+
+    `;
 
 }
 
 
-/* =========================================================
-   TOAST
-========================================================= */
+/* =====================================================
+   OPEN WEBSITE
+===================================================== */
 
-let toastTimer;
+function openWebsite(
+    link,
+    inactive
+){
+
+    if(inactive){
+
+        return;
+
+    }
 
 
-function showToast(message,type){
+    if(!link){
 
-    const toast =
-        document.getElementById(
-            "toast"
+        alert(
+            "Website link is not available."
         );
 
+        return;
 
-    toast.textContent = message;
-
-
-    toast.className =
-        "toast show " +
-        (
-            type === "error"
-            ? "error"
-            : "success"
-        );
+    }
 
 
-    clearTimeout(toastTimer);
-
-
-    toastTimer =
-        setTimeout(
-            function(){
-
-                toast.classList.remove(
-                    "show"
-                );
-
-            },
-            3000
-        );
+    window.open(
+        link,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
 
 
-/* =========================================================
-   MODAL CLICK
-========================================================= */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-document.getElementById(
-    "cardModal"
-)
-.addEventListener(
-    "click",
-    function(e){
+function escapeHTML(
+    value
+){
 
-        if(e.target === this){
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
-            closeModal();
-
-        }
-
-    }
-);
+}
 
 
-/* =========================================================
-   ESC
-========================================================= */
+/* =====================================================
+   ESCAPE ATTRIBUTE
+===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function(e){
+function escapeAttribute(
+    value
+){
 
-        if(e.key === "Escape"){
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /\\/g,
+        "\\\\"
+    )
+    .replace(
+        /'/g,
+        "\\'"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    );
 
-            closeModal();
+}
 
-        }
 
-    }
-);
+/* =====================================================
+   START
+===================================================== */
+
+loadWebsites();
 
 </script>
 
-
 </body>
-
 </html>
